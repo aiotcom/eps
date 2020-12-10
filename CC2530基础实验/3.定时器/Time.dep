@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2637937198</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\HARDWARE\Lamp\Lamp.c</file>
+      <file>$PROJ_DIR$\HARDWARE\Delay\delay.c</file>
+      <file>$PROJ_DIR$\HARDWARE\LED\LED.c</file>
+      <file>$PROJ_DIR$\HARDWARE\Time\Time.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lamp.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\Usart\Usart.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\Time.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Delay\delay.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\WiFi.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\LED.pbi</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256_banked.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\Time.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Fan.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Fan.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\Time\Time.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Fan\Fan.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Fan\Fan.c</file>
+      <file>$PROJ_DIR$\Debug\Exe\Time.hex</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\Usart\Usart.h</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\WiFi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Time.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\Usart.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\LED\LED.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\Time.d51</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\LED.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$PROJ_DIR$\HARDWARE\WiFi\WiFi.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\Test.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lamp.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\WiFi\WiFi.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Usart.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\Lamp\Lamp.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\Test.d51</file>
+      <file>$PROJ_DIR$\HARDWARE\KEY\KEY.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 29 21</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Lamp\Lamp.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 34 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Delay\delay.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\LED\LED.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 32</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10 34 18 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 34 18 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Time\Time.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10 34 18 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 34 18 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34 10 18 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34 10 18 28</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Usart\Usart.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23 9 33 35 31 36 34 10</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\Time.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 12 14 17 30</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Fan\Fan.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10 34 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 34 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\Time.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 13 32 26 7 22 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\WiFi\WiFi.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23 9 33 35 31 36 34 10 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\Test.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 12 5 14 17 30</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\Test.d51</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 13 32 39 26 7 22 24</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
