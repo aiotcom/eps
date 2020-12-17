@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>OLED/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>201</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>26</ColumnWidth0><ColumnWidth1>1388</ColumnWidth1><ColumnWidth2>370</ColumnWidth2><ColumnWidth3>92</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Disassembly><MixedMode>1</MixedMode><CodeCovShow>1</CodeCovShow><InstrProfShow>1</InstrProfShow></Disassembly><Debug-Log><ColumnWidth0>27</ColumnWidth0><ColumnWidth1>1850</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-4007-14550</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>OLED</ExpandedNode><ExpandedNode>OLED/HARDWARE</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-6914-14700</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-10720-6118</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>31</YPos><SelStart>735</SelStart><SelEnd>735</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Rs485\Rs485.c</Filename><XPos>0</XPos><YPos>39</YPos><SelStart>427</SelStart><SelEnd>427</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Usart\Usart.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>58</SelStart><SelEnd>58</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\OLED\OLED.c</Filename><XPos>0</XPos><YPos>340</YPos><SelStart>6975</SelStart><SelEnd>7208</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\OLED\OLED.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>116</SelStart><SelEnd>116</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\OLEDIIC\OLEDIIC.c</Filename><XPos>0</XPos><YPos>107</YPos><SelStart>2356</SelStart><SelEnd>2369</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Lamp\Lamp.c</Filename><XPos>0</XPos><YPos>3</YPos><SelStart>396</SelStart><SelEnd>396</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Usart\Usart.h</Filename><XPos>0</XPos><YPos>21</YPos><SelStart>172</SelStart><SelEnd>172</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\OLEDIIC\OLEDIIC.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>308</SelStart><SelEnd>308</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0108e278><key>iaridepm.enu1</key></Toolbar-0108e278></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>552</Bottom><Right>275</Right><x>-2</x><y>-2</y><xscreen>98</xscreen><yscreen>86</yscreen><sizeHorzCX>61250</sizeHorzCX><sizeHorzCY>104369</sizeHorzCY><sizeVertCX>173125</sizeVertCX><sizeVertCY>672330</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>227</Bottom><Right>1602</Right><x>-2</x><y>-2</y><xscreen>1604</xscreen><yscreen>229</yscreen><sizeHorzCX>1002500</sizeHorzCX><sizeHorzCY>277913</sizeHorzCY><sizeVertCX>61250</sizeVertCX><sizeVertCY>104369</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

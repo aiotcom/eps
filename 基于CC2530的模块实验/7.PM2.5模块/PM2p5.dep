@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>810175937</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Obj\USART.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLED.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLEDIIC.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\OLED\OLED.c</file>
+      <file>$PROJ_DIR$\HARDWARE\OLED\OLED.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLEDIIC.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\USART.r51</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_CC2530F256_banked.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLED.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\PM2p5.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\PM2p5.d51</file>
+      <file>$PROJ_DIR$\Debug\Obj\PM2p5.pbd</file>
+      <file>$PROJ_DIR$\typedef.h</file>
+      <file>$PROJ_DIR$\HARDWARE\USART\USART.c</file>
+      <file>$PROJ_DIR$\HARDWARE\USART\USART.h</file>
+      <file>$PROJ_DIR$\HARDWARE\PM2p5\PM2p5.c</file>
+      <file>$PROJ_DIR$\HARDWARE\PM2p5\PM2p5.h</file>
+      <file>$PROJ_DIR$\HARDWARE\OLEDIIC\OLEDIIC.c</file>
+      <file>$PROJ_DIR$\HARDWARE\OLEDIIC\OLEDIIC.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\PM2p5.r51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Delay\delay.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Delay\delay.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\OLED\OLED.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 8 4 28 23 30 31 17 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 4 28 23 30 31 17 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\PM2p5.d51</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 11 1 5 25 10 2 24 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\PM2p5.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 13 9 14 0 27 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\USART\USART.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19 29 3 4 28 8 30 31 17 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19 29 3 4 28 8 30 31 17 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\PM2p5\PM2p5.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30 29 3 4 21 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30 29 3 4 21 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\OLEDIIC\OLEDIIC.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 31 30 17 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 30 17 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Delay\delay.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 2</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 31 30 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 30 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 7 30 31 17 21 28 4 29 3 19 8</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7 30 31 17 21 28 4 29 3 19 8</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

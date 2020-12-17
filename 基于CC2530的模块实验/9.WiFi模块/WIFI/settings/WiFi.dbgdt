@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Project>
+  <Desktop>
+    <Static>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>27</ColumnWidth0><ColumnWidth1>1850</ColumnWidth1></Debug-Log>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>27</ColumnWidth0><ColumnWidth1>1387</ColumnWidth1><ColumnWidth2>370</ColumnWidth2><ColumnWidth3>92</ColumnWidth3></Build>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>91</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Disassembly>
+        
+        
+        
+      <MixedMode>1</MixedMode><CodeCovShow>1</CodeCovShow><InstrProfShow>1</InstrProfShow></Disassembly>
+    <Watch><Format><struct_types/><watch_formats/></Format><PreferedWindows><Position>2</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><Column0>100</Column0><Column1>100</Column1><Column2>100</Column2><Column3>100</Column3></Watch><Find-in-Files><ColumnWidth0>664</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>1138</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+      
+    <Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-28127-5128</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-27604-5138</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-12222-24035</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3><Wnd4>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-6108-5131</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>WiFi</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd4><Wnd5>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-16856-5135</Identity>
+            <TabName>Disassembly</TabName>
+            <Factory>Disassembly</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd5></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\main.c</Filename><XPos>0</XPos><YPos>40</YPos><SelStart>950</SelStart><SelEnd>950</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\WiFi\WiFi.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>30</SelStart><SelEnd>34</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Usart\Usart.c</Filename><XPos>0</XPos><YPos>312</YPos><SelStart>6981</SelStart><SelEnd>6981</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\WiFi\WiFi.h</Filename><XPos>0</XPos><YPos>6</YPos><SelStart>1282</SelStart><SelEnd>1282</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Time\Time.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>10</SelStart><SelEnd>14</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Usart\Usart.h</Filename><XPos>0</XPos><YPos>9</YPos><SelStart>428</SelStart><SelEnd>428</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Rs485\Rs485.c</Filename><XPos>0</XPos><YPos>310</YPos><SelStart>3644</SelStart><SelEnd>3644</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Lamp\Lamp.c</Filename><XPos>0</XPos><YPos>54</YPos><SelStart>1361</SelStart><SelEnd>1361</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Lamp\Lamp.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>136</SelStart><SelEnd>136</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\HARDWARE\Time\Time.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>221</SelStart><SelEnd>221</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00b8e278><key>iaridepm.enu1</key></Toolbar-00b8e278></Sizes></Row0><Row1><Sizes><Toolbar-14896270><key>debuggergui.enu1</key></Toolbar-14896270></Sizes></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd4><Rect><Top>-2</Top><Left>-2</Left><Bottom>592</Bottom><Right>165</Right><x>-2</x><y>-2</y><xscreen>167</xscreen><yscreen>169</yscreen><sizeHorzCX>104375</sizeHorzCX><sizeHorzCY>204106</sizeHorzCY><sizeVertCX>104375</sizeVertCX><sizeVertCY>717391</sizeVertCY></Rect></Wnd4></Sizes></Row0></Left><Right><Row0><Sizes><Wnd5><Rect><Top>-2</Top><Left>-2</Left><Bottom>592</Bottom><Right>165</Right><x>-2</x><y>-2</y><xscreen>167</xscreen><yscreen>169</yscreen><sizeHorzCX>104375</sizeHorzCX><sizeHorzCY>204106</sizeHorzCY><sizeVertCX>104375</sizeVertCX><sizeVertCY>717391</sizeVertCY></Rect></Wnd5></Sizes></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>167</Bottom><Right>1602</Right><x>-2</x><y>-2</y><xscreen>1604</xscreen><yscreen>169</yscreen><sizeHorzCX>1002500</sizeHorzCX><sizeHorzCY>204106</sizeHorzCY><sizeVertCX>104375</sizeVertCX><sizeVertCY>204106</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Project>
+
+

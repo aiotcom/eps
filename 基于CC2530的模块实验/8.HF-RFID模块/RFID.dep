@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3636555248</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Debug\Exe\RFID.hex</file>
+      <file>$TOOLKIT_DIR$\config\devices\Texas Instruments\lnk51ew_cc2530F256_banked.xcl</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-blxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\OLEDIIC\OLEDIIC.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\Rs485.pbi</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Usart.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\RFID.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\Usart.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\Time\Time.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Lamp\Lamp.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\Rs485\Rs485.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Rs485.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLED.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\Lamp\Lamp.c</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lamp.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\Usart\Usart.c</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\delay.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\RFID\RC522.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\Time.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\Usart\Usart.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Time\Time.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lamp.pbi</file>
+      <file>$PROJ_DIR$\Debug\Exe\RFID.d51</file>
+      <file>$PROJ_DIR$\Debug\Obj\Time.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLEDIIC.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\OLEDIIC\OLEDIIC.h</file>
+      <file>$PROJ_DIR$\HARDWARE\RFID\RC522.h</file>
+      <file>$PROJ_DIR$\HARDWARE\OLED\OLED.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r51</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLEDIIC.pbi</file>
+      <file>$PROJ_DIR$\HARDWARE\OLED\OLED.c</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\OLED.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\RC522.r51</file>
+      <file>$PROJ_DIR$\HARDWARE\Rs485\Rs485.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\RC522.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdarg.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Delay\delay.h</file>
+      <file>$PROJ_DIR$\HARDWARE\Delay\delay.c</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\OLEDIIC\OLEDIIC.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 44 6 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 6 31</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 34</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 6 31 44 32 25 39 43 21 18 37 13 10 33 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 31 44 32 25 39 43 21 18 37 13 10 33 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\RFID.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 38 35 42 22 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Lamp\Lamp.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 6 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Usart\Usart.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 39 43 21 18 37 6 44 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\RFID\RC522.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 40</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 33 6 44 32 39 43 21 37 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 6 44 32 39 43 21 37 18</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Time\Time.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 6 44 32 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\RFID.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 1 16 30 40 12 34 2</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\OLED\OLED.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 31 6 44 37 21 18 33</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 6 44 37 21 18 33</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Rs485\Rs485.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37 21 18 39 43 13 6 44 25</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 28 0</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\HARDWARE\Delay\delay.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 44 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 6</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

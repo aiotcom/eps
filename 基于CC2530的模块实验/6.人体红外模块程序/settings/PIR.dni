@@ -1,0 +1,38 @@
+[DebugChecksum]
+Checksum=508014902
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=1
+Leave target running=1
+[Aliases]
+A0=_ "D:\OuYangDong\Project\模块文档V2.0\CC2530\10-、人体红外模块\人体红外模块程序\HARDWARE\Delay\delay.c" ""
+A1=_ "D:\OuYangDong\Project\模块文档V2.0\CC2530\10-、人体红外模块\人体红外模块程序\HARDWARE\Lamp\Lamp.c" ""
+A2=_ "D:\OuYangDong\Project\模块文档V2.0\CC2530\10-、人体红外模块\人体红外模块程序\HARDWARE\PIR\PIR.c" ""
+A3=_ "D:\OuYangDong\Project\模块文档V2.0\CC2530\10-、人体红外模块\人体红外模块程序\main.c" ""
+Count=4
+SuppressDialog=0

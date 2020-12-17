@@ -1,0 +1,41 @@
+[CodeCoverage]
+Enabled=_ 0
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[Profiling]
+Enabled=0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[DebugChecksum]
+Checksum=1279381315
+[InstructionProfiling]
+Enabled=_ 0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "E:\常用模块实验\CC2530 BasicRF通信实验\2.RSSI采集实验\transmitter_node\source\Components\basicrf\basic_rf.c" ""
+A1=_ "E:\常用模块实验\CC2530 BasicRF通信实验\2.RSSI采集实验\transmitter_node\source\Components\radios\cc2530\hal_rf.c" ""
+A2=_ "E:\常用模块实验\CC2530 BasicRF通信实验\2.RSSI采集实验\transmitter_node\source\Components\radios\cc2530\hal_timer_32k.c" ""
+A3=_ "E:\常用模块实验\CC2530 BasicRF通信实验\2.RSSI采集实验\transmitter_node\source\Components\targets\srf05_soc\hal_led.c" ""
+A4=_ "E:\常用模块实验\CC2530 BasicRF通信实验\2.RSSI采集实验\transmitter_node\source\apps\per_test\per_test.c" ""
+Count=5
+SuppressDialog=0

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3058640055</fileChecksum>
+  <configuration>
+    <name>srf05_cc2530</name>
+    <outputs>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_rf_util.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_joystick.pbi</file>
+      <file>$TOOLKIT_DIR$\config\lnk51ew_cc2530b.xcl</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\spectrum_analyzer.pbd</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_led.pbi</file>
+      <file>$PROJ_DIR$\spectrum_analyzer.d51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_int.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_lcd_srf05.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_rf.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\adc.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\source\apps\spectrum_analyzer\spectrum_analyzer.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\cc8051\hal_cc8051.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\hal_defs.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\common\hal_lcd_srf05.c</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\util_lcd.r51</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\hal_int.c</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\adc.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_assert.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\clock.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_mcu.r51</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$TOOLKIT_DIR$\inc\ioCC2530.h</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\util.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_digio.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_led.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\spectrum_analyzer.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_digio.pbi</file>
+      <file>$TOOLKIT_DIR$\config\lnk_base.xcl</file>
+      <file>$PROJ_DIR$\spectrum_analyzer.hex</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_button.r51</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl-pli-nlxd-1e16x01.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_int.r51</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_joystick.c</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\spectrum_analyzer.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_mcu.pbi</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_led.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\clock.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\hal_mcu.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\hal_rf.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_assert.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_button.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_mcu.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\adc.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_lcd.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_board.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_rf.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util_lcd.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util_lcd.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_board.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_int.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\clock.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_digio.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_button.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_led.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\utils\util.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_joystick.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\adc.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_assert.c</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\common\hal_types.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_digio.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\targets\interface\hal_rf_util.h</file>
+      <file>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\hal_rf_util.c</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_assert.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\clock.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\util.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer.map</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_board.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_lcd_srf05.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_board.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_rf.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_joystick.r51</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_rf_util.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\util_lcd.pbi</file>
+      <file>$PROJ_DIR$\temp\spectrum_analyzer\hal_button.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\temp\spectrum_analyzer\spectrum_analyzer.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 9 65 64 70 75 27 6 1 69 4 35 71 73 34 66 74</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\spectrum_analyzer.d51</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 67 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 2 28 16 18 17 68 30 24 32 72 7 25 19 8 0 26 23 14 31</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\apps\spectrum_analyzer\spectrum_analyzer.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 60 36 57 50 22 11 12 42 51 40 46 47 62 49</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\common\hal_lcd_srf05.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 44 42 50 22 11 12 20 21 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 67 29 5</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\common\hal_int.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 32 16 18 19 8 0 7 17 68 30 24 72 25 23 14 26</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 60 12 51 50 22 11 42 43 58 52 37 38 40 39 46 47 63 62 13 44 20 21 59 36 45 61 57 54 41 53 33 55 56 48 49 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 12 51 50 22 11 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_joystick.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 72</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 57 60 50 22 11 12 42 58 61 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\hal_mcu.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 42 37 12 22 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\hal_rf.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50 22 11 60 12 42 51 40 46 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\adc.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 58 60 12 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_board.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 70</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 12 61 51 42 50 22 11 44 57 37</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\utils\util_lcd.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 74</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50 22 11 60 12 42 44 57 41 40 49 47 46 20 21</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\clock.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 37 60 12 22 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_digio.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 12 50 22 11 42 51 61</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_button.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 75</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 50 22 11 12 42 41</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_led.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60 36 50 22 11 12 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\utils\util.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 60 12 46</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_assert.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40 12 36 60 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\source\Components\radios\cc2530\hal_rf_util.c</name>
+      <outputs>
+        <tool>
+          <name>ICC8051</name>
+          <file> 0</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 50 22 11 60 12 42 40 62 46</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+</project>
+
+

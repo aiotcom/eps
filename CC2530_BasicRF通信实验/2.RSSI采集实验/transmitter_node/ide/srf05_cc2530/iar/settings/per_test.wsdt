@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>per_test/srf05_cc2530</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>141</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      <PreferedWindows><Position>4</Position><ScreenPosX>71</ScreenPosX><ScreenPosY>126</ScreenPosY><Windows/></PreferedWindows></Workspace>
+      <Build>
+        
+        
+        
+        
+      <PreferedWindows><Position>4</Position><ScreenPosX>334</ScreenPosX><ScreenPosY>595</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1035</ColumnWidth1><ColumnWidth2>276</ColumnWidth2><ColumnWidth3>69</ColumnWidth3></Build>
+      <TerminalIO/>
+    <Debug-Log><ColumnWidth0>24</ColumnWidth0><ColumnWidth1>1217</ColumnWidth1></Debug-Log></Static>
+    <Windows>
+      
+      
+    <Wnd2><Tabs><Tab><Identity>TabID-23610-22371</Identity><TabName>Workspace</TabName><Factory>Workspace</Factory><Session><NodeDict><ExpandedNode>per_test</ExpandedNode><ExpandedNode>per_test/application</ExpandedNode></NodeDict></Session></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-21582-22818</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab><Tab><Identity>TabID-30550-15859</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\interface\hal_uart.h</Filename><XPos>0</XPos><YPos>18</YPos><SelStart>1231</SelStart><SelEnd>1231</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\apps\per_test\per_test.h</Filename><XPos>0</XPos><YPos>7</YPos><SelStart>620</SelStart><SelEnd>635</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_board.c</Filename><XPos>0</XPos><YPos>40</YPos><SelStart>1467</SelStart><SelEnd>1467</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\radios\cc2530\hal_mcu.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>456</SelStart><SelEnd>486</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_led.c</Filename><XPos>0</XPos><YPos>16</YPos><SelStart>1013</SelStart><SelEnd>1013</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\apps\per_test\per_test_menu.c</Filename><XPos>0</XPos><YPos>153</YPos><SelStart>3217</SelStart><SelEnd>3230</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\radios\cc2530\hal_rf.c</Filename><XPos>0</XPos><YPos>287</YPos><SelStart>7452</SelStart><SelEnd>7452</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\common\hal_defs.h</Filename><XPos>0</XPos><YPos>4</YPos><SelStart>575</SelStart><SelEnd>575</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\apps\per_test\per_test.c</Filename><XPos>0</XPos><YPos>24</YPos><SelStart>1788</SelStart><SelEnd>1788</SelEnd></Tab><ActiveTab>8</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\source\Components\targets\srf05_soc\hal_board.h</Filename><XPos>0</XPos><YPos>61</YPos><SelStart>2172</SelStart><SelEnd>2172</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00b0a128><key>iaridepm.enu1</key></Toolbar-00b0a128></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>752</Bottom><Right>215</Right><x>-2</x><y>-2</y><xscreen>200</xscreen><yscreen>200</yscreen><sizeHorzCX>156250</sizeHorzCX><sizeHorzCY>210970</sizeHorzCY><sizeVertCX>169531</sizeVertCX><sizeVertCY>795359</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>152</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>154</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>162447</sizeHorzCY><sizeVertCX>156250</sizeVertCX><sizeVertCY>210970</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

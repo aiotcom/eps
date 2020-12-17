@@ -1,0 +1,45 @@
+[DebugChecksum]
+Checksum=1511219213
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\2&、OLED模块\OLED模块程序\HARDWARE\Delay\delay.c" ""
+A1=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\2&、OLED模块\OLED模块程序\HARDWARE\OLEDIIC\OLEDIIC.c" ""
+A2=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\2&、OLED模块\OLED模块程序\HARDWARE\Usart\Usart.c" ""
+A3=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\2&、OLED模块\OLED模块程序\main.c" ""
+A4=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\√2、OLED模块（插针）\OLED模块程序\HARDWARE\Delay\delay.c" ""
+A5=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\√2、OLED模块（插针）\OLED模块程序\HARDWARE\OLEDIIC\OLEDIIC.c" ""
+A6=_ "D:\OuYangDong\Project\模块程序+文档V2.0\CC2530\√2、OLED模块（插针）\OLED模块程序\HARDWARE\Usart\Usart.c" ""
+A7=_ "D:\OuYangDong\Project\模块程序\CC2530底座\5、OLED模块\HARDWARE\Delay\delay.c" ""
+A8=_ "D:\OuYangDong\Project\模块程序\CC2530底座\5、OLED模块\HARDWARE\OLEDIIC\OLEDIIC.c" ""
+A9=_ "D:\OuYangDong\Project\模块程序\CC2530底座\5、OLED模块\HARDWARE\Usart\Usart.c" ""
+A10=_ "D:\OuYangDong\Project\模块程序\CC2530底座\5、OLED模块\main.c" ""
+Count=11
+SuppressDialog=0
