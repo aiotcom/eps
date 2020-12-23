@@ -1,0 +1,405 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        28/Feb/2019  10:30:52 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Components\HARDWARE\Fan.c       /
+//    Command line       =  -f D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poi /
+//                          nt2point-interactive\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.c /
+//                          fg (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS)   /
+//                          -f D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poi /
+//                          nt2point-interactive\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig. /
+//                          cfg (-DSECURE=0 -DZG_SECURE_DYNAMIC=0             /
+//                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800         /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFF11                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 D:\ZigBee\KJXY-ZigBee\KJXY /
+//                          -ZigBeeV2.0\exp2-point2point-interactive\Componen /
+//                          ts\HARDWARE\Fan.c -D NWK_AUTO_POLL -D ZTOOL_P1    /
+//                          -D MT_SYS_FUNC -D MT_ZDO_FUNC -D                  /
+//                          LCD_SUPPORTED=DEBUG -lC                           /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\EndDeviceEB\List\ -lA                 /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\EndDeviceEB\List\ --diag_suppress     /
+//                          Pe001,Pa010 -o D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV /
+//                          2.0\exp2-point2point-interactive\Projects\zstack\ /
+//                          Samples\SampleApp\CC2530DB\EndDeviceEB\Obj\ -e    /
+//                          --no_unroll --no_inline --no_tbaa --debug         /
+//                          --core=plain --dptr=16,1 --data_model=large       /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBee /
+//                          V2.0\exp2-point2point-interactive\Projects\zstack /
+//                          \Samples\SampleApp\CC2530DB\..\SOURCE\ -I         /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I           /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I      /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE /
+//                          \ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-p /
+//                          oint2point-interactive\Projects\zstack\Samples\Sa /
+//                          mpleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TA /
+//                          RGET\CC2530EB\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigB /
+//                          eeV2.0\exp2-point2point-interactive\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP /
+//                          ONENTS\OSAL\MCU\CCSOC\ -I                         /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUD /
+//                          E\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2- /
+//                          point2point-interactive\Projects\zstack\Samples\S /
+//                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK /
+//                          \AF\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp /
+//                          2-point2point-interactive\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STA /
+//                          CK\NWK\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\ /
+//                          exp2-point2point-interactive\Projects\zstack\Samp /
+//                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ /
+//                          STACK\SEC\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2 /
+//                          .0\exp2-point2point-interactive\Projects\zstack\S /
+//                          amples\SampleApp\CC2530DB\..\..\..\..\..\COMPONEN /
+//                          TS\STACK\SAPI\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigB /
+//                          eeV2.0\exp2-point2point-interactive\Projects\zsta /
+//                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP /
+//                          ONENTS\STACK\SYS\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Z /
+//                          igBeeV2.0\exp2-point2point-interactive\Projects\z /
+//                          stack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C /
+//                          OMPONENTS\STACK\ZDO\ -I                           /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\   /
+//                          -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poi /
+//                          nt2point-interactive\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\    /
+//                          -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poi /
+//                          nt2point-interactive\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES /
+//                          \SADDR\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\ /
+//                          exp2-point2point-interactive\Projects\zstack\Samp /
+//                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ /
+//                          SERVICES\SDATA\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zig /
+//                          BeeV2.0\exp2-point2point-interactive\Projects\zst /
+//                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COM /
+//                          PONENTS\MAC\INCLUDE\ -I                           /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LE /
+//                          VEL\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp /
+//                          2-point2point-interactive\Projects\zstack\Samples /
+//                          \SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC /
+//                          \LOW_LEVEL\srf04\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Z /
+//                          igBeeV2.0\exp2-point2point-interactive\Projects\z /
+//                          stack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C /
+//                          OMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -I     /
+//                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\HARDWARE\   /
+//                          -Om                                               /
+//    List file          =  D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2 /
+//                          point-interactive\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\EndDeviceEB\List\Fan.s51              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME Fan
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??FanOff?relay
+        FUNCTION ??FanOff?relay,0203H
+        PUBLIC ??FanOn?relay
+        FUNCTION ??FanOn?relay,0203H
+        PUBLIC ??Fan_Init?relay
+        FUNCTION ??Fan_Init?relay,0203H
+        PUBLIC FanOff
+        FUNCTION FanOff,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC FanOn
+        FUNCTION FanOn,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Fan_Init
+        FUNCTION Fan_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK P0DIR
+        PUBWEAK _A_P0
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+FanOff              SYMBOL "FanOff"
+??FanOff?relay      SYMBOL "?relay", FanOff
+FanOn               SYMBOL "FanOn"
+??FanOn?relay       SYMBOL "?relay", FanOn
+Fan_Init            SYMBOL "Fan_Init"
+??Fan_Init?relay    SYMBOL "?relay", Fan_Init
+
+// D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2point-interactive\Components\HARDWARE\Fan.c
+//    1 #include "Fan.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//    2 void FanOff(void);
+//    3 /*
+//    4 初始化风扇控制IO
+//    5 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//    6 void Fan_Init(void)
+Fan_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Fan_Init
+        CODE
+//    7 {
+        FUNCALL Fan_Init, FanOff
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//    8    P0DIR |= 0x02;      //P0.1定义为输出
+        ORL     0xfd,#0x2
+//    9    FanOff();
+        ; Setup parameters for call to function FanOff
+        LCALL   ??FanOff?relay
+//   10 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE P0DIR
+//   11 /*
+//   12 控制风扇转动
+//   13 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   14 void FanOn(void)
+FanOn:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function FanOn
+        CODE
+//   15 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   16   Fan = 1;
+        SETB    0x80.1
+//   17 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+        REQUIRE _A_P0
+//   18 /*
+//   19 控制风扇停止
+//   20 */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   21 void FanOff(void)
+FanOff:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function FanOff
+        CODE
+//   22 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   23   Fan = 0;
+        CLR     0x80.1
+//   24 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_P0
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Fan_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Fan_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??FanOn?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    FanOn
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??FanOff?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    FanOff
+
+        END
+// 
+// 27 bytes in segment BANKED_CODE
+// 18 bytes in segment BANK_RELAYS
+//  2 bytes in segment SFR_AN
+// 
+// 45 bytes of CODE memory
+//  0 bytes of DATA memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: none

@@ -1,0 +1,611 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         16/Dec/2020  22:49:09 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Components\HARDWARE\HC_SR04.c          #
+#    Command line       =  -f E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä #
+#                          ³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg       #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg         #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Components\HARDWARE\HC_SR04.c -D       #
+#                          ZIGBEEPRO -D ZTOOL_P1 -D MT_SYS_FUNC -D            #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE  #
+#                          -lC E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê #
+#                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\CoordinatorEB\List\ -lA                   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\CoordinatorEB\List\ --diag_suppress           #
+#                          Pe001,Pa010 -o E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.Zi #
+#                          gBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\CoordinatorEB\Obj\ -e --debug  #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅ #
+#                          ÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\ -I                   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\SOURCE\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\ #
+#                          3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\   #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä #
+#                          ³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\MT\ -I           #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« #
+#                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« #
+#                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\  #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä #
+#                          ³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\NWK\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I      #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I        #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I            #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« #
+#                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\ #
+#                          srf04\SINGLE_CHIP\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµ #
+#                          Ñé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\HARDWARE\ -Ohz                                  #
+#    List file          =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\CoordinatorEB\List\HC_SR04.lst                #
+#    Object file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\CoordinatorEB\Obj\HC_SR04.r51                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Components\HARDWARE\HC_SR04.c
+      1          #include "HC_SR04.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include "TM1640.h"	
+      3          #include "delay.h"
+      4          #include "Time.h"
+      5          
+      6          //==========================================================
+      7          //	º¯ÊýÃû³Æ£º	HCSR04_Init()
+      8          //
+      9          //	º¯Êý¹¦ÄÜ£º	³õÊ¼»¯³¬Éù²¨Ä£¿é
+     10          //
+     11          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     12          //
+     13          //	·µ»Ø²ÎÊý£º	ÎÞ
+     14          //
+     15          //	ËµÃ÷£º		
+     16          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     17          void HCSR04_Init(void)
+   \                     HCSR04_Init:
+     18          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     19              P0SEL &= ~0x03;     //ÉèÖÃP0.0¡¢P0.1ÆÕÍ¨IO¿Ú  
+   \   000000   53F3FC       ANL     0xf3,#0xfc
+     20              P1SEL &= ~0xF3;     //ÉèÖÃP1.0¡¢P1.1¡¢P1.4¡¢P1.5¡¢P1.6¡¢P1.7ÎªÆÕÍ¨IO¿Ú 
+   \   000003   53F40C       ANL     0xf4,#0xc
+     21              
+     22              P0DIR |= 0x01;      //P0.0¶¨ÒåÎªÊä³ö
+   \   000006   43FD01       ORL     0xfd,#0x1
+     23              P1DIR |= 0x62;      //P1.1¡¢P1.5¡¢P1.6¶¨ÒåÎªÊä³ö
+   \   000009   43FE62       ORL     0xfe,#0x62
+     24              
+     25              P0DIR &= ~0x02;     //ÉèP0.1ÎªÊäÈëÄ£Ê½ 
+   \   00000C   53FDFD       ANL     0xfd,#0xfd
+     26              P0INP &= ~0x02;     //´ò¿ªP0.1ÉÏÀ­µç×è
+   \   00000F   538FFD       ANL     0x8f,#0xfd
+     27              P1DIR &= ~0x91;     //ÉèP1.0¡¢P1.4¡¢P1.7ÎªÊäÈëÄ£Ê½ 
+   \   000012   53FE6E       ANL     0xfe,#0x6e
+     28              P1INP &= ~0x91;     //´ò¿ªP1.0¡¢P1.4¡¢P1.7ÉÏÀ­µç×è
+   \   000015   53F66E       ANL     0xf6,#0x6e
+     29          	
+     30              Trigl1_LOW();	//Trigl1³õÊ¼»¯ÖÃ0
+   \   000018   C296         CLR     0x90.6
+     31              Trigl2_LOW()	//Trigl2³õÊ¼»¯ÖÃ0
+   \   00001A   C295         CLR     0x90.5
+     32              Trigl3_LOW()	//Trigl3³õÊ¼»¯ÖÃ0
+   \   00001C   C280         CLR     0x80.0
+     33              Trigl4_LOW()	//Trigl4³õÊ¼»¯ÖÃ0	
+   \   00001E   C291         CLR     0x90.1
+     34          }
+   \   000020   02....       LJMP    ?BRET
+   \   000023                REQUIRE P0SEL
+   \   000023                REQUIRE P1SEL
+   \   000023                REQUIRE P0DIR
+   \   000023                REQUIRE P1DIR
+   \   000023                REQUIRE P0INP
+   \   000023                REQUIRE P1INP
+   \   000023                REQUIRE _A_P1
+   \   000023                REQUIRE _A_P0
+     35          
+     36          //==========================================================
+     37          //	º¯ÊýÃû³Æ£º	HCSR04_StartMeasure()
+     38          //
+     39          //	º¯Êý¹¦ÄÜ£º	³¬Éù²¨Ä£¿é²â¾à
+     40          //
+     41          //	Èë¿Ú²ÎÊý£º	number:¶à´ÎÆ½¾ùÖµ ´ÎÊý
+     42          //
+     43          //	·µ»Ø²ÎÊý£º	ÎÞ
+     44          //
+     45          //	ËµÃ÷£º		
+     46          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          uint16 HCSR04_StartMeasure(uint8 number)
+   \                     HCSR04_StartMeasure:
+     48          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+     49          					uint16_t rspcount;
+     50            static  uint8 Flag = 1;
+     51            static  uint16 i = 0;
+     52            static  double HCSR04_Data = 0;
+     53            static  double Apart = 0;
+     54            
+     55            for(i=0;i<number;i++)
+   \   000007   90....       MOV     DPTR,#??i
+   \   00000A   E4           CLR     A
+   \   00000B   F0           MOVX    @DPTR,A
+   \   00000C   A3           INC     DPTR
+   \   00000D   8051         SJMP    ??HCSR04_StartMeasure_0
+     56            {
+     57                Flag = 1;
+     58                Trigl3_HIGH();  //À­¸ßTrigl3
+     59                delay_us(20);   //±ØÐë´óÓÚ10us
+     60                Trigl3_LOW();		//À­µÍTrigl3
+     61                rspcount = 0;
+     62          			 
+     63                while((!Echo3_STATE())&&(rspcount<9000)){	//µÈ´ý·µ»Ø
+     64          					delay_us(1);
+     65          					rspcount++;
+     66          			}
+     67                HCSR04Count = 0; //ÇåÁã¼ÆÊýÆ÷
+     68                T1IE = 1;        //¿ªÆôITM1ÖÐ¶Ï,¿ªÊ¼¼ÆÊ±
+     69                
+     70          			rspcount = 0;
+     71                while(Flag)		//µÈ´ý½ÓÊÕ»ØÏìÐÅºÅ
+     72                {
+     73          					rspcount++;
+     74          					delay_us(1);
+     75                    if(!Echo3_STATE())    //½ÓÊÕÍê³É
+     76                    {
+     77                        T1IE = 0;	        //¹Ø±ÕITM2ÖÐ¶Ï
+     78                        if((HCSR04Count*17/50)>=400){
+     79                            i--;
+     80                        }
+     81                        else{ 
+     82                            Apart += HCSR04Count*17/100;	//¾àÀëÊý¾Ý
+   \                     ??HCSR04_StartMeasure_1:
+   \   00000F   EC           MOV     A,R4
+   \   000010   F8           MOV     R0,A
+   \   000011   ED           MOV     A,R5
+   \   000012   F9           MOV     R1,A
+   \   000013   7A64         MOV     R2,#0x64
+   \   000015   7B00         MOV     R3,#0x0
+   \   000017   12....       LCALL   ?US_DIV_MOD
+   \   00001A   88..         MOV     ?V0 + 0,R0
+   \   00001C   89..         MOV     ?V0 + 1,R1
+   \   00001E   E4           CLR     A
+   \   00001F   F5..         MOV     ?V0 + 2,A
+   \   000021   F5..         MOV     ?V0 + 3,A
+   \   000023   78..         MOV     R0,#?V0 + 0
+   \   000025   12....       LCALL   ?UL_TO_FLT
+   \   000028   90....       MOV     DPTR,#??Apart
+   \   00002B   78..         MOV     R0,#?V0 + 4
+   \   00002D   12....       LCALL   ?L_MOV_X
+   \   000030   78..         MOV     R0,#?V0 + 0
+   \   000032   79..         MOV     R1,#?V0 + 4
+   \   000034   12....       LCALL   ?FLT_ADD
+   \   000037   90....       MOV     DPTR,#??Apart
+   \   00003A   78..         MOV     R0,#?V0 + 0
+   \   00003C   12....       LCALL   ?L_MOV_TO_X
+     83          							}
+     84                        HCSR04Count = 0;
+   \                     ??HCSR04_StartMeasure_2:
+   \   00003F   90....       MOV     DPTR,#HCSR04Count
+   \   000042   E4           CLR     A
+   \   000043   F0           MOVX    @DPTR,A
+   \   000044   A3           INC     DPTR
+   \   000045   F0           MOVX    @DPTR,A
+     85                        Flag = 0;
+   \   000046   90....       MOV     DPTR,#??Flag
+   \   000049   F0           MOVX    @DPTR,A
+     86                    }
+     87                }
+     88          			T1IE = 0;//Í£²½¶¨Ê±Æ÷1¼ÆÊý  
+   \                     ??HCSR04_StartMeasure_3:
+   \   00004A   C2B9         CLR     0xb8.1
+     89          			delay_ms(10);
+   \   00004C                ; Setup parameters for call to function delay_ms
+   \   00004C   90....       MOV     DPTR,#__Constant_a
+   \   00004F   12....       LCALL   ?XLOAD_R2345
+   \   000052   12....       LCALL   ??delay_ms?relay
+   \   000055   90....       MOV     DPTR,#??i
+   \   000058   E0           MOVX    A,@DPTR
+   \   000059   2401         ADD     A,#0x1
+   \   00005B   F0           MOVX    @DPTR,A
+   \   00005C   A3           INC     DPTR
+   \   00005D   E0           MOVX    A,@DPTR
+   \   00005E   3400         ADDC    A,#0x0
+   \                     ??HCSR04_StartMeasure_0:
+   \   000060   F0           MOVX    @DPTR,A
+   \   000061   90....       MOV     DPTR,#??i
+   \   000064   8E..         MOV     ?V0 + 0,R6
+   \   000066   C3           CLR     C
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   95..         SUBB    A,?V0 + 0
+   \   00006A   A3           INC     DPTR
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   9400         SUBB    A,#0x0
+   \   00006E   4003         JC      $+5
+   \   000070   02....       LJMP    ??HCSR04_StartMeasure_4 & 0xFFFF
+   \   000073   90....       MOV     DPTR,#??Flag
+   \   000076   7401         MOV     A,#0x1
+   \   000078   F0           MOVX    @DPTR,A
+   \   000079   D280         SETB    0x80.0
+   \   00007B                ; Setup parameters for call to function delay_us
+   \   00007B   90....       MOV     DPTR,#__Constant_14
+   \   00007E   12....       LCALL   ?XLOAD_R2345
+   \   000081   12....       LCALL   ??delay_us?relay
+   \   000084   C280         CLR     0x80.0
+   \   000086   75..28       MOV     ?V0 + 0,#0x28
+   \   000089   75..23       MOV     ?V0 + 1,#0x23
+   \   00008C   8015         SJMP    ??HCSR04_StartMeasure_5
+   \                     ??HCSR04_StartMeasure_6:
+   \   00008E                ; Setup parameters for call to function delay_us
+   \   00008E   90....       MOV     DPTR,#__Constant_1
+   \   000091   12....       LCALL   ?XLOAD_R2345
+   \   000094   12....       LCALL   ??delay_us?relay
+   \   000097   E5..         MOV     A,?V0 + 0
+   \   000099   24FF         ADD     A,#-0x1
+   \   00009B   F5..         MOV     ?V0 + 0,A
+   \   00009D   E5..         MOV     A,?V0 + 1
+   \   00009F   34FF         ADDC    A,#-0x1
+   \   0000A1   F5..         MOV     ?V0 + 1,A
+   \                     ??HCSR04_StartMeasure_5:
+   \   0000A3   A281         MOV     C,0x80.1
+   \   0000A5   4006         JC      ??HCSR04_StartMeasure_7
+   \   0000A7   E5..         MOV     A,?V0 + 0
+   \   0000A9   45..         ORL     A,?V0 + 1
+   \   0000AB   70E1         JNZ     ??HCSR04_StartMeasure_6
+   \                     ??HCSR04_StartMeasure_7:
+   \   0000AD   90....       MOV     DPTR,#HCSR04Count
+   \   0000B0   E4           CLR     A
+   \   0000B1   F0           MOVX    @DPTR,A
+   \   0000B2   A3           INC     DPTR
+   \   0000B3   F0           MOVX    @DPTR,A
+   \   0000B4   D2B9         SETB    0xb8.1
+   \                     ??HCSR04_StartMeasure_8:
+   \   0000B6   90....       MOV     DPTR,#??Flag
+   \   0000B9   E0           MOVX    A,@DPTR
+   \   0000BA   608E         JZ      ??HCSR04_StartMeasure_3
+   \   0000BC                ; Setup parameters for call to function delay_us
+   \   0000BC   90....       MOV     DPTR,#__Constant_1
+   \   0000BF   12....       LCALL   ?XLOAD_R2345
+   \   0000C2   12....       LCALL   ??delay_us?relay
+   \   0000C5   A281         MOV     C,0x80.1
+   \   0000C7   40ED         JC      ??HCSR04_StartMeasure_8
+   \   0000C9   C2B9         CLR     0xb8.1
+   \   0000CB   90....       MOV     DPTR,#HCSR04Count
+   \   0000CE   E0           MOVX    A,@DPTR
+   \   0000CF   FC           MOV     R4,A
+   \   0000D0   A3           INC     DPTR
+   \   0000D1   E0           MOVX    A,@DPTR
+   \   0000D2   FD           MOV     R5,A
+   \   0000D3   EC           MOV     A,R4
+   \   0000D4   75F011       MOV     B,#0x11
+   \   0000D7   A4           MUL     AB
+   \   0000D8   FC           MOV     R4,A
+   \   0000D9   A8F0         MOV     R0,B
+   \   0000DB   75F011       MOV     B,#0x11
+   \   0000DE   ED           MOV     A,R5
+   \   0000DF   A4           MUL     AB
+   \   0000E0   28           ADD     A,R0
+   \   0000E1   FD           MOV     R5,A
+   \   0000E2   EC           MOV     A,R4
+   \   0000E3   F8           MOV     R0,A
+   \   0000E4   ED           MOV     A,R5
+   \   0000E5   F9           MOV     R1,A
+   \   0000E6   7A32         MOV     R2,#0x32
+   \   0000E8   7B00         MOV     R3,#0x0
+   \   0000EA   12....       LCALL   ?US_DIV_MOD
+   \   0000ED   E8           MOV     A,R0
+   \   0000EE   9490         SUBB    A,#-0x70
+   \   0000F0   E9           MOV     A,R1
+   \   0000F1   9401         SUBB    A,#0x1
+   \   0000F3   5003         JNC     $+5
+   \   0000F5   02....       LJMP    ??HCSR04_StartMeasure_1 & 0xFFFF
+   \   0000F8   90....       MOV     DPTR,#??i
+   \   0000FB   E0           MOVX    A,@DPTR
+   \   0000FC   24FF         ADD     A,#-0x1
+   \   0000FE   F0           MOVX    @DPTR,A
+   \   0000FF   A3           INC     DPTR
+   \   000100   E0           MOVX    A,@DPTR
+   \   000101   34FF         ADDC    A,#-0x1
+   \   000103   F0           MOVX    @DPTR,A
+   \   000104   02....       LJMP    ??HCSR04_StartMeasure_2 & 0xFFFF
+     90            }
+     91            
+     92            HCSR04_Data = (Apart/number)/2;//È¡Æ½¾ùÖµ
+   \                     ??HCSR04_StartMeasure_4:
+   \   000107   90....       MOV     DPTR,#??Apart
+   \   00010A   78..         MOV     R0,#?V0 + 4
+   \   00010C   12....       LCALL   ?L_MOV_X
+   \   00010F   E4           CLR     A
+   \   000110   F5..         MOV     ?V0 + 1,A
+   \   000112   F5..         MOV     ?V0 + 2,A
+   \   000114   F5..         MOV     ?V0 + 3,A
+   \   000116   78..         MOV     R0,#?V0 + 0
+   \   000118   12....       LCALL   ?UL_TO_FLT
+   \   00011B   78..         MOV     R0,#?V0 + 4
+   \   00011D   79..         MOV     R1,#?V0 + 0
+   \   00011F   12....       LCALL   ?FLT_DIV
+   \   000122   90....       MOV     DPTR,#__Constant_3f000000
+   \   000125   78..         MOV     R0,#?V0 + 0
+   \   000127   12....       LCALL   ?L_MOV_X
+   \   00012A   78..         MOV     R0,#?V0 + 4
+   \   00012C   79..         MOV     R1,#?V0 + 0
+   \   00012E   12....       LCALL   ?FLT_MUL
+   \   000131   90....       MOV     DPTR,#??HCSR04_Data
+   \   000134   78..         MOV     R0,#?V0 + 4
+   \   000136   12....       LCALL   ?L_MOV_TO_X
+     93            Apart = 0;
+   \   000139   90....       MOV     DPTR,#__Constant_0
+   \   00013C   12....       LCALL   ?XLOAD_R2345
+   \   00013F   90....       MOV     DPTR,#??Apart
+   \   000142   12....       LCALL   ?XSTORE_R2345
+     94          	return (uint16)HCSR04_Data;
+   \   000145   90....       MOV     DPTR,#??HCSR04_Data
+   \   000148   12....       LCALL   ?XLOAD_R2345
+   \   00014B   12....       LCALL   ?R2345_FLT_TO_L
+   \   00014E   AA..         MOV     R2,?V0 + 0
+   \   000150   AB..         MOV     R3,?V0 + 1
+   \   000152   7F08         MOV     R7,#0x8
+   \   000154   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000157                REQUIRE _A_P0
+   \   000157                REQUIRE _A_IEN1
+     95          }
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     ??Flag:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for Flag>`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??i:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??HCSR04_Data:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \                     ??Apart:
+   \   000000                DS 4
+   \   000004                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for Flag>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_a:
+   \   000000   0A000000     DD 10
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_14:
+   \   000000   14000000     DD 20
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3f000000:
+   \   000000   0000003F     DD 3F000000H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_0:
+   \   000000   00000000     DD 0H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HCSR04_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HCSR04_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HCSR04_StartMeasure?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HCSR04_StartMeasure
+     96          
+     97          
+     98          
+     99          
+
+   Maximum stack usage in bytes:
+
+     Function            ISTACK PSTACK XSTACK
+     --------            ------ ------ ------
+     HCSR04_Init             0      0      0
+     HCSR04_StartMeasure     0      0     16
+       -> delay_ms           0      0     32
+       -> delay_us           0      0     32
+       -> delay_us           0      0     32
+       -> delay_us           0      0     32
+
+
+   Segment part sizes:
+
+     Function/Label              Bytes
+     --------------              -----
+     _A_P0                          1
+     P0INP                          1
+     _A_P1                          1
+     _A_IEN1                        1
+     P0SEL                          1
+     P1SEL                          1
+     P1INP                          1
+     P0DIR                          1
+     P1DIR                          1
+     HCSR04_Init                   35
+     HCSR04_StartMeasure          343
+     Flag                           1
+     i                              2
+     HCSR04_Data                    4
+     Apart                          4
+     ?<Initializer for Flag>        1
+     __Constant_a                   4
+     __Constant_14                  4
+     __Constant_1                   4
+     __Constant_3f000000            4
+     __Constant_0                   4
+     ??HCSR04_Init?relay            6
+     ??HCSR04_StartMeasure?relay    6
+
+ 
+ 378 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+   9 bytes in segment SFR_AN
+   1 byte  in segment XDATA_I
+   1 byte  in segment XDATA_ID
+  20 bytes in segment XDATA_ROM_C
+  10 bytes in segment XDATA_Z
+ 
+ 391 bytes of CODE  memory
+   0 bytes of CONST memory (+ 20 bytes shared)
+   0 bytes of DATA  memory (+  9 bytes shared)
+  11 bytes of XDATA memory
+
+Errors: none
+Warnings: none

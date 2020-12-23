@@ -1,0 +1,683 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         16/Dec/2020  21:43:16 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Components\services\saddr\saddr.c      #
+#    Command line       =  -f E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä #
+#                          ³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg       #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg         #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Components\services\saddr\saddr.c -D   #
+#                          NWK_AUTO_POLL -D ZTOOL_P1 -D MT_SYS_FUNC -D        #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC             #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\EndDeviceEB\List\ -lA                         #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\EndDeviceEB\List\ --diag_suppress             #
+#                          Pe001,Pa010 -o E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.Zi #
+#                          gBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\EndDeviceEB\Obj\ -e            #
+#                          --no_unroll --no_inline --no_tbaa --debug          #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅ #
+#                          ÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\ -I                   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\SOURCE\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\ #
+#                          3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\   #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä #
+#                          ³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\MT\ -I           #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« #
+#                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« #
+#                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\  #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä #
+#                          ³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\NWK\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I      #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I        #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I            #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« #
+#                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\ #
+#                          srf04\SINGLE_CHIP\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµ #
+#                          Ñé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\HARDWARE\ -Om                                   #
+#    List file          =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\EndDeviceEB\List\saddr.lst                    #
+#    Object file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬É #
+#                          ù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\EndDeviceEB\Obj\saddr.r51                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Components\services\saddr\saddr.c
+      1          /****************************************************************************
+      2            Filename:       saddr.c
+      3            Revised:        $Date: 2009-12-10 08:32:15 -0800 (Thu, 10 Dec 2009) $
+      4            Revision:       $Revision: 21311 $
+      5          
+      6            Description:    Zigbee and 802.15.4 device address utility functions.
+      7          
+      8          
+      9            Copyright 2005-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          ****************************************************************************/
+     39          
+     40          /****************************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "hal_types.h"
+     44          #include "OSAL.h"
+     45          #include "saddr.h"
+     46          
+     47          /****************************************************************************
+     48           * @fn          sAddrCmp
+     49           *
+     50           * @brief       Compare two device addresses.
+     51           *
+     52           * input parameters
+     53           *
+     54           * @param       pAddr1        - Pointer to first address.
+     55           * @param       pAddr2        - Pointer to second address.
+     56           *
+     57           * output parameters
+     58           *
+     59           * @return      TRUE if addresses are equal, FALSE otherwise
+     60           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     61          bool sAddrCmp(const sAddr_t *pAddr1, const sAddr_t *pAddr2)
+   \                     sAddrCmp:
+     62          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     63            if (pAddr1->addrMode != pAddr2->addrMode)
+   \   000005   EA           MOV     A,R2
+   \   000006   2408         ADD     A,#0x8
+   \   000008   F8           MOV     R0,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   3400         ADDC    A,#0x0
+   \   00000C   F9           MOV     R1,A
+   \   00000D   8882         MOV     DPL,R0
+   \   00000F   8983         MOV     DPH,R1
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   FE           MOV     R6,A
+   \   000013   8C82         MOV     DPL,R4
+   \   000015   8D83         MOV     DPH,R5
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   A3           INC     DPTR
+   \   00001C   A3           INC     DPTR
+   \   00001D   A3           INC     DPTR
+   \   00001E   A3           INC     DPTR
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   6E           XRL     A,R6
+   \   000021   6004         JZ      ??sAddrCmp_0
+     64            {
+     65              return FALSE;
+   \                     ??sAddrCmp_1:
+   \   000023   7900         MOV     R1,#0x0
+   \   000025   802E         SJMP    ??sAddrCmp_2
+     66            }
+     67            else if (pAddr1->addrMode == SADDR_MODE_NONE)
+   \                     ??sAddrCmp_0:
+   \   000027   8882         MOV     DPL,R0
+   \   000029   8983         MOV     DPH,R1
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   60F5         JZ      ??sAddrCmp_1
+     68            {
+     69              return FALSE;
+     70            }
+     71            else if (pAddr1->addrMode == SADDR_MODE_SHORT)
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   6402         XRL     A,#0x2
+   \   000031   701A         JNZ     ??sAddrCmp_3
+     72            {
+     73              return (bool) (pAddr1->addr.shortAddr == pAddr2->addr.shortAddr);
+   \   000033   8A82         MOV     DPL,R2
+   \   000035   8B83         MOV     DPH,R3
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   F8           MOV     R0,A
+   \   000039   A3           INC     DPTR
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   F9           MOV     R1,A
+   \   00003C   8C82         MOV     DPL,R4
+   \   00003E   8D83         MOV     DPH,R5
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   68           XRL     A,R0
+   \   000042   7003         JNZ     ??sAddrCmp_4
+   \   000044   A3           INC     DPTR
+   \   000045   E0           MOVX    A,@DPTR
+   \   000046   69           XRL     A,R1
+   \                     ??sAddrCmp_4:
+   \   000047   70DA         JNZ     ??sAddrCmp_1
+   \   000049   7901         MOV     R1,#0x1
+   \   00004B   8008         SJMP    ??sAddrCmp_2
+     74            }
+     75            else if (pAddr1->addrMode == SADDR_MODE_EXT)
+   \                     ??sAddrCmp_3:
+   \   00004D   E0           MOVX    A,@DPTR
+   \   00004E   6403         XRL     A,#0x3
+   \   000050   70D1         JNZ     ??sAddrCmp_1
+     76            {
+     77              return (sAddrExtCmp(pAddr1->addr.extAddr, pAddr2->addr.extAddr));
+   \   000052                ; Setup parameters for call to function sAddrExtCmp
+   \   000052   12....       LCALL   ??sAddrExtCmp?relay
+   \                     ??sAddrCmp_2:
+   \   000055   7F01         MOV     R7,#0x1
+   \   000057   02....       LJMP    ?BANKED_LEAVE_XDATA
+     78            }
+     79            else
+     80            {
+     81              return FALSE;
+     82            }
+     83          }
+     84          
+     85          /****************************************************************************
+     86           * @fn          sAddrIden
+     87           *
+     88           * @brief       Check if two device addresses are identical.
+     89           *
+     90           *              This routine is virtually the same as sAddrCmp, which is used
+     91           *              to determine if two different addresses are the same. However,
+     92           *              this routine can be used to determine if an address is the
+     93           *              same as a previously stored address. The key difference is in
+     94           *              the former case, if the address mode is "none", then the
+     95           *              assumption is that the two addresses can not be the same. But
+     96           *              in the latter case, the address mode itself is being compared.
+     97           *              So two addresses can be identical even if the address mode is
+     98           *              "none", as long as the address mode of both addresses being
+     99           *              compared is "none".
+    100           *
+    101           * input parameters
+    102           *
+    103           * @param       pAddr1        - Pointer to first address.
+    104           * @param       pAddr2        - Pointer to second address.
+    105           *
+    106           * output parameters
+    107           *
+    108           * @return      TRUE if addresses are identical, FALSE otherwise
+    109           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    110          bool sAddrIden(const sAddr_t *pAddr1, const sAddr_t *pAddr2)
+   \                     sAddrIden:
+    111          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    112            // first check if the address modes are the same
+    113            if (pAddr1->addrMode != pAddr2->addrMode)
+   \   000005   EA           MOV     A,R2
+   \   000006   2408         ADD     A,#0x8
+   \   000008   F8           MOV     R0,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   3400         ADDC    A,#0x0
+   \   00000C   F9           MOV     R1,A
+   \   00000D   8882         MOV     DPL,R0
+   \   00000F   8983         MOV     DPH,R1
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   FE           MOV     R6,A
+   \   000013   8C82         MOV     DPL,R4
+   \   000015   8D83         MOV     DPH,R5
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   A3           INC     DPTR
+   \   00001A   A3           INC     DPTR
+   \   00001B   A3           INC     DPTR
+   \   00001C   A3           INC     DPTR
+   \   00001D   A3           INC     DPTR
+   \   00001E   A3           INC     DPTR
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   6E           XRL     A,R6
+   \   000021   6004         JZ      ??sAddrIden_0
+    114            {
+    115              // no, so no point in comparing any further
+    116              return FALSE;
+   \                     ??sAddrIden_1:
+   \   000023   7900         MOV     R1,#0x0
+   \   000025   8030         SJMP    ??sAddrIden_2
+    117            }
+    118            // the address modes are the same; check if there is no address
+    119            else if (pAddr1->addrMode == SADDR_MODE_NONE)
+   \                     ??sAddrIden_0:
+   \   000027   8882         MOV     DPL,R0
+   \   000029   8983         MOV     DPH,R1
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   7004         JNZ     ??sAddrIden_3
+    120            {
+    121              // no address, so no need to compare any further as both addresses have the
+    122              // same address mode but no address, so they are identical
+    123              return TRUE;
+   \                     ??sAddrIden_4:
+   \   00002E   7901         MOV     R1,#0x1
+   \   000030   8025         SJMP    ??sAddrIden_2
+    124            }
+    125            // there's an address; check if it is short
+    126            else if (pAddr1->addrMode == SADDR_MODE_SHORT)
+   \                     ??sAddrIden_3:
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   6402         XRL     A,#0x2
+   \   000035   7018         JNZ     ??sAddrIden_5
+    127            {
+    128              // compare short addresses
+    129              return (bool) (pAddr1->addr.shortAddr == pAddr2->addr.shortAddr);
+   \   000037   8A82         MOV     DPL,R2
+   \   000039   8B83         MOV     DPH,R3
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   F8           MOV     R0,A
+   \   00003D   A3           INC     DPTR
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   F9           MOV     R1,A
+   \   000040   8C82         MOV     DPL,R4
+   \   000042   8D83         MOV     DPH,R5
+   \   000044   E0           MOVX    A,@DPTR
+   \   000045   68           XRL     A,R0
+   \   000046   7003         JNZ     ??sAddrIden_6
+   \   000048   A3           INC     DPTR
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   69           XRL     A,R1
+   \                     ??sAddrIden_6:
+   \   00004B   70D6         JNZ     ??sAddrIden_1
+   \   00004D   80DF         SJMP    ??sAddrIden_4
+    130            }
+    131            // there's an address; check if it is extended
+    132            else if (pAddr1->addrMode == SADDR_MODE_EXT)
+   \                     ??sAddrIden_5:
+   \   00004F   E0           MOVX    A,@DPTR
+   \   000050   6403         XRL     A,#0x3
+   \   000052   70CF         JNZ     ??sAddrIden_1
+    133            {
+    134              // compare extended addresses
+    135              return (sAddrExtCmp(pAddr1->addr.extAddr, pAddr2->addr.extAddr));
+   \   000054                ; Setup parameters for call to function sAddrExtCmp
+   \   000054   12....       LCALL   ??sAddrExtCmp?relay
+   \                     ??sAddrIden_2:
+   \   000057   7F01         MOV     R7,#0x1
+   \   000059   02....       LJMP    ?BANKED_LEAVE_XDATA
+    136            }
+    137            else // unknown error
+    138            {
+    139              return FALSE;
+    140            }
+    141          }
+    142          
+    143          /****************************************************************************
+    144           * @fn          sAddrCpy
+    145           *
+    146           * @brief       Copy a device address.
+    147           *
+    148           * input parameters
+    149           *
+    150           * @param       pSrc         - Pointer to address to copy.
+    151           *
+    152           * output parameters
+    153           *
+    154           * @param       pDest        - Pointer to address of copy.
+    155           *
+    156           * @return      None.
+    157           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    158          void sAddrCpy(sAddr_t *pDest, const sAddr_t *pSrc)
+   \                     sAddrCpy:
+    159          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    160            pDest->addrMode = pSrc->addrMode;
+   \   000005   EA           MOV     A,R2
+   \   000006   2408         ADD     A,#0x8
+   \   000008   F8           MOV     R0,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   3400         ADDC    A,#0x0
+   \   00000C   F9           MOV     R1,A
+   \   00000D   8C82         MOV     DPL,R4
+   \   00000F   8D83         MOV     DPH,R5
+   \   000011   A3           INC     DPTR
+   \   000012   A3           INC     DPTR
+   \   000013   A3           INC     DPTR
+   \   000014   A3           INC     DPTR
+   \   000015   A3           INC     DPTR
+   \   000016   A3           INC     DPTR
+   \   000017   A3           INC     DPTR
+   \   000018   A3           INC     DPTR
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   8882         MOV     DPL,R0
+   \   00001C   8983         MOV     DPH,R1
+   \   00001E   F0           MOVX    @DPTR,A
+    161          
+    162            if (pDest->addrMode == SADDR_MODE_EXT)
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   6403         XRL     A,#0x3
+   \   000022   7005         JNZ     ??sAddrCpy_0
+    163            {
+    164              sAddrExtCpy(pDest->addr.extAddr, pSrc->addr.extAddr);
+   \   000024                ; Setup parameters for call to function sAddrExtCpy
+   \   000024   12....       LCALL   ??sAddrExtCpy?relay
+   \   000027   8012         SJMP    ??sAddrCpy_1
+    165            }
+    166            else
+    167            {
+    168              pDest->addr.shortAddr = pSrc->addr.shortAddr;
+   \                     ??sAddrCpy_0:
+   \   000029   8C82         MOV     DPL,R4
+   \   00002B   8D83         MOV     DPH,R5
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F8           MOV     R0,A
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   F9           MOV     R1,A
+   \   000032   8A82         MOV     DPL,R2
+   \   000034   8B83         MOV     DPH,R3
+   \   000036   E8           MOV     A,R0
+   \   000037   F0           MOVX    @DPTR,A
+   \   000038   A3           INC     DPTR
+   \   000039   E9           MOV     A,R1
+   \   00003A   F0           MOVX    @DPTR,A
+    169            }
+    170          }
+   \                     ??sAddrCpy_1:
+   \   00003B   7F01         MOV     R7,#0x1
+   \   00003D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    171          
+    172          /****************************************************************************
+    173           * @fn          sAddrExtCmp
+    174           *
+    175           * @brief       Compare two extended addresses.
+    176           *
+    177           * input parameters
+    178           *
+    179           * @param       pAddr1        - Pointer to first address.
+    180           * @param       pAddr2        - Pointer to second address.
+    181           *
+    182           * output parameters
+    183           *
+    184           * @return      TRUE if addresses are equal, FALSE otherwise
+    185           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    186          bool sAddrExtCmp(const uint8 * pAddr1, const uint8 * pAddr2)
+   \                     sAddrExtCmp:
+    187          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    188            uint8 i;
+    189          
+    190            for (i = SADDR_EXT_LEN; i != 0; i--)
+   \   000005   75..08       MOV     ?V0 + 0,#0x8
+   \   000008   8002         SJMP    ??sAddrExtCmp_0
+   \                     ??sAddrExtCmp_1:
+   \   00000A   15..         DEC     ?V0 + 0
+   \                     ??sAddrExtCmp_0:
+   \   00000C   E5..         MOV     A,?V0 + 0
+   \   00000E   602C         JZ      ??sAddrExtCmp_2
+    191            {
+    192              if (*pAddr1++ != *pAddr2++)
+   \   000010   EA           MOV     A,R2
+   \   000011   FE           MOV     R6,A
+   \   000012   EB           MOV     A,R3
+   \   000013   FF           MOV     R7,A
+   \   000014   8E82         MOV     DPL,R6
+   \   000016   8F83         MOV     DPH,R7
+   \   000018   A3           INC     DPTR
+   \   000019   AA82         MOV     R2,DPL
+   \   00001B   AB83         MOV     R3,DPH
+   \   00001D   EC           MOV     A,R4
+   \   00001E   F8           MOV     R0,A
+   \   00001F   ED           MOV     A,R5
+   \   000020   F9           MOV     R1,A
+   \   000021   8882         MOV     DPL,R0
+   \   000023   8983         MOV     DPH,R1
+   \   000025   A3           INC     DPTR
+   \   000026   AC82         MOV     R4,DPL
+   \   000028   AD83         MOV     R5,DPH
+   \   00002A   8E82         MOV     DPL,R6
+   \   00002C   8F83         MOV     DPH,R7
+   \   00002E   E0           MOVX    A,@DPTR
+   \   00002F   FE           MOV     R6,A
+   \   000030   8882         MOV     DPL,R0
+   \   000032   8983         MOV     DPH,R1
+   \   000034   E0           MOVX    A,@DPTR
+   \   000035   6E           XRL     A,R6
+   \   000036   60D2         JZ      ??sAddrExtCmp_1
+    193              {
+    194                return FALSE;
+   \   000038   7900         MOV     R1,#0x0
+   \   00003A   8002         SJMP    ??sAddrExtCmp_3
+    195              }
+    196            }
+    197            return TRUE;
+   \                     ??sAddrExtCmp_2:
+   \   00003C   7901         MOV     R1,#0x1
+   \                     ??sAddrExtCmp_3:
+   \   00003E   7F02         MOV     R7,#0x2
+   \   000040   02....       LJMP    ?BANKED_LEAVE_XDATA
+    198          }
+    199          
+    200          /****************************************************************************
+    201           * @fn          sAddrExtCpy
+    202           *
+    203           * @brief       Copy an extended address.
+    204           *
+    205           * input parameters
+    206           *
+    207           * @param       pSrc         - Pointer to address to copy.
+    208           *
+    209           * output parameters
+    210           *
+    211           * @param       pDest        - Pointer to address of copy.
+    212           *
+    213           * @return      pDest + SADDR_EXT_LEN.
+    214           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    215          void *sAddrExtCpy(uint8 * pDest, const uint8 * pSrc)
+   \                     sAddrExtCpy:
+    216          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+    217            return osal_memcpy(pDest, pSrc, SADDR_EXT_LEN);
+   \   000005                ; Setup parameters for call to function osal_memcpy
+   \   000005   8C..         MOV     ?V0 + 0,R4
+   \   000007   8D..         MOV     ?V0 + 1,R5
+   \   000009   75..00       MOV     ?V0 + 2,#0x0
+   \   00000C   78..         MOV     R0,#?V0 + 0
+   \   00000E   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000011   7C08         MOV     R4,#0x8
+   \   000013   7D00         MOV     R5,#0x0
+   \   000015   12....       LCALL   ??osal_memcpy?relay
+   \   000018   7403         MOV     A,#0x3
+   \   00001A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00001D   7F03         MOV     R7,#0x3
+   \   00001F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    218          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sAddrCmp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sAddrCmp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sAddrIden?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sAddrIden
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sAddrCpy?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sAddrCpy
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sAddrExtCmp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sAddrExtCmp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sAddrExtCpy?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sAddrExtCpy
+    219          
+    220          
+    221          
+    222          
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     sAddrCmp             0      0      9
+       -> sAddrExtCmp     0      0     18
+     sAddrCpy             1      0      9
+       -> sAddrExtCpy     0      0     18
+     sAddrExtCmp          0      0     19
+     sAddrExtCpy          0      0     23
+       -> osal_memcpy     0      0     28
+     sAddrIden            0      0      9
+       -> sAddrExtCmp     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     sAddrCmp              90
+     sAddrIden             92
+     sAddrCpy              64
+     sAddrExtCmp           67
+     sAddrExtCpy           34
+     ??sAddrCmp?relay       6
+     ??sAddrIden?relay      6
+     ??sAddrCpy?relay       6
+     ??sAddrExtCmp?relay    6
+     ??sAddrExtCpy?relay    6
+
+ 
+ 347 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+ 
+ 377 bytes of CODE memory
+
+Errors: none
+Warnings: none

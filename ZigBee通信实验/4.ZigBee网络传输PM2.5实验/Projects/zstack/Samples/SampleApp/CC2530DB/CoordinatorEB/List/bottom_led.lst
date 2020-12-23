@@ -1,0 +1,2060 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         23/Oct/2020  17:46:57 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\bottom_led.c                     #
+#    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wCoord.cfg (-DCPU32MHZ         #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\bottom_led.c -D ZIGBEEPRO -D     #
+#                          ZTOOL_P1 -D MT_SYS_FUNC -D xMT_ZDO_FUNC -D         #
+#                          LCD_SUPPORTED=DEBUG -D NV_RESTORE -lC              #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\List\ -lA E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ #
+#                          \2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ #
+#                          ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\CoordinatorEB\List\ --diag_suppress          #
+#                          Pe001,Pa010 -o E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ #
+#                          \2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ #
+#                          ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\CoordinatorEB\Obj\ -e --debug --core=plain   #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé #
+#                          ×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑ #
+#                          é-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\SOURCE\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I         #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MT\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎ #
+#                          ÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷ #
+#                          Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\INCLUDE\ -I                  #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\AF\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\NWK\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SEC\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SAPI\ -I                    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SYS\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\ZDO\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\F8W\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SADDR\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SDATA\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\  #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HARDWARE\ -Ohz                 #
+#    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\List\bottom_led.lst                           #
+#    Object file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\Obj\bottom_led.r51                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\bottom_led.c
+      1          //#include "delay.h"
+      2          #include "bottom_led.h"
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      3          #include "delay.h"
+      4          #include <ioCC2530.h> 
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+      5          long int rgb = 0x070707;  //ÐèÒª±ä»»µÄÑÕÉ«
+   \                     rgb:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for rgb>`
+   \   000004                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      6          uint16 fig = 0,num = 23;    
+   \                     fig:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+   \                     num:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for num>`
+   \   000002                REQUIRE __INIT_XDATA_I
+      7          void RGB_REST(void);
+      8          void Set_White(void);
+      9          void bottom_led(void);
+     10          void _delayunit(void);
+     11          void RGB_Set_UP();
+     12          void RGB_Set_Down(void);
+     13          void Bottom_Green(void);
+     14          void Bottom_Red(void);
+     15          void Bottom_Blue(void);
+     16          void Bottom_Yellow(void);
+     17          void Bottom_BlackOut(void);
+     18          void RGB_Set_UP(void);
+     19          /***********************************************************************************
+     20          * º¯ÊýÃû³Æ        InitLed
+     21          *
+     22          * º¯Êý¹¦ÄÜ        ÉèÖÃLEDµÆÏàÓ¦µÄIO¿Ú
+     23          *
+     24          * Èë¿Ú²ÎÊý        ÎÞ
+     25          *
+     26          * ·µ»Ø²ÎÊý        ÎÞ 
+     27          *
+     28          * ËµÃ÷
+     29          ***********************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     30          void bottom_led_init(void)
+   \                     bottom_led_init:
+     31          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     32              P2DIR |= 0x01;      //P1.0¶¨ÒåÎªÊä³ö
+   \   000004   43FF01       ORL     0xff,#0x1
+     33              RGB_REST();
+   \   000007                ; Setup parameters for call to function RGB_REST
+   \   000007   12....       LCALL   ??RGB_REST?relay
+     34          }
+   \   00000A                REQUIRE ?Subroutine1
+   \   00000A                REQUIRE P2DIR
+   \   00000A                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     35          void _delayunit(void)
+   \                     _delayunit:
+     36          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     37            uint8 i=0;
+     38            for(i=0;i<2;i++)
+     39            {
+     40            
+     41            }
+     42          }
+   \   000000   02....       LJMP    ?BRET
+     43          /*  1Âë 850ns¸ß 400nsµÍ*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          void RGB_Set_UP(void)
+   \                     RGB_Set_UP:
+     45          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     46                LED = 1;      //1
+   \   000000   D2A0         SETB    0xa0.0
+     47                asm("NOP");
+   \   000002   00           NOP
+     48                asm("NOP");
+   \   000003   00           NOP
+     49                asm("NOP");
+   \   000004   00           NOP
+     50                asm("NOP");
+   \   000005   00           NOP
+     51                asm("NOP");
+   \   000006   00           NOP
+     52                asm("NOP");
+   \   000007   00           NOP
+     53                LED = 0;
+   \   000008   02....       LJMP    ??Subroutine6_0 & 0xFFFF
+   \   00000B                REQUIRE _A_P2
+     54          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   C2A0         CLR     0xa0.0
+   \   000002   02....       LJMP    ?BRET
+     55          
+     56          /*  0Âë  400ns¸ß  850nsµÍ*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     57          void RGB_Set_Down(void)
+   \                     RGB_Set_Down:
+     58          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     59                LED = 1;     //0
+   \   000000   D2A0         SETB    0xa0.0
+     60                asm("NOP");
+   \   000002   00           NOP
+     61                asm("NOP");
+   \   000003   00           NOP
+     62                LED = 0;
+   \   000004   C2A0         CLR     0xa0.0
+     63                asm("NOP");
+   \   000006   00           NOP
+     64                asm("NOP");
+   \   000007   00           NOP
+     65          }
+   \   000008   02....       LJMP    ?BRET
+   \   00000B                REQUIRE _A_P2
+     66          
+     67          #define SEND_HI {LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;}
+     68          
+     69          #define SEND_LO {LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;}
+     70          //#define SEND_HI {LED = 1;LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0; }
+     71          //
+     72          //#define SEND_LO {LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0;LED = 0; }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void Bottom_White(void)
+   \                     Bottom_White:
+     74          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     75            SEND_HI;
+   \   000000   D2A0         SETB    0xa0.0
+   \   000002   D2A0         SETB    0xa0.0
+   \   000004   D2A0         SETB    0xa0.0
+   \   000006   D2A0         SETB    0xa0.0
+   \   000008   D2A0         SETB    0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   C2A0         CLR     0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+     76            SEND_HI;
+   \   00001C   D2A0         SETB    0xa0.0
+   \   00001E   D2A0         SETB    0xa0.0
+   \   000020   D2A0         SETB    0xa0.0
+   \   000022   D2A0         SETB    0xa0.0
+   \   000024   D2A0         SETB    0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   C2A0         CLR     0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+     77            SEND_HI;
+   \   000038   D2A0         SETB    0xa0.0
+   \   00003A   D2A0         SETB    0xa0.0
+   \   00003C   D2A0         SETB    0xa0.0
+   \   00003E   D2A0         SETB    0xa0.0
+   \   000040   D2A0         SETB    0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   C2A0         CLR     0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+     78            SEND_HI;
+   \   000054   D2A0         SETB    0xa0.0
+   \   000056   D2A0         SETB    0xa0.0
+   \   000058   D2A0         SETB    0xa0.0
+   \   00005A   D2A0         SETB    0xa0.0
+   \   00005C   D2A0         SETB    0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   C2A0         CLR     0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+     79            SEND_HI;
+   \   000070   D2A0         SETB    0xa0.0
+   \   000072   D2A0         SETB    0xa0.0
+   \   000074   D2A0         SETB    0xa0.0
+   \   000076   D2A0         SETB    0xa0.0
+   \   000078   D2A0         SETB    0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   C2A0         CLR     0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+     80            SEND_HI;
+   \   00008C   D2A0         SETB    0xa0.0
+   \   00008E   D2A0         SETB    0xa0.0
+   \   000090   D2A0         SETB    0xa0.0
+   \   000092   D2A0         SETB    0xa0.0
+   \   000094   D2A0         SETB    0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   C2A0         CLR     0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+     81            SEND_HI;
+   \   0000A8   D2A0         SETB    0xa0.0
+   \   0000AA   D2A0         SETB    0xa0.0
+   \   0000AC   D2A0         SETB    0xa0.0
+   \   0000AE   D2A0         SETB    0xa0.0
+   \   0000B0   D2A0         SETB    0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   C2A0         CLR     0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+     82            SEND_HI;
+   \   0000C4   D2A0         SETB    0xa0.0
+   \   0000C6   D2A0         SETB    0xa0.0
+   \   0000C8   D2A0         SETB    0xa0.0
+   \   0000CA   D2A0         SETB    0xa0.0
+   \   0000CC   D2A0         SETB    0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   C2A0         CLR     0xa0.0
+   \   0000D8   C2A0         CLR     0xa0.0
+   \   0000DA   C2A0         CLR     0xa0.0
+   \   0000DC   C2A0         CLR     0xa0.0
+   \   0000DE   C2A0         CLR     0xa0.0
+     83            SEND_HI;
+   \   0000E0   D2A0         SETB    0xa0.0
+   \   0000E2   D2A0         SETB    0xa0.0
+   \   0000E4   D2A0         SETB    0xa0.0
+   \   0000E6   D2A0         SETB    0xa0.0
+   \   0000E8   D2A0         SETB    0xa0.0
+   \   0000EA   D2A0         SETB    0xa0.0
+   \   0000EC   D2A0         SETB    0xa0.0
+   \   0000EE   D2A0         SETB    0xa0.0
+   \   0000F0   D2A0         SETB    0xa0.0
+   \   0000F2   C2A0         CLR     0xa0.0
+   \   0000F4   C2A0         CLR     0xa0.0
+   \   0000F6   C2A0         CLR     0xa0.0
+   \   0000F8   C2A0         CLR     0xa0.0
+   \   0000FA   C2A0         CLR     0xa0.0
+     84            SEND_HI;
+   \   0000FC   D2A0         SETB    0xa0.0
+   \   0000FE   D2A0         SETB    0xa0.0
+   \   000100   D2A0         SETB    0xa0.0
+   \   000102   D2A0         SETB    0xa0.0
+   \   000104   D2A0         SETB    0xa0.0
+   \   000106   D2A0         SETB    0xa0.0
+   \   000108   D2A0         SETB    0xa0.0
+   \   00010A   D2A0         SETB    0xa0.0
+   \   00010C   D2A0         SETB    0xa0.0
+   \   00010E   C2A0         CLR     0xa0.0
+   \   000110   C2A0         CLR     0xa0.0
+   \   000112   C2A0         CLR     0xa0.0
+   \   000114   C2A0         CLR     0xa0.0
+   \   000116   C2A0         CLR     0xa0.0
+     85          
+     86            SEND_HI;
+   \   000118   D2A0         SETB    0xa0.0
+   \   00011A   D2A0         SETB    0xa0.0
+   \   00011C   D2A0         SETB    0xa0.0
+   \   00011E   D2A0         SETB    0xa0.0
+   \   000120   D2A0         SETB    0xa0.0
+   \   000122   D2A0         SETB    0xa0.0
+   \   000124   D2A0         SETB    0xa0.0
+   \   000126   D2A0         SETB    0xa0.0
+   \   000128   D2A0         SETB    0xa0.0
+   \   00012A   C2A0         CLR     0xa0.0
+   \   00012C   C2A0         CLR     0xa0.0
+   \   00012E   C2A0         CLR     0xa0.0
+   \   000130   C2A0         CLR     0xa0.0
+   \   000132   C2A0         CLR     0xa0.0
+     87            SEND_HI;
+   \   000134   D2A0         SETB    0xa0.0
+   \   000136   D2A0         SETB    0xa0.0
+   \   000138   D2A0         SETB    0xa0.0
+   \   00013A   D2A0         SETB    0xa0.0
+   \   00013C   D2A0         SETB    0xa0.0
+   \   00013E   D2A0         SETB    0xa0.0
+   \   000140   D2A0         SETB    0xa0.0
+   \   000142   D2A0         SETB    0xa0.0
+   \   000144   D2A0         SETB    0xa0.0
+   \   000146   C2A0         CLR     0xa0.0
+   \   000148   C2A0         CLR     0xa0.0
+   \   00014A   C2A0         CLR     0xa0.0
+   \   00014C   C2A0         CLR     0xa0.0
+   \   00014E   C2A0         CLR     0xa0.0
+     88            SEND_HI;
+   \   000150   D2A0         SETB    0xa0.0
+   \   000152   D2A0         SETB    0xa0.0
+   \   000154   D2A0         SETB    0xa0.0
+   \   000156   D2A0         SETB    0xa0.0
+   \   000158   D2A0         SETB    0xa0.0
+   \   00015A   D2A0         SETB    0xa0.0
+   \   00015C   D2A0         SETB    0xa0.0
+   \   00015E   D2A0         SETB    0xa0.0
+   \   000160   D2A0         SETB    0xa0.0
+   \   000162   C2A0         CLR     0xa0.0
+   \   000164   C2A0         CLR     0xa0.0
+   \   000166   C2A0         CLR     0xa0.0
+   \   000168   C2A0         CLR     0xa0.0
+   \   00016A   C2A0         CLR     0xa0.0
+     89            SEND_HI;
+   \   00016C   D2A0         SETB    0xa0.0
+   \   00016E   D2A0         SETB    0xa0.0
+   \   000170   D2A0         SETB    0xa0.0
+   \   000172   D2A0         SETB    0xa0.0
+   \   000174   D2A0         SETB    0xa0.0
+   \   000176   D2A0         SETB    0xa0.0
+   \   000178   D2A0         SETB    0xa0.0
+   \   00017A   D2A0         SETB    0xa0.0
+   \   00017C   D2A0         SETB    0xa0.0
+   \   00017E   C2A0         CLR     0xa0.0
+   \   000180   C2A0         CLR     0xa0.0
+   \   000182   C2A0         CLR     0xa0.0
+   \   000184   C2A0         CLR     0xa0.0
+   \   000186   C2A0         CLR     0xa0.0
+     90            SEND_HI;
+   \   000188   D2A0         SETB    0xa0.0
+   \   00018A   D2A0         SETB    0xa0.0
+   \   00018C   D2A0         SETB    0xa0.0
+   \   00018E   D2A0         SETB    0xa0.0
+   \   000190   D2A0         SETB    0xa0.0
+   \   000192   D2A0         SETB    0xa0.0
+   \   000194   D2A0         SETB    0xa0.0
+   \   000196   D2A0         SETB    0xa0.0
+   \   000198   D2A0         SETB    0xa0.0
+   \   00019A   C2A0         CLR     0xa0.0
+   \   00019C   C2A0         CLR     0xa0.0
+   \   00019E   C2A0         CLR     0xa0.0
+   \   0001A0   C2A0         CLR     0xa0.0
+   \   0001A2   C2A0         CLR     0xa0.0
+     91            SEND_HI;
+   \   0001A4   D2A0         SETB    0xa0.0
+   \   0001A6   D2A0         SETB    0xa0.0
+   \   0001A8   D2A0         SETB    0xa0.0
+   \   0001AA   D2A0         SETB    0xa0.0
+   \   0001AC   D2A0         SETB    0xa0.0
+   \   0001AE   D2A0         SETB    0xa0.0
+   \   0001B0   D2A0         SETB    0xa0.0
+   \   0001B2   D2A0         SETB    0xa0.0
+   \   0001B4   D2A0         SETB    0xa0.0
+   \   0001B6                REQUIRE ?Subroutine2
+   \   0001B6                REQUIRE _A_P2
+   \   0001B6                ; // Fall through to label ?Subroutine2
+     92            
+     93            SEND_HI;
+     94            SEND_HI;
+     95            SEND_HI;
+     96            SEND_HI;  
+     97            SEND_HI;
+     98            SEND_HI;
+     99            SEND_HI;
+    100            SEND_HI;  
+    101          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   C2A0         CLR     0xa0.0
+   \   000002   C2A0         CLR     0xa0.0
+   \   000004   C2A0         CLR     0xa0.0
+   \   000006   C2A0         CLR     0xa0.0
+   \   000008   C2A0         CLR     0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   D2A0         SETB    0xa0.0
+   \   000014   D2A0         SETB    0xa0.0
+   \   000016   D2A0         SETB    0xa0.0
+   \   000018   D2A0         SETB    0xa0.0
+   \   00001A   D2A0         SETB    0xa0.0
+   \   00001C   C2A0         CLR     0xa0.0
+   \   00001E   C2A0         CLR     0xa0.0
+   \   000020   C2A0         CLR     0xa0.0
+   \   000022   C2A0         CLR     0xa0.0
+   \   000024   C2A0         CLR     0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   D2A0         SETB    0xa0.0
+   \   000030   D2A0         SETB    0xa0.0
+   \   000032   D2A0         SETB    0xa0.0
+   \   000034   D2A0         SETB    0xa0.0
+   \   000036   D2A0         SETB    0xa0.0
+   \   000038   C2A0         CLR     0xa0.0
+   \   00003A   C2A0         CLR     0xa0.0
+   \   00003C   C2A0         CLR     0xa0.0
+   \   00003E   C2A0         CLR     0xa0.0
+   \   000040   C2A0         CLR     0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   D2A0         SETB    0xa0.0
+   \   00004C   D2A0         SETB    0xa0.0
+   \   00004E   D2A0         SETB    0xa0.0
+   \   000050   D2A0         SETB    0xa0.0
+   \   000052   D2A0         SETB    0xa0.0
+   \   000054   C2A0         CLR     0xa0.0
+   \   000056   C2A0         CLR     0xa0.0
+   \   000058   C2A0         CLR     0xa0.0
+   \   00005A   C2A0         CLR     0xa0.0
+   \   00005C   C2A0         CLR     0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   D2A0         SETB    0xa0.0
+   \   000068   D2A0         SETB    0xa0.0
+   \   00006A   D2A0         SETB    0xa0.0
+   \   00006C   D2A0         SETB    0xa0.0
+   \   00006E   D2A0         SETB    0xa0.0
+   \   000070   C2A0         CLR     0xa0.0
+   \   000072   C2A0         CLR     0xa0.0
+   \   000074   C2A0         CLR     0xa0.0
+   \   000076   C2A0         CLR     0xa0.0
+   \   000078   C2A0         CLR     0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   D2A0         SETB    0xa0.0
+   \   000084   D2A0         SETB    0xa0.0
+   \   000086   D2A0         SETB    0xa0.0
+   \   000088   D2A0         SETB    0xa0.0
+   \   00008A   D2A0         SETB    0xa0.0
+   \   00008C   C2A0         CLR     0xa0.0
+   \   00008E   C2A0         CLR     0xa0.0
+   \   000090   C2A0         CLR     0xa0.0
+   \   000092   C2A0         CLR     0xa0.0
+   \   000094   C2A0         CLR     0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   D2A0         SETB    0xa0.0
+   \   0000A0   D2A0         SETB    0xa0.0
+   \   0000A2   D2A0         SETB    0xa0.0
+   \   0000A4   D2A0         SETB    0xa0.0
+   \   0000A6   D2A0         SETB    0xa0.0
+   \   0000A8   C2A0         CLR     0xa0.0
+   \   0000AA   C2A0         CLR     0xa0.0
+   \   0000AC   C2A0         CLR     0xa0.0
+   \   0000AE   C2A0         CLR     0xa0.0
+   \   0000B0   C2A0         CLR     0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   D2A0         SETB    0xa0.0
+   \   0000BC   D2A0         SETB    0xa0.0
+   \   0000BE   D2A0         SETB    0xa0.0
+   \   0000C0   D2A0         SETB    0xa0.0
+   \   0000C2   D2A0         SETB    0xa0.0
+   \   0000C4   C2A0         CLR     0xa0.0
+   \   0000C6   C2A0         CLR     0xa0.0
+   \   0000C8   C2A0         CLR     0xa0.0
+   \   0000CA   C2A0         CLR     0xa0.0
+   \   0000CC   C2A0         CLR     0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   D2A0         SETB    0xa0.0
+   \   0000D8   D2A0         SETB    0xa0.0
+   \   0000DA   D2A0         SETB    0xa0.0
+   \   0000DC   D2A0         SETB    0xa0.0
+   \   0000DE   D2A0         SETB    0xa0.0
+   \   0000E0   02....       LJMP    ??Subroutine5_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   C2A0         CLR     0xa0.0
+   \   000002   C2A0         CLR     0xa0.0
+   \   000004   C2A0         CLR     0xa0.0
+   \   000006   C2A0         CLR     0xa0.0
+   \   000008                REQUIRE ??Subroutine6_0
+   \   000008                ; // Fall through to label ??Subroutine6_0
+    102          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    103          void Bottom_Green(void)
+   \                     Bottom_Green:
+    104          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    105            SEND_HI;
+   \   000000   D2A0         SETB    0xa0.0
+   \   000002   D2A0         SETB    0xa0.0
+   \   000004   D2A0         SETB    0xa0.0
+   \   000006   D2A0         SETB    0xa0.0
+   \   000008   D2A0         SETB    0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   C2A0         CLR     0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+    106            SEND_HI;
+   \   00001C   D2A0         SETB    0xa0.0
+   \   00001E   D2A0         SETB    0xa0.0
+   \   000020   D2A0         SETB    0xa0.0
+   \   000022   D2A0         SETB    0xa0.0
+   \   000024   D2A0         SETB    0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   C2A0         CLR     0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+    107            SEND_HI;
+   \   000038   D2A0         SETB    0xa0.0
+   \   00003A   D2A0         SETB    0xa0.0
+   \   00003C   D2A0         SETB    0xa0.0
+   \   00003E   D2A0         SETB    0xa0.0
+   \   000040   D2A0         SETB    0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   C2A0         CLR     0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+    108            SEND_HI;
+   \   000054   D2A0         SETB    0xa0.0
+   \   000056   D2A0         SETB    0xa0.0
+   \   000058   D2A0         SETB    0xa0.0
+   \   00005A   D2A0         SETB    0xa0.0
+   \   00005C   D2A0         SETB    0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   C2A0         CLR     0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+    109            SEND_HI;
+   \   000070   D2A0         SETB    0xa0.0
+   \   000072   D2A0         SETB    0xa0.0
+   \   000074   D2A0         SETB    0xa0.0
+   \   000076   D2A0         SETB    0xa0.0
+   \   000078   D2A0         SETB    0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   C2A0         CLR     0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+    110            SEND_HI;
+   \   00008C   D2A0         SETB    0xa0.0
+   \   00008E   D2A0         SETB    0xa0.0
+   \   000090   D2A0         SETB    0xa0.0
+   \   000092   D2A0         SETB    0xa0.0
+   \   000094   D2A0         SETB    0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   C2A0         CLR     0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+    111            SEND_HI;
+   \   0000A8   D2A0         SETB    0xa0.0
+   \   0000AA   D2A0         SETB    0xa0.0
+   \   0000AC   D2A0         SETB    0xa0.0
+   \   0000AE   D2A0         SETB    0xa0.0
+   \   0000B0   D2A0         SETB    0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   C2A0         CLR     0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+    112            SEND_HI;
+   \   0000C4   D2A0         SETB    0xa0.0
+   \   0000C6   D2A0         SETB    0xa0.0
+   \   0000C8   D2A0         SETB    0xa0.0
+   \   0000CA   D2A0         SETB    0xa0.0
+   \   0000CC   D2A0         SETB    0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   0000D9                REQUIRE _A_P2
+    113            
+    114            SEND_LO;
+    115            SEND_LO;
+    116            SEND_LO;
+    117            SEND_LO;
+    118            SEND_LO;
+    119            SEND_LO;
+    120            SEND_LO;
+    121            SEND_LO;
+    122            
+    123            SEND_LO;
+    124            SEND_LO;
+    125            SEND_LO;
+    126            SEND_LO;  
+    127            SEND_LO;
+    128            SEND_LO;
+    129            SEND_LO;
+    130            SEND_LO;  
+    131          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   C2A0         CLR     0xa0.0
+   \   000002   C2A0         CLR     0xa0.0
+   \   000004   C2A0         CLR     0xa0.0
+   \   000006   C2A0         CLR     0xa0.0
+   \   000008   C2A0         CLR     0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   D2A0         SETB    0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+   \   00001C   C2A0         CLR     0xa0.0
+   \   00001E   C2A0         CLR     0xa0.0
+   \   000020   C2A0         CLR     0xa0.0
+   \   000022   C2A0         CLR     0xa0.0
+   \   000024   C2A0         CLR     0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   D2A0         SETB    0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+   \   000038   C2A0         CLR     0xa0.0
+   \   00003A   C2A0         CLR     0xa0.0
+   \   00003C   C2A0         CLR     0xa0.0
+   \   00003E   C2A0         CLR     0xa0.0
+   \   000040   C2A0         CLR     0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   D2A0         SETB    0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+   \   000054   C2A0         CLR     0xa0.0
+   \   000056   C2A0         CLR     0xa0.0
+   \   000058   C2A0         CLR     0xa0.0
+   \   00005A   C2A0         CLR     0xa0.0
+   \   00005C   C2A0         CLR     0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   D2A0         SETB    0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+   \   000070   C2A0         CLR     0xa0.0
+   \   000072   C2A0         CLR     0xa0.0
+   \   000074   C2A0         CLR     0xa0.0
+   \   000076   C2A0         CLR     0xa0.0
+   \   000078   C2A0         CLR     0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   D2A0         SETB    0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+   \   00008C   C2A0         CLR     0xa0.0
+   \   00008E   C2A0         CLR     0xa0.0
+   \   000090   C2A0         CLR     0xa0.0
+   \   000092   C2A0         CLR     0xa0.0
+   \   000094   C2A0         CLR     0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   D2A0         SETB    0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+   \   0000A8   C2A0         CLR     0xa0.0
+   \   0000AA   C2A0         CLR     0xa0.0
+   \   0000AC   C2A0         CLR     0xa0.0
+   \   0000AE   C2A0         CLR     0xa0.0
+   \   0000B0   C2A0         CLR     0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   D2A0         SETB    0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+   \   0000C4   C2A0         CLR     0xa0.0
+   \   0000C6   C2A0         CLR     0xa0.0
+   \   0000C8   C2A0         CLR     0xa0.0
+   \   0000CA   C2A0         CLR     0xa0.0
+   \   0000CC   C2A0         CLR     0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   D2A0         SETB    0xa0.0
+   \   0000D8   C2A0         CLR     0xa0.0
+   \   0000DA   C2A0         CLR     0xa0.0
+   \   0000DC   C2A0         CLR     0xa0.0
+   \   0000DE   C2A0         CLR     0xa0.0
+   \   0000E0                REQUIRE ??Subroutine4_0
+   \   0000E0                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   C2A0         CLR     0xa0.0
+   \   000002   C2A0         CLR     0xa0.0
+   \   000004   C2A0         CLR     0xa0.0
+   \   000006   C2A0         CLR     0xa0.0
+   \   000008   C2A0         CLR     0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   D2A0         SETB    0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+   \   00001C   C2A0         CLR     0xa0.0
+   \   00001E   C2A0         CLR     0xa0.0
+   \   000020   C2A0         CLR     0xa0.0
+   \   000022   C2A0         CLR     0xa0.0
+   \   000024   C2A0         CLR     0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   D2A0         SETB    0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+   \   000038   C2A0         CLR     0xa0.0
+   \   00003A   C2A0         CLR     0xa0.0
+   \   00003C   C2A0         CLR     0xa0.0
+   \   00003E   C2A0         CLR     0xa0.0
+   \   000040   C2A0         CLR     0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   D2A0         SETB    0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+   \   000054   C2A0         CLR     0xa0.0
+   \   000056   C2A0         CLR     0xa0.0
+   \   000058   C2A0         CLR     0xa0.0
+   \   00005A   C2A0         CLR     0xa0.0
+   \   00005C   C2A0         CLR     0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   D2A0         SETB    0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+   \   000070   C2A0         CLR     0xa0.0
+   \   000072   C2A0         CLR     0xa0.0
+   \   000074   C2A0         CLR     0xa0.0
+   \   000076   C2A0         CLR     0xa0.0
+   \   000078   C2A0         CLR     0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   D2A0         SETB    0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+   \   00008C   C2A0         CLR     0xa0.0
+   \   00008E   C2A0         CLR     0xa0.0
+   \   000090   C2A0         CLR     0xa0.0
+   \   000092   C2A0         CLR     0xa0.0
+   \   000094   C2A0         CLR     0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   D2A0         SETB    0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+   \   0000A8   C2A0         CLR     0xa0.0
+   \   0000AA   C2A0         CLR     0xa0.0
+   \   0000AC   C2A0         CLR     0xa0.0
+   \   0000AE   C2A0         CLR     0xa0.0
+   \   0000B0   C2A0         CLR     0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   D2A0         SETB    0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+   \   0000C4   C2A0         CLR     0xa0.0
+   \   0000C6   C2A0         CLR     0xa0.0
+   \   0000C8   C2A0         CLR     0xa0.0
+   \   0000CA   C2A0         CLR     0xa0.0
+   \   0000CC   C2A0         CLR     0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   D2A0         SETB    0xa0.0
+   \   0000D8   C2A0         CLR     0xa0.0
+   \   0000DA   C2A0         CLR     0xa0.0
+   \   0000DC   C2A0         CLR     0xa0.0
+   \   0000DE   C2A0         CLR     0xa0.0
+   \   0000E0                REQUIRE ??Subroutine5_0
+   \   0000E0                ; // Fall through to label ??Subroutine5_0
+    132          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    133          void Bottom_Red(void)
+   \                     Bottom_Red:
+    134          { 
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    135            SEND_LO;
+   \   000000   D2A0         SETB    0xa0.0
+   \   000002   D2A0         SETB    0xa0.0
+   \   000004   D2A0         SETB    0xa0.0
+   \   000006   D2A0         SETB    0xa0.0
+   \   000008   D2A0         SETB    0xa0.0
+   \   00000A   C2A0         CLR     0xa0.0
+   \   00000C   C2A0         CLR     0xa0.0
+   \   00000E   C2A0         CLR     0xa0.0
+   \   000010   C2A0         CLR     0xa0.0
+   \   000012   C2A0         CLR     0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+    136            SEND_LO;
+   \   00001C   D2A0         SETB    0xa0.0
+   \   00001E   D2A0         SETB    0xa0.0
+   \   000020   D2A0         SETB    0xa0.0
+   \   000022   D2A0         SETB    0xa0.0
+   \   000024   D2A0         SETB    0xa0.0
+   \   000026   C2A0         CLR     0xa0.0
+   \   000028   C2A0         CLR     0xa0.0
+   \   00002A   C2A0         CLR     0xa0.0
+   \   00002C   C2A0         CLR     0xa0.0
+   \   00002E   C2A0         CLR     0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+    137            SEND_LO;
+   \   000038   D2A0         SETB    0xa0.0
+   \   00003A   D2A0         SETB    0xa0.0
+   \   00003C   D2A0         SETB    0xa0.0
+   \   00003E   D2A0         SETB    0xa0.0
+   \   000040   D2A0         SETB    0xa0.0
+   \   000042   C2A0         CLR     0xa0.0
+   \   000044   C2A0         CLR     0xa0.0
+   \   000046   C2A0         CLR     0xa0.0
+   \   000048   C2A0         CLR     0xa0.0
+   \   00004A   C2A0         CLR     0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+    138            SEND_LO;
+   \   000054   D2A0         SETB    0xa0.0
+   \   000056   D2A0         SETB    0xa0.0
+   \   000058   D2A0         SETB    0xa0.0
+   \   00005A   D2A0         SETB    0xa0.0
+   \   00005C   D2A0         SETB    0xa0.0
+   \   00005E   C2A0         CLR     0xa0.0
+   \   000060   C2A0         CLR     0xa0.0
+   \   000062   C2A0         CLR     0xa0.0
+   \   000064   C2A0         CLR     0xa0.0
+   \   000066   C2A0         CLR     0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+    139            SEND_LO;
+   \   000070   D2A0         SETB    0xa0.0
+   \   000072   D2A0         SETB    0xa0.0
+   \   000074   D2A0         SETB    0xa0.0
+   \   000076   D2A0         SETB    0xa0.0
+   \   000078   D2A0         SETB    0xa0.0
+   \   00007A   C2A0         CLR     0xa0.0
+   \   00007C   C2A0         CLR     0xa0.0
+   \   00007E   C2A0         CLR     0xa0.0
+   \   000080   C2A0         CLR     0xa0.0
+   \   000082   C2A0         CLR     0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+    140            SEND_LO;
+   \   00008C   D2A0         SETB    0xa0.0
+   \   00008E   D2A0         SETB    0xa0.0
+   \   000090   D2A0         SETB    0xa0.0
+   \   000092   D2A0         SETB    0xa0.0
+   \   000094   D2A0         SETB    0xa0.0
+   \   000096   C2A0         CLR     0xa0.0
+   \   000098   C2A0         CLR     0xa0.0
+   \   00009A   C2A0         CLR     0xa0.0
+   \   00009C   C2A0         CLR     0xa0.0
+   \   00009E   C2A0         CLR     0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+    141            SEND_LO;
+   \   0000A8   D2A0         SETB    0xa0.0
+   \   0000AA   D2A0         SETB    0xa0.0
+   \   0000AC   D2A0         SETB    0xa0.0
+   \   0000AE   D2A0         SETB    0xa0.0
+   \   0000B0   D2A0         SETB    0xa0.0
+   \   0000B2   C2A0         CLR     0xa0.0
+   \   0000B4   C2A0         CLR     0xa0.0
+   \   0000B6   C2A0         CLR     0xa0.0
+   \   0000B8   C2A0         CLR     0xa0.0
+   \   0000BA   C2A0         CLR     0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+    142            SEND_LO;
+   \   0000C4   D2A0         SETB    0xa0.0
+   \   0000C6   D2A0         SETB    0xa0.0
+   \   0000C8   D2A0         SETB    0xa0.0
+   \   0000CA   D2A0         SETB    0xa0.0
+   \   0000CC   D2A0         SETB    0xa0.0
+   \   0000CE   C2A0         CLR     0xa0.0
+   \   0000D0   C2A0         CLR     0xa0.0
+   \   0000D2   C2A0         CLR     0xa0.0
+   \   0000D4   C2A0         CLR     0xa0.0
+   \   0000D6                REQUIRE ?Subroutine3
+   \   0000D6                REQUIRE _A_P2
+   \   0000D6                ; // Fall through to label ?Subroutine3
+    143            
+    144            SEND_HI;
+    145            SEND_HI;
+    146            SEND_HI;
+    147            SEND_HI;
+    148            SEND_HI;
+    149            SEND_HI;
+    150            SEND_HI;
+    151            SEND_HI;
+    152            
+    153            SEND_LO;
+    154            SEND_LO;
+    155            SEND_LO;
+    156            SEND_LO;  
+    157            SEND_LO;
+    158            SEND_LO;
+    159            SEND_LO;
+    160            SEND_LO;  
+    161          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   C2A0         CLR     0xa0.0
+   \   000002   C2A0         CLR     0xa0.0
+   \   000004   C2A0         CLR     0xa0.0
+   \   000006   C2A0         CLR     0xa0.0
+   \   000008   C2A0         CLR     0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   D2A0         SETB    0xa0.0
+   \   000014   D2A0         SETB    0xa0.0
+   \   000016   D2A0         SETB    0xa0.0
+   \   000018   D2A0         SETB    0xa0.0
+   \   00001A   D2A0         SETB    0xa0.0
+   \   00001C   C2A0         CLR     0xa0.0
+   \   00001E   C2A0         CLR     0xa0.0
+   \   000020   C2A0         CLR     0xa0.0
+   \   000022   C2A0         CLR     0xa0.0
+   \   000024   C2A0         CLR     0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   D2A0         SETB    0xa0.0
+   \   000030   D2A0         SETB    0xa0.0
+   \   000032   D2A0         SETB    0xa0.0
+   \   000034   D2A0         SETB    0xa0.0
+   \   000036   D2A0         SETB    0xa0.0
+   \   000038   C2A0         CLR     0xa0.0
+   \   00003A   C2A0         CLR     0xa0.0
+   \   00003C   C2A0         CLR     0xa0.0
+   \   00003E   C2A0         CLR     0xa0.0
+   \   000040   C2A0         CLR     0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   D2A0         SETB    0xa0.0
+   \   00004C   D2A0         SETB    0xa0.0
+   \   00004E   D2A0         SETB    0xa0.0
+   \   000050   D2A0         SETB    0xa0.0
+   \   000052   D2A0         SETB    0xa0.0
+   \   000054   C2A0         CLR     0xa0.0
+   \   000056   C2A0         CLR     0xa0.0
+   \   000058   C2A0         CLR     0xa0.0
+   \   00005A   C2A0         CLR     0xa0.0
+   \   00005C   C2A0         CLR     0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   D2A0         SETB    0xa0.0
+   \   000068   D2A0         SETB    0xa0.0
+   \   00006A   D2A0         SETB    0xa0.0
+   \   00006C   D2A0         SETB    0xa0.0
+   \   00006E   D2A0         SETB    0xa0.0
+   \   000070   C2A0         CLR     0xa0.0
+   \   000072   C2A0         CLR     0xa0.0
+   \   000074   C2A0         CLR     0xa0.0
+   \   000076   C2A0         CLR     0xa0.0
+   \   000078   C2A0         CLR     0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   D2A0         SETB    0xa0.0
+   \   000084   D2A0         SETB    0xa0.0
+   \   000086   D2A0         SETB    0xa0.0
+   \   000088   D2A0         SETB    0xa0.0
+   \   00008A   D2A0         SETB    0xa0.0
+   \   00008C   C2A0         CLR     0xa0.0
+   \   00008E   C2A0         CLR     0xa0.0
+   \   000090   C2A0         CLR     0xa0.0
+   \   000092   C2A0         CLR     0xa0.0
+   \   000094   C2A0         CLR     0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   D2A0         SETB    0xa0.0
+   \   0000A0   D2A0         SETB    0xa0.0
+   \   0000A2   D2A0         SETB    0xa0.0
+   \   0000A4   D2A0         SETB    0xa0.0
+   \   0000A6   D2A0         SETB    0xa0.0
+   \   0000A8   C2A0         CLR     0xa0.0
+   \   0000AA   C2A0         CLR     0xa0.0
+   \   0000AC   C2A0         CLR     0xa0.0
+   \   0000AE   C2A0         CLR     0xa0.0
+   \   0000B0   C2A0         CLR     0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   D2A0         SETB    0xa0.0
+   \   0000BC   D2A0         SETB    0xa0.0
+   \   0000BE   D2A0         SETB    0xa0.0
+   \   0000C0   D2A0         SETB    0xa0.0
+   \   0000C2   D2A0         SETB    0xa0.0
+   \   0000C4   C2A0         CLR     0xa0.0
+   \   0000C6   C2A0         CLR     0xa0.0
+   \   0000C8   C2A0         CLR     0xa0.0
+   \   0000CA   C2A0         CLR     0xa0.0
+   \   0000CC   C2A0         CLR     0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   D2A0         SETB    0xa0.0
+   \   0000D8   D2A0         SETB    0xa0.0
+   \   0000DA   D2A0         SETB    0xa0.0
+   \   0000DC   D2A0         SETB    0xa0.0
+   \   0000DE   D2A0         SETB    0xa0.0
+   \   0000E0   02....       LJMP    ??Subroutine4_0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          void Bottom_Blue(void)
+   \                     Bottom_Blue:
+    163          { 
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    164            SEND_LO;
+   \   000000   D2A0         SETB    0xa0.0
+   \   000002   D2A0         SETB    0xa0.0
+   \   000004   D2A0         SETB    0xa0.0
+   \   000006   D2A0         SETB    0xa0.0
+   \   000008   D2A0         SETB    0xa0.0
+   \   00000A   C2A0         CLR     0xa0.0
+   \   00000C   C2A0         CLR     0xa0.0
+   \   00000E   C2A0         CLR     0xa0.0
+   \   000010   C2A0         CLR     0xa0.0
+   \   000012   C2A0         CLR     0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+    165            SEND_LO;
+   \   00001C   D2A0         SETB    0xa0.0
+   \   00001E   D2A0         SETB    0xa0.0
+   \   000020   D2A0         SETB    0xa0.0
+   \   000022   D2A0         SETB    0xa0.0
+   \   000024   D2A0         SETB    0xa0.0
+   \   000026   C2A0         CLR     0xa0.0
+   \   000028   C2A0         CLR     0xa0.0
+   \   00002A   C2A0         CLR     0xa0.0
+   \   00002C   C2A0         CLR     0xa0.0
+   \   00002E   C2A0         CLR     0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+    166            SEND_LO;
+   \   000038   D2A0         SETB    0xa0.0
+   \   00003A   D2A0         SETB    0xa0.0
+   \   00003C   D2A0         SETB    0xa0.0
+   \   00003E   D2A0         SETB    0xa0.0
+   \   000040   D2A0         SETB    0xa0.0
+   \   000042   C2A0         CLR     0xa0.0
+   \   000044   C2A0         CLR     0xa0.0
+   \   000046   C2A0         CLR     0xa0.0
+   \   000048   C2A0         CLR     0xa0.0
+   \   00004A   C2A0         CLR     0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+    167            SEND_LO;
+   \   000054   D2A0         SETB    0xa0.0
+   \   000056   D2A0         SETB    0xa0.0
+   \   000058   D2A0         SETB    0xa0.0
+   \   00005A   D2A0         SETB    0xa0.0
+   \   00005C   D2A0         SETB    0xa0.0
+   \   00005E   C2A0         CLR     0xa0.0
+   \   000060   C2A0         CLR     0xa0.0
+   \   000062   C2A0         CLR     0xa0.0
+   \   000064   C2A0         CLR     0xa0.0
+   \   000066   C2A0         CLR     0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+    168            SEND_LO;
+   \   000070   D2A0         SETB    0xa0.0
+   \   000072   D2A0         SETB    0xa0.0
+   \   000074   D2A0         SETB    0xa0.0
+   \   000076   D2A0         SETB    0xa0.0
+   \   000078   D2A0         SETB    0xa0.0
+   \   00007A   C2A0         CLR     0xa0.0
+   \   00007C   C2A0         CLR     0xa0.0
+   \   00007E   C2A0         CLR     0xa0.0
+   \   000080   C2A0         CLR     0xa0.0
+   \   000082   C2A0         CLR     0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+    169            SEND_LO;
+   \   00008C   D2A0         SETB    0xa0.0
+   \   00008E   D2A0         SETB    0xa0.0
+   \   000090   D2A0         SETB    0xa0.0
+   \   000092   D2A0         SETB    0xa0.0
+   \   000094   D2A0         SETB    0xa0.0
+   \   000096   C2A0         CLR     0xa0.0
+   \   000098   C2A0         CLR     0xa0.0
+   \   00009A   C2A0         CLR     0xa0.0
+   \   00009C   C2A0         CLR     0xa0.0
+   \   00009E   C2A0         CLR     0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+    170            SEND_LO;
+   \   0000A8   D2A0         SETB    0xa0.0
+   \   0000AA   D2A0         SETB    0xa0.0
+   \   0000AC   D2A0         SETB    0xa0.0
+   \   0000AE   D2A0         SETB    0xa0.0
+   \   0000B0   D2A0         SETB    0xa0.0
+   \   0000B2   C2A0         CLR     0xa0.0
+   \   0000B4   C2A0         CLR     0xa0.0
+   \   0000B6   C2A0         CLR     0xa0.0
+   \   0000B8   C2A0         CLR     0xa0.0
+   \   0000BA   C2A0         CLR     0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+    171            SEND_LO;
+   \   0000C4   D2A0         SETB    0xa0.0
+   \   0000C6   D2A0         SETB    0xa0.0
+   \   0000C8   D2A0         SETB    0xa0.0
+   \   0000CA   D2A0         SETB    0xa0.0
+   \   0000CC   D2A0         SETB    0xa0.0
+   \   0000CE   C2A0         CLR     0xa0.0
+   \   0000D0   C2A0         CLR     0xa0.0
+   \   0000D2   C2A0         CLR     0xa0.0
+   \   0000D4   C2A0         CLR     0xa0.0
+   \   0000D6   C2A0         CLR     0xa0.0
+   \   0000D8   C2A0         CLR     0xa0.0
+   \   0000DA   C2A0         CLR     0xa0.0
+   \   0000DC   C2A0         CLR     0xa0.0
+   \   0000DE   C2A0         CLR     0xa0.0
+    172             
+    173            SEND_LO;
+   \   0000E0   D2A0         SETB    0xa0.0
+   \   0000E2   D2A0         SETB    0xa0.0
+   \   0000E4   D2A0         SETB    0xa0.0
+   \   0000E6   D2A0         SETB    0xa0.0
+   \   0000E8   D2A0         SETB    0xa0.0
+   \   0000EA   C2A0         CLR     0xa0.0
+   \   0000EC   C2A0         CLR     0xa0.0
+   \   0000EE   C2A0         CLR     0xa0.0
+   \   0000F0   C2A0         CLR     0xa0.0
+   \   0000F2   C2A0         CLR     0xa0.0
+   \   0000F4   C2A0         CLR     0xa0.0
+   \   0000F6   C2A0         CLR     0xa0.0
+   \   0000F8   C2A0         CLR     0xa0.0
+   \   0000FA   C2A0         CLR     0xa0.0
+    174            SEND_LO;
+   \   0000FC   D2A0         SETB    0xa0.0
+   \   0000FE   D2A0         SETB    0xa0.0
+   \   000100   D2A0         SETB    0xa0.0
+   \   000102   D2A0         SETB    0xa0.0
+   \   000104   D2A0         SETB    0xa0.0
+   \   000106   C2A0         CLR     0xa0.0
+   \   000108   C2A0         CLR     0xa0.0
+   \   00010A   C2A0         CLR     0xa0.0
+   \   00010C   C2A0         CLR     0xa0.0
+   \   00010E   C2A0         CLR     0xa0.0
+   \   000110   C2A0         CLR     0xa0.0
+   \   000112   C2A0         CLR     0xa0.0
+   \   000114   C2A0         CLR     0xa0.0
+   \   000116   C2A0         CLR     0xa0.0
+    175            SEND_LO;
+   \   000118   D2A0         SETB    0xa0.0
+   \   00011A   D2A0         SETB    0xa0.0
+   \   00011C   D2A0         SETB    0xa0.0
+   \   00011E   D2A0         SETB    0xa0.0
+   \   000120   D2A0         SETB    0xa0.0
+   \   000122   C2A0         CLR     0xa0.0
+   \   000124   C2A0         CLR     0xa0.0
+   \   000126   C2A0         CLR     0xa0.0
+   \   000128   C2A0         CLR     0xa0.0
+   \   00012A   C2A0         CLR     0xa0.0
+   \   00012C   C2A0         CLR     0xa0.0
+   \   00012E   C2A0         CLR     0xa0.0
+   \   000130   C2A0         CLR     0xa0.0
+   \   000132   C2A0         CLR     0xa0.0
+    176            SEND_LO;  
+   \   000134   D2A0         SETB    0xa0.0
+   \   000136   D2A0         SETB    0xa0.0
+   \   000138   D2A0         SETB    0xa0.0
+   \   00013A   D2A0         SETB    0xa0.0
+   \   00013C   D2A0         SETB    0xa0.0
+   \   00013E   C2A0         CLR     0xa0.0
+   \   000140   C2A0         CLR     0xa0.0
+   \   000142   C2A0         CLR     0xa0.0
+   \   000144   C2A0         CLR     0xa0.0
+   \   000146   C2A0         CLR     0xa0.0
+   \   000148   C2A0         CLR     0xa0.0
+   \   00014A   C2A0         CLR     0xa0.0
+   \   00014C   C2A0         CLR     0xa0.0
+   \   00014E   C2A0         CLR     0xa0.0
+    177            SEND_LO;
+   \   000150   D2A0         SETB    0xa0.0
+   \   000152   D2A0         SETB    0xa0.0
+   \   000154   D2A0         SETB    0xa0.0
+   \   000156   D2A0         SETB    0xa0.0
+   \   000158   D2A0         SETB    0xa0.0
+   \   00015A   C2A0         CLR     0xa0.0
+   \   00015C   C2A0         CLR     0xa0.0
+   \   00015E   C2A0         CLR     0xa0.0
+   \   000160   C2A0         CLR     0xa0.0
+   \   000162   C2A0         CLR     0xa0.0
+   \   000164   C2A0         CLR     0xa0.0
+   \   000166   C2A0         CLR     0xa0.0
+   \   000168   C2A0         CLR     0xa0.0
+   \   00016A   C2A0         CLR     0xa0.0
+    178            SEND_LO;
+   \   00016C   D2A0         SETB    0xa0.0
+   \   00016E   D2A0         SETB    0xa0.0
+   \   000170   D2A0         SETB    0xa0.0
+   \   000172   D2A0         SETB    0xa0.0
+   \   000174   D2A0         SETB    0xa0.0
+   \   000176   C2A0         CLR     0xa0.0
+   \   000178   C2A0         CLR     0xa0.0
+   \   00017A   C2A0         CLR     0xa0.0
+   \   00017C   C2A0         CLR     0xa0.0
+   \   00017E   C2A0         CLR     0xa0.0
+   \   000180   C2A0         CLR     0xa0.0
+   \   000182   C2A0         CLR     0xa0.0
+   \   000184   C2A0         CLR     0xa0.0
+   \   000186   C2A0         CLR     0xa0.0
+    179            SEND_LO;
+   \   000188   D2A0         SETB    0xa0.0
+   \   00018A   D2A0         SETB    0xa0.0
+   \   00018C   D2A0         SETB    0xa0.0
+   \   00018E   D2A0         SETB    0xa0.0
+   \   000190   D2A0         SETB    0xa0.0
+   \   000192   C2A0         CLR     0xa0.0
+   \   000194   C2A0         CLR     0xa0.0
+   \   000196   C2A0         CLR     0xa0.0
+   \   000198   C2A0         CLR     0xa0.0
+   \   00019A   C2A0         CLR     0xa0.0
+   \   00019C   C2A0         CLR     0xa0.0
+   \   00019E   C2A0         CLR     0xa0.0
+   \   0001A0   C2A0         CLR     0xa0.0
+   \   0001A2   C2A0         CLR     0xa0.0
+    180            SEND_LO; 
+   \   0001A4   D2A0         SETB    0xa0.0
+   \   0001A6   D2A0         SETB    0xa0.0
+   \   0001A8   D2A0         SETB    0xa0.0
+   \   0001AA   D2A0         SETB    0xa0.0
+   \   0001AC   D2A0         SETB    0xa0.0
+   \   0001AE   C2A0         CLR     0xa0.0
+   \   0001B0   C2A0         CLR     0xa0.0
+   \   0001B2   C2A0         CLR     0xa0.0
+   \   0001B4   C2A0         CLR     0xa0.0
+   \   0001B6   02....       LJMP    ?Subroutine2 & 0xFFFF
+   \   0001B9                REQUIRE _A_P2
+    181            
+    182            SEND_HI;
+    183            SEND_HI;
+    184            SEND_HI;
+    185            SEND_HI;
+    186            SEND_HI;
+    187            SEND_HI;
+    188            SEND_HI;
+    189            SEND_HI;  
+    190          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    191          void Bottom_Yellow(void)
+   \                     Bottom_Yellow:
+    192          { 
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    193            SEND_HI;
+   \   000000   D2A0         SETB    0xa0.0
+   \   000002   D2A0         SETB    0xa0.0
+   \   000004   D2A0         SETB    0xa0.0
+   \   000006   D2A0         SETB    0xa0.0
+   \   000008   D2A0         SETB    0xa0.0
+   \   00000A   D2A0         SETB    0xa0.0
+   \   00000C   D2A0         SETB    0xa0.0
+   \   00000E   D2A0         SETB    0xa0.0
+   \   000010   D2A0         SETB    0xa0.0
+   \   000012   C2A0         CLR     0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+    194            SEND_HI;
+   \   00001C   D2A0         SETB    0xa0.0
+   \   00001E   D2A0         SETB    0xa0.0
+   \   000020   D2A0         SETB    0xa0.0
+   \   000022   D2A0         SETB    0xa0.0
+   \   000024   D2A0         SETB    0xa0.0
+   \   000026   D2A0         SETB    0xa0.0
+   \   000028   D2A0         SETB    0xa0.0
+   \   00002A   D2A0         SETB    0xa0.0
+   \   00002C   D2A0         SETB    0xa0.0
+   \   00002E   C2A0         CLR     0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+    195            SEND_HI;
+   \   000038   D2A0         SETB    0xa0.0
+   \   00003A   D2A0         SETB    0xa0.0
+   \   00003C   D2A0         SETB    0xa0.0
+   \   00003E   D2A0         SETB    0xa0.0
+   \   000040   D2A0         SETB    0xa0.0
+   \   000042   D2A0         SETB    0xa0.0
+   \   000044   D2A0         SETB    0xa0.0
+   \   000046   D2A0         SETB    0xa0.0
+   \   000048   D2A0         SETB    0xa0.0
+   \   00004A   C2A0         CLR     0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+    196            SEND_HI;
+   \   000054   D2A0         SETB    0xa0.0
+   \   000056   D2A0         SETB    0xa0.0
+   \   000058   D2A0         SETB    0xa0.0
+   \   00005A   D2A0         SETB    0xa0.0
+   \   00005C   D2A0         SETB    0xa0.0
+   \   00005E   D2A0         SETB    0xa0.0
+   \   000060   D2A0         SETB    0xa0.0
+   \   000062   D2A0         SETB    0xa0.0
+   \   000064   D2A0         SETB    0xa0.0
+   \   000066   C2A0         CLR     0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+    197            SEND_HI;
+   \   000070   D2A0         SETB    0xa0.0
+   \   000072   D2A0         SETB    0xa0.0
+   \   000074   D2A0         SETB    0xa0.0
+   \   000076   D2A0         SETB    0xa0.0
+   \   000078   D2A0         SETB    0xa0.0
+   \   00007A   D2A0         SETB    0xa0.0
+   \   00007C   D2A0         SETB    0xa0.0
+   \   00007E   D2A0         SETB    0xa0.0
+   \   000080   D2A0         SETB    0xa0.0
+   \   000082   C2A0         CLR     0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+    198            SEND_HI;
+   \   00008C   D2A0         SETB    0xa0.0
+   \   00008E   D2A0         SETB    0xa0.0
+   \   000090   D2A0         SETB    0xa0.0
+   \   000092   D2A0         SETB    0xa0.0
+   \   000094   D2A0         SETB    0xa0.0
+   \   000096   D2A0         SETB    0xa0.0
+   \   000098   D2A0         SETB    0xa0.0
+   \   00009A   D2A0         SETB    0xa0.0
+   \   00009C   D2A0         SETB    0xa0.0
+   \   00009E   C2A0         CLR     0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+    199            SEND_HI;
+   \   0000A8   D2A0         SETB    0xa0.0
+   \   0000AA   D2A0         SETB    0xa0.0
+   \   0000AC   D2A0         SETB    0xa0.0
+   \   0000AE   D2A0         SETB    0xa0.0
+   \   0000B0   D2A0         SETB    0xa0.0
+   \   0000B2   D2A0         SETB    0xa0.0
+   \   0000B4   D2A0         SETB    0xa0.0
+   \   0000B6   D2A0         SETB    0xa0.0
+   \   0000B8   D2A0         SETB    0xa0.0
+   \   0000BA   C2A0         CLR     0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+    200            SEND_HI;
+   \   0000C4   D2A0         SETB    0xa0.0
+   \   0000C6   D2A0         SETB    0xa0.0
+   \   0000C8   D2A0         SETB    0xa0.0
+   \   0000CA   D2A0         SETB    0xa0.0
+   \   0000CC   D2A0         SETB    0xa0.0
+   \   0000CE   D2A0         SETB    0xa0.0
+   \   0000D0   D2A0         SETB    0xa0.0
+   \   0000D2   D2A0         SETB    0xa0.0
+   \   0000D4   D2A0         SETB    0xa0.0
+   \   0000D6   02....       LJMP    ?Subroutine3 & 0xFFFF
+   \   0000D9                REQUIRE _A_P2
+    201            
+    202            SEND_HI;
+    203            SEND_HI;
+    204            SEND_HI;
+    205            SEND_HI;
+    206            SEND_HI;
+    207            SEND_HI;
+    208            SEND_HI;
+    209            SEND_HI;  
+    210            
+    211            SEND_LO;
+    212            SEND_LO;
+    213            SEND_LO;
+    214            SEND_LO;
+    215            SEND_LO;
+    216            SEND_LO;
+    217            SEND_LO;
+    218            SEND_LO;  
+    219          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    220          void Bottom_BlackOut(void)
+   \                     Bottom_BlackOut:
+    221          { 
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    222            SEND_LO;
+   \   000000   D2A0         SETB    0xa0.0
+   \   000002   D2A0         SETB    0xa0.0
+   \   000004   D2A0         SETB    0xa0.0
+   \   000006   D2A0         SETB    0xa0.0
+   \   000008   D2A0         SETB    0xa0.0
+   \   00000A   C2A0         CLR     0xa0.0
+   \   00000C   C2A0         CLR     0xa0.0
+   \   00000E   C2A0         CLR     0xa0.0
+   \   000010   C2A0         CLR     0xa0.0
+   \   000012   C2A0         CLR     0xa0.0
+   \   000014   C2A0         CLR     0xa0.0
+   \   000016   C2A0         CLR     0xa0.0
+   \   000018   C2A0         CLR     0xa0.0
+   \   00001A   C2A0         CLR     0xa0.0
+    223            SEND_LO;
+   \   00001C   D2A0         SETB    0xa0.0
+   \   00001E   D2A0         SETB    0xa0.0
+   \   000020   D2A0         SETB    0xa0.0
+   \   000022   D2A0         SETB    0xa0.0
+   \   000024   D2A0         SETB    0xa0.0
+   \   000026   C2A0         CLR     0xa0.0
+   \   000028   C2A0         CLR     0xa0.0
+   \   00002A   C2A0         CLR     0xa0.0
+   \   00002C   C2A0         CLR     0xa0.0
+   \   00002E   C2A0         CLR     0xa0.0
+   \   000030   C2A0         CLR     0xa0.0
+   \   000032   C2A0         CLR     0xa0.0
+   \   000034   C2A0         CLR     0xa0.0
+   \   000036   C2A0         CLR     0xa0.0
+    224            SEND_LO;
+   \   000038   D2A0         SETB    0xa0.0
+   \   00003A   D2A0         SETB    0xa0.0
+   \   00003C   D2A0         SETB    0xa0.0
+   \   00003E   D2A0         SETB    0xa0.0
+   \   000040   D2A0         SETB    0xa0.0
+   \   000042   C2A0         CLR     0xa0.0
+   \   000044   C2A0         CLR     0xa0.0
+   \   000046   C2A0         CLR     0xa0.0
+   \   000048   C2A0         CLR     0xa0.0
+   \   00004A   C2A0         CLR     0xa0.0
+   \   00004C   C2A0         CLR     0xa0.0
+   \   00004E   C2A0         CLR     0xa0.0
+   \   000050   C2A0         CLR     0xa0.0
+   \   000052   C2A0         CLR     0xa0.0
+    225            SEND_LO;
+   \   000054   D2A0         SETB    0xa0.0
+   \   000056   D2A0         SETB    0xa0.0
+   \   000058   D2A0         SETB    0xa0.0
+   \   00005A   D2A0         SETB    0xa0.0
+   \   00005C   D2A0         SETB    0xa0.0
+   \   00005E   C2A0         CLR     0xa0.0
+   \   000060   C2A0         CLR     0xa0.0
+   \   000062   C2A0         CLR     0xa0.0
+   \   000064   C2A0         CLR     0xa0.0
+   \   000066   C2A0         CLR     0xa0.0
+   \   000068   C2A0         CLR     0xa0.0
+   \   00006A   C2A0         CLR     0xa0.0
+   \   00006C   C2A0         CLR     0xa0.0
+   \   00006E   C2A0         CLR     0xa0.0
+    226            SEND_LO;
+   \   000070   D2A0         SETB    0xa0.0
+   \   000072   D2A0         SETB    0xa0.0
+   \   000074   D2A0         SETB    0xa0.0
+   \   000076   D2A0         SETB    0xa0.0
+   \   000078   D2A0         SETB    0xa0.0
+   \   00007A   C2A0         CLR     0xa0.0
+   \   00007C   C2A0         CLR     0xa0.0
+   \   00007E   C2A0         CLR     0xa0.0
+   \   000080   C2A0         CLR     0xa0.0
+   \   000082   C2A0         CLR     0xa0.0
+   \   000084   C2A0         CLR     0xa0.0
+   \   000086   C2A0         CLR     0xa0.0
+   \   000088   C2A0         CLR     0xa0.0
+   \   00008A   C2A0         CLR     0xa0.0
+    227            SEND_LO;
+   \   00008C   D2A0         SETB    0xa0.0
+   \   00008E   D2A0         SETB    0xa0.0
+   \   000090   D2A0         SETB    0xa0.0
+   \   000092   D2A0         SETB    0xa0.0
+   \   000094   D2A0         SETB    0xa0.0
+   \   000096   C2A0         CLR     0xa0.0
+   \   000098   C2A0         CLR     0xa0.0
+   \   00009A   C2A0         CLR     0xa0.0
+   \   00009C   C2A0         CLR     0xa0.0
+   \   00009E   C2A0         CLR     0xa0.0
+   \   0000A0   C2A0         CLR     0xa0.0
+   \   0000A2   C2A0         CLR     0xa0.0
+   \   0000A4   C2A0         CLR     0xa0.0
+   \   0000A6   C2A0         CLR     0xa0.0
+    228            SEND_LO;
+   \   0000A8   D2A0         SETB    0xa0.0
+   \   0000AA   D2A0         SETB    0xa0.0
+   \   0000AC   D2A0         SETB    0xa0.0
+   \   0000AE   D2A0         SETB    0xa0.0
+   \   0000B0   D2A0         SETB    0xa0.0
+   \   0000B2   C2A0         CLR     0xa0.0
+   \   0000B4   C2A0         CLR     0xa0.0
+   \   0000B6   C2A0         CLR     0xa0.0
+   \   0000B8   C2A0         CLR     0xa0.0
+   \   0000BA   C2A0         CLR     0xa0.0
+   \   0000BC   C2A0         CLR     0xa0.0
+   \   0000BE   C2A0         CLR     0xa0.0
+   \   0000C0   C2A0         CLR     0xa0.0
+   \   0000C2   C2A0         CLR     0xa0.0
+    229            SEND_LO;  
+   \   0000C4   D2A0         SETB    0xa0.0
+   \   0000C6   D2A0         SETB    0xa0.0
+   \   0000C8   D2A0         SETB    0xa0.0
+   \   0000CA   D2A0         SETB    0xa0.0
+   \   0000CC   D2A0         SETB    0xa0.0
+   \   0000CE   C2A0         CLR     0xa0.0
+   \   0000D0   C2A0         CLR     0xa0.0
+   \   0000D2   C2A0         CLR     0xa0.0
+   \   0000D4   C2A0         CLR     0xa0.0
+   \   0000D6   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   0000D9                REQUIRE _A_P2
+    230            
+    231            SEND_LO;
+    232            SEND_LO;
+    233            SEND_LO;
+    234            SEND_LO;
+    235            SEND_LO;
+    236            SEND_LO;
+    237            SEND_LO;
+    238            SEND_LO;   
+    239            
+    240            SEND_LO;
+    241            SEND_LO;
+    242            SEND_LO;
+    243            SEND_LO;
+    244            SEND_LO;
+    245            SEND_LO;
+    246            SEND_LO;
+    247            SEND_LO;  
+    248          }
+    249          /***********************************************************************************
+    250          * º¯ÊýÃû³Æ        RGB_SET()
+    251          *
+    252          * º¯Êý¹¦ÄÜ        ÉèÖÃÑÕÉ« 
+    253          *
+    254          * Èë¿Ú²ÎÊý        G8R8B8£º 24Î»RGBÑÕÉ«
+    255          *
+    256          * ·µ»Ø²ÎÊý        ÎÞ 
+    257          *
+    258          * ËµÃ÷
+    259          ***********************************************************************************/
+    260          
+    261          
+    262          /* À­µÍµçÆ½µÈ´ýÏÂÒ»´ÎÃüÁî  */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    263          void RGB_REST(void)
+   \                     RGB_REST:
+    264          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    265              LED = 0;
+   \   000004   C2A0         CLR     0xa0.0
+    266              delay_ms(1);  
+   \   000006                ; Setup parameters for call to function delay_ms
+   \   000006   90....       MOV     DPTR,#__Constant_1
+   \   000009   12....       LCALL   ?XLOAD_R2345
+   \   00000C   12....       LCALL   ??delay_ms?relay
+    267          }
+   \   00000F   02....       LJMP    ?Subroutine1 & 0xFFFF
+   \   000012                REQUIRE _A_P2
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for rgb>`:
+   \   000000   07070700     DD 460551
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for num>`:
+   \   000000   1700         DW 23
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_1:
+   \   000000   01000000     DD 1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??bottom_led_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    bottom_led_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_delayunit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _delayunit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RGB_Set_UP?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RGB_Set_UP
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RGB_Set_Down?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RGB_Set_Down
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Bottom_White?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Bottom_White
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Bottom_Green?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Bottom_Green
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Bottom_Red?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Bottom_Red
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Bottom_Blue?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Bottom_Blue
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Bottom_Yellow?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Bottom_Yellow
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Bottom_BlackOut?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Bottom_BlackOut
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RGB_REST?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RGB_REST
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     Bottom_BlackOut     0      0      0
+     Bottom_Blue         0      0      0
+     Bottom_Green        0      0      0
+     Bottom_Red          0      0      0
+     Bottom_White        0      0      0
+     Bottom_Yellow       0      0      0
+     RGB_REST            2      0      0
+       -> delay_ms       4      0      0
+     RGB_Set_Down        0      0      0
+     RGB_Set_UP          0      0      0
+     _delayunit          0      0      0
+     bottom_led_init     2      0      0
+       -> RGB_REST       4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     _A_P2                      1
+     P2DIR                      1
+     rgb                        4
+     fig                        2
+     num                        2
+     bottom_led_init           10
+     ?Subroutine1               7
+     _delayunit                 3
+     RGB_Set_UP                11
+     ??Subroutine6_0            5
+     RGB_Set_Down              11
+     Bottom_White             438
+     ?Subroutine2             227
+     ??Subroutine5_0            8
+     Bottom_Green             217
+     ?Subroutine0             224
+     ??Subroutine4_0          224
+     Bottom_Red               214
+     ?Subroutine3             227
+     Bottom_Blue              441
+     Bottom_Yellow            217
+     Bottom_BlackOut          217
+     RGB_REST                  18
+     ?<Initializer for rgb>     4
+     ?<Initializer for num>     2
+     __Constant_1               4
+     ??bottom_led_init?relay    6
+     ??_delayunit?relay         6
+     ??RGB_Set_UP?relay         6
+     ??RGB_Set_Down?relay       6
+     ??Bottom_White?relay       6
+     ??Bottom_Green?relay       6
+     ??Bottom_Red?relay         6
+     ??Bottom_Blue?relay        6
+     ??Bottom_Yellow?relay      6
+     ??Bottom_BlackOut?relay    6
+     ??RGB_REST?relay           6
+
+ 
+ 2 719 bytes in segment BANKED_CODE
+    66 bytes in segment BANK_RELAYS
+     2 bytes in segment SFR_AN
+     6 bytes in segment XDATA_I
+     6 bytes in segment XDATA_ID
+     4 bytes in segment XDATA_ROM_C
+     2 bytes in segment XDATA_Z
+ 
+ 2 791 bytes of CODE  memory
+     0 bytes of CONST memory (+ 4 bytes shared)
+     0 bytes of DATA  memory (+ 2 bytes shared)
+     8 bytes of XDATA memory
+
+Errors: none
+Warnings: none

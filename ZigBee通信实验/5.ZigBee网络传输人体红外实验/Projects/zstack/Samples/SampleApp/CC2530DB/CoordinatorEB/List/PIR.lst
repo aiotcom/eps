@@ -1,0 +1,240 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         18/Dec/2020  11:27:08 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Components\HARDWARE\P #
+#                          IR.c                                               #
+#    Command line       =  -f C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ #
+#                          —È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sa #
+#                          mples\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f #
+#                          8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func         #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wC #
+#                          onfig.cfg (-DSECURE=0 -DZG_SECURE_DYNAMIC=0        #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Components\HARDWARE\P #
+#                          IR.c -D ZIGBEEPRO -D ZTOOL_P1 -D MT_SYS_FUNC -D    #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE  #
+#                          -lC C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈  #
+#                          µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\CoordinatorEB\List\ -lA  #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\CoordinatorEB\List\          #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\CoordinatorEB\Obj\ -e        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ #
+#                          —È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sa #
+#                          mples\SampleApp\CC2530DB\ -I                       #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\SOURCE\ -I                #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I  #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT #
+#                          \ -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ #
+#                           µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\HAL\INCLUDE\ -I C:\Users\Administrator\Desktop\ #
+#                          eps\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I           #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OS #
+#                          AL\MCU\CCSOC\ -I C:\Users\Administrator\Desktop\ep #
+#                          s\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\OSAL\INCLUDE\ -I                    #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ST #
+#                          ACK\AF\ -I C:\Users\Administrator\Desktop\eps\ZigB #
+#                          eeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\..\..\..\..\..\CO #
+#                          MPONENTS\STACK\NWK\ -I C:\Users\Administrator\Desk #
+#                          top\eps\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ— #
+#                          È\Projects\zstack\Samples\SampleApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\STACK\SEC\ -I                 #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ST #
+#                          ACK\SAPI\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\ #
+#                          COMPONENTS\STACK\SYS\ -I                           #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\ST #
+#                          ACK\ZDO\ -I C:\Users\Administrator\Desktop\eps\Zig #
+#                          BeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\ZMAC\F8W\ -I C:\Users\Administrator\Desk #
+#                          top\eps\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ— #
+#                          È\Projects\zstack\Samples\SampleApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\ZMAC\ -I                      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\SE #
+#                          RVICES\SADDR\ -I C:\Users\Administrator\Desktop\ep #
+#                          s\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\.. #
+#                          \..\COMPONENTS\SERVICES\SDATA\ -I                  #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA #
+#                          C\INCLUDE\ -I C:\Users\Administrator\Desktop\eps\Z #
+#                          igBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \COMPONENTS\MAC\HIGH_LEVEL\ -I                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MA #
+#                          C\LOW_LEVEL\srf04\ -I C:\Users\Administrator\Deskt #
+#                          op\eps\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHI #
+#                          P\ -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ®– #
+#                          ≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack #
+#                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONE #
+#                          NTS\HARDWARE\ -Ohz                                 #
+#    List file          =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\CoordinatorEB\List\PIR.lst   #
+#    Object file        =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\CoordinatorEB\Obj\PIR.r51    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\5.ZigBeeÕ¯¬Á¥´ ‰»ÀÃÂ∫ÏÕ‚ µ—È\Components\HARDWARE\PIR.c
+      1          #include "delay.h"
+      2          #include "PIR.h"
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      3          
+      4          //==========================================================
+      5          //	∫Ø ˝√˚≥∆£∫	PIR_Init()
+      6          //
+      7          //	∫Ø ˝π¶ƒ‹£∫	≥ı ºªØ»ÀÃÂ∫ÏÕ‚
+      8          //
+      9          //	»Îø⁄≤Œ ˝£∫	Œﬁ
+     10          //
+     11          //	∑µªÿ≤Œ ˝£∫	Œﬁ
+     12          //
+     13          //	Àµ√˜£∫		
+     14          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     15          void PIR_Init(void)
+   \                     PIR_Init:
+     16          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     17            P0DIR |= 0x08;      //P0.3∂®“ÂŒ™ ‰≥ˆ
+   \   000000   43FD08       ORL     0xfd,#0x8
+     18            
+     19            P1SEL &= ~0x02;     //…Ë÷√P1.1Œ™∆’Õ®IOø⁄  
+   \   000003   53F4FD       ANL     0xf4,#0xfd
+     20            P1DIR &= ~0x02;     //∞¥º¸Ω”‘⁄P1.1ø⁄…œ£¨…ËP1.1Œ™ ‰»Îƒ£ Ω 
+   \   000006   53FEFD       ANL     0xfe,#0xfd
+     21            P1INP &= ~0x02;     //¥Úø™P1.1…œ¿≠µÁ◊Ë
+   \   000009   53F6FD       ANL     0xf6,#0xfd
+     22          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE P0DIR
+   \   00000F                REQUIRE P1SEL
+   \   00000F                REQUIRE P1DIR
+   \   00000F                REQUIRE P1INP
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??PIR_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    PIR_Init
+
+   Maximum stack usage in bytes:
+
+     Function ISTACK PSTACK XSTACK
+     -------- ------ ------ ------
+     PIR_Init     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label   Bytes
+     --------------   -----
+     P1SEL               1
+     P1INP               1
+     P0DIR               1
+     P1DIR               1
+     PIR_Init           15
+     ??PIR_Init?relay    6
+
+ 
+ 15 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+  4 bytes in segment SFR_AN
+ 
+ 21 bytes of CODE memory
+  0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

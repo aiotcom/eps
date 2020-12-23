@@ -1,0 +1,2091 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         23/Oct/2020  17:48:22 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\SHT20.c                          #
+#    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ         #
+#                          -DROOT=__near_func -DBLINK_LEDS) -f                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\SHT20.c -D NWK_AUTO_POLL -D      #
+#                          ZTOOL_P1 -D MT_SYS_FUNC -D MT_ZDO_FUNC -D          #
+#                          LCD_SUPPORTED=DEBUG -lC E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\EndDeviceEB\List\ -lA               #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\List\ --diag_suppress Pe001,Pa010 -o            #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\Obj\ -e --no_unroll --no_inline --no_tbaa       #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\SOURCE #
+#                          \ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏ #
+#                          ß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý #
+#                          ¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\ZMAIN\TI2530DB\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\HAL\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\INCLUDE\ -I                  #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\AF\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\NWK\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SEC\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SAPI\ -I                    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SYS\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\ZDO\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\F8W\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SADDR\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SDATA\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\  #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HARDWARE\ -Om                  #
+#    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\List\SHT20.lst                                  #
+#    Object file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\Obj\SHT20.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\SHT20.c
+      1          #include "SHT20.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "TM1640.h"
+      3          #include <ioCC2530.h>
+      4          #include "OLED.h"
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      5          SHT2x_PARAM g_sht2x_param;
+   \                     g_sht2x_param:
+   \   000000                DS 24
+   \   000018                REQUIRE __INIT_XDATA_Z
+      6          //==========================================================
+      7          //	º¯ÊýÃû³Æ£º	IIC_Delay
+      8          //
+      9          //	º¯Êý¹¦ÄÜ£º	IICÑÓÊ±º¯Êý
+     10          //
+     11          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+     12          //
+     13          //	·µ»Ø²ÎÊý£º	ÎÞ
+     14          //
+     15          //	ËµÃ÷£º		
+     16          //==========================================================
+     17          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     18          static void IIC_Delay(uint32 n)
+   \                     IIC_Delay:
+     19          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     20            while(0);
+     21          }
+   \   000000   02....       LJMP    ?BRET
+     22          
+     23          //==========================================================
+     24          //	º¯ÊýÃû³Æ£º	SHT20_IIC_Init
+     25          //
+     26          //	º¯Êý¹¦ÄÜ£º	³õÊ¼»¯IIC
+     27          //
+     28          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     29          //
+     30          //	·µ»Ø²ÎÊý£º	ÎÞ
+     31          //
+     32          //	ËµÃ÷£º		
+     33          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     34          static void SHT20_IIC_Init(void)
+   \                     SHT20_IIC_Init:
+     35          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     36              P0SEL &= ~0x03;     //ÉèÖÃP0.0¡¢P0.1ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F3FC       ANL     0xf3,#0xfc
+     37              P0DIR |= 0x03;      //P0.0¡¢P0.1¶¨ÒåÎªÊä³ö
+   \   000003   43FD03       ORL     0xfd,#0x3
+     38          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     39          
+     40          //==========================================================
+     41          //	º¯ÊýÃû³Æ£º	IIC_SCL_OUTPUT
+     42          //
+     43          //	º¯Êý¹¦ÄÜ£º	IICÊ±ÖÓÏßÊä³öÄ£Ê½
+     44          //
+     45          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     46          //
+     47          //	·µ»Ø²ÎÊý£º	ÎÞ
+     48          //
+     49          //	ËµÃ÷£º		
+     50          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     51          static void IIC_SCL_OUTPUT(void)
+   \                     IIC_SCL_OUTPUT:
+     52          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     53              P0SEL &= ~0x02;     //ÉèÖÃP0.1ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F3FD       ANL     0xf3,#0xfd
+     54              P0DIR |= 0x02;      //P0.1¶¨ÒåÎªÊä³ö
+   \   000003   43FD02       ORL     0xfd,#0x2
+     55          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     56          
+     57          //==========================================================
+     58          //	º¯ÊýÃû³Æ£º	IIC_SCL_INPUT
+     59          //
+     60          //	º¯Êý¹¦ÄÜ£º	IICÊ±ÖÓÏßÊäÈëÄ£Ê½
+     61          //
+     62          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     63          //
+     64          //	·µ»Ø²ÎÊý£º	ÎÞ
+     65          //
+     66          //	ËµÃ÷£º		
+     67          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     68          static void IIC_SCL_INPUT(void)
+   \                     IIC_SCL_INPUT:
+     69          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     70              P0SEL &= ~0x02;     //ÉèÖÃP0.1ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F3FD       ANL     0xf3,#0xfd
+     71              P0DIR &= ~0x02;     //°´¼ü½ÓÔÚP0.6¿ÚÉÏ£¬ÉèP0.6ÎªÊäÈëÄ£Ê½ 
+   \   000003   53FDFD       ANL     0xfd,#0xfd
+     72              P0INP &= ~0x02;     //´ò¿ªP0.1ÉÏÀ­µç×è
+   \   000006   538FFD       ANL     0x8f,#0xfd
+     73          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+   \   00000C                REQUIRE P0INP
+     74          
+     75          //==========================================================
+     76          //	º¯ÊýÃû³Æ£º	IIC_SDA_OUTPUT
+     77          //
+     78          //	º¯Êý¹¦ÄÜ£º	IICÊý¾ÝÏßÊä³öÄ£Ê½ 
+     79          //
+     80          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     81          //
+     82          //	·µ»Ø²ÎÊý£º	ÎÞ
+     83          //
+     84          //	ËµÃ÷£º		
+     85          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     86          static void IIC_SDA_OUTPUT(void)
+   \                     IIC_SDA_OUTPUT:
+     87          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     88              P0SEL &= ~0x01;     //ÉèÖÃP0.0ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F3FE       ANL     0xf3,#0xfe
+     89              P0DIR |= 0x01;      //P0.0¶¨ÒåÎªÊä³ö
+   \   000003   43FD01       ORL     0xfd,#0x1
+     90          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     91          //==========================================================
+     92          //	º¯ÊýÃû³Æ£º	IIC_SDA_INPUT
+     93          //
+     94          //	º¯Êý¹¦ÄÜ£º	IICÊý¾ÝÏßÊäÈëÄ£Ê½
+     95          //
+     96          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     97          //
+     98          //	·µ»Ø²ÎÊý£º	ÎÞ
+     99          //
+    100          //	ËµÃ÷£º		
+    101          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    102          static void IIC_SDA_INPUT(void)
+   \                     IIC_SDA_INPUT:
+    103          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    104              P0SEL &= ~0x01;     //ÉèÖÃP0.0ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F3FE       ANL     0xf3,#0xfe
+    105              P0DIR &= ~0x01;     //°´¼ü½ÓÔÚP0.0¿ÚÉÏ£¬ÉèP0.7ÎªÊäÈëÄ£Ê½ 
+   \   000003   53FDFE       ANL     0xfd,#0xfe
+    106              P0INP &= ~0x01;     //´ò¿ªP0.0ÉÏÀ­µç×è
+   \   000006   538FFE       ANL     0x8f,#0xfe
+    107          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+   \   00000C                REQUIRE P0INP
+    108          //==========================================================
+    109          //	º¯ÊýÃû³Æ£º	IIC_Start
+    110          //
+    111          //	º¯Êý¹¦ÄÜ£º	IICÆô¶¯Ê±Ðò
+    112          //
+    113          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    114          //
+    115          //	·µ»Ø²ÎÊý£º	ÎÞ
+    116          //
+    117          //	ËµÃ÷£º		
+    118          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    119          static void IIC_Start(void)
+   \                     IIC_Start:
+    120          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    121              IIC_SDA_OUTPUT();	//Ê±ÖÓÏßÊä³öÄ£Ê½
+   \   000004                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    122              IIC_SCL_OUTPUT();	//Êý¾ÝÏßÊä³öÄ£Ê½
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    123              SDA_HIGH();		//À­¸ßÊý¾ÝÏß
+   \   00000A   D280         SETB    0x80.0
+    124              SCL_HIGH();		//À­¸ßÊ±ÖÓÏß
+   \   00000C   D281         SETB    0x80.1
+    125              SDA_LOW();		//À­µÍÊý¾ÝÏß			
+   \   00000E   C280         CLR     0x80.0
+    126              SCL_LOW();		//À­µÍÊ±ÖÓÏß
+   \   000010   C281         CLR     0x80.1
+    127          }
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE _A_P0
+    128          //==========================================================
+    129          //	º¯ÊýÃû³Æ£º	IIC_Stop
+    130          //
+    131          //	º¯Êý¹¦ÄÜ£º	IICÍ£Ö¹Ê±Ðò 
+    132          //
+    133          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    134          //
+    135          //	·µ»Ø²ÎÊý£º	ÎÞ
+    136          //
+    137          //	ËµÃ÷£º		
+    138          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    139          static void IIC_Stop(void)
+   \                     IIC_Stop:
+    140          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    141              IIC_SDA_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    142              IIC_SCL_OUTPUT();
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    143              SCL_LOW();
+   \   00000A   C281         CLR     0x80.1
+    144              SDA_LOW();
+   \   00000C   C280         CLR     0x80.0
+    145              SCL_HIGH();
+   \   00000E   D281         SETB    0x80.1
+    146              SDA_HIGH();
+   \   000010   D280         SETB    0x80.0
+    147          }
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE _A_P0
+    148          
+    149          //==========================================================
+    150          //	º¯ÊýÃû³Æ£º	IIC_Wait_Ack
+    151          //
+    152          //	º¯Êý¹¦ÄÜ£º	µÈ´ýÓ¦´ðÐÅºÅµ½À´
+    153          //
+    154          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    155          //
+    156          //	·µ»Ø²ÎÊý£º	·µ»ØÖµ£º1£¬½ÓÊÕÓ¦´ðÊ§°Ü
+    157          //        							0£¬½ÓÊÕÓ¦´ð³É¹¦
+    158          //
+    159          //	ËµÃ÷£º		
+    160          //==========================================================
+    161          //static uint8 IIC_Wait_Ack(void)
+    162          //{
+    163          //    uint8 Time=0;
+    164          //    IIC_SCL_OUTPUT();
+    165          //    IIC_SDA_OUTPUT();
+    166          //    SDA_HIGH();
+    167          //    SCL_HIGH();
+    168          //    IIC_SDA_INPUT();
+    169          //    while(SDA_STATE())
+    170          //    {
+    171          //      Time++;
+    172          //      if(Time>250)
+    173          //      {
+    174          //        IIC_Stop();
+    175          //        return 1;
+    176          //      }
+    177          //    }
+    178          //    SCL_LOW();
+    179          //    return 0;
+    180          //}
+    181          //==========================================================
+    182          //	º¯ÊýÃû³Æ£º	IIC_Ack
+    183          //
+    184          //	º¯Êý¹¦ÄÜ£º	IIC ACKÓ¦´ð
+    185          //
+    186          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    187          //
+    188          //	·µ»Ø²ÎÊý£º	ÎÞ
+    189          //
+    190          //	ËµÃ÷£º		
+    191          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    192          static void IIC_Ack(void)
+   \                     IIC_Ack:
+    193          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    194              IIC_SCL_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    195              SCL_LOW();
+   \   000007   C281         CLR     0x80.1
+    196              IIC_SDA_OUTPUT();
+   \   000009                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000009   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    197              SDA_LOW();
+   \   00000C   C280         CLR     0x80.0
+    198              SCL_HIGH();
+   \   00000E   D281         SETB    0x80.1
+    199              SCL_LOW();
+   \   000010   C281         CLR     0x80.1
+    200          }
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE _A_P0
+    201          
+    202          //==========================================================
+    203          //	º¯ÊýÃû³Æ£º	IIC_NAck
+    204          //
+    205          //	º¯Êý¹¦ÄÜ£º	IIC ÎÞACKÓ¦´ð
+    206          //
+    207          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    208          //
+    209          //	·µ»Ø²ÎÊý£º	ÎÞ
+    210          //
+    211          //	ËµÃ÷£º		
+    212          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    213          static void IIC_NAck(void)
+   \                     IIC_NAck:
+    214          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    215              IIC_SCL_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    216              SCL_LOW();
+   \   000007   C281         CLR     0x80.1
+    217              IIC_SDA_OUTPUT();
+   \   000009                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000009   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    218              SDA_HIGH();
+   \   00000C   D280         SETB    0x80.0
+    219              SCL_HIGH();
+   \   00000E   D281         SETB    0x80.1
+    220              SCL_LOW();
+   \   000010   C281         CLR     0x80.1
+    221          }
+   \   000012   D083         POP     DPH
+   \   000014   D082         POP     DPL
+   \   000016   02....       LJMP    ?BRET
+   \   000019                REQUIRE _A_P0
+    222          //==========================================================
+    223          //	º¯ÊýÃû³Æ£º	IIC_Read_Byte
+    224          //
+    225          //	º¯Êý¹¦ÄÜ£º	IIC ¶ÁÈ¡Êý¾Ý
+    226          //
+    227          //	Èë¿Ú²ÎÊý£º	ack:ÊÇ·ñ·¢ËÍACK
+    228          //
+    229          //	·µ»Ø²ÎÊý£º	ÎÞ
+    230          //
+    231          //	ËµÃ÷£º		
+    232          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    233          static uint8 IIC_Read_Byte(uint8 ack)
+   \                     IIC_Read_Byte:
+    234          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    235              uint8 i,receive=0;
+   \   000007   7E00         MOV     R6,#0x0
+    236              IIC_SDA_INPUT();
+   \   000009                ; Setup parameters for call to function IIC_SDA_INPUT
+   \   000009   12....       LCALL   ??IIC_SDA_INPUT?relay
+    237              IIC_SCL_OUTPUT();
+   \   00000C                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   00000C   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    238              for(i=0;i<8;i++)
+   \   00000F   7800         MOV     R0,#0x0
+   \   000011   800E         SJMP    ??IIC_Read_Byte_0
+    239              {
+    240                  SCL_LOW();
+   \                     ??IIC_Read_Byte_1:
+   \   000013   C281         CLR     0x80.1
+    241                  SCL_HIGH();
+   \   000015   D281         SETB    0x80.1
+    242                  receive<<=1;
+   \   000017   EE           MOV     A,R6
+   \   000018   C3           CLR     C
+   \   000019   33           RLC     A
+   \   00001A   FE           MOV     R6,A
+    243                  if(SDA_STATE())receive++;
+   \   00001B   A280         MOV     C,0x80.0
+   \   00001D   5001         JNC     ??IIC_Read_Byte_2
+   \   00001F   0E           INC     R6
+    244              }
+   \                     ??IIC_Read_Byte_2:
+   \   000020   08           INC     R0
+   \                     ??IIC_Read_Byte_0:
+   \   000021   E8           MOV     A,R0
+   \   000022   C3           CLR     C
+   \   000023   9408         SUBB    A,#0x8
+   \   000025   40EC         JC      ??IIC_Read_Byte_1
+    245              if(!ack) IIC_NAck();
+   \   000027   EF           MOV     A,R7
+   \   000028   7005         JNZ     ??IIC_Read_Byte_3
+   \   00002A                ; Setup parameters for call to function IIC_NAck
+   \   00002A   12....       LCALL   ??IIC_NAck?relay
+   \   00002D   8003         SJMP    ??IIC_Read_Byte_4
+    246              else IIC_Ack();
+   \                     ??IIC_Read_Byte_3:
+   \   00002F                ; Setup parameters for call to function IIC_Ack
+   \   00002F   12....       LCALL   ??IIC_Ack?relay
+    247              return receive;
+   \                     ??IIC_Read_Byte_4:
+   \   000032   EE           MOV     A,R6
+   \   000033   F9           MOV     R1,A
+   \   000034   7F01         MOV     R7,#0x1
+   \   000036   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000039                REQUIRE _A_P0
+    248          }
+    249          
+    250          
+    251          //==========================================================
+    252          //	º¯ÊýÃû³Æ£º	Write_IIC_Byte
+    253          //
+    254          //	º¯Êý¹¦ÄÜ£º	IIC Ð´ÈëÊý¾Ý
+    255          //
+    256          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    257          //
+    258          //	·µ»Ø²ÎÊý£º	ÎÞ
+    259          //
+    260          //	ËµÃ÷£º		
+    261          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    262          static uint8 Write_IIC_Byte(uint8 byte)
+   \                     Write_IIC_Byte:
+    263          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    264              uint8 i, ack;
+    265          
+    266              IIC_SCL_OUTPUT();
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    267              IIC_SDA_OUTPUT();		//ÉèÖÃÎªÊä³öÄ£Ê½
+   \   00000A                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   00000A   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    268              
+    269              for(i = 0; i < 8; i++)
+   \   00000D   7800         MOV     R0,#0x0
+   \   00000F   800A         SJMP    ??Write_IIC_Byte_0
+    270              {
+    271                  if(byte & 0x80)         //Ò»´Î¶ÁÈ¡×î¸ßÎ» ·¢ËÍÊý¾Ý
+    272                  {
+    273                      SDA_HIGH();
+    274                  }
+    275                  else 
+    276                  {
+    277                      SDA_LOW();
+   \                     ??Write_IIC_Byte_1:
+   \   000011   C280         CLR     0x80.0
+    278                  }
+    279                  
+    280                  SCL_HIGH();  		//Ê±ÖÓÏßÀ­¸ß
+   \                     ??Write_IIC_Byte_2:
+   \   000013   D281         SETB    0x80.1
+    281                  SCL_LOW();   		//Ê±ÖÓÏßÀ­µÍ
+   \   000015   C281         CLR     0x80.1
+    282                  
+    283                  byte <<= 1;
+   \   000017   C3           CLR     C
+   \   000018   33           RLC     A
+   \   000019   FF           MOV     R7,A
+   \   00001A   08           INC     R0
+   \                     ??Write_IIC_Byte_0:
+   \   00001B   E8           MOV     A,R0
+   \   00001C   C3           CLR     C
+   \   00001D   9408         SUBB    A,#0x8
+   \   00001F   5009         JNC     ??Write_IIC_Byte_3
+   \   000021   EF           MOV     A,R7
+   \   000022   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000024   50EB         JNC     ??Write_IIC_Byte_1
+   \   000026   D280         SETB    0x80.0
+   \   000028   80E9         SJMP    ??Write_IIC_Byte_2
+    284              }
+    285          
+    286              IIC_SDA_INPUT();  	        //Êý¾ÝÏßÊäÈëÄ£Ê½
+   \                     ??Write_IIC_Byte_3:
+   \   00002A                ; Setup parameters for call to function IIC_SDA_INPUT
+   \   00002A   12....       LCALL   ??IIC_SDA_INPUT?relay
+    287              
+    288              SCL_HIGH();			//Ê±ÖÓÏßÀ­¸ß
+   \   00002D   D281         SETB    0x80.1
+    289              
+    290              if(Bit_SET == SDA_STATE())  //Èç¹û½ÓÊÜµ½Êý¾ÝÏß¸ßÐÅºÅ  ACK´íÎó
+    291              {
+    292                  ack = ACK_ERROR;
+    293              }
+    294              else
+    295              {
+    296                  ack = ACK_OK;
+   \   00002F   A280         MOV     C,0x80.0
+   \   000031   E4           CLR     A
+   \   000032   33           RLC     A
+   \   000033   FE           MOV     R6,A
+    297              }
+    298              
+    299              SCL_LOW();          //À­µÍÊ±ÖÓÏß
+   \   000034   C281         CLR     0x80.1
+    300          
+    301              IIC_SDA_OUTPUT();	
+   \   000036                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000036   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    302          
+    303              SDA_HIGH();		//À­¸ßÊý¾ÝÏß
+   \   000039   D280         SETB    0x80.0
+    304              
+    305              return (ack);
+   \   00003B   EE           MOV     A,R6
+   \   00003C   F9           MOV     R1,A
+   \   00003D   7F01         MOV     R7,#0x1
+   \   00003F   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000042                REQUIRE _A_P0
+    306          }
+    307          //==========================================================
+    308          //	º¯ÊýÃû³Æ£º	SHT2x_I2cReadByte
+    309          //
+    310          //	º¯Êý¹¦ÄÜ£º	IIC ¶ÁÈ¡Êý¾Ý
+    311          //
+    312          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    313          //
+    314          //	·µ»Ø²ÎÊý£º	ÎÞ
+    315          //
+    316          //	ËµÃ÷£º		
+    317          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    318          uint8 SHT2x_I2cReadByte(void)
+   \                     SHT2x_I2cReadByte:
+    319          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    320              uint8 i, val = 0;
+   \   000005   7E00         MOV     R6,#0x0
+    321          
+    322              IIC_SCL_OUTPUT();  		    //ÉèÖÃÎªÊä³öÄ£Ê½
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    323              IIC_SDA_OUTPUT();
+   \   00000A                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   00000A   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    324          
+    325              SDA_HIGH();			    //Êý¾ÝÏßÀ­¸ß
+   \   00000D   D280         SETB    0x80.0
+    326              
+    327              IIC_SDA_INPUT();		    //Êý¾ÝÏßÉèÖÃÎªÊäÈëÄ£Ê½
+   \   00000F                ; Setup parameters for call to function IIC_SDA_INPUT
+   \   00000F   12....       LCALL   ??IIC_SDA_INPUT?relay
+    328                  
+    329              for(i = 0; i < 8; i++)
+   \   000012   7800         MOV     R0,#0x0
+   \   000014   8010         SJMP    ??SHT2x_I2cReadByte_0
+    330              {
+    331                  val <<= 1; 
+   \                     ??SHT2x_I2cReadByte_1:
+   \   000016   EE           MOV     A,R6
+   \   000017   C3           CLR     C
+   \   000018   33           RLC     A
+   \   000019   FE           MOV     R6,A
+    332                  
+    333                  SCL_HIGH();  	 	    //À­¸ßÊ±ÖÓÏß
+   \   00001A   D281         SETB    0x80.1
+    334                  
+    335                  if(Bit_SET == SDA_STATE())  //Èç¹ûÊý¾ÝÏß±»À­¸ß
+   \   00001C   A280         MOV     C,0x80.0
+   \   00001E   5003         JNC     ??SHT2x_I2cReadByte_2
+    336                  {
+    337                      val |= 0x01;	    //¶ÁÈ¡Êý¾ÝÏßÖÐµÄÊý¾Ý
+   \   000020   D2E0         SETB    0xE0 /* A   */.0
+   \   000022   FE           MOV     R6,A
+    338                  }
+    339                  
+    340                  SCL_LOW();      	    //À­µÍÊ±ÖÓÏß
+   \                     ??SHT2x_I2cReadByte_2:
+   \   000023   C281         CLR     0x80.1
+    341              }
+   \   000025   08           INC     R0
+   \                     ??SHT2x_I2cReadByte_0:
+   \   000026   E8           MOV     A,R0
+   \   000027   C3           CLR     C
+   \   000028   9408         SUBB    A,#0x8
+   \   00002A   40EA         JC      ??SHT2x_I2cReadByte_1
+    342          
+    343              IIC_SDA_OUTPUT();  		    //Êý¾ÝÏßÊä³öÄ£Ê½
+   \   00002C                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   00002C   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    344          
+    345              SDA_HIGH();			    //Êý¾ÝÏßÀ­¸ß
+   \   00002F   D280         SETB    0x80.0
+    346              
+    347              return (val);		    //·µ»Ø¶ÁÈ¡µ½µÄÊý¾Ý
+   \   000031   EE           MOV     A,R6
+   \   000032   F9           MOV     R1,A
+   \   000033   7F01         MOV     R7,#0x1
+   \   000035   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000038                REQUIRE _A_P0
+    348          }
+    349          ////==========================================================
+    350          ////	º¯ÊýÃû³Æ£º	IIC_Send_Byte
+    351          ////
+    352          ////	º¯Êý¹¦ÄÜ£º	IIC Ð´ÈëÊý¾Ý
+    353          ////
+    354          ////	Èë¿Ú²ÎÊý£º	txd:Ð´ÈëÊý¾Ý
+    355          ////
+    356          ////	·µ»Ø²ÎÊý£º	ÎÞ
+    357          ////
+    358          ////	ËµÃ÷£º		
+    359          ////==========================================================
+    360          //static void IIC_Send_Byte(uint8 txd)
+    361          //{
+    362          //    uint8 t;
+    363          //    IIC_SCL_OUTPUT();
+    364          //    IIC_SDA_OUTPUT();
+    365          //    SCL_LOW();
+    366          //    for(t=0;t<8;t++)
+    367          //    {
+    368          //        if(txd & 0x80)
+    369          //        {
+    370          //            SDA_HIGH();
+    371          //        }
+    372          //        else 
+    373          //        {
+    374          //            SDA_LOW();
+    375          //        }
+    376          //        
+    377          //        SCL_HIGH();
+    378          //        SCL_LOW();
+    379          //        txd<<=1;
+    380          //    }
+    381          //}
+    382          
+    383          //==========================================================
+    384          //	º¯ÊýÃû³Æ£º	SHT2x_MeasureTempHM
+    385          //
+    386          //	º¯Êý¹¦ÄÜ£º	Ö÷»úÄ£Ê½ÎÂ¶È¶ÁÈ¡
+    387          //
+    388          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    389          //
+    390          //	·µ»Ø²ÎÊý£º	ÎÞ
+    391          //
+    392          //	ËµÃ÷£º		
+    393          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    394          float SHT2x_MeasureTempHM(void)
+   \                     SHT2x_MeasureTempHM:
+    395          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    396              float TEMP;
+    397              uint8 tmp1, tmp2;
+    398              uint16 ST;
+    399              
+    400              IIC_SCL_OUTPUT();  					//Ê±ÖÓÏßÉèÖÃÎªÊä³öÄ£Ê½
+   \   000005                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000005   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    401               
+    402              IIC_Start();    					//¿ªÆôIIC´«Êä×´Ì¬                       
+   \   000008                ; Setup parameters for call to function IIC_Start
+   \   000008   12....       LCALL   ??IIC_Start?relay
+    403              Write_IIC_Byte(I2C_ADR_W);				//Ð´Èë0x80 ±íÊ¾¿ªÊ¼Ð´Êý¾Ý
+   \   00000B                ; Setup parameters for call to function Write_IIC_Byte
+   \   00000B   7980         MOV     R1,#-0x80
+   \   00000D   12....       LCALL   ??Write_IIC_Byte?relay
+    404              Write_IIC_Byte(TRIG_TEMP_MEASUREMENT_HM); 		//Ö÷»úÄ£Ê½Ïà¶ÔÎÂ¶È
+   \   000010                ; Setup parameters for call to function Write_IIC_Byte
+   \   000010   79E3         MOV     R1,#-0x1d
+   \   000012   12....       LCALL   ??Write_IIC_Byte?relay
+    405            
+    406              IIC_Start();					//¿ªÆôIIC´«Êä×´Ì¬      
+   \   000015                ; Setup parameters for call to function IIC_Start
+   \   000015   12....       LCALL   ??IIC_Start?relay
+    407              Write_IIC_Byte(I2C_ADR_R);				//Ð´Èë0x81 ±íÊ¾¿ªÊ¼¶ÁÊý¾Ý
+   \   000018                ; Setup parameters for call to function Write_IIC_Byte
+   \   000018   7981         MOV     R1,#-0x7f
+   \   00001A   12....       LCALL   ??Write_IIC_Byte?relay
+    408          
+    409              SCL_HIGH();   					//À­¸ßÊ±ÖÓÏß
+   \   00001D   D281         SETB    0x80.1
+    410          
+    411              IIC_SCL_INPUT();					//ÉèÖÃÎªÊäÈëÄ£Ê½
+   \   00001F                ; Setup parameters for call to function IIC_SCL_INPUT
+   \   00001F   12....       LCALL   ??IIC_SCL_INPUT?relay
+   \   000022   8009         SJMP    ??SHT2x_MeasureTempHM_0
+    412          
+    413              while(Bit_RESET == SCL_STATE())  			//Èç¹û¸ÃÊ±ÖÓÏß±»ÖÃµÍ
+    414              {
+    415                  IIC_Delay(20);
+   \                     ??SHT2x_MeasureTempHM_1:
+   \   000024                ; Setup parameters for call to function IIC_Delay
+   \   000024   90....       MOV     DPTR,#__Constant_14
+   \   000027   12....       LCALL   ?XLOAD_R2345
+   \   00002A   12....       LCALL   ??IIC_Delay?relay
+    416              }
+   \                     ??SHT2x_MeasureTempHM_0:
+   \   00002D   A281         MOV     C,0x80.1
+   \   00002F   50F3         JNC     ??SHT2x_MeasureTempHM_1
+    417              
+    418              tmp1 = SHT2x_I2cReadByte();                         //¶ÁÈ¡Êý¾Ý
+   \   000031                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000031   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   000034   E9           MOV     A,R1
+   \   000035   FE           MOV     R6,A
+    419              IIC_Ack();						//ACKÓ¦´ð
+   \   000036                ; Setup parameters for call to function IIC_Ack
+   \   000036   12....       LCALL   ??IIC_Ack?relay
+    420              tmp2 = SHT2x_I2cReadByte();     	                //¶ÁÈ¡Êý¾Ý
+   \   000039                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000039   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00003C   E9           MOV     A,R1
+   \   00003D   F5..         MOV     ?V0 + 0,A
+    421              IIC_NAck();						//²»Ó¦´ð
+   \   00003F                ; Setup parameters for call to function IIC_NAck
+   \   00003F   12....       LCALL   ??IIC_NAck?relay
+    422              IIC_Stop();						//¹Ø±ÕIIC
+   \   000042                ; Setup parameters for call to function IIC_Stop
+   \   000042   12....       LCALL   ??IIC_Stop?relay
+    423              
+    424              ST = (tmp1 << 8) | (tmp2 << 0);
+    425              ST &= ~0x0003;
+    426              TEMP = ((float)ST * 0.00268127) - 46.85;  //×ª»»ËùµÃµ½µÄÊý¾Ý
+    427          
+    428              IIC_SCL_OUTPUT();  			      //Ê±ÖÓÏßÊä³ö
+   \   000045                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000045   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    429          
+    430              return (TEMP);	    		      //·µ»ØÎÂ¶ÈÖµ
+   \   000048   EE           MOV     A,R6
+   \   000049   F9           MOV     R1,A
+   \   00004A   E5..         MOV     A,?V0 + 0
+   \   00004C   54FC         ANL     A,#0xfc
+   \   00004E   F5..         MOV     ?V0 + 0,A
+   \   000050   E9           MOV     A,R1
+   \   000051   F5..         MOV     ?V0 + 1,A
+   \   000053   E4           CLR     A
+   \   000054   F5..         MOV     ?V0 + 2,A
+   \   000056   F5..         MOV     ?V0 + 3,A
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?UL_TO_FLT
+   \   00005D   90....       MOV     DPTR,#__Constant_3b2fb83f
+   \   000060   78..         MOV     R0,#?V0 + 4
+   \   000062   12....       LCALL   ?L_MOV_X
+   \   000065   78..         MOV     R0,#?V0 + 0
+   \   000067   79..         MOV     R1,#?V0 + 4
+   \   000069   12....       LCALL   ?FLT_MUL
+   \   00006C   90....       MOV     DPTR,#__Constant_c23b6666
+   \   00006F   78..         MOV     R0,#?V0 + 4
+   \   000071   12....       LCALL   ?L_MOV_X
+   \   000074   78..         MOV     R0,#?V0 + 0
+   \   000076   79..         MOV     R1,#?V0 + 4
+   \   000078   12....       LCALL   ?FLT_ADD
+   \   00007B   AA..         MOV     R2,?V0 + 0
+   \   00007D   AB..         MOV     R3,?V0 + 1
+   \   00007F   AC..         MOV     R4,?V0 + 2
+   \   000081   AD..         MOV     R5,?V0 + 3
+   \   000083   7F08         MOV     R7,#0x8
+   \   000085   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000088                REQUIRE _A_P0
+    431          }
+    432          
+    433          //==========================================================
+    434          //	º¯ÊýÃû³Æ£º	SHT2x_MeasureHumiHM
+    435          //
+    436          //	º¯Êý¹¦ÄÜ£º	Ö÷»úÄ£Ê½Êª¶È¶ÁÈ¡
+    437          //
+    438          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+    439          //
+    440          //	·µ»Ø²ÎÊý£º	ÎÞ
+    441          //
+    442          //	ËµÃ÷£º		
+    443          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    444          float SHT2x_MeasureHumiHM(void)
+   \                     SHT2x_MeasureHumiHM:
+    445          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    446              float HUMI;
+    447              uint8 tmp1, tmp2;    
+    448              uint16 SRH;
+    449          
+    450              IIC_SCL_OUTPUT();
+   \   000005                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000005   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    451              
+    452              IIC_Start();                               
+   \   000008                ; Setup parameters for call to function IIC_Start
+   \   000008   12....       LCALL   ??IIC_Start?relay
+    453              Write_IIC_Byte(I2C_ADR_W);
+   \   00000B                ; Setup parameters for call to function Write_IIC_Byte
+   \   00000B   7980         MOV     R1,#-0x80
+   \   00000D   12....       LCALL   ??Write_IIC_Byte?relay
+    454              Write_IIC_Byte(TRIG_HUMI_MEASUREMENT_HM);
+   \   000010                ; Setup parameters for call to function Write_IIC_Byte
+   \   000010   79E5         MOV     R1,#-0x1b
+   \   000012   12....       LCALL   ??Write_IIC_Byte?relay
+    455          
+    456              IIC_Start();
+   \   000015                ; Setup parameters for call to function IIC_Start
+   \   000015   12....       LCALL   ??IIC_Start?relay
+    457              Write_IIC_Byte(I2C_ADR_R);
+   \   000018                ; Setup parameters for call to function Write_IIC_Byte
+   \   000018   7981         MOV     R1,#-0x7f
+   \   00001A   12....       LCALL   ??Write_IIC_Byte?relay
+    458          
+    459              SCL_HIGH();
+   \   00001D   D281         SETB    0x80.1
+    460          
+    461              IIC_SCL_INPUT();
+   \   00001F                ; Setup parameters for call to function IIC_SCL_INPUT
+   \   00001F   12....       LCALL   ??IIC_SCL_INPUT?relay
+   \   000022   8009         SJMP    ??SHT2x_MeasureHumiHM_0
+    462          
+    463              while(Bit_RESET == SCL_STATE())
+    464              {
+    465                  IIC_Delay(20);
+   \                     ??SHT2x_MeasureHumiHM_1:
+   \   000024                ; Setup parameters for call to function IIC_Delay
+   \   000024   90....       MOV     DPTR,#__Constant_14
+   \   000027   12....       LCALL   ?XLOAD_R2345
+   \   00002A   12....       LCALL   ??IIC_Delay?relay
+    466              }
+   \                     ??SHT2x_MeasureHumiHM_0:
+   \   00002D   A281         MOV     C,0x80.1
+   \   00002F   50F3         JNC     ??SHT2x_MeasureHumiHM_1
+    467              
+    468              tmp1 = SHT2x_I2cReadByte();
+   \   000031                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000031   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   000034   E9           MOV     A,R1
+   \   000035   FE           MOV     R6,A
+    469              IIC_Ack();
+   \   000036                ; Setup parameters for call to function IIC_Ack
+   \   000036   12....       LCALL   ??IIC_Ack?relay
+    470              tmp2 = SHT2x_I2cReadByte();
+   \   000039                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000039   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00003C   E9           MOV     A,R1
+   \   00003D   F5..         MOV     ?V0 + 0,A
+    471              IIC_NAck();
+   \   00003F                ; Setup parameters for call to function IIC_NAck
+   \   00003F   12....       LCALL   ??IIC_NAck?relay
+    472              IIC_Stop();
+   \   000042                ; Setup parameters for call to function IIC_Stop
+   \   000042   12....       LCALL   ??IIC_Stop?relay
+    473              
+    474              SRH = (tmp1 << 8) | (tmp2 << 0);
+    475              SRH &= ~0x0003;
+    476              HUMI = ((float)SRH * 0.00190735) - 6;
+    477          
+    478              IIC_SCL_OUTPUT();
+   \   000045                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000045   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    479          
+    480              return (HUMI);
+   \   000048   EE           MOV     A,R6
+   \   000049   F9           MOV     R1,A
+   \   00004A   E5..         MOV     A,?V0 + 0
+   \   00004C   54FC         ANL     A,#0xfc
+   \   00004E   F5..         MOV     ?V0 + 0,A
+   \   000050   E9           MOV     A,R1
+   \   000051   F5..         MOV     ?V0 + 1,A
+   \   000053   E4           CLR     A
+   \   000054   F5..         MOV     ?V0 + 2,A
+   \   000056   F5..         MOV     ?V0 + 3,A
+   \   000058   78..         MOV     R0,#?V0 + 0
+   \   00005A   12....       LCALL   ?UL_TO_FLT
+   \   00005D   90....       MOV     DPTR,#__Constant_3afa000c
+   \   000060   78..         MOV     R0,#?V0 + 4
+   \   000062   12....       LCALL   ?L_MOV_X
+   \   000065   78..         MOV     R0,#?V0 + 0
+   \   000067   79..         MOV     R1,#?V0 + 4
+   \   000069   12....       LCALL   ?FLT_MUL
+   \   00006C   90....       MOV     DPTR,#__Constant_c0c00000
+   \   00006F   78..         MOV     R0,#?V0 + 4
+   \   000071   12....       LCALL   ?L_MOV_X
+   \   000074   78..         MOV     R0,#?V0 + 0
+   \   000076   79..         MOV     R1,#?V0 + 4
+   \   000078   12....       LCALL   ?FLT_ADD
+   \   00007B   AA..         MOV     R2,?V0 + 0
+   \   00007D   AB..         MOV     R3,?V0 + 1
+   \   00007F   AC..         MOV     R4,?V0 + 2
+   \   000081   AD..         MOV     R5,?V0 + 3
+   \   000083   7F08         MOV     R7,#0x8
+   \   000085   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000088                REQUIRE _A_P0
+    481          }
+    482          
+    483          //==========================================================
+    484          //	º¯ÊýÃû³Æ£º	SHT2x_MeasureTempPoll
+    485          //
+    486          //	º¯Êý¹¦ÄÜ£º	·ÇÖ÷»úÄ£Ê½ÎÂ¶È¶ÁÈ¡ 
+    487          //
+    488          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+    489          //
+    490          //	·µ»Ø²ÎÊý£º	ÎÞ
+    491          //
+    492          //	ËµÃ÷£º		
+    493          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    494          float SHT2x_MeasureTempPoll(void)
+   \                     SHT2x_MeasureTempPoll:
+    495          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    496              float TEMP;
+    497              uint8 ack, tmp1, tmp2;
+    498              uint16 ST;
+    499              
+    500              IIC_Start();                            
+   \   000005                ; Setup parameters for call to function IIC_Start
+   \   000005   12....       LCALL   ??IIC_Start?relay
+    501              Write_IIC_Byte(I2C_ADR_W);
+   \   000008                ; Setup parameters for call to function Write_IIC_Byte
+   \   000008   7980         MOV     R1,#-0x80
+   \   00000A   12....       LCALL   ??Write_IIC_Byte?relay
+    502              Write_IIC_Byte(TRIG_TEMP_MEASUREMENT_POLL);
+   \   00000D                ; Setup parameters for call to function Write_IIC_Byte
+   \   00000D   79F3         MOV     R1,#-0xd
+   \   00000F   12....       LCALL   ??Write_IIC_Byte?relay
+    503          
+    504              do {
+    505                  IIC_Delay(20);               
+   \                     ??SHT2x_MeasureTempPoll_0:
+   \   000012                ; Setup parameters for call to function IIC_Delay
+   \   000012   90....       MOV     DPTR,#__Constant_14
+   \   000015   12....       LCALL   ?XLOAD_R2345
+   \   000018   12....       LCALL   ??IIC_Delay?relay
+    506                  IIC_Start();
+   \   00001B                ; Setup parameters for call to function IIC_Start
+   \   00001B   12....       LCALL   ??IIC_Start?relay
+    507                  ack = Write_IIC_Byte(I2C_ADR_R);
+    508              } while(ACK_ERROR == ack);
+   \   00001E                ; Setup parameters for call to function Write_IIC_Byte
+   \   00001E   7981         MOV     R1,#-0x7f
+   \   000020   12....       LCALL   ??Write_IIC_Byte?relay
+   \   000023   E9           MOV     A,R1
+   \   000024   6401         XRL     A,#0x1
+   \   000026   60EA         JZ      ??SHT2x_MeasureTempPoll_0
+    509              
+    510              tmp1 = SHT2x_I2cReadByte();
+   \   000028                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000028   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00002B   E9           MOV     A,R1
+   \   00002C   FE           MOV     R6,A
+    511              IIC_Ack();
+   \   00002D                ; Setup parameters for call to function IIC_Ack
+   \   00002D   12....       LCALL   ??IIC_Ack?relay
+    512              tmp2 = SHT2x_I2cReadByte();
+   \   000030                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000030   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   000033   E9           MOV     A,R1
+   \   000034   F5..         MOV     ?V0 + 0,A
+    513              IIC_NAck();
+   \   000036                ; Setup parameters for call to function IIC_NAck
+   \   000036   12....       LCALL   ??IIC_NAck?relay
+    514              IIC_Stop();
+   \   000039                ; Setup parameters for call to function IIC_Stop
+   \   000039   12....       LCALL   ??IIC_Stop?relay
+    515              
+    516              ST = (tmp1 << 8) | (tmp2 << 0);
+    517              ST &= ~0x0003;
+    518              TEMP = ((float)ST * 0.00268127) - 46.85;
+    519          
+    520              return (TEMP);	  
+   \   00003C   EE           MOV     A,R6
+   \   00003D   F9           MOV     R1,A
+   \   00003E   E5..         MOV     A,?V0 + 0
+   \   000040   54FC         ANL     A,#0xfc
+   \   000042   F5..         MOV     ?V0 + 0,A
+   \   000044   E9           MOV     A,R1
+   \   000045   F5..         MOV     ?V0 + 1,A
+   \   000047   E4           CLR     A
+   \   000048   F5..         MOV     ?V0 + 2,A
+   \   00004A   F5..         MOV     ?V0 + 3,A
+   \   00004C   78..         MOV     R0,#?V0 + 0
+   \   00004E   12....       LCALL   ?UL_TO_FLT
+   \   000051   90....       MOV     DPTR,#__Constant_3b2fb83f
+   \   000054   78..         MOV     R0,#?V0 + 4
+   \   000056   12....       LCALL   ?L_MOV_X
+   \   000059   78..         MOV     R0,#?V0 + 0
+   \   00005B   79..         MOV     R1,#?V0 + 4
+   \   00005D   12....       LCALL   ?FLT_MUL
+   \   000060   90....       MOV     DPTR,#__Constant_c23b6666
+   \   000063   78..         MOV     R0,#?V0 + 4
+   \   000065   12....       LCALL   ?L_MOV_X
+   \   000068   78..         MOV     R0,#?V0 + 0
+   \   00006A   79..         MOV     R1,#?V0 + 4
+   \   00006C   12....       LCALL   ?FLT_ADD
+   \   00006F   AA..         MOV     R2,?V0 + 0
+   \   000071   AB..         MOV     R3,?V0 + 1
+   \   000073   AC..         MOV     R4,?V0 + 2
+   \   000075   AD..         MOV     R5,?V0 + 3
+   \   000077   7F08         MOV     R7,#0x8
+   \   000079   02....       LJMP    ?BANKED_LEAVE_XDATA
+    521          }
+    522          
+    523          //==========================================================
+    524          //	º¯ÊýÃû³Æ£º	SHT2x_MeasureHumiPoll
+    525          //
+    526          //	º¯Êý¹¦ÄÜ£º	·ÇÖ÷»úÄ£Ê½Êª¶È¶ÁÈ¡ 
+    527          //
+    528          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+    529          //
+    530          //	·µ»Ø²ÎÊý£º	ÎÞ
+    531          //
+    532          //	ËµÃ÷£º		
+    533          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    534          float SHT2x_MeasureHumiPoll(void)
+   \                     SHT2x_MeasureHumiPoll:
+    535          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+    536              float HUMI;
+    537              uint8 ack, tmp1, tmp2;    
+    538              uint16 SRH;
+    539              
+    540              IIC_Start();                               
+   \   000005                ; Setup parameters for call to function IIC_Start
+   \   000005   12....       LCALL   ??IIC_Start?relay
+    541              Write_IIC_Byte(I2C_ADR_W);
+   \   000008                ; Setup parameters for call to function Write_IIC_Byte
+   \   000008   7980         MOV     R1,#-0x80
+   \   00000A   12....       LCALL   ??Write_IIC_Byte?relay
+    542              Write_IIC_Byte(TRIG_HUMI_MEASUREMENT_POLL);
+   \   00000D                ; Setup parameters for call to function Write_IIC_Byte
+   \   00000D   79F5         MOV     R1,#-0xb
+   \   00000F   12....       LCALL   ??Write_IIC_Byte?relay
+    543              
+    544              do {
+    545                  IIC_Delay(20);
+   \                     ??SHT2x_MeasureHumiPoll_0:
+   \   000012                ; Setup parameters for call to function IIC_Delay
+   \   000012   90....       MOV     DPTR,#__Constant_14
+   \   000015   12....       LCALL   ?XLOAD_R2345
+   \   000018   12....       LCALL   ??IIC_Delay?relay
+    546                  IIC_Start();
+   \   00001B                ; Setup parameters for call to function IIC_Start
+   \   00001B   12....       LCALL   ??IIC_Start?relay
+    547                  ack = Write_IIC_Byte(I2C_ADR_R);
+    548              } while(ACK_ERROR == ack);
+   \   00001E                ; Setup parameters for call to function Write_IIC_Byte
+   \   00001E   7981         MOV     R1,#-0x7f
+   \   000020   12....       LCALL   ??Write_IIC_Byte?relay
+   \   000023   E9           MOV     A,R1
+   \   000024   6401         XRL     A,#0x1
+   \   000026   60EA         JZ      ??SHT2x_MeasureHumiPoll_0
+    549              
+    550              tmp1 = SHT2x_I2cReadByte();
+   \   000028                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000028   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00002B   E9           MOV     A,R1
+   \   00002C   FE           MOV     R6,A
+    551              IIC_Ack();
+   \   00002D                ; Setup parameters for call to function IIC_Ack
+   \   00002D   12....       LCALL   ??IIC_Ack?relay
+    552              tmp2 = SHT2x_I2cReadByte();
+   \   000030                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000030   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   000033   E9           MOV     A,R1
+   \   000034   F5..         MOV     ?V0 + 0,A
+    553              IIC_NAck();
+   \   000036                ; Setup parameters for call to function IIC_NAck
+   \   000036   12....       LCALL   ??IIC_NAck?relay
+    554              IIC_Stop();
+   \   000039                ; Setup parameters for call to function IIC_Stop
+   \   000039   12....       LCALL   ??IIC_Stop?relay
+    555              
+    556              SRH = (tmp1 << 8) | (tmp2 << 0);
+    557              SRH &= ~0x0003;
+    558              HUMI = ((float)SRH * 0.00190735) - 6;
+    559          
+    560              return (HUMI);
+   \   00003C   EE           MOV     A,R6
+   \   00003D   F9           MOV     R1,A
+   \   00003E   E5..         MOV     A,?V0 + 0
+   \   000040   54FC         ANL     A,#0xfc
+   \   000042   F5..         MOV     ?V0 + 0,A
+   \   000044   E9           MOV     A,R1
+   \   000045   F5..         MOV     ?V0 + 1,A
+   \   000047   E4           CLR     A
+   \   000048   F5..         MOV     ?V0 + 2,A
+   \   00004A   F5..         MOV     ?V0 + 3,A
+   \   00004C   78..         MOV     R0,#?V0 + 0
+   \   00004E   12....       LCALL   ?UL_TO_FLT
+   \   000051   90....       MOV     DPTR,#__Constant_3afa000c
+   \   000054   78..         MOV     R0,#?V0 + 4
+   \   000056   12....       LCALL   ?L_MOV_X
+   \   000059   78..         MOV     R0,#?V0 + 0
+   \   00005B   79..         MOV     R1,#?V0 + 4
+   \   00005D   12....       LCALL   ?FLT_MUL
+   \   000060   90....       MOV     DPTR,#__Constant_c0c00000
+   \   000063   78..         MOV     R0,#?V0 + 4
+   \   000065   12....       LCALL   ?L_MOV_X
+   \   000068   78..         MOV     R0,#?V0 + 0
+   \   00006A   79..         MOV     R1,#?V0 + 4
+   \   00006C   12....       LCALL   ?FLT_ADD
+   \   00006F   AA..         MOV     R2,?V0 + 0
+   \   000071   AB..         MOV     R3,?V0 + 1
+   \   000073   AC..         MOV     R4,?V0 + 2
+   \   000075   AD..         MOV     R5,?V0 + 3
+   \   000077   7F08         MOV     R7,#0x8
+   \   000079   02....       LJMP    ?BANKED_LEAVE_XDATA
+    561          }
+    562          
+    563          //==========================================================
+    564          //	º¯ÊýÃû³Æ£º	SHT2x_GetSerialNumber
+    565          //
+    566          //	º¯Êý¹¦ÄÜ£º	ÐòÁÐºÅ
+    567          //
+    568          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+    569          //
+    570          //	·µ»Ø²ÎÊý£º	ÎÞ
+    571          //
+    572          //	ËµÃ÷£º		
+    573          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    574          void SHT2x_GetSerialNumber(uint8 *buf)
+   \                     SHT2x_GetSerialNumber:
+    575          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    576              /* Read from memory location 1 */
+    577              IIC_Start();
+   \   000009                ; Setup parameters for call to function IIC_Start
+   \   000009   12....       LCALL   ??IIC_Start?relay
+    578              Write_IIC_Byte(I2C_ADR_W);	                //I2C address
+   \   00000C                ; Setup parameters for call to function Write_IIC_Byte
+   \   00000C   7980         MOV     R1,#-0x80
+   \   00000E   12....       LCALL   ??Write_IIC_Byte?relay
+    579              Write_IIC_Byte(0xFA); 			//Command for readout on-chip memory
+   \   000011                ; Setup parameters for call to function Write_IIC_Byte
+   \   000011   79FA         MOV     R1,#-0x6
+   \   000013   12....       LCALL   ??Write_IIC_Byte?relay
+    580              Write_IIC_Byte(0x0F); 			//on-chip memory address
+   \   000016                ; Setup parameters for call to function Write_IIC_Byte
+   \   000016   790F         MOV     R1,#0xf
+   \   000018   12....       LCALL   ??Write_IIC_Byte?relay
+    581              IIC_Start();
+   \   00001B                ; Setup parameters for call to function IIC_Start
+   \   00001B   12....       LCALL   ??IIC_Start?relay
+    582              Write_IIC_Byte(I2C_ADR_R);	                //I2C address
+   \   00001E                ; Setup parameters for call to function Write_IIC_Byte
+   \   00001E   7981         MOV     R1,#-0x7f
+   \   000020   12....       LCALL   ??Write_IIC_Byte?relay
+    583              buf[5] = SHT2x_I2cReadByte();               //Read SNB_3
+   \   000023                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000023   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   000026   E9           MOV     A,R1
+   \   000027   8E82         MOV     DPL,R6
+   \   000029   8F83         MOV     DPH,R7
+   \   00002B   A3           INC     DPTR
+   \   00002C   A3           INC     DPTR
+   \   00002D   A3           INC     DPTR
+   \   00002E   A3           INC     DPTR
+   \   00002F   A3           INC     DPTR
+   \   000030   F0           MOVX    @DPTR,A
+    584              IIC_Ack();
+   \   000031                ; Setup parameters for call to function IIC_Ack
+   \   000031   12....       LCALL   ??IIC_Ack?relay
+    585              SHT2x_I2cReadByte(); 			//Read CRC SNB_3 (CRC is not analyzed)
+   \   000034                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000034   12....       LCALL   ??SHT2x_I2cReadByte?relay
+    586              IIC_Ack();
+   \   000037                ; Setup parameters for call to function IIC_Ack
+   \   000037   12....       LCALL   ??IIC_Ack?relay
+    587              buf[4] = SHT2x_I2cReadByte(); 	        //Read SNB_2
+   \   00003A                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   00003A   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00003D   E9           MOV     A,R1
+   \   00003E   8E82         MOV     DPL,R6
+   \   000040   8F83         MOV     DPH,R7
+   \   000042   A3           INC     DPTR
+   \   000043   A3           INC     DPTR
+   \   000044   A3           INC     DPTR
+   \   000045   A3           INC     DPTR
+   \   000046   F0           MOVX    @DPTR,A
+    588              IIC_Ack();
+   \   000047                ; Setup parameters for call to function IIC_Ack
+   \   000047   12....       LCALL   ??IIC_Ack?relay
+    589              IIC_Read_Byte(0); 				//Read CRC SNB_2 (CRC is not analyzed)
+   \   00004A                ; Setup parameters for call to function IIC_Read_Byte
+   \   00004A   7900         MOV     R1,#0x0
+   \   00004C   12....       LCALL   ??IIC_Read_Byte?relay
+    590              IIC_Ack();
+   \   00004F                ; Setup parameters for call to function IIC_Ack
+   \   00004F   12....       LCALL   ??IIC_Ack?relay
+    591              buf[3] = SHT2x_I2cReadByte(); 	        //Read SNB_1
+   \   000052                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000052   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   000055   E9           MOV     A,R1
+   \   000056   8E82         MOV     DPL,R6
+   \   000058   8F83         MOV     DPH,R7
+   \   00005A   A3           INC     DPTR
+   \   00005B   A3           INC     DPTR
+   \   00005C   A3           INC     DPTR
+   \   00005D   F0           MOVX    @DPTR,A
+    592              IIC_Ack();
+   \   00005E                ; Setup parameters for call to function IIC_Ack
+   \   00005E   12....       LCALL   ??IIC_Ack?relay
+    593              SHT2x_I2cReadByte(); 			//Read CRC SNB_1 (CRC is not analyzed)
+   \   000061                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000061   12....       LCALL   ??SHT2x_I2cReadByte?relay
+    594              IIC_Ack();
+   \   000064                ; Setup parameters for call to function IIC_Ack
+   \   000064   12....       LCALL   ??IIC_Ack?relay
+    595              buf[2] = SHT2x_I2cReadByte(); 	        //Read SNB_0
+   \   000067                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000067   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00006A   E9           MOV     A,R1
+   \   00006B   8E82         MOV     DPL,R6
+   \   00006D   8F83         MOV     DPH,R7
+   \   00006F   A3           INC     DPTR
+   \   000070   A3           INC     DPTR
+   \   000071   F0           MOVX    @DPTR,A
+    596              IIC_Ack();
+   \   000072                ; Setup parameters for call to function IIC_Ack
+   \   000072   12....       LCALL   ??IIC_Ack?relay
+    597              SHT2x_I2cReadByte(); 			//Read CRC SNB_0 (CRC is not analyzed)
+   \   000075                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000075   12....       LCALL   ??SHT2x_I2cReadByte?relay
+    598              IIC_Ack();
+   \   000078                ; Setup parameters for call to function IIC_Ack
+   \   000078   12....       LCALL   ??IIC_Ack?relay
+    599              IIC_Stop();
+   \   00007B                ; Setup parameters for call to function IIC_Stop
+   \   00007B   12....       LCALL   ??IIC_Stop?relay
+    600          
+    601              /* Read from memory location 2 */
+    602              IIC_Start();
+   \   00007E                ; Setup parameters for call to function IIC_Start
+   \   00007E   12....       LCALL   ??IIC_Start?relay
+    603              Write_IIC_Byte(I2C_ADR_W); 	                //I2C address
+   \   000081                ; Setup parameters for call to function Write_IIC_Byte
+   \   000081   7980         MOV     R1,#-0x80
+   \   000083   12....       LCALL   ??Write_IIC_Byte?relay
+    604              Write_IIC_Byte(0xFC); 			//Command for readout on-chip memory
+   \   000086                ; Setup parameters for call to function Write_IIC_Byte
+   \   000086   79FC         MOV     R1,#-0x4
+   \   000088   12....       LCALL   ??Write_IIC_Byte?relay
+    605              Write_IIC_Byte(0xC9); 			//on-chip memory address
+   \   00008B                ; Setup parameters for call to function Write_IIC_Byte
+   \   00008B   79C9         MOV     R1,#-0x37
+   \   00008D   12....       LCALL   ??Write_IIC_Byte?relay
+    606              IIC_Start();
+   \   000090                ; Setup parameters for call to function IIC_Start
+   \   000090   12....       LCALL   ??IIC_Start?relay
+    607              Write_IIC_Byte(I2C_ADR_R); 	                //I2C address
+   \   000093                ; Setup parameters for call to function Write_IIC_Byte
+   \   000093   7981         MOV     R1,#-0x7f
+   \   000095   12....       LCALL   ??Write_IIC_Byte?relay
+    608              buf[1] = SHT2x_I2cReadByte(); 	        //Read SNC_1
+   \   000098                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   000098   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   00009B   E9           MOV     A,R1
+   \   00009C   8E82         MOV     DPL,R6
+   \   00009E   8F83         MOV     DPH,R7
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   F0           MOVX    @DPTR,A
+    609              IIC_Ack();
+   \   0000A2                ; Setup parameters for call to function IIC_Ack
+   \   0000A2   12....       LCALL   ??IIC_Ack?relay
+    610              buf[0] = SHT2x_I2cReadByte(); 	        //Read SNC_0
+   \   0000A5                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   0000A5   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   0000A8   E9           MOV     A,R1
+   \   0000A9   8E82         MOV     DPL,R6
+   \   0000AB   8F83         MOV     DPH,R7
+   \   0000AD   F0           MOVX    @DPTR,A
+    611              IIC_Ack();
+   \   0000AE                ; Setup parameters for call to function IIC_Ack
+   \   0000AE   12....       LCALL   ??IIC_Ack?relay
+    612              IIC_Read_Byte(0); 			        //Read CRC SNC0/1 (CRC is not analyzed)
+   \   0000B1                ; Setup parameters for call to function IIC_Read_Byte
+   \   0000B1   7900         MOV     R1,#0x0
+   \   0000B3   12....       LCALL   ??IIC_Read_Byte?relay
+    613              IIC_Ack();
+   \   0000B6                ; Setup parameters for call to function IIC_Ack
+   \   0000B6   12....       LCALL   ??IIC_Ack?relay
+    614              buf[7] = SHT2x_I2cReadByte(); 	        //Read SNA_1
+   \   0000B9                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   0000B9   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   0000BC   E9           MOV     A,R1
+   \   0000BD   8E82         MOV     DPL,R6
+   \   0000BF   8F83         MOV     DPH,R7
+   \   0000C1   A3           INC     DPTR
+   \   0000C2   A3           INC     DPTR
+   \   0000C3   A3           INC     DPTR
+   \   0000C4   A3           INC     DPTR
+   \   0000C5   A3           INC     DPTR
+   \   0000C6   A3           INC     DPTR
+   \   0000C7   A3           INC     DPTR
+   \   0000C8   F0           MOVX    @DPTR,A
+    615              IIC_Ack();
+   \   0000C9                ; Setup parameters for call to function IIC_Ack
+   \   0000C9   12....       LCALL   ??IIC_Ack?relay
+    616              buf[6] = SHT2x_I2cReadByte(); 	        //Read SNA_0
+   \   0000CC                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   0000CC   12....       LCALL   ??SHT2x_I2cReadByte?relay
+   \   0000CF   E9           MOV     A,R1
+   \   0000D0   8E82         MOV     DPL,R6
+   \   0000D2   8F83         MOV     DPH,R7
+   \   0000D4   A3           INC     DPTR
+   \   0000D5   A3           INC     DPTR
+   \   0000D6   A3           INC     DPTR
+   \   0000D7   A3           INC     DPTR
+   \   0000D8   A3           INC     DPTR
+   \   0000D9   A3           INC     DPTR
+   \   0000DA   F0           MOVX    @DPTR,A
+    617              IIC_Ack();
+   \   0000DB                ; Setup parameters for call to function IIC_Ack
+   \   0000DB   12....       LCALL   ??IIC_Ack?relay
+    618              SHT2x_I2cReadByte(); 			//Read CRC SNA0/1 (CRC is not analyzed)
+   \   0000DE                ; Setup parameters for call to function SHT2x_I2cReadByte
+   \   0000DE   12....       LCALL   ??SHT2x_I2cReadByte?relay
+    619              IIC_NAck();
+   \   0000E1                ; Setup parameters for call to function IIC_NAck
+   \   0000E1   12....       LCALL   ??IIC_NAck?relay
+    620              IIC_Stop();
+   \   0000E4                ; Setup parameters for call to function IIC_Stop
+   \   0000E4   12....       LCALL   ??IIC_Stop?relay
+    621          }
+   \   0000E7   7F01         MOV     R7,#0x1
+   \   0000E9   02....       LJMP    ?BANKED_LEAVE_XDATA
+    622          
+    623          //==========================================================
+    624          //	º¯ÊýÃû³Æ£º	SHT2x_GetTempHumi
+    625          //
+    626          //	º¯Êý¹¦ÄÜ£º	µÃµ½µÄÊý¾Ý 
+    627          //
+    628          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+    629          //
+    630          //	·µ»Ø²ÎÊý£º	ÎÞ
+    631          //
+    632          //	ËµÃ÷£º		
+    633          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    634          void SHT2x_GetTempHumi(void)
+   \                     SHT2x_GetTempHumi:
+    635          {   
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    636              g_sht2x_param.TEMP_HM = SHT2x_MeasureTempHM();			//Ö÷»úÄ£Ê½ÏÂµÄÎÂ¶ÈÊý¾Ý
+   \   000004                ; Setup parameters for call to function SHT2x_MeasureTempHM
+   \   000004   12....       LCALL   ??SHT2x_MeasureTempHM?relay
+   \   000007   90....       MOV     DPTR,#g_sht2x_param
+   \   00000A   12....       LCALL   ?XSTORE_R2345
+    637              g_sht2x_param.HUMI_HM = SHT2x_MeasureHumiHM(); 			//Ö÷»úÄ£Ê½ÏÂµÄÊª¶ÈÊý¾Ý
+   \   00000D                ; Setup parameters for call to function SHT2x_MeasureHumiHM
+   \   00000D   12....       LCALL   ??SHT2x_MeasureHumiHM?relay
+   \   000010   90....       MOV     DPTR,#g_sht2x_param + 4
+   \   000013   12....       LCALL   ?XSTORE_R2345
+    638          }
+   \   000016   D083         POP     DPH
+   \   000018   D082         POP     DPL
+   \   00001A   02....       LJMP    ?BRET
+    639          //==========================================================
+    640          //	º¯ÊýÃû³Æ£º	SHT2x_GetTemp
+    641          //
+    642          //	º¯Êý¹¦ÄÜ£º	µÃµ½µÄÊý¾Ý 
+    643          //
+    644          //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+    645          //
+    646          //	·µ»Ø²ÎÊý£º	ÎÞ
+    647          //
+    648          //	ËµÃ÷£º		
+    649          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    650          uint8 SHT2x_GetTemp(void)
+   \                     SHT2x_GetTemp:
+    651          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    652              return (uint8)g_sht2x_param.TEMP_HM;
+   \   000005   90....       MOV     DPTR,#g_sht2x_param
+   \   000008   12....       LCALL   ?XLOAD_R2345
+   \   00000B   12....       LCALL   ?R2345_FLT_TO_L
+   \   00000E   A9..         MOV     R1,?V0 + 0
+   \   000010   7F04         MOV     R7,#0x4
+   \   000012   02....       LJMP    ?BANKED_LEAVE_XDATA
+    653          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    654          uint8 SHT2x_GetHumi(void)
+   \                     SHT2x_GetHumi:
+    655          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    656              return (uint8)g_sht2x_param.HUMI_HM;
+   \   000005   90....       MOV     DPTR,#g_sht2x_param + 4
+   \   000008   12....       LCALL   ?XLOAD_R2345
+   \   00000B   12....       LCALL   ?R2345_FLT_TO_L
+   \   00000E   A9..         MOV     R1,?V0 + 0
+   \   000010   7F04         MOV     R7,#0x4
+   \   000012   02....       LJMP    ?BANKED_LEAVE_XDATA
+    657          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    658          void SHT2x_DisplayHumi(void)
+   \                     SHT2x_DisplayHumi:
+    659          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    660              g_sht2x_param.HUMI_HM = SHT2x_MeasureHumiHM();	
+   \   000005                ; Setup parameters for call to function SHT2x_MeasureHumiHM
+   \   000005   12....       LCALL   ??SHT2x_MeasureHumiHM?relay
+   \   000008   8A..         MOV     ?V0 + 0,R2
+   \   00000A   8B..         MOV     ?V0 + 1,R3
+   \   00000C   8C..         MOV     ?V0 + 2,R4
+   \   00000E   8D..         MOV     ?V0 + 3,R5
+   \   000010   90....       MOV     DPTR,#g_sht2x_param + 4
+   \   000013   78..         MOV     R0,#?V0 + 0
+   \   000015   12....       LCALL   ?L_MOV_TO_X
+    661              send_LED_Display(0xc0,(uint8)g_sht2x_param.HUMI_HM,1);
+   \   000018                ; Setup parameters for call to function send_LED_Display
+   \   000018   7C01         MOV     R4,#0x1
+   \   00001A   78..         MOV     R0,#?V0 + 0
+   \   00001C   12....       LCALL   ?FLT_TO_L
+   \   00001F   AA..         MOV     R2,?V0 + 0
+   \   000021   7B00         MOV     R3,#0x0
+   \   000023   79C0         MOV     R1,#-0x40
+   \   000025   12....       LCALL   ??send_LED_Display?relay
+    662          }
+   \   000028   7F04         MOV     R7,#0x4
+   \   00002A   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    663          void SHT2x_DisplayTemp(void)
+   \                     SHT2x_DisplayTemp:
+    664          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    665              g_sht2x_param.TEMP_HM = SHT2x_MeasureTempHM();
+   \   000005                ; Setup parameters for call to function SHT2x_MeasureTempHM
+   \   000005   12....       LCALL   ??SHT2x_MeasureTempHM?relay
+   \   000008   90....       MOV     DPTR,#g_sht2x_param
+   \   00000B   12....       LCALL   ?XSTORE_R2345
+    666              send_LED_Display(0xc0,(uint8)g_sht2x_param.TEMP_HM,2); 
+   \   00000E                ; Setup parameters for call to function send_LED_Display
+   \   00000E   90....       MOV     DPTR,#g_sht2x_param
+   \   000011   12....       LCALL   ?XLOAD_R2345
+   \   000014   12....       LCALL   ?R2345_FLT_TO_L
+   \   000017   AA..         MOV     R2,?V0 + 0
+   \   000019   7B00         MOV     R3,#0x0
+   \   00001B   7402         MOV     A,#0x2
+   \   00001D   FC           MOV     R4,A
+   \   00001E   79C0         MOV     R1,#-0x40
+   \   000020   12....       LCALL   ??send_LED_Display?relay
+    667          }
+   \   000023   7F04         MOV     R7,#0x4
+   \   000025   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    668          void SHT2x_Init(void)
+   \                     SHT2x_Init:
+    669          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    670            SHT20_IIC_Init();
+   \   000004                ; Setup parameters for call to function SHT20_IIC_Init
+   \   000004   12....       LCALL   ??SHT20_IIC_Init?relay
+    671            TM1640_Init();
+   \   000007                ; Setup parameters for call to function TM1640_Init
+   \   000007   12....       LCALL   ??TM1640_Init?relay
+    672            SHT2x_GetTempHumi(); 
+   \   00000A                ; Setup parameters for call to function SHT2x_GetTempHumi
+   \   00000A   12....       LCALL   ??SHT2x_GetTempHumi?relay
+    673          }
+   \   00000D   D083         POP     DPH
+   \   00000F   D082         POP     DPL
+   \   000011   02....       LJMP    ?BRET
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_14:
+   \   000000   14000000     DD 20
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3b2fb83f:
+   \   000000   3FB82F3B     DD 3B2FB83FH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_c23b6666:
+   \   000000   66663BC2     DD 0C23B6666H
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_3afa000c:
+   \   000000   0C00FA3A     DD 3AFA000CH
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_c0c00000:
+   \   000000   0000C0C0     DD 0C0C00000H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Delay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Delay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT20_IIC_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT20_IIC_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SCL_OUTPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SCL_OUTPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SCL_INPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SCL_INPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SDA_OUTPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SDA_OUTPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SDA_INPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SDA_INPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_NAck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_NAck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Read_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Read_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Write_IIC_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Write_IIC_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_I2cReadByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_I2cReadByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_MeasureTempHM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_MeasureTempHM
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_MeasureHumiHM?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_MeasureHumiHM
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_MeasureTempPoll?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_MeasureTempPoll
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_MeasureHumiPoll?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_MeasureHumiPoll
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_GetSerialNumber?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_GetSerialNumber
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_GetTempHumi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_GetTempHumi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_GetTemp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_GetTemp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_GetHumi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_GetHumi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_DisplayHumi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_DisplayHumi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_DisplayTemp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_DisplayTemp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SHT2x_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SHT2x_Init
+
+   Maximum stack usage in bytes:
+
+     Function                 ISTACK PSTACK XSTACK
+     --------                 ------ ------ ------
+     IIC_Ack                      2      0     16
+       -> IIC_SCL_OUTPUT          4      0      0
+       -> IIC_SDA_OUTPUT          4      0      0
+     IIC_Delay                    0      0     16
+     IIC_NAck                     2      0     16
+       -> IIC_SCL_OUTPUT          4      0      0
+       -> IIC_SDA_OUTPUT          4      0      0
+     IIC_Read_Byte                0      0     18
+       -> IIC_SDA_INPUT           0      0     18
+       -> IIC_SCL_OUTPUT          0      0     18
+       -> IIC_NAck                0      0     18
+       -> IIC_Ack                 0      0     18
+     IIC_SCL_INPUT                0      0     16
+     IIC_SCL_OUTPUT               0      0     16
+     IIC_SDA_INPUT                0      0      9
+     IIC_SDA_OUTPUT               0      0      9
+     IIC_Start                    2      0     16
+       -> IIC_SDA_OUTPUT          4      0      0
+       -> IIC_SCL_OUTPUT          4      0      0
+     IIC_Stop                     2      0     16
+       -> IIC_SDA_OUTPUT          4      0      0
+       -> IIC_SCL_OUTPUT          4      0      0
+     SHT20_IIC_Init               0      0      0
+     SHT2x_DisplayHumi            0      0     12
+       -> SHT2x_MeasureHumiHM     0      0     24
+       -> send_LED_Display        0      0     24
+     SHT2x_DisplayTemp            0      0     12
+       -> SHT2x_MeasureTempHM     0      0     24
+       -> send_LED_Display        0      0     24
+     SHT2x_GetHumi                0      0     12
+     SHT2x_GetSerialNumber        1      0      9
+       -> IIC_Start               0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> IIC_Start               0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> IIC_Read_Byte           0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> IIC_Stop                0      0     18
+       -> IIC_Start               0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> IIC_Start               0      0     18
+       -> Write_IIC_Byte          0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> IIC_Read_Byte           0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_Ack                 0      0     18
+       -> SHT2x_I2cReadByte       0      0     18
+       -> IIC_NAck                0      0     18
+       -> IIC_Stop                0      0     18
+     SHT2x_GetTemp                0      0     12
+     SHT2x_GetTempHumi            2      0      0
+       -> SHT2x_MeasureTempHM     4      0      0
+       -> SHT2x_MeasureHumiHM     4      0      0
+     SHT2x_I2cReadByte            0      0     25
+       -> IIC_SCL_OUTPUT          0      0     18
+       -> IIC_SDA_OUTPUT          0      0     18
+       -> IIC_SDA_INPUT           0      0     18
+       -> IIC_SDA_OUTPUT          0      0     18
+     SHT2x_Init                   2      0      0
+       -> SHT20_IIC_Init          4      0      0
+       -> TM1640_Init             4      0      0
+       -> SHT2x_GetTempHumi       4      0      0
+     SHT2x_MeasureHumiHM          0      0     28
+       -> IIC_SCL_OUTPUT          0      0     32
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> IIC_SCL_INPUT           0      0     32
+       -> IIC_Delay               0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_Ack                 0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_NAck                0      0     32
+       -> IIC_Stop                0      0     32
+       -> IIC_SCL_OUTPUT          0      0     32
+     SHT2x_MeasureHumiPoll        0      0     16
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> IIC_Delay               0      0     32
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_Ack                 0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_NAck                0      0     32
+       -> IIC_Stop                0      0     32
+     SHT2x_MeasureTempHM          0      0     28
+       -> IIC_SCL_OUTPUT          0      0     32
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> IIC_SCL_INPUT           0      0     32
+       -> IIC_Delay               0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_Ack                 0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_NAck                0      0     32
+       -> IIC_Stop                0      0     32
+       -> IIC_SCL_OUTPUT          0      0     32
+     SHT2x_MeasureTempPoll        0      0     16
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> IIC_Delay               0      0     32
+       -> IIC_Start               0      0     32
+       -> Write_IIC_Byte          0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_Ack                 0      0     32
+       -> SHT2x_I2cReadByte       0      0     32
+       -> IIC_NAck                0      0     32
+       -> IIC_Stop                0      0     32
+     Write_IIC_Byte               0      0     25
+       -> IIC_SCL_OUTPUT          0      0     18
+       -> IIC_SDA_OUTPUT          0      0     18
+       -> IIC_SDA_INPUT           0      0     18
+       -> IIC_SDA_OUTPUT          0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P0                            1
+     P0INP                            1
+     P0SEL                            1
+     P0DIR                            1
+     g_sht2x_param                   24
+     IIC_Delay                        3
+     SHT20_IIC_Init                   9
+     IIC_SCL_OUTPUT                   9
+     IIC_SCL_INPUT                   12
+     IIC_SDA_OUTPUT                   9
+     IIC_SDA_INPUT                   12
+     IIC_Start                       25
+     IIC_Stop                        25
+     IIC_Ack                         25
+     IIC_NAck                        25
+     IIC_Read_Byte                   57
+     Write_IIC_Byte                  66
+     SHT2x_I2cReadByte               56
+     SHT2x_MeasureTempHM            136
+     SHT2x_MeasureHumiHM            136
+     SHT2x_MeasureTempPoll          124
+     SHT2x_MeasureHumiPoll          124
+     SHT2x_GetSerialNumber          236
+     SHT2x_GetTempHumi               29
+     SHT2x_GetTemp                   21
+     SHT2x_GetHumi                   21
+     SHT2x_DisplayHumi               45
+     SHT2x_DisplayTemp               40
+     SHT2x_Init                      20
+     __Constant_14                    4
+     __Constant_3b2fb83f              4
+     __Constant_c23b6666              4
+     __Constant_3afa000c              4
+     __Constant_c0c00000              4
+     ??IIC_Delay?relay                6
+     ??SHT20_IIC_Init?relay           6
+     ??IIC_SCL_OUTPUT?relay           6
+     ??IIC_SCL_INPUT?relay            6
+     ??IIC_SDA_OUTPUT?relay           6
+     ??IIC_SDA_INPUT?relay            6
+     ??IIC_Start?relay                6
+     ??IIC_Stop?relay                 6
+     ??IIC_Ack?relay                  6
+     ??IIC_NAck?relay                 6
+     ??IIC_Read_Byte?relay            6
+     ??Write_IIC_Byte?relay           6
+     ??SHT2x_I2cReadByte?relay        6
+     ??SHT2x_MeasureTempHM?relay      6
+     ??SHT2x_MeasureHumiHM?relay      6
+     ??SHT2x_MeasureTempPoll?relay    6
+     ??SHT2x_MeasureHumiPoll?relay    6
+     ??SHT2x_GetSerialNumber?relay    6
+     ??SHT2x_GetTempHumi?relay        6
+     ??SHT2x_GetTemp?relay            6
+     ??SHT2x_GetHumi?relay            6
+     ??SHT2x_DisplayHumi?relay        6
+     ??SHT2x_DisplayTemp?relay        6
+     ??SHT2x_Init?relay               6
+
+ 
+ 1 265 bytes in segment BANKED_CODE
+   144 bytes in segment BANK_RELAYS
+     4 bytes in segment SFR_AN
+    20 bytes in segment XDATA_ROM_C
+    24 bytes in segment XDATA_Z
+ 
+ 1 409 bytes of CODE  memory
+     0 bytes of CONST memory (+ 20 bytes shared)
+     0 bytes of DATA  memory (+  4 bytes shared)
+    24 bytes of XDATA memory
+
+Errors: none
+Warnings: none

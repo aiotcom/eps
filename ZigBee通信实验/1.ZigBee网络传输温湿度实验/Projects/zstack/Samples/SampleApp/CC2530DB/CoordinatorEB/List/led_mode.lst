@@ -1,0 +1,320 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         23/Oct/2020  17:46:47 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\led_mode.c                       #
+#    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wCoord.cfg (-DCPU32MHZ         #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\led_mode.c -D ZIGBEEPRO -D       #
+#                          ZTOOL_P1 -D MT_SYS_FUNC -D xMT_ZDO_FUNC -D         #
+#                          LCD_SUPPORTED=DEBUG -D NV_RESTORE -lC              #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\List\ -lA E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ #
+#                          \2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ #
+#                          ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\CoordinatorEB\List\ --diag_suppress          #
+#                          Pe001,Pa010 -o E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ #
+#                          \2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ #
+#                          ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\CoordinatorEB\Obj\ -e --debug --core=plain   #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé #
+#                          ×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑ #
+#                          é-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\SOURCE\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I         #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MT\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎ #
+#                          ÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷ #
+#                          Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\INCLUDE\ -I                  #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\AF\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\NWK\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SEC\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SAPI\ -I                    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SYS\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\ZDO\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\F8W\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SADDR\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SDATA\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\  #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HARDWARE\ -Ohz                 #
+#    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\List\led_mode.lst                             #
+#    Object file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\Obj\led_mode.r51                              #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\led_mode.c
+      1          #include "led_mode.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          /*
+      3          ³õÊ¼»¯LEDÄ£¿éÉÏµÄS4->P1.6°´¼ü£¬LED2->P1.2°´¼üµÄIO´®¿Ú¿Ú
+      4          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void LedMode_Init(void)
+   \                     LedMode_Init:
+      6          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      7              //LEDµÆIO¿Ú³õÊ¼»¯
+      8              P1SEL &= ~BV(2);     //ÉèÖÃP1.2ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F4FB       ANL     0xf4,#0xfb
+      9              P1DIR |= BV(2);      //P1.2¶¨ÒåÎªÊä³ö
+   \   000003   43FE04       ORL     0xfe,#0x4
+     10          
+     11              //°´¼üIO¿Ú³õÊ¼»¯    
+     12              P1SEL &= ~BV(6);     //ÉèÖÃP1.6ÎªÆÕÍ¨IO¿Ú  
+   \   000006   53F4BF       ANL     0xf4,#0xbf
+     13              P1DIR &= ~BV(6);      //P1.6¶¨ÒåÎªÊäÈë 
+   \   000009   53FEBF       ANL     0xfe,#0xbf
+     14              P1INP &= ~BV(6);     //´ò¿ªP1.6ÉÏÀ­µç×è
+   \   00000C   53F6BF       ANL     0xf6,#0xbf
+     15          }
+   \   00000F   02....       LJMP    ?BRET
+   \   000012                REQUIRE P1SEL
+   \   000012                REQUIRE P1DIR
+   \   000012                REQUIRE P1INP
+     16          /*
+     17          LEDÄ£¿éÉÏLED2µãÁÁ
+     18          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     19          void Led2_On(void)   
+   \                     Led2_On:
+     20          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     21            P1_2 = 0;
+   \   000000   C292         CLR     0x90.2
+     22          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P1
+     23          /*
+     24          LEDÄ£¿éÉÏLED2Ï¨Ãð
+     25          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     26          void Led2_Off(void)  
+   \                     Led2_Off:
+     27          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     28            P1_2 = 1;
+   \   000000   D292         SETB    0x90.2
+     29          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P1
+     30          /*
+     31          ¶ÁLEDÄ£¿éÉÏµÄ°´¼üS4
+     32          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          uint8 Key_ReadS4(void)
+   \                     Key_ReadS4:
+     34          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     35            return P1_6?KEY_RELASE:KEY_PRESS;
+   \   000000   A296         MOV     C,0x90.6
+   \   000002   E4           CLR     A
+   \   000003   33           RLC     A
+   \   000004   F9           MOV     R1,A
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE _A_P1
+     36          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LedMode_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LedMode_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Led2_On?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Led2_On
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Led2_Off?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Led2_Off
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Key_ReadS4?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Key_ReadS4
+
+   Maximum stack usage in bytes:
+
+     Function     ISTACK PSTACK XSTACK
+     --------     ------ ------ ------
+     Key_ReadS4       0      0      0
+     Led2_Off         0      0      0
+     Led2_On          0      0      0
+     LedMode_Init     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label       Bytes
+     --------------       -----
+     _A_P1                   1
+     P1SEL                   1
+     P1INP                   1
+     P1DIR                   1
+     LedMode_Init           18
+     Led2_On                 5
+     Led2_Off                5
+     Key_ReadS4              8
+     ??LedMode_Init?relay    6
+     ??Led2_On?relay         6
+     ??Led2_Off?relay        6
+     ??Key_ReadS4?relay      6
+
+ 
+ 36 bytes in segment BANKED_CODE
+ 24 bytes in segment BANK_RELAYS
+  4 bytes in segment SFR_AN
+ 
+ 60 bytes of CODE memory
+  0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

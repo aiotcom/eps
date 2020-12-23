@@ -1,0 +1,1015 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         17/Dec/2020  17:01:51 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Components\HARDWARE\IIC.c                   #
+#    Command line       =  -f E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制 #
+#                          LED灯实验\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg            #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0  #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Components\HARDWARE\IIC.c -D ZIGBEEPRO -D   #
+#                          ZTOOL_P1 -D MT_SYS_FUNC -D xMT_ZDO_FUNC -D         #
+#                          LCD_SUPPORTED=DEBUG -D NV_RESTORE -lC              #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          Coordinator\List\ -lA E:\常用模块实验\ZigBee通信实 #
+#                          验\6.ZigBee网络控制LED灯实验\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\Coordinator\List\            #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          Coordinator\Obj\ -e --debug --core=plain           #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\常用模块实验\ZigBee通信 #
+#                          实验\6.ZigBee网络控制LED灯实验\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\ -I                        #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\SOURCE\ -I E:\常用模块实验\ZigBee通信实验\6.Zig #
+#                          Bee网络控制LED灯实验\Projects\zstack\Samples\Sampl #
+#                          eApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I          #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MT\ -I                   #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I          #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I  #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I       #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I         #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\AF\ -I             #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\NWK\ -I            #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\SEC\ -I            #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I           #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\SYS\ -I            #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I            #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I             #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\ZMAC\ -I                 #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I       #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I       #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I          #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I       #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I  #
+#                          E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SING #
+#                          LE_CHIP\ -I E:\常用模块实验\ZigBee通信实验\6.ZigBe #
+#                          e网络控制LED灯实验\Projects\zstack\Samples\SampleA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\HARDWARE\    #
+#                          -Ohz                                               #
+#    List file          =  E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          Coordinator\List\IIC.lst                           #
+#    Object file        =  E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED #
+#                          灯实验\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          Coordinator\Obj\IIC.r51                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\常用模块实验\ZigBee通信实验\6.ZigBee网络控制LED灯实验\Components\HARDWARE\IIC.c
+      1          #include "delay.h"
+      2          #include "IIC.h"
+      3          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      4          //==========================================================
+      5          //	函数名称：	IIC_Delay
+      6          //
+      7          //	函数功能：	IIC延时函数
+      8          //
+      9          //	入口参数：	时间
+     10          //
+     11          //	返回参数：	无
+     12          //
+     13          //	说明：		
+     14          //==========================================================
+     15          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     16          void IIC_Delay(uint32 n)
+   \                     IIC_Delay:
+     17          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     18            while(0);
+     19          }
+   \   000000   02....       LJMP    ?BRET
+     20          
+     21          //==========================================================
+     22          //	函数名称：	IIC_Init
+     23          //
+     24          //	函数功能：	初始化IIC
+     25          //
+     26          //	入口参数：	无
+     27          //
+     28          //	返回参数：	无
+     29          //
+     30          //	说明：		
+     31          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          void IIC_Init(void)
+   \                     IIC_Init:
+     33          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     34              P0SEL &= ~0xC0;     //设置P0.6、P0.7为普通IO口  
+   \   000000   53F33F       ANL     0xf3,#0x3f
+     35              P0DIR |= 0xC0;      //P0.6、P0.7定义为输出
+   \   000003   43FDC0       ORL     0xfd,#0xc0
+     36          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     37          
+     38          //==========================================================
+     39          //	函数名称：	IIC_SCL_OUTPUT
+     40          //
+     41          //	函数功能：	IIC时钟线输出模式
+     42          //
+     43          //	入口参数：	无
+     44          //
+     45          //	返回参数：	无
+     46          //
+     47          //	说明：		
+     48          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     49          void IIC_SCL_OUTPUT(void)
+   \                     IIC_SCL_OUTPUT:
+     50          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     51              P0SEL &= ~0x40;     //设置P0.6为普通IO口  
+   \   000000   53F3BF       ANL     0xf3,#0xbf
+     52              P0DIR |= 0x40;      //P0.6定义为输出
+   \   000003   43FD40       ORL     0xfd,#0x40
+     53          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     54          
+     55          //==========================================================
+     56          //	函数名称：	IIC_SCL_INPUT
+     57          //
+     58          //	函数功能：	IIC时钟线输入模式
+     59          //
+     60          //	入口参数：	无
+     61          //
+     62          //	返回参数：	无
+     63          //
+     64          //	说明：		
+     65          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     66          void IIC_SCL_INPUT(void)
+   \                     IIC_SCL_INPUT:
+     67          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     68              P0SEL &= ~0x40;     //设置P0.6为普通IO口  
+   \   000000   53F3BF       ANL     0xf3,#0xbf
+     69              P0DIR &= ~0x40;     //按键接在P0.6口上，设P0.6为输入模式 
+   \   000003   53FDBF       ANL     0xfd,#0xbf
+     70              P0INP &= ~0x40;     //打开P0.6上拉电阻
+   \   000006   538FBF       ANL     0x8f,#0xbf
+     71          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+   \   00000C                REQUIRE P0INP
+     72          
+     73          //==========================================================
+     74          //	函数名称：	IIC_SDA_OUTPUT
+     75          //
+     76          //	函数功能：	IIC数据线输出模式 
+     77          //
+     78          //	入口参数：	无
+     79          //
+     80          //	返回参数：	无
+     81          //
+     82          //	说明：		
+     83          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     84          void IIC_SDA_OUTPUT(void)
+   \                     IIC_SDA_OUTPUT:
+     85          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     86              P0SEL &= ~0x80;     //设置P0.7为普通IO口  
+   \   000000   53F37F       ANL     0xf3,#0x7f
+     87              P0DIR |= 0x80;      //P0.7定义为输出
+   \   000003   43FD80       ORL     0xfd,#0x80
+     88          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0SEL
+   \   000009                REQUIRE P0DIR
+     89          
+     90          //==========================================================
+     91          //	函数名称：	IIC_SDA_INPUT
+     92          //
+     93          //	函数功能：	IIC数据线输入模式
+     94          //
+     95          //	入口参数：	无
+     96          //
+     97          //	返回参数：	无
+     98          //
+     99          //	说明：		
+    100          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    101          void IIC_SDA_INPUT(void)
+   \                     IIC_SDA_INPUT:
+    102          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    103              P0SEL &= ~0x80;     //设置P0.7为普通IO口  
+   \   000000   53F37F       ANL     0xf3,#0x7f
+    104              P0DIR &= ~0x80;     //按键接在P0.7口上，设P0.7为输入模式 
+   \   000003   53FD7F       ANL     0xfd,#0x7f
+    105              P0INP &= ~0x80;     //打开P0.7上拉电阻
+   \   000006   538F7F       ANL     0x8f,#0x7f
+    106          }
+   \   000009   02....       LJMP    ?BRET
+   \   00000C                REQUIRE P0SEL
+   \   00000C                REQUIRE P0DIR
+   \   00000C                REQUIRE P0INP
+    107          
+    108          //==========================================================
+    109          //	函数名称：	IIC_Start
+    110          //
+    111          //	函数功能：	IIC启动时序
+    112          //
+    113          //	入口参数：	无
+    114          //
+    115          //	返回参数：	无
+    116          //
+    117          //	说明：		
+    118          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    119          void IIC_Start(void)
+   \                     IIC_Start:
+    120          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    121              IIC_SDA_OUTPUT();	//时钟线输出模式
+   \   000004                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    122              IIC_SCL_OUTPUT();	//数据线输出模式
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    123              SDA_HIGH();		//拉高数据线
+   \   00000A   D287         SETB    0x80.7
+   \   00000C   D287         SETB    0x80.7
+    124              SCL_HIGH();		//拉高时钟线
+   \   00000E   D286         SETB    0x80.6
+   \   000010   D286         SETB    0x80.6
+    125              SDA_LOW();		//拉低数据线			
+   \   000012   C287         CLR     0x80.7
+   \   000014   C287         CLR     0x80.7
+    126              SCL_LOW();		//拉低时钟线
+   \   000016   80..         SJMP    ??Subroutine3_0
+   \   000018                REQUIRE _A_P0
+    127          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine3_0:
+   \   000000   C286         CLR     0x80.6
+   \   000002   C286         CLR     0x80.6
+   \   000004                REQUIRE ??Subroutine4_0
+   \   000004                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    128          
+    129          //==========================================================
+    130          //	函数名称：	IIC_Stop
+    131          //
+    132          //	函数功能：	IIC停止时序 
+    133          //
+    134          //	入口参数：	无
+    135          //
+    136          //	返回参数：	无
+    137          //
+    138          //	说明：		
+    139          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    140          void IIC_Stop(void)
+   \                     IIC_Stop:
+    141          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    142              IIC_SDA_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    143              IIC_SCL_OUTPUT();
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    144              SCL_LOW();
+   \   00000A   C286         CLR     0x80.6
+   \   00000C   C286         CLR     0x80.6
+    145              SDA_LOW();
+   \   00000E   C287         CLR     0x80.7
+   \   000010   C287         CLR     0x80.7
+    146              SCL_HIGH();
+   \   000012   D286         SETB    0x80.6
+   \   000014   D286         SETB    0x80.6
+    147              SDA_HIGH();
+   \   000016   D287         SETB    0x80.7
+   \   000018   D287         SETB    0x80.7
+    148          }
+   \   00001A   80..         SJMP    ??Subroutine4_0
+   \   00001C                REQUIRE _A_P0
+    149          
+    150          //==========================================================
+    151          //	函数名称：	IIC_Wait_Ack
+    152          //
+    153          //	函数功能：	等待应答信号到来
+    154          //
+    155          //	入口参数：	无
+    156          //
+    157          //	返回参数：	返回值：1，接收应答失败
+    158          //        							0，接收应答成功
+    159          //
+    160          //	说明：		
+    161          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          uint8 IIC_Wait_Ack(void)
+   \                     IIC_Wait_Ack:
+    163          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    164              uint8 Time=0;
+    165              IIC_SCL_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    166              IIC_SDA_OUTPUT();
+   \   000007                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000007   12....       LCALL   ??Subroutine5_0 & 0xFFFF
+    167              SDA_HIGH();
+    168              SCL_HIGH();
+   \                     ??CrossCallReturnLabel_2:
+   \   00000A   D286         SETB    0x80.6
+   \   00000C   D286         SETB    0x80.6
+    169              IIC_SDA_INPUT();
+   \   00000E                ; Setup parameters for call to function IIC_SDA_INPUT
+   \   00000E   12....       LCALL   ??IIC_SDA_INPUT?relay
+   \   000011   74FB         MOV     A,#-0x5
+    170              while(SDA_STATE())
+   \                     ??IIC_Wait_Ack_0:
+   \   000013   A287         MOV     C,0x80.7
+   \   000015   500A         JNC     ??IIC_Wait_Ack_1
+    171              {
+    172                Time++;
+    173                if(Time>250)
+   \   000017   14           DEC     A
+   \   000018   70F9         JNZ     ??IIC_Wait_Ack_0
+    174                {
+    175                  IIC_Stop();
+   \   00001A                ; Setup parameters for call to function IIC_Stop
+   \   00001A   12....       LCALL   ??IIC_Stop?relay
+    176                  return 1;
+   \   00001D   7901         MOV     R1,#0x1
+   \   00001F   8006         SJMP    ??IIC_Wait_Ack_2
+    177                }
+    178              }
+    179              SCL_LOW();
+   \                     ??IIC_Wait_Ack_1:
+   \   000021   C286         CLR     0x80.6
+   \   000023   C286         CLR     0x80.6
+    180              return 0;
+   \   000025   7900         MOV     R1,#0x0
+   \                     ??IIC_Wait_Ack_2:
+   \   000027   80..         SJMP    ??Subroutine4_0
+   \   000029                REQUIRE _A_P0
+    181          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine5_0:
+   \   000000   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+   \   000003   D287         SETB    0x80.7
+   \   000005   D287         SETB    0x80.7
+   \   000007   22           RET
+    182          
+    183          
+    184          
+    185          //==========================================================
+    186          //	函数名称：	IIC_Ack
+    187          //
+    188          //	函数功能：	IIC ACK应答
+    189          //
+    190          //	入口参数：	无
+    191          //
+    192          //	返回参数：	无
+    193          //
+    194          //	说明：		
+    195          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D286         SETB    0x80.6
+   \   000002   D286         SETB    0x80.6
+   \   000004                REQUIRE ??Subroutine3_0
+   \   000004                ; // Fall through to label ??Subroutine3_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    196          void IIC_Ack(void)
+   \                     IIC_Ack:
+    197          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    198              IIC_SCL_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    199              SCL_LOW();
+   \   000007   C286         CLR     0x80.6
+   \   000009   C286         CLR     0x80.6
+    200              IIC_SDA_OUTPUT();
+   \   00000B                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   00000B   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    201              SDA_LOW();
+   \   00000E   C287         CLR     0x80.7
+   \   000010   C287         CLR     0x80.7
+    202              SCL_HIGH();
+   \   000012   80..         SJMP    ?Subroutine0
+   \   000014                REQUIRE _A_P0
+    203              SCL_LOW();
+    204          }
+    205          
+    206          //==========================================================
+    207          //	函数名称：	IIC_NAck
+    208          //
+    209          //	函数功能：	IIC 无ACK应答
+    210          //
+    211          //	入口参数：	无
+    212          //
+    213          //	返回参数：	无
+    214          //
+    215          //	说明：		
+    216          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    217          void IIC_NAck(void)
+   \                     IIC_NAck:
+    218          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    219              IIC_SCL_OUTPUT();
+   \   000004                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000004   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    220              SCL_LOW();
+   \   000007   12....       LCALL   ?Subroutine2 & 0xFFFF
+    221              IIC_SDA_OUTPUT();
+    222              SDA_HIGH();
+    223              SCL_HIGH();
+   \                     ??CrossCallReturnLabel_0:
+   \   00000A   80..         SJMP    ?Subroutine0
+   \   00000C                REQUIRE _A_P0
+    224              SCL_LOW();
+    225          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   C286         CLR     0x80.6
+   \   000002   C286         CLR     0x80.6
+   \   000004                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000004                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   000004                REQUIRE ??Subroutine5_0
+   \   000004                ; // Fall through to label ??Subroutine5_0
+    226          //==========================================================
+    227          //	函数名称：	IIC_Read_Byte
+    228          //
+    229          //	函数功能：	IIC 读取数据
+    230          //
+    231          //	入口参数：	ack:是否发送ACK
+    232          //
+    233          //	返回参数：	无
+    234          //
+    235          //	说明：		
+    236          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    237          uint8 IIC_Read_Byte(uint8 ack)
+   \                     IIC_Read_Byte:
+    238          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    239              uint8 i,receive=0;
+   \   000007   7E00         MOV     R6,#0x0
+    240              IIC_SDA_INPUT();
+   \   000009                ; Setup parameters for call to function IIC_SDA_INPUT
+   \   000009   12....       LCALL   ??IIC_SDA_INPUT?relay
+    241              IIC_SCL_OUTPUT();
+   \   00000C                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   00000C   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    242              for(i=0;i<8;i++)
+   \   00000F   7808         MOV     R0,#0x8
+    243              {
+    244                  SCL_LOW();
+   \                     ??IIC_Read_Byte_0:
+   \   000011   C286         CLR     0x80.6
+   \   000013   C286         CLR     0x80.6
+    245                  SCL_HIGH();
+   \   000015   D286         SETB    0x80.6
+   \   000017   D286         SETB    0x80.6
+    246                  receive<<=1;
+   \   000019   EE           MOV     A,R6
+   \   00001A   C3           CLR     C
+   \   00001B   33           RLC     A
+   \   00001C   FE           MOV     R6,A
+    247                  if(SDA_STATE())receive++;
+   \   00001D   A287         MOV     C,0x80.7
+   \   00001F   5001         JNC     ??IIC_Read_Byte_1
+   \   000021   0E           INC     R6
+    248              }
+   \                     ??IIC_Read_Byte_1:
+   \   000022   18           DEC     R0
+   \   000023   E8           MOV     A,R0
+   \   000024   70EB         JNZ     ??IIC_Read_Byte_0
+    249              if(!ack) IIC_NAck();
+   \   000026   EF           MOV     A,R7
+   \   000027   7005         JNZ     ??IIC_Read_Byte_2
+   \   000029                ; Setup parameters for call to function IIC_NAck
+   \   000029   12....       LCALL   ??IIC_NAck?relay
+   \   00002C   8003         SJMP    ??IIC_Read_Byte_3
+    250              else IIC_Ack();
+   \                     ??IIC_Read_Byte_2:
+   \   00002E                ; Setup parameters for call to function IIC_Ack
+   \   00002E   12....       LCALL   ??IIC_Ack?relay
+    251              return receive;
+   \                     ??IIC_Read_Byte_3:
+   \   000031   EE           MOV     A,R6
+   \   000032                REQUIRE ?Subroutine1
+   \   000032                REQUIRE _A_P0
+   \   000032                ; // Fall through to label ?Subroutine1
+    252          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   F9           MOV     R1,A
+   \   000001                REQUIRE ??Subroutine6_0
+   \   000001                ; // Fall through to label ??Subroutine6_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine6_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    253          
+    254          
+    255          //==========================================================
+    256          //	函数名称：	Write_IIC_Byte
+    257          //
+    258          //	函数功能：	IIC 写入数据
+    259          //
+    260          //	入口参数：	无
+    261          //
+    262          //	返回参数：	无
+    263          //
+    264          //	说明：		
+    265          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    266          uint8 Write_IIC_Byte(uint8 byte)
+   \                     Write_IIC_Byte:
+    267          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    268              uint8 i, ack;
+    269          
+    270              IIC_SCL_OUTPUT();
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    271              IIC_SDA_OUTPUT();		//设置为输出模式
+   \   00000A                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   00000A   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    272              
+    273              for(i = 0; i < 8; i++)
+   \   00000D   7808         MOV     R0,#0x8
+    274              {
+    275                  if(byte & 0x80)         //一次读取最高位 发送数据
+   \                     ??Write_IIC_Byte_0:
+   \   00000F   EE           MOV     A,R6
+   \   000010   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000012   5006         JNC     ??Write_IIC_Byte_1
+    276                  {
+    277                      SDA_HIGH();
+   \   000014   D287         SETB    0x80.7
+   \   000016   D287         SETB    0x80.7
+   \   000018   8004         SJMP    ??Write_IIC_Byte_2
+    278                  }
+    279                  else 
+    280                  {
+    281                      SDA_LOW();
+   \                     ??Write_IIC_Byte_1:
+   \   00001A   C287         CLR     0x80.7
+   \   00001C   C287         CLR     0x80.7
+    282                  }
+    283                  
+    284                  SCL_HIGH();  		//时钟线拉高
+   \                     ??Write_IIC_Byte_2:
+   \   00001E   D286         SETB    0x80.6
+   \   000020   D286         SETB    0x80.6
+    285                  SCL_LOW();   		//时钟线拉低
+   \   000022   C286         CLR     0x80.6
+   \   000024   C286         CLR     0x80.6
+    286                  
+    287                  byte <<= 1;
+   \   000026   C3           CLR     C
+   \   000027   33           RLC     A
+   \   000028   FE           MOV     R6,A
+    288              }
+   \   000029   18           DEC     R0
+   \   00002A   E8           MOV     A,R0
+   \   00002B   70E2         JNZ     ??Write_IIC_Byte_0
+    289          
+    290              IIC_SDA_INPUT();  	        //数据线输入模式
+   \   00002D                ; Setup parameters for call to function IIC_SDA_INPUT
+   \   00002D   12....       LCALL   ??IIC_SDA_INPUT?relay
+    291              
+    292              SCL_HIGH();			//时钟线拉高
+   \   000030   D286         SETB    0x80.6
+   \   000032   D286         SETB    0x80.6
+    293              
+    294              if(Bit_SET == SDA_STATE())  //如果接受到数据线高信号  ACK错误
+   \   000034   E580         MOV     A,0x80
+   \   000036   FF           MOV     R7,A
+    295              {
+    296                  ack = ACK_ERROR;
+    297              }
+    298              else
+    299              {
+    300                  ack = ACK_OK;
+    301              }
+    302              
+    303              SCL_LOW();          //拉低时钟线
+   \   000037   12....       LCALL   ?Subroutine2 & 0xFFFF
+    304          
+    305              IIC_SDA_OUTPUT();	
+    306          
+    307              SDA_HIGH();		//拉高数据线
+    308              
+    309              return (ack);
+   \                     ??CrossCallReturnLabel_1:
+   \   00003A   EF           MOV     A,R7
+   \   00003B   A2E7         MOV     C,0xE0 /* A   */.7
+   \   00003D   E4           CLR     A
+   \   00003E   33           RLC     A
+   \   00003F   80..         SJMP    ?Subroutine1
+   \   000041                REQUIRE _A_P0
+    310          }
+    311          
+    312          
+    313          
+    314          //==========================================================
+    315          //	函数名称：	IIC_Send_Byte
+    316          //
+    317          //	函数功能：	IIC 写入数据
+    318          //
+    319          //	入口参数：	txd:写入数据
+    320          //
+    321          //	返回参数：	无
+    322          //
+    323          //	说明：		
+    324          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    325          void IIC_Send_Byte(uint8 txd)
+   \                     IIC_Send_Byte:
+    326          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    327              uint8 t;
+    328              IIC_SCL_OUTPUT();
+   \   000007                ; Setup parameters for call to function IIC_SCL_OUTPUT
+   \   000007   12....       LCALL   ??IIC_SCL_OUTPUT?relay
+    329              IIC_SDA_OUTPUT();
+   \   00000A                ; Setup parameters for call to function IIC_SDA_OUTPUT
+   \   00000A   12....       LCALL   ??IIC_SDA_OUTPUT?relay
+    330              SCL_LOW();
+   \   00000D   C286         CLR     0x80.6
+   \   00000F   C286         CLR     0x80.6
+    331              for(t=0;t<8;t++)
+   \   000011   7808         MOV     R0,#0x8
+    332              {
+    333                  if(txd & 0x80)
+   \                     ??IIC_Send_Byte_0:
+   \   000013   EE           MOV     A,R6
+   \   000014   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000016   5006         JNC     ??IIC_Send_Byte_1
+    334                  {
+    335                      SDA_HIGH();
+   \   000018   D287         SETB    0x80.7
+   \   00001A   D287         SETB    0x80.7
+   \   00001C   8004         SJMP    ??IIC_Send_Byte_2
+    336                  }
+    337                  else 
+    338                  {
+    339                      SDA_LOW();
+   \                     ??IIC_Send_Byte_1:
+   \   00001E   C287         CLR     0x80.7
+   \   000020   C287         CLR     0x80.7
+    340                  }
+    341                  
+    342                  SCL_HIGH();
+   \                     ??IIC_Send_Byte_2:
+   \   000022   D286         SETB    0x80.6
+   \   000024   D286         SETB    0x80.6
+    343                  SCL_LOW();
+   \   000026   C286         CLR     0x80.6
+   \   000028   C286         CLR     0x80.6
+    344                  txd<<=1;
+   \   00002A   C3           CLR     C
+   \   00002B   33           RLC     A
+   \   00002C   FE           MOV     R6,A
+    345              }
+   \   00002D   18           DEC     R0
+   \   00002E   E8           MOV     A,R0
+   \   00002F   70E2         JNZ     ??IIC_Send_Byte_0
+    346          }
+   \   000031   80..         SJMP    ??Subroutine6_0
+   \   000033                REQUIRE _A_P0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Delay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Delay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SCL_OUTPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SCL_OUTPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SCL_INPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SCL_INPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SDA_OUTPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SDA_OUTPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_SDA_INPUT?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_SDA_INPUT
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Wait_Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Wait_Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_NAck?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_NAck
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Read_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Read_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Write_IIC_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Write_IIC_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IIC_Send_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IIC_Send_Byte
+    347          
+    348          
+
+   Maximum stack usage in bytes:
+
+     Function            ISTACK PSTACK XSTACK
+     --------            ------ ------ ------
+     IIC_Ack                 2      0      9
+       -> IIC_SCL_OUTPUT     4      0      0
+       -> IIC_SDA_OUTPUT     4      0      0
+     IIC_Delay               0      0      0
+     IIC_Init                0      0      0
+     IIC_NAck                2      0      9
+       -> IIC_SCL_OUTPUT     4      0      0
+       -> IIC_SDA_OUTPUT     4      0      0
+     IIC_Read_Byte           0      0      9
+       -> IIC_SDA_INPUT      0      0     18
+       -> IIC_SCL_OUTPUT     0      0     18
+       -> IIC_NAck           0      0     18
+       -> IIC_Ack            0      0     18
+     IIC_SCL_INPUT           0      0      0
+     IIC_SCL_OUTPUT          0      0      9
+     IIC_SDA_INPUT           0      0      9
+     IIC_SDA_OUTPUT          0      0      9
+     IIC_Send_Byte           0      0      9
+       -> IIC_SCL_OUTPUT     0      0     18
+       -> IIC_SDA_OUTPUT     0      0     18
+     IIC_Start               2      0      0
+       -> IIC_SDA_OUTPUT     4      0      0
+       -> IIC_SCL_OUTPUT     4      0      0
+     IIC_Stop                2      0      0
+       -> IIC_SDA_OUTPUT     4      0      0
+       -> IIC_SCL_OUTPUT     4      0      0
+     IIC_Wait_Ack            2      0      0
+       -> IIC_SCL_OUTPUT     4      0      0
+       -> IIC_SDA_OUTPUT     4      0      0
+       -> IIC_SDA_INPUT      4      0      0
+       -> IIC_Stop           4      0      0
+     Write_IIC_Byte          0      0      9
+       -> IIC_SCL_OUTPUT     0      0     18
+       -> IIC_SDA_OUTPUT     0      0     18
+       -> IIC_SDA_INPUT      0      0     18
+       -> IIC_SDA_OUTPUT     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label         Bytes
+     --------------         -----
+     _A_P0                     1
+     P0INP                     1
+     P0SEL                     1
+     P0DIR                     1
+     IIC_Delay                 3
+     IIC_Init                  9
+     IIC_SCL_OUTPUT            9
+     IIC_SCL_INPUT            12
+     IIC_SDA_OUTPUT            9
+     IIC_SDA_INPUT            12
+     IIC_Start                24
+     ??Subroutine3_0           4
+     ??Subroutine4_0           7
+     IIC_Stop                 28
+     IIC_Wait_Ack             41
+     ??Subroutine5_0           8
+     ?Subroutine0              4
+     IIC_Ack                  20
+     IIC_NAck                 12
+     ?Subroutine2              4
+     IIC_Read_Byte            50
+     ?Subroutine1              1
+     ??Subroutine6_0           5
+     Write_IIC_Byte           65
+     IIC_Send_Byte            51
+     ??IIC_Delay?relay         6
+     ??IIC_Init?relay          6
+     ??IIC_SCL_OUTPUT?relay    6
+     ??IIC_SCL_INPUT?relay     6
+     ??IIC_SDA_OUTPUT?relay    6
+     ??IIC_SDA_INPUT?relay     6
+     ??IIC_Start?relay         6
+     ??IIC_Stop?relay          6
+     ??IIC_Wait_Ack?relay      6
+     ??IIC_Ack?relay           6
+     ??IIC_NAck?relay          6
+     ??IIC_Read_Byte?relay     6
+     ??Write_IIC_Byte?relay    6
+     ??IIC_Send_Byte?relay     6
+
+ 
+ 378 bytes in segment BANKED_CODE
+  84 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+ 
+ 462 bytes of CODE memory
+   0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

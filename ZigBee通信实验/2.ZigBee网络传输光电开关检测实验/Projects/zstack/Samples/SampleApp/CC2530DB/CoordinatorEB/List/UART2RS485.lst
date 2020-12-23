@@ -1,0 +1,281 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         23/Oct/2020  17:46:46 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\UART2RS485.c                     #
+#    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wCoord.cfg (-DCPU32MHZ         #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\UART2RS485.c -D ZIGBEEPRO -D     #
+#                          ZTOOL_P1 -D MT_SYS_FUNC -D xMT_ZDO_FUNC -D         #
+#                          LCD_SUPPORTED=DEBUG -D NV_RESTORE -lC              #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\List\ -lA E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ #
+#                          \2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ #
+#                          ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\CoordinatorEB\List\ --diag_suppress          #
+#                          Pe001,Pa010 -o E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ #
+#                          \2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ #
+#                          ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\CoordinatorEB\Obj\ -e --debug --core=plain   #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé #
+#                          ×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑ #
+#                          é-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\SOURCE\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I         #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MT\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLU #
+#                          DE\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎ #
+#                          ÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷ #
+#                          Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\INCLUDE\ -I                  #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\AF\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\NWK\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SEC\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SAPI\ -I                    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SYS\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\ZDO\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\F8W\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SADDR\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SDATA\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\  #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HARDWARE\ -Ohz                 #
+#    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\List\UART2RS485.lst                           #
+#    Object file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\Coordinat #
+#                          orEB\Obj\UART2RS485.r51                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\UART2RS485.c
+      1          #include "UART2RS485.h"
+      2          #include "MT_UART.h"
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      3          #include "HAL_DEFS.h"
+      4          #include "string.h"
+      5          #include "stdio.h"
+      6          /*
+      7          ³õÊ¼»¯UART×ª485Ð¾Æ¬ÊÕ·¢¿ØÖÆÒý½Å
+      8          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      9          void UART2RS485_Init(void)
+   \                     UART2RS485_Init:
+     10          {  
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     11              halUARTCfg_t uartConfig;
+     12              
+     13              P1SEL &= ~BV(3);     //ÉèÖÃP1.3ÎªÆÕÍ¨IO¿Ú  
+   \   000004   53F4F7       ANL     0xf4,#0xf7
+     14              P1DIR |= BV(3);      //P1.3¶¨ÒåÎªÊä³ö 
+   \   000007   43FE08       ORL     0xfe,#0x8
+     15              UartInit(HAL_UART_PORT_1,HAL_UART_BR_115200);
+   \   00000A                ; Setup parameters for call to function UartInit
+   \   00000A   7A04         MOV     R2,#0x4
+   \   00000C   7901         MOV     R1,#0x1
+   \   00000E   12....       LCALL   ??UartInit?relay
+     16              printf("this is uart1 print\r\n");
+   \   000011                ; Setup parameters for call to function printf
+   \   000011   7A..         MOV     R2,#`?<Constant "this is uart1 print\\r\\n">` & 0xff
+   \   000013   7B..         MOV     R3,#(`?<Constant "this is uart1 print\\r\\n">` >> 8) & 0xff
+   \   000015   12....       LCALL   ??printf?relay
+     17          }
+   \   000018   D083         POP     DPH
+   \   00001A   D082         POP     DPL
+   \   00001C   02....       LJMP    ?BRET
+   \   00001F                REQUIRE P1SEL
+   \   00001F                REQUIRE P1DIR
+     18          /*
+     19          Í¨¹ýRS485×ÜÏß·¢ËÍÊý¾Ý
+     20          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     21          void RS485Bus_Send(void)
+   \                     RS485Bus_Send:
+     22          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     23            
+     24          }
+   \   000000   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UART2RS485_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UART2RS485_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??RS485Bus_Send?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    RS485Bus_Send
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "this is uart1 print\\r\\n">`:
+   \   000000   74686973     DB "this is uart1 print\015\012"
+   \            20697320
+   \            75617274
+   \            31207072
+   \            696E740D
+   \            0A00    
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     RS485Bus_Send       0      0      0
+     UART2RS485_Init     2      0      0
+       -> UartInit       4      0      0
+       -> printf         4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                        Bytes
+     --------------                        -----
+     P1SEL                                    1
+     P1DIR                                    1
+     UART2RS485_Init                         31
+     RS485Bus_Send                            3
+     ??UART2RS485_Init?relay                  6
+     ??RS485Bus_Send?relay                    6
+     ?<Constant "this is uart1 print\r\n">   22
+
+ 
+ 34 bytes in segment BANKED_CODE
+ 12 bytes in segment BANK_RELAYS
+  2 bytes in segment SFR_AN
+ 22 bytes in segment XDATA_ROM_C
+ 
+ 46 bytes of CODE  memory
+ 22 bytes of CONST memory
+  0 bytes of DATA  memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

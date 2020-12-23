@@ -1,0 +1,232 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         16/Dec/2020  12:59:00 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Components\HARDWARE\Switch.c         #
+#    Command line       =  -f E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä #
+#                          ¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg     #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg       #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Components\HARDWARE\Switch.c -D      #
+#                          ZIGBEEPRO -D ZTOOL_P1 -D MT_SYS_FUNC -D            #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE  #
+#                          -lC E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Ê #
+#                          ä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\CoordinatorEB\List\ -lA                 #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\CoordinatorEB\List\ --diag_suppress         #
+#                          Pe001,Pa010 -o E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.Zi #
+#                          gBeeÍøÂç´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\CoordinatorEB\Obj\ -e        #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä #
+#                          ¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.Zig #
+#                          BeeÍøÂç´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\SOURCE\ -I                 #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\ZMAIN\TI2530DB\ -I                 #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\MT\ -I            #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I   #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530 #
+#                          EB\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç #
+#                          ´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\Sampl #
+#                          eApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\C #
+#                          CSOC\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍø #
+#                          Âç´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\Sam #
+#                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INC #
+#                          LUDE\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍø #
+#                          Âç´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\Sam #
+#                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\AF #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´« #
+#                          Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\NWK\   #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä #
+#                          ¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I  #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I    #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I     #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I      #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I          #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\   #
+#                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä #
+#                          ¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA #
+#                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´« #
+#                          Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleA #
+#                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ #
+#                           -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Ê #
+#                          ä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleAp #
+#                          p\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVE #
+#                          L\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´ #
+#                          «Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEV #
+#                          EL\srf04\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigB #
+#                          eeÍøÂç´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\ #
+#                          LOW_LEVEL\srf04\SINGLE_CHIP\ -I                    #
+#                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\COMPONENTS\HARDWARE\ -Ohz    #
+#    List file          =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\CoordinatorEB\List\Switch.lst               #
+#    Object file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµ #
+#                          ç¿ª¹Ø¼ì²âÊµÑé\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\CoordinatorEB\Obj\Switch.r51                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\2.ZigBeeÍøÂç´«Êä¹âµç¿ª¹Ø¼ì²âÊµÑé\Components\HARDWARE\Switch.c
+      1          #include "Switch.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include <ioCC2530.h>
+      3          //==========================================================
+      4          //	º¯ÊýÃû³Æ£º	Optocoupler_Init()
+      5          //
+      6          //	º¯Êý¹¦ÄÜ£º	¹âµç´«¸ÐÆ÷³õÊ¼»¯
+      7          //
+      8          //	Èë¿Ú²ÎÊý£º	ÎÞ
+      9          //
+     10          //	·µ»Ø²ÎÊý£º	ÎÞ
+     11          //
+     12          //	ËµÃ÷£º		
+     13          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          void Optocoupler_Init(void)
+   \                     Optocoupler_Init:
+     15          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     16              P1SEL &= ~0x01;     //ÉèÖÃP1.0ÎªÆÕÍ¨IO¿Ú  
+   \   000000   53F4FE       ANL     0xf4,#0xfe
+     17              P1DIR &= ~0x01;     //°´¼ü½ÓÔÚP1.0¿ÚÉÏ£¬ÉèP1.0ÎªÊäÈëÄ£Ê½ 
+   \   000003   53FEFE       ANL     0xfe,#0xfe
+     18              P1INP &= ~0x01;     //´ò¿ªP1.0ÉÏÀ­µç×è
+   \   000006   53F6FE       ANL     0xf6,#0xfe
+     19          
+     20              P1SEL &= ~0x02;     //ÉèÖÃP1.1ÎªÆÕÍ¨IO¿Ú  
+   \   000009   53F4FD       ANL     0xf4,#0xfd
+     21              P1DIR |= 0x02;      //P1.1¶¨ÒåÎªÊä³ö
+   \   00000C   43FE02       ORL     0xfe,#0x2
+     22              Optocoupler_Switch_ON();//¿ªÆô¹âµç´«¸ÐÆ÷Ä£¿é
+   \   00000F   C291         CLR     0x90.1
+     23          }
+   \   000011   02....       LJMP    ?BRET
+   \   000014                REQUIRE P1SEL
+   \   000014                REQUIRE P1DIR
+   \   000014                REQUIRE P1INP
+   \   000014                REQUIRE _A_P1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Optocoupler_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Optocoupler_Init
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     Optocoupler_Init     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label           Bytes
+     --------------           -----
+     _A_P1                       1
+     P1SEL                       1
+     P1INP                       1
+     P1DIR                       1
+     Optocoupler_Init           20
+     ??Optocoupler_Init?relay    6
+
+ 
+ 20 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+  4 bytes in segment SFR_AN
+ 
+ 26 bytes of CODE memory
+  0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

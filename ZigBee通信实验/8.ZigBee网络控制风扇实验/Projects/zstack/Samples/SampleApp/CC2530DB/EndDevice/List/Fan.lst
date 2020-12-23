@@ -1,0 +1,259 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         22/Dec/2020  18:32:27 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Components\HARDWARE\Fan.c #
+#    Command line       =  -f C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ #
+#                          —È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wEn #
+#                          dev.cfg (-DCPU32MHZ -DROOT=__near_func             #
+#                          -DBLINK_LEDS) -f C:\Users\Administrator\Desktop\ep #
+#                          s\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\Tools\ #
+#                          CC2530DB\f8wConfig.cfg (-DSECURE=0                 #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Components\HARDWARE\Fan.c #
+#                           -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_SYS_FUNC -D    #
+#                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC             #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\EndDevice\List\ -lA              #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\EndDevice\List\ --diag_suppress  #
+#                          Pe001,Pa010 -o C:\Users\Administrator\Desktop\eps\ #
+#                          ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\z #
+#                          stack\Samples\SampleApp\CC2530DB\EndDevice\Obj\    #
+#                          -e --no_unroll --no_inline --no_tbaa --debug       #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\Administrator\Des #
+#                          ktop\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\ -I      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\SOURCE\ -I                    #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\    #
+#                          -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ #
+#                          —È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL #
+#                          \INCLUDE\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\HAL\TARGET\CC2530EB\ -I                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\M #
+#                          CU\CCSOC\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\OSAL\INCLUDE\ -I C:\Users\Administrator\Des #
+#                          ktop\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \..\..\COMPONENTS\STACK\AF\ -I                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ #
+#                          NWK\ -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ #
+#                          ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\STACK\SEC\ -I C:\Users\Administrator\Desktop\eps #
+#                          \ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\STACK\SAPI\ -I                           #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ #
+#                          SYS\ -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ #
+#                          ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\STACK\ZDO\ -I C:\Users\Administrator\Desktop\eps #
+#                          \ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\ZMAC\F8W\ -I C:\Users\Administrator\Desk #
+#                          top\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC #
+#                          ES\SADDR\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\SERVICES\SDATA\ -I                          #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\IN #
+#                          CLUDE\ -I C:\Users\Administrator\Desktop\eps\ZigBe #
+#                          eÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack #
+#                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONE #
+#                          NTS\MAC\HIGH_LEVEL\ -I C:\Users\Administrator\Desk #
+#                          top\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO #
+#                          W_LEVEL\srf04\SINGLE_CHIP\ -I                      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HARDWA #
+#                          RE\ -Om                                            #
+#    List file          =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\EndDevice\List\Fan.lst           #
+#    Object file        =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\EndDevice\Obj\Fan.r51            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Components\HARDWARE\Fan.c
+      1          #include "Fan.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          void FanOff(void);
+      3          /*
+      4          ≥ı ºªØ∑Á…»øÿ÷∆IO
+      5          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      6          void Fan_Init(void)
+   \                     Fan_Init:
+      7          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+      8             P0DIR |= 0x02;      //P0.1∂®“ÂŒ™ ‰≥ˆ
+   \   000004   43FD02       ORL     0xfd,#0x2
+      9             FanOff();
+   \   000007                ; Setup parameters for call to function FanOff
+   \   000007   12....       LCALL   ??FanOff?relay
+     10          }
+   \   00000A   D083         POP     DPH
+   \   00000C   D082         POP     DPL
+   \   00000E   02....       LJMP    ?BRET
+   \   000011                REQUIRE P0DIR
+     11          /*
+     12          øÿ÷∆∑Á…»◊™∂Ø
+     13          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          void FanOn(void)
+   \                     FanOn:
+     15          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     16            Fan = 1;
+   \   000000   D281         SETB    0x80.1
+     17          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+     18          /*
+     19          øÿ÷∆∑Á…»Õ£÷π
+     20          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     21          void FanOff(void)
+   \                     FanOff:
+     22          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     23            Fan = 0;
+   \   000000   C281         CLR     0x80.1
+     24          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Fan_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Fan_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??FanOn?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    FanOn
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??FanOff?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    FanOff
+
+   Maximum stack usage in bytes:
+
+     Function    ISTACK PSTACK XSTACK
+     --------    ------ ------ ------
+     FanOff          0      0      0
+     FanOn           0      0      0
+     Fan_Init        2      0      0
+       -> FanOff     4      0      0
+
+
+   Segment part sizes:
+
+     Function/Label   Bytes
+     --------------   -----
+     _A_P0               1
+     P0DIR               1
+     Fan_Init           17
+     FanOn               5
+     FanOff              5
+     ??Fan_Init?relay    6
+     ??FanOn?relay       6
+     ??FanOff?relay      6
+
+ 
+ 27 bytes in segment BANKED_CODE
+ 18 bytes in segment BANK_RELAYS
+  2 bytes in segment SFR_AN
+ 
+ 45 bytes of CODE memory
+  0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

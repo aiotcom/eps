@@ -1,0 +1,53 @@
+[DebugChecksum]
+Checksum=345624650
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[Profiling]
+Enabled=0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\SampleApp.c}.382.5@1" 0 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\Source\SampleApp-EndDevice.c}.397.10@1" 0 0 0 0 "" 0 ""
+Count=2
+[ChipconEmu]
+Stop timers on halt=1
+Leave target running=1
+[Aliases]
+A0=_ "D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2point-interactive\Components\hal\target\CC2530EB\hal_led.c" ""
+A1=_ "D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2point-interactive\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A2=_ "D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point2point-bind\Components\hal\target\CC2530EB\hal_led.c" ""
+A3=_ "D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point2point-bind\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A4=_ "D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee\point2point\Components\zmac\f8w\zmac.c" ""
+A5=_ "D:\ZigBee\KJXY-ZigBee\useful_code\p2p\Components\hal\target\CC2530EB\hal_led.c" ""
+A6=_ "D:\ZigBee\KJXY-ZigBee\useful_code\p2p\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A7=_ "E:\aiotcode-master\多网融合实验装置\2.基于无线传感网络的实验\3.2ZigBee点播通信实验-上报传感器数据\Components\hal\target\CC2530EB\hal_led.c" ""
+A8=_ "E:\aiotcode-master\多网融合实验装置\2.基于无线传感网络的实验\3.2ZigBee点播通信实验-上报传感器数据\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A9=_ "E:\aiotcode-master\多网融合实验装置\2.基于无线传感网络的实验\3.6ZigBee点播通信实验-上报传感器数据\Components\hal\target\CC2530EB\hal_led.c" ""
+A10=_ "E:\aiotcode-master\多网融合实验装置\2.基于无线传感网络的实验\3.6ZigBee点播通信实验-上报传感器数据\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A11=_ "E:\常用模块实验\ZigBee通信实验\3.ZigBee网络传输超声波数据实验\Components\hal\target\CC2530EB\hal_led.c" ""
+A12=_ "E:\常用模块实验\ZigBee通信实验\3.ZigBee网络传输超声波数据实验\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A13=_ "F:\工作任务\2016-05\无线传感网实验箱配套光盘-CDIOT-L02-02\源代码\Zigbee无线传感网原理与应用\实验6 ZStack点播通信实验-V20160509\Components\osal\common\OSAL_Timers.c" ""
+A14=_ "F:\工作任务\2016-05\无线传感网实验箱配套光盘-CDIOT-L02-02\源代码\Zigbee无线传感网原理与应用\实验6 ZStack点播通信实验-V20160509\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=15
+SuppressDialog=0

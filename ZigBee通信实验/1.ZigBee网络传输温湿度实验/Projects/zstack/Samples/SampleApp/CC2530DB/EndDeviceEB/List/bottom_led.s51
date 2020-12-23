@@ -1,0 +1,2989 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        23/Oct/2020  17:48:24 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Components\HARDWARE\bottom_led.c                  /
+//    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß /
+//                          ´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý /
+//                          ¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\..\ /
+//                          ..\..\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ     /
+//                          -DROOT=__near_func -DBLINK_LEDS) -f               /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0       /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFF11                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\aiotcode-master\¶àÍøÈÚº /
+//                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í /
+//                          ¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\bottom /
+//                          _led.c -D NWK_AUTO_POLL -D ZTOOL_P1 -D            /
+//                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                     /
+//                          LCD_SUPPORTED=DEBUG -lC                           /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDev /
+//                          iceEB\List\ -lA E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×° /
+//                          ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé /
+//                          -ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\EndDeviceEB\List\ --diag_suppress       /
+//                          Pe001,Pa010 -o E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°Ö /
+//                          Ã\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé- /
+//                          ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\ /
+//                          CC2530DB\EndDeviceEB\Obj\ -e --no_unroll          /
+//                          --no_inline --no_tbaa --debug --core=plain        /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\ -I    /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\SOU /
+//                          RCE\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓ /
+//                          ÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ /
+//                          ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530D /
+//                          B\..\..\..\ZMAIN\TI2530DB\ -I                     /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MT\ -I                        /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\HAL\INCLUDE\ -I               /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I       /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\OSAL\INCLUDE\ -I              /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\AF\ -I                  /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\NWK\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\SEC\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\SAPI\ -I                /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\SYS\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\ZDO\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\ZMAC\F8W\ -I                  /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\ZMAC\ -I                      /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\SERVICES\SADDR\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\SERVICES\SDATA\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\INCLUDE\ -I               /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I       /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CH /
+//                          IP\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚ /
+//                          ÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸Ð /
+//                          Æ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB /
+//                          \..\..\..\..\..\COMPONENTS\HARDWARE\ -Om          /
+//    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDev /
+//                          iceEB\List\bottom_led.s51                         /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME bottom_led
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?XLOAD_R2345
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??Bottom_BlackOut?relay
+        FUNCTION ??Bottom_BlackOut?relay,0203H
+        PUBLIC ??Bottom_Blue?relay
+        FUNCTION ??Bottom_Blue?relay,0203H
+        PUBLIC ??Bottom_Green?relay
+        FUNCTION ??Bottom_Green?relay,0203H
+        PUBLIC ??Bottom_Red?relay
+        FUNCTION ??Bottom_Red?relay,0203H
+        PUBLIC ??Bottom_White?relay
+        FUNCTION ??Bottom_White?relay,0203H
+        PUBLIC ??Bottom_Yellow?relay
+        FUNCTION ??Bottom_Yellow?relay,0203H
+        PUBLIC ??RGB_REST?relay
+        FUNCTION ??RGB_REST?relay,0203H
+        PUBLIC ??RGB_Set_Down?relay
+        FUNCTION ??RGB_Set_Down?relay,0203H
+        PUBLIC ??RGB_Set_UP?relay
+        FUNCTION ??RGB_Set_UP?relay,0203H
+        PUBLIC ??_delayunit?relay
+        FUNCTION ??_delayunit?relay,0203H
+        PUBLIC ??bottom_led_init?relay
+        FUNCTION ??bottom_led_init?relay,0203H
+        PUBLIC Bottom_BlackOut
+        FUNCTION Bottom_BlackOut,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Bottom_Blue
+        FUNCTION Bottom_Blue,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Bottom_Green
+        FUNCTION Bottom_Green,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Bottom_Red
+        FUNCTION Bottom_Red,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Bottom_White
+        FUNCTION Bottom_White,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Bottom_Yellow
+        FUNCTION Bottom_Yellow,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK P2DIR
+        PUBLIC RGB_REST
+        FUNCTION RGB_REST,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC RGB_Set_Down
+        FUNCTION RGB_Set_Down,080203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC RGB_Set_UP
+        FUNCTION RGB_Set_UP,080203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBWEAK _A_P2
+        PUBWEAK __Constant_1
+        PUBLIC _delayunit
+        FUNCTION _delayunit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC bottom_led_init
+        FUNCTION bottom_led_init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC fig
+        PUBLIC num
+        PUBLIC rgb
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+delay_ms            SYMBOL "delay_ms"
+??delay_ms?relay    SYMBOL "?relay", delay_ms
+Bottom_BlackOut     SYMBOL "Bottom_BlackOut"
+??Bottom_BlackOut?relay SYMBOL "?relay", Bottom_BlackOut
+Bottom_Blue         SYMBOL "Bottom_Blue"
+??Bottom_Blue?relay SYMBOL "?relay", Bottom_Blue
+Bottom_Green        SYMBOL "Bottom_Green"
+??Bottom_Green?relay SYMBOL "?relay", Bottom_Green
+Bottom_Red          SYMBOL "Bottom_Red"
+??Bottom_Red?relay  SYMBOL "?relay", Bottom_Red
+Bottom_White        SYMBOL "Bottom_White"
+??Bottom_White?relay SYMBOL "?relay", Bottom_White
+Bottom_Yellow       SYMBOL "Bottom_Yellow"
+??Bottom_Yellow?relay SYMBOL "?relay", Bottom_Yellow
+RGB_REST            SYMBOL "RGB_REST"
+??RGB_REST?relay    SYMBOL "?relay", RGB_REST
+RGB_Set_Down        SYMBOL "RGB_Set_Down"
+??RGB_Set_Down?relay SYMBOL "?relay", RGB_Set_Down
+RGB_Set_UP          SYMBOL "RGB_Set_UP"
+??RGB_Set_UP?relay  SYMBOL "?relay", RGB_Set_UP
+_delayunit          SYMBOL "_delayunit"
+??_delayunit?relay  SYMBOL "?relay", _delayunit
+bottom_led_init     SYMBOL "bottom_led_init"
+??bottom_led_init?relay SYMBOL "?relay", bottom_led_init
+
+        EXTERN delay_ms
+        FUNCTION delay_ms,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??delay_ms?relay
+        FUNCTION ??delay_ms?relay,00H
+
+// E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\bottom_led.c
+//    1 //#include "delay.h"
+//    2 #include "bottom_led.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,0a0H
+// union <unnamed> volatile __sfr _A_P2
+_A_P2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0ffH
+// unsigned char volatile __sfr P2DIR
+P2DIR:
+        DATA8
+        DS 1
+//    3 #include "delay.h"
+//    4 #include <ioCC2530.h> 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//    5 long int rgb = 0x070707;  //ÐèÒª±ä»»µÄÑÕÉ«
+rgb:
+        DATA32
+        DS 4
+        REQUIRE `?<Initializer for rgb>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//    6 uint16 fig = 0,num = 23;    
+fig:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+num:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for num>`
+        REQUIRE __INIT_XDATA_I
+//    7 void RGB_REST(void);
+//    8 void Set_White(void);
+//    9 void bottom_led(void);
+//   10 void _delayunit(void);
+//   11 void RGB_Set_UP();
+//   12 void RGB_Set_Down(void);
+//   13 void Bottom_Green(void);
+//   14 void Bottom_Red(void);
+//   15 void Bottom_Blue(void);
+//   16 void Bottom_Yellow(void);
+//   17 void Bottom_BlackOut(void);
+//   18 void RGB_Set_UP(void);
+//   19 /***********************************************************************************
+//   20 * º¯ÊýÃû³Æ        InitLed
+//   21 *
+//   22 * º¯Êý¹¦ÄÜ        ÉèÖÃLEDµÆÏàÓ¦µÄIO¿Ú
+//   23 *
+//   24 * Èë¿Ú²ÎÊý        ÎÞ
+//   25 *
+//   26 * ·µ»Ø²ÎÊý        ÎÞ 
+//   27 *
+//   28 * ËµÃ÷
+//   29 ***********************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   30 void bottom_led_init(void)
+bottom_led_init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function bottom_led_init
+        CODE
+//   31 {
+        FUNCALL bottom_led_init, RGB_REST
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//   32     P2DIR |= 0x01;      //P1.0¶¨ÒåÎªÊä³ö
+        ORL     0xff,#0x1
+//   33     RGB_REST();
+        ; Setup parameters for call to function RGB_REST
+        LCALL   ??RGB_REST?relay
+//   34 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE P2DIR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   35 void _delayunit(void)
+_delayunit:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function _delayunit
+        CODE
+//   36 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   37   uint8 i=0;
+//   38   for(i=0;i<2;i++)
+        MOV     R0,#0x0
+        SJMP    ??_delayunit_0
+??_delayunit_1:
+        INC     R0
+??_delayunit_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x2
+        JC      ??_delayunit_1
+//   39   {
+//   40   
+//   41   }
+//   42 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//   43 /*  1Âë 850ns¸ß 400nsµÍ*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   44 void RGB_Set_UP(void)
+RGB_Set_UP:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function RGB_Set_UP
+        CODE
+//   45 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   46       LED = 1;      //1
+        SETB    0xa0.0
+//   47       asm("NOP");
+        NOP
+//   48       asm("NOP");
+        NOP
+//   49       asm("NOP");
+        NOP
+//   50       asm("NOP");
+        NOP
+//   51       asm("NOP");
+        NOP
+//   52       asm("NOP");
+        NOP
+//   53       LED = 0;
+        CLR     0xa0.0
+//   54 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+        REQUIRE _A_P2
+//   55 
+//   56 /*  0Âë  400ns¸ß  850nsµÍ*/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   57 void RGB_Set_Down(void)
+RGB_Set_Down:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function RGB_Set_Down
+        CODE
+//   58 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   59       LED = 1;     //0
+        SETB    0xa0.0
+//   60       asm("NOP");
+        NOP
+//   61       asm("NOP");
+        NOP
+//   62       LED = 0;
+        CLR     0xa0.0
+//   63       asm("NOP");
+        NOP
+//   64       asm("NOP");
+        NOP
+//   65 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+        REQUIRE _A_P2
+//   66 
+//   67 #define SEND_HI {LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;}
+//   68 
+//   69 #define SEND_LO {LED = 1;LED = 1;LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;LED = 0;}
+//   70 //#define SEND_HI {LED = 1;LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0; }
+//   71 //
+//   72 //#define SEND_LO {LED = 1;LED = 1;LED = 1;LED = 0;LED = 0;LED = 0;LED = 0; }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   73 void Bottom_White(void)
+Bottom_White:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Bottom_White
+        CODE
+//   74 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   75   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   76   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   77   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   78   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   79   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   80   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   81   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   82   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   83   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   84   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   85 
+//   86   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   87   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   88   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   89   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   90   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   91   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   92   
+//   93   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   94   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   95   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   96   SEND_HI;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   97   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   98   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//   99   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  100   SEND_HI;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  101 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+        REQUIRE _A_P2
+//  102 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  103 void Bottom_Green(void)
+Bottom_Green:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function Bottom_Green
+        CODE
+//  104 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  105   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  106   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  107   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  108   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  109   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  110   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  111   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  112   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  113   
+//  114   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  115   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  116   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  117   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  118   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  119   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  120   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  121   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  122   
+//  123   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  124   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  125   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  126   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  127   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  128   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  129   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  130   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  131 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+        REQUIRE _A_P2
+//  132 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  133 void Bottom_Red(void)
+Bottom_Red:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function Bottom_Red
+        CODE
+//  134 { 
+        ; Saved register size: 0
+        ; Auto size: 0
+//  135   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  136   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  137   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  138   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  139   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  140   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  141   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  142   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  143   
+//  144   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  145   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  146   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  147   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  148   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  149   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  150   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  151   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  152   
+//  153   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  154   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  155   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  156   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  157   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  158   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  159   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  160   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  161 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  162 void Bottom_Blue(void)
+Bottom_Blue:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function Bottom_Blue
+        CODE
+//  163 { 
+        ; Saved register size: 0
+        ; Auto size: 0
+//  164   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  165   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  166   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  167   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  168   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  169   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  170   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  171   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  172    
+//  173   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  174   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  175   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  176   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  177   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  178   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  179   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  180   SEND_LO; 
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  181   
+//  182   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  183   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  184   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  185   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  186   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  187   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  188   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  189   SEND_HI;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  190 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_P2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  191 void Bottom_Yellow(void)
+Bottom_Yellow:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function Bottom_Yellow
+        CODE
+//  192 { 
+        ; Saved register size: 0
+        ; Auto size: 0
+//  193   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  194   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  195   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  196   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  197   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  198   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  199   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  200   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  201   
+//  202   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  203   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  204   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  205   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  206   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  207   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  208   SEND_HI;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  209   SEND_HI;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  210   
+//  211   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  212   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  213   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  214   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  215   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  216   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  217   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  218   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  219 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+        REQUIRE _A_P2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  220 void Bottom_BlackOut(void)
+Bottom_BlackOut:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function Bottom_BlackOut
+        CODE
+//  221 { 
+        ; Saved register size: 0
+        ; Auto size: 0
+//  222   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  223   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  224   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  225   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  226   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  227   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  228   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  229   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  230   
+//  231   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  232   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  233   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  234   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  235   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  236   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  237   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  238   SEND_LO;   
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  239   
+//  240   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  241   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  242   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  243   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  244   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  245   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  246   SEND_LO;
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  247   SEND_LO;  
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        SETB    0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+        CLR     0xa0.0
+//  248 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+        REQUIRE _A_P2
+//  249 /***********************************************************************************
+//  250 * º¯ÊýÃû³Æ        RGB_SET()
+//  251 *
+//  252 * º¯Êý¹¦ÄÜ        ÉèÖÃÑÕÉ« 
+//  253 *
+//  254 * Èë¿Ú²ÎÊý        G8R8B8£º 24Î»RGBÑÕÉ«
+//  255 *
+//  256 * ·µ»Ø²ÎÊý        ÎÞ 
+//  257 *
+//  258 * ËµÃ÷
+//  259 ***********************************************************************************/
+//  260 
+//  261 
+//  262 /* À­µÍµçÆ½µÈ´ýÏÂÒ»´ÎÃüÁî  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  263 void RGB_REST(void)
+RGB_REST:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function RGB_REST
+        CODE
+//  264 {
+        FUNCALL RGB_REST, delay_ms
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  265     LED = 0;
+        CLR     0xa0.0
+//  266     delay_ms(1);  
+        ; Setup parameters for call to function delay_ms
+        MOV     DPTR,#__Constant_1
+        LCALL   ?XLOAD_R2345
+        LCALL   ??delay_ms?relay
+//  267 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock10
+        REQUIRE _A_P2
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for rgb>`:
+        DATA32
+        DD 460551
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for num>`:
+        DATA16
+        DW 23
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1:
+        DD 1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??bottom_led_init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    bottom_led_init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??_delayunit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    _delayunit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RGB_Set_UP?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RGB_Set_UP
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RGB_Set_Down?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RGB_Set_Down
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Bottom_White?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Bottom_White
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Bottom_Green?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Bottom_Green
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Bottom_Red?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Bottom_Red
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Bottom_Blue?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Bottom_Blue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Bottom_Yellow?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Bottom_Yellow
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Bottom_BlackOut?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Bottom_BlackOut
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??RGB_REST?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    RGB_REST
+
+        END
+// 
+// 4 127 bytes in segment BANKED_CODE
+//    66 bytes in segment BANK_RELAYS
+//     2 bytes in segment SFR_AN
+//     6 bytes in segment XDATA_I
+//     6 bytes in segment XDATA_ID
+//     4 bytes in segment XDATA_ROM_C
+//     2 bytes in segment XDATA_Z
+// 
+// 4 199 bytes of CODE  memory
+//     0 bytes of CONST memory (+ 4 bytes shared)
+//     0 bytes of DATA  memory (+ 2 bytes shared)
+//     8 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

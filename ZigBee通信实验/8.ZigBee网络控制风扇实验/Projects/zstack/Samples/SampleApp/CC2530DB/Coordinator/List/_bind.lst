@@ -1,0 +1,358 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         22/Dec/2020  18:31:28 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Components\HARDWARE\_bind #
+#                          .c                                                 #
+#    Command line       =  -f C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ #
+#                          —È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wCo #
+#                          ord.cfg (-DCPU32MHZ -DROOT=__near_func             #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfi #
+#                          g.cfg (-DSECURE=0 -DZG_SECURE_DYNAMIC=0            #
+#                          -DREFLECTOR -DDEFAULT_CHANLIST=0x00000800          #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Components\HARDWARE\_bind #
+#                          .c -D ZIGBEEPRO -D ZTOOL_P1 -D MT_SYS_FUNC -D      #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE  #
+#                          -lC C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈  #
+#                          µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Sampl #
+#                          es\SampleApp\CC2530DB\Coordinator\List\ -lA        #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\Coordinator\List\                #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\Coordinator\Obj\ -e --debug      #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\Administrator\Des #
+#                          ktop\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\ -I      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\SOURCE\ -I                    #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\    #
+#                          -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ #
+#                          —È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HAL #
+#                          \INCLUDE\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\HAL\TARGET\CC2530EB\ -I                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\M #
+#                          CU\CCSOC\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\OSAL\INCLUDE\ -I C:\Users\Administrator\Des #
+#                          ktop\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \..\..\COMPONENTS\STACK\AF\ -I                     #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ #
+#                          NWK\ -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ #
+#                          ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\STACK\SEC\ -I C:\Users\Administrator\Desktop\eps #
+#                          \ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\STACK\SAPI\ -I                           #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ #
+#                          SYS\ -I C:\Users\Administrator\Desktop\eps\ZigBeeÕ #
+#                          ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENT #
+#                          S\STACK\ZDO\ -I C:\Users\Administrator\Desktop\eps #
+#                          \ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          OMPONENTS\ZMAC\F8W\ -I C:\Users\Administrator\Desk #
+#                          top\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\SERVIC #
+#                          ES\SADDR\ -I C:\Users\Administrator\Desktop\eps\Zi #
+#                          gBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\SERVICES\SDATA\ -I                          #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\IN #
+#                          CLUDE\ -I C:\Users\Administrator\Desktop\eps\ZigBe #
+#                          eÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack #
+#                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONE #
+#                          NTS\MAC\HIGH_LEVEL\ -I C:\Users\Administrator\Desk #
+#                          top\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO #
+#                          W_LEVEL\srf04\SINGLE_CHIP\ -I                      #
+#                          C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\HARDWA #
+#                          RE\ -Ohz                                           #
+#    List file          =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\Coordinator\List\_bind.lst       #
+#    Object file        =  C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\ #
+#                          8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\Coordinator\Obj\_bind.r51        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\eps\ZigBeeÕ®–≈ µ—È\8.ZigBeeÕ¯¬Áøÿ÷∆∑Á…» µ—È\Components\HARDWARE\_bind.c
+      1          #include "_bind.h"
+      2          /*
+      3          ∆Ù∂Ø∞Ó∂®◊¢“™£¨∂º ‰≥ˆ∑Ω»•…Í«Î∞Û∂®
+      4          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void StartBind(uint8 NumOfId,const cId_t *pId )
+   \                     StartBind:
+      6          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   8A..         MOV     ?V0 + 0,R2
+   \   000009   8B..         MOV     ?V0 + 1,R3
+      7            printf("pId=%d\r\n",*pId);
+   \   00000B                ; Setup parameters for call to function printf
+   \   00000B   8A82         MOV     DPL,R2
+   \   00000D   8B83         MOV     DPH,R3
+   \   00000F   12....       LCALL   ?PUSH_XSTACK8_X_TWO
+   \   000012   7A..         MOV     R2,#`?<Constant "pId=%d\\r\\n">` & 0xff
+   \   000014   7B..         MOV     R3,#(`?<Constant "pId=%d\\r\\n">` >> 8) & 0xff
+   \   000016   12....       LCALL   ??printf?relay
+   \   000019   7402         MOV     A,#0x2
+   \   00001B   12....       LCALL   ?DEALLOC_XSTACK8
+      8            if ( AF_DataRequest( &Boardcast_DstAddr,
+      9                                 &Coordinator_epDesc,
+     10                                 BIND_REQUEST_CMD_ID,
+     11                                 NumOfId*2,
+     12                                 (uint8*)pId,
+     13                                 &SampleApp_TransID,
+     14                                 AF_DISCV_ROUTE,
+     15                                 AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   00001E                ; Setup parameters for call to function AF_DataRequest
+   \   00001E   75..1E       MOV     ?V0 + 2,#0x1e
+   \   000021   78..         MOV     R0,#?V0 + 2
+   \   000023   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000026   75....       MOV     ?V0 + 2,#SampleApp_TransID & 0xff
+   \   000029   75....       MOV     ?V0 + 3,#(SampleApp_TransID >> 8) & 0xff
+   \   00002C   78..         MOV     R0,#?V0 + 2
+   \   00002E   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000031   78..         MOV     R0,#?V0 + 0
+   \   000033   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000036   8E..         MOV     ?V0 + 0,R6
+   \   000038   75..00       MOV     ?V0 + 1,#0x0
+   \   00003B   7401         MOV     A,#0x1
+   \   00003D   78..         MOV     R0,#?V0 + 0
+   \   00003F   12....       LCALL   ?S_SHL
+   \   000042   78..         MOV     R0,#?V0 + 0
+   \   000044   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000047   75..40       MOV     ?V0 + 0,#0x40
+   \   00004A   75..00       MOV     ?V0 + 1,#0x0
+   \   00004D   78..         MOV     R0,#?V0 + 0
+   \   00004F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000052   7920         MOV     R1,#0x20
+   \   000054   7C..         MOV     R4,#Coordinator_epDesc & 0xff
+   \   000056   7D..         MOV     R5,#(Coordinator_epDesc >> 8) & 0xff
+   \   000058   7A..         MOV     R2,#Boardcast_DstAddr & 0xff
+   \   00005A   7B..         MOV     R3,#(Boardcast_DstAddr >> 8) & 0xff
+   \   00005C   12....       LCALL   ??AF_DataRequest?relay
+   \   00005F   7409         MOV     A,#0x9
+   \   000061   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000064   E9           MOV     A,R1
+   \   000065   7007         JNZ     ??StartBind_0
+     16            {
+     17              printf("request bind\r\n");//¥Æø⁄¥Ú”°Ã· æ£¨∑¢ÀÕ≥…π¶
+   \   000067                ; Setup parameters for call to function printf
+   \   000067   7A..         MOV     R2,#`?<Constant "request bind\\r\\n">` & 0xff
+   \   000069   7B..         MOV     R3,#(`?<Constant "request bind\\r\\n">` >> 8) & 0xff
+   \   00006B   12....       LCALL   ??printf?relay
+     18            }  
+     19          }
+   \                     ??StartBind_0:
+   \   00006E                REQUIRE ?Subroutine0
+   \   00006E                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F04         MOV     R7,#0x4
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     20          /*
+     21          …Ë±∏∑¥¿°∞Û∂®«Î«Û
+     22          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void ResponeBind(uint16 *pId,afAddrType_t *dstAddr)
+   \                     ResponeBind:
+     24          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FA           MOV     R2,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FB           MOV     R3,A
+     25            if ( AF_DataRequest( dstAddr,
+     26                                 &EndDevice_epDesc,
+     27                                 BIND_RSP_CMD_ID,
+     28                                 2,
+     29                                 (uint8*)pId,
+     30                                 &SampleApp_TransID,
+     31                                 AF_DISCV_ROUTE,
+     32                                 AF_DEFAULT_RADIUS ) == afStatus_SUCCESS )
+   \   00000D                ; Setup parameters for call to function AF_DataRequest
+   \   00000D   75..1E       MOV     ?V0 + 2,#0x1e
+   \   000010   78..         MOV     R0,#?V0 + 2
+   \   000012   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000015   75....       MOV     ?V0 + 2,#SampleApp_TransID & 0xff
+   \   000018   75....       MOV     ?V0 + 3,#(SampleApp_TransID >> 8) & 0xff
+   \   00001B   78..         MOV     R0,#?V0 + 2
+   \   00001D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000020   78..         MOV     R0,#?V0 + 0
+   \   000022   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000025   75..02       MOV     ?V0 + 0,#0x2
+   \   000028   75..00       MOV     ?V0 + 1,#0x0
+   \   00002B   78..         MOV     R0,#?V0 + 0
+   \   00002D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000030   75..41       MOV     ?V0 + 0,#0x41
+   \   000033   78..         MOV     R0,#?V0 + 0
+   \   000035   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000038   7920         MOV     R1,#0x20
+   \   00003A   7C..         MOV     R4,#EndDevice_epDesc & 0xff
+   \   00003C   7D..         MOV     R5,#(EndDevice_epDesc >> 8) & 0xff
+   \   00003E   12....       LCALL   ??AF_DataRequest?relay
+   \   000041   7409         MOV     A,#0x9
+   \   000043   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000046   E9           MOV     A,R1
+   \   000047   7007         JNZ     ??ResponeBind_0
+     33            {
+     34              printf("response bind\r\n");//¥Æø⁄¥Ú”°Ã· æ£¨∑¢ÀÕ≥…π¶
+   \   000049                ; Setup parameters for call to function printf
+   \   000049   7A..         MOV     R2,#`?<Constant "response bind\\r\\n">` & 0xff
+   \   00004B   7B..         MOV     R3,#(`?<Constant "response bind\\r\\n">` >> 8) & 0xff
+   \   00004D   12....       LCALL   ??printf?relay
+     35            } 
+     36          }
+   \                     ??ResponeBind_0:
+   \   000050   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??StartBind?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    StartBind
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ResponeBind?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ResponeBind
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "pId=%d\\r\\n">`:
+   \   000000   7049643D     DB "pId=%d\015\012"
+   \            25640D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "request bind\\r\\n">`:
+   \   000000   72657175     DB "request bind\015\012"
+   \            65737420
+   \            62696E64
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "response bind\\r\\n">`:
+   \   000000   72657370     DB "response bind\015\012"
+   \            6F6E7365
+   \            2062696E
+   \            640D0A00
+
+   Maximum stack usage in bytes:
+
+     Function            ISTACK PSTACK XSTACK
+     --------            ------ ------ ------
+     ResponeBind             0      0     21
+       -> AF_DataRequest     0      0     42
+       -> printf             0      0     24
+     StartBind               0      0     21
+       -> printf             0      0     28
+       -> AF_DataRequest     0      0     42
+       -> printf             0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     StartBind                        110
+     ?Subroutine0                       5
+     ResponeBind                       82
+     ??StartBind?relay                  6
+     ??ResponeBind?relay                6
+     ?<Constant "pId=%d\r\n">           9
+     ?<Constant "request bind\r\n">    15
+     ?<Constant "response bind\r\n">   16
+
+ 
+ 197 bytes in segment BANKED_CODE
+  12 bytes in segment BANK_RELAYS
+  40 bytes in segment XDATA_ROM_C
+ 
+ 209 bytes of CODE  memory
+  40 bytes of CONST memory
+
+Errors: none
+Warnings: none

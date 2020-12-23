@@ -1,0 +1,1025 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         26/Feb/2019  22:56:15 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Components\HARDWARE\WiFiGate.c         #
+#    Command line       =  -f D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\po #
+#                          int2point-bind\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg       #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg         #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Components\HARDWARE\WiFiGate.c -D      #
+#                          ZIGBEEPRO -D ZTOOL_P1 -D MT_SYS_FUNC -D            #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE  #
+#                          -lC D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\p #
+#                          oint2point-bind\Projects\zstack\Samples\SampleApp\ #
+#                          CC2530DB\CoordinatorEB\List\ -lA                   #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\CoordinatorEB\List\ --diag_suppress           #
+#                          Pe001,Pa010 -o D:\ZigBee\KJXY-ZigBee\useful_code\Z #
+#                          igBee-Ext\point2point-bind\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\CoordinatorEB\Obj\ -e --debug  #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I D:\ZigBee\KJXY-ZigBee\usef #
+#                          ul_code\ZigBee-Ext\point2point-bind\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\ -I                   #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\SOURCE\ -I D:\ZigBee\KJXY-ZigBee\useful_co #
+#                          de\ZigBee-Ext\point2point-bind\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\   #
+#                          -I D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\po #
+#                          int2point-bind\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\MT\ -I           #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I     #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB #
+#                          \ -I D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\ #
+#                          point2point-bind\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC #
+#                          \ -I D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\ #
+#                          point2point-bind\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\  #
+#                          -I D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\po #
+#                          int2point-bind\Projects\zstack\Samples\SampleApp\C #
+#                          C2530DB\..\..\..\..\..\COMPONENTS\STACK\AF\ -I     #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\NWK\ -I       #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I       #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I      #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I       #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I       #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I        #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I            #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I  #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I  #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I     #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I  #
+#                          D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04 #
+#                          \ -I D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\ #
+#                          point2point-bind\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\ #
+#                          srf04\SINGLE_CHIP\ -I D:\ZigBee\KJXY-ZigBee\useful #
+#                          _code\ZigBee-Ext\point2point-bind\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONEN #
+#                          TS\HARDWARE\ -Ohz                                  #
+#    List file          =  D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\CoordinatorEB\List\WiFiGate.lst               #
+#    Object file        =  D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point #
+#                          2point-bind\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\CoordinatorEB\Obj\WiFiGate.r51                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\ZigBee\KJXY-ZigBee\useful_code\ZigBee-Ext\point2point-bind\Components\HARDWARE\WiFiGate.c
+      1          #include "WiFiGate.h"
+      2          
+      3          #define SEND_TO_WIFI(d,l)        HalUARTWrite(HAL_UART_PORT_0,d,l);
+      4          #define WIFI_RECV_DATA_BUFFER_LEN 100
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      5          uint8 WiFiRecvDataBuffer[ WIFI_RECV_DATA_BUFFER_LEN ];
+   \                     WiFiRecvDataBuffer:
+   \   000000                DS 100
+   \   000064                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      6          uint8 WiFiRecvLenght = 0;
+   \                     WiFiRecvLenght:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      7          uint8 NextEvent=0;
+   \                     NextEvent:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+      8          uint8 WiFiCmdHandle = 0;
+   \                     WiFiCmdHandle:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+      9          
+     10          #define GET_RECV_LENGHT()        Hal_UART_RxBufLen(HAL_UART_PORT_0);
+     11          #define GET_RECV_DATA(b,l)       HalUARTRead(HAL_UART_PORT_0,b,l);
+     12          /*
+     13          WiFi网关功能初始化，并不是直正的初始化WiFi模块，WiFi模块的初始化在WiFiGate_ProcessEvent()中
+     14          这里主要是启动WiFi的初始化以及收发数据。
+     15          osal_start_timerEx( SampleApp_TaskID, SAMPLEAPP_SEND_PERIODIC_MSG_EVT,TIME);
+     16          uint8 osal_msg_send( uint8 destination_task, uint8 *msg_ptr )
+     17          osal_set_event();
+     18          */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     19          uint8 WiFiGate_TaskId = 0;
+   \                     WiFiGate_TaskId:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     20          uint8 WiFiModeInitDone = 0;
+   \                     WiFiModeInitDone:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     21          void WiFiGate_Init( uint8 task_id )
+   \                     WiFiGate_Init:
+     22          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+     23            WiFiGate_TaskId = task_id;
+   \   000006   90....       MOV     DPTR,#WiFiGate_TaskId
+   \   000009   F0           MOVX    @DPTR,A
+     24          //  osal_set_event(WiFiGate_TaskId,WIFI_INIT_SEND_AT_EVT);
+     25            osal_start_timerEx( WiFiGate_TaskId, WIFI_INIT_SEND_AT_EVT,2000); 
+   \   00000A                ; Setup parameters for call to function osal_start_timerEx
+   \   00000A   7CD0         MOV     R4,#-0x30
+   \   00000C   7D07         MOV     R5,#0x7
+   \   00000E   7A80         MOV     R2,#-0x80
+   \   000010   7B00         MOV     R3,#0x0
+   \   000012   12....       LCALL   ??osal_start_timerEx?relay
+     26            UartInit(HAL_UART_PORT_0,HAL_UART_BR_115200);
+   \   000015                ; Setup parameters for call to function UartInit
+   \   000015   7A04         MOV     R2,#0x4
+   \   000017   7900         MOV     R1,#0x0
+   \   000019   12....       LCALL   ??UartInit?relay
+     27          }
+   \   00001C   7F01         MOV     R7,#0x1
+   \   00001E   02....       LJMP    ?BANKED_LEAVE_XDATA
+     28          /*
+     29          配置WIFI参数
+     30          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     31          void ConfigWiFiArg(uint8 *pConfig,uint16 NextSta)
+   \                     ConfigWiFiArg:
+     32          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+     33            memset((void*)WiFiRecvDataBuffer,0,WIFI_RECV_DATA_BUFFER_LEN);
+   \   00000B                ; Setup parameters for call to function memset
+   \   00000B   75..64       MOV     ?V0 + 2,#0x64
+   \   00000E   75..00       MOV     ?V0 + 3,#0x0
+   \   000011   78..         MOV     R0,#?V0 + 2
+   \   000013   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000016   7C00         MOV     R4,#0x0
+   \   000018   7D00         MOV     R5,#0x0
+   \   00001A   7A..         MOV     R2,#WiFiRecvDataBuffer & 0xff
+   \   00001C   7B..         MOV     R3,#(WiFiRecvDataBuffer >> 8) & 0xff
+   \   00001E   12....       LCALL   ??memset?relay
+   \   000021   7402         MOV     A,#0x2
+   \   000023   12....       LCALL   ?DEALLOC_XSTACK8
+     34            WiFiRecvLenght = 0;
+   \   000026   90....       MOV     DPTR,#WiFiRecvLenght
+   \   000029   E4           CLR     A
+   \   00002A   F0           MOVX    @DPTR,A
+     35            HalUARTResetRxQueue();
+   \   00002B                ; Setup parameters for call to function HalUARTResetRxQueue
+   \   00002B   12....       LCALL   ??HalUARTResetRxQueue?relay
+     36            SEND_TO_WIFI(pConfig,strlen(pConfig)); 
+                                               ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char const *"
+   \   00002E                ; Setup parameters for call to function HalUARTWrite
+   \   00002E                ; Setup parameters for call to function strlen
+   \   00002E   EE           MOV     A,R6
+   \   00002F   FA           MOV     R2,A
+   \   000030   EF           MOV     A,R7
+   \   000031   FB           MOV     R3,A
+   \   000032   12....       LCALL   ??strlen?relay
+   \   000035   EA           MOV     A,R2
+   \   000036   FC           MOV     R4,A
+   \   000037   EB           MOV     A,R3
+   \   000038   FD           MOV     R5,A
+   \   000039   EE           MOV     A,R6
+   \   00003A   FA           MOV     R2,A
+   \   00003B   EF           MOV     A,R7
+   \   00003C   FB           MOV     R3,A
+   \   00003D   7900         MOV     R1,#0x0
+   \   00003F   12....       LCALL   ??HalUARTWrite?relay
+     37            osal_start_timerEx( WiFiGate_TaskId, WIFI_GET_RSPONE,500);
+   \   000042                ; Setup parameters for call to function osal_start_timerEx
+   \   000042   7CF4         MOV     R4,#-0xc
+   \   000044   7D01         MOV     R5,#0x1
+   \   000046   7A90         MOV     R2,#-0x70
+   \   000048   12....       LCALL   ??Subroutine4_0 & 0xFFFF
+     38            NextEvent = NextSta;
+   \                     ??CrossCallReturnLabel_7:
+   \   00004B   E5..         MOV     A,?V0 + 0
+   \   00004D   90....       MOV     DPTR,#NextEvent
+   \   000050   F0           MOVX    @DPTR,A
+     39          }
+   \   000051   7F04         MOV     R7,#0x4
+   \   000053   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002   90....       MOV     DPTR,#WiFiGate_TaskId
+   \   000005   E0           MOVX    A,@DPTR
+   \   000006   F9           MOV     R1,A
+   \   000007   12....       LCALL   ??osal_start_timerEx?relay
+   \   00000A   22           RET
+     40          /*
+     41          wifi网关处理任务，包括初始化WiFi模块，收发数据
+     42          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     43          uint16 WiFiGate_ProcessEvent( uint8 task_id, uint16 events )
+   \                     WiFiGate_ProcessEvent:
+     44          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     45            uint8 len=0;
+     46            (void)task_id;  // Intentionally unreferenced parameter
+     47          
+     48            if ( events & SYS_EVENT_MSG )
+   \   000005   EB           MOV     A,R3
+   \   000006   5480         ANL     A,#0x80
+   \   000008   6003         JZ      $+5
+   \   00000A   02....       LJMP    ??WiFiGate_ProcessEvent_0 & 0xFFFF
+     49            {//如果是系统任务
+     50              
+     51            }
+     52            else
+     53            {//如果是用户自定义任务
+     54              switch(events)
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+   \   000011   78..         MOV     R0,#?V0 + 0
+   \   000013   12....       LCALL   ?US_SWITCH_SPARSE
+   \                     `?<Jumptable for WiFiGate_ProcessEvent>_0`:
+   \   000016   0000         DW        0
+   \   000018   0A00         DW        10
+   \   00001A   8000         DW        128
+   \   00001C   ....         DW        ??WiFiGate_ProcessEvent_1
+   \   00001E   8100         DW        129
+   \   000020   ....         DW        ??WiFiGate_ProcessEvent_2
+   \   000022   8200         DW        130
+   \   000024   ....         DW        ??WiFiGate_ProcessEvent_3
+   \   000026   8300         DW        131
+   \   000028   ....         DW        ??WiFiGate_ProcessEvent_4
+   \   00002A   8400         DW        132
+   \   00002C   ....         DW        ??WiFiGate_ProcessEvent_5
+   \   00002E   8500         DW        133
+   \   000030   ....         DW        ??WiFiGate_ProcessEvent_6
+   \   000032   8600         DW        134
+   \   000034   ....         DW        ??WiFiGate_ProcessEvent_7
+   \   000036   8900         DW        137
+   \   000038   ....         DW        ??WiFiGate_ProcessEvent_8
+   \   00003A   9000         DW        144
+   \   00003C   ....         DW        ??WiFiGate_ProcessEvent_9
+   \   00003E   8780         DW        32903
+   \   000040   ....         DW        ??WiFiGate_ProcessEvent_10
+   \   000042   ....         DW        ??WiFiGate_ProcessEvent_0
+     55              {
+     56                case WIFI_INIT_SEND_AT_EVT:
+     57                     printf("WifiConfig:Send AT\r\n");
+   \                     ??WiFiGate_ProcessEvent_1:
+   \   000044                ; Setup parameters for call to function printf
+   \   000044   7A..         MOV     R2,#`?<Constant "WifiConfig:Send AT\\r\\n">` & 0xff
+   \   000046   7B..         MOV     R3,#(`?<Constant "WifiConfig:Send AT\\r\\n">` >> 8) & 0xff
+   \   000048   12....       LCALL   ??printf?relay
+     58                     ConfigWiFiArg("AT\r\n",WIFI_INIT_SET_MODE_EVT);
+   \   00004B                ; Setup parameters for call to function ConfigWiFiArg
+   \   00004B   7C81         MOV     R4,#-0x7f
+   \   00004D   7D00         MOV     R5,#0x0
+   \   00004F   7A..         MOV     R2,#`?<Constant "AT\\r\\n">` & 0xff
+   \   000051   7B..         MOV     R3,#(`?<Constant "AT\\r\\n">` >> 8) & 0xff
+   \                     ??WiFiGate_ProcessEvent_11:
+   \   000053   12....       LCALL   ??ConfigWiFiArg?relay
+     59                  break;
+   \   000056   02....       LJMP    ??WiFiGate_ProcessEvent_0 & 0xFFFF
+     60                case WIFI_INIT_SET_MODE_EVT:
+     61                     printf("WifiConfig:AT+CWMODE\r\n");
+   \                     ??WiFiGate_ProcessEvent_2:
+   \   000059                ; Setup parameters for call to function printf
+   \   000059   7A..         MOV     R2,#`?<Constant "WifiConfig:AT+CWMODE\\r\\n">` & 0xff
+   \   00005B   7B..         MOV     R3,#(`?<Constant "WifiConfig:AT+CWMODE\\r\\n">` >> 8) & 0xff
+   \   00005D   12....       LCALL   ??printf?relay
+     62                     ConfigWiFiArg("AT+CWMODE=3\r\n",WIFI_INIT_CONNECT_AP_EVT);
+   \   000060                ; Setup parameters for call to function ConfigWiFiArg
+   \   000060   7C82         MOV     R4,#-0x7e
+   \   000062   7D00         MOV     R5,#0x0
+   \   000064   7A..         MOV     R2,#`?<Constant "AT+CWMODE=3\\r\\n">` & 0xff
+   \   000066   7B..         MOV     R3,#(`?<Constant "AT+CWMODE=3\\r\\n">` >> 8) & 0xff
+   \   000068   80E9         SJMP    ??WiFiGate_ProcessEvent_11
+     63                  break;
+     64                case WIFI_INIT_CONNECT_AP_EVT:
+     65                     printf("WifiConfig:AT+CWJAP\r\n");
+   \                     ??WiFiGate_ProcessEvent_3:
+   \   00006A                ; Setup parameters for call to function printf
+   \   00006A   7A..         MOV     R2,#`?<Constant "WifiConfig:AT+CWJAP\\r\\n">` & 0xff
+   \   00006C   7B..         MOV     R3,#(`?<Constant "WifiConfig:AT+CWJAP\\r\\n">` >> 8) & 0xff
+   \   00006E   12....       LCALL   ??printf?relay
+     66                     ConfigWiFiArg("AT+CWJAP=\"Honor 8X\",\"1234567890\"\r\n",WIFI_INIT_CONNECT_SERVER_EVT);
+   \   000071                ; Setup parameters for call to function ConfigWiFiArg
+   \   000071   7C83         MOV     R4,#-0x7d
+   \   000073   7D00         MOV     R5,#0x0
+   \   000075   7A..         MOV     R2,#`?<Constant "AT+CWJAP=\\"Honor 8X\\",\\"...">` & 0xff
+   \   000077   7B..         MOV     R3,#(`?<Constant "AT+CWJAP=\\"Honor 8X\\",\\"...">` >> 8) & 0xff
+   \   000079   80D8         SJMP    ??WiFiGate_ProcessEvent_11
+     67                  break;
+     68                case WIFI_INIT_CONNECT_SERVER_EVT:
+     69                     printf("WifiConfig:AT+CIPSTART\r\n");
+   \                     ??WiFiGate_ProcessEvent_4:
+   \   00007B                ; Setup parameters for call to function printf
+   \   00007B   7A..         MOV     R2,#`?<Constant "WifiConfig:AT+CIPSTART\\r\\n">` & 0xff
+   \   00007D   7B..         MOV     R3,#(`?<Constant "WifiConfig:AT+CIPSTART\\r\\n">` >> 8) & 0xff
+   \   00007F   12....       LCALL   ??printf?relay
+     70                     ConfigWiFiArg("AT+CIPSTART=\"TCP\",\"183.230.40.40\",1811\r\n",WIFI_INIT_TRANSMIT_MODE_EVT);
+   \   000082                ; Setup parameters for call to function ConfigWiFiArg
+   \   000082   7C84         MOV     R4,#-0x7c
+   \   000084   7D00         MOV     R5,#0x0
+   \   000086   7A..         MOV     R2,#`?<Constant "AT+CIPSTART=\\"TCP\\",\\"18...">` & 0xff
+   \   000088   7B..         MOV     R3,#(`?<Constant "AT+CIPSTART=\\"TCP\\",\\"18...">` >> 8) & 0xff
+   \   00008A   80C7         SJMP    ??WiFiGate_ProcessEvent_11
+     71                  break;
+     72                case WIFI_INIT_TRANSMIT_MODE_EVT:
+     73                     printf("WifiConfig:AT+CIPMODE\r\n");
+   \                     ??WiFiGate_ProcessEvent_5:
+   \   00008C                ; Setup parameters for call to function printf
+   \   00008C   7A..         MOV     R2,#`?<Constant "WifiConfig:AT+CIPMODE\\r\\n">` & 0xff
+   \   00008E   7B..         MOV     R3,#(`?<Constant "WifiConfig:AT+CIPMODE\\r\\n">` >> 8) & 0xff
+   \   000090   12....       LCALL   ??printf?relay
+     74                     ConfigWiFiArg("AT+CIPMODE=1\r\n",WIFI_INIT_START_SEND_EVT);
+   \   000093                ; Setup parameters for call to function ConfigWiFiArg
+   \   000093   7C85         MOV     R4,#-0x7b
+   \   000095   7D00         MOV     R5,#0x0
+   \   000097   7A..         MOV     R2,#`?<Constant "AT+CIPMODE=1\\r\\n">` & 0xff
+   \   000099   7B..         MOV     R3,#(`?<Constant "AT+CIPMODE=1\\r\\n">` >> 8) & 0xff
+   \   00009B   80B6         SJMP    ??WiFiGate_ProcessEvent_11
+     75                  break;
+     76                case WIFI_INIT_START_SEND_EVT:
+     77                     printf("WifiConfig:AT+CIPSEND\r\n");
+   \                     ??WiFiGate_ProcessEvent_6:
+   \   00009D                ; Setup parameters for call to function printf
+   \   00009D   7A..         MOV     R2,#`?<Constant "WifiConfig:AT+CIPSEND\\r\\n">` & 0xff
+   \   00009F   7B..         MOV     R3,#(`?<Constant "WifiConfig:AT+CIPSEND\\r\\n">` >> 8) & 0xff
+   \   0000A1   12....       LCALL   ??printf?relay
+     78                     ConfigWiFiArg("AT+CIPSEND\r\n",WIFI_INIT_CONNECT_ONENET);
+   \   0000A4                ; Setup parameters for call to function ConfigWiFiArg
+   \   0000A4   7C89         MOV     R4,#-0x77
+   \   0000A6   7D00         MOV     R5,#0x0
+   \   0000A8   7A..         MOV     R2,#`?<Constant "AT+CIPSEND\\r\\n">` & 0xff
+   \   0000AA   7B..         MOV     R3,#(`?<Constant "AT+CIPSEND\\r\\n">` >> 8) & 0xff
+   \   0000AC   80A5         SJMP    ??WiFiGate_ProcessEvent_11
+     79                  break;
+     80                case WIFI_INIT_CONNECT_ONENET:
+     81                     osal_start_timerEx( WiFiGate_TaskId, WIFI_RECEIVE_MSG_EVT,50);
+   \                     ??WiFiGate_ProcessEvent_8:
+   \   0000AE                ; Setup parameters for call to function osal_start_timerEx
+   \   0000AE   7C32         MOV     R4,#0x32
+   \   0000B0   12....       LCALL   ?Subroutine3 & 0xFFFF
+     82                     printf("Try to connect OneNET\r\n");
+   \                     ??CrossCallReturnLabel_5:
+   \   0000B3                ; Setup parameters for call to function printf
+   \   0000B3   7A..         MOV     R2,#`?<Constant "Try to connect OneNET\\r\\n">` & 0xff
+   \   0000B5   7B..         MOV     R3,#(`?<Constant "Try to connect OneNET\\r\\n">` >> 8) & 0xff
+   \   0000B7   12....       LCALL   ??printf?relay
+     83                     
+     84                     //发送连接OneNET的命令连接到OneNET平台
+     85                     SEND_TO_WIFI(CONNECT_ONENET_KEYSTRING,strlen(CONNECT_ONENET_KEYSTRING));
+   \   0000BA                ; Setup parameters for call to function HalUARTWrite
+   \   0000BA   7C1A         MOV     R4,#0x1a
+   \   0000BC   7D00         MOV     R5,#0x0
+   \   0000BE   7A..         MOV     R2,#`?<Constant "*201298#1234567890#sa...">` & 0xff
+   \   0000C0   7B..         MOV     R3,#(`?<Constant "*201298#1234567890#sa...">` >> 8) & 0xff
+   \   0000C2   7900         MOV     R1,#0x0
+   \   0000C4   12....       LCALL   ??HalUARTWrite?relay
+     86                     WiFiModeInitDone = 1;//wifi模块初始化正常，并连接到oneNET上。
+   \   0000C7   90....       MOV     DPTR,#WiFiModeInitDone
+   \                     ??WiFiGate_ProcessEvent_12:
+   \   0000CA   7401         MOV     A,#0x1
+   \   0000CC   F0           MOVX    @DPTR,A
+     87                  break;        
+   \   0000CD   02....       LJMP    ??WiFiGate_ProcessEvent_0 & 0xFFFF
+     88                case WIFI_GET_RSPONE:
+     89                     len = GET_RECV_LENGHT();
+   \                     ??WiFiGate_ProcessEvent_9:
+   \   0000D0                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   0000D0   7900         MOV     R1,#0x0
+   \   0000D2   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   0000D5   EA           MOV     A,R2
+   \   0000D6   FE           MOV     R6,A
+     90                      if(len)
+   \   0000D7   6007         JZ      ??WiFiGate_ProcessEvent_13
+     91                      {              
+     92                        GET_RECV_DATA(&WiFiRecvDataBuffer[WiFiRecvLenght],len);
+   \   0000D9                ; Setup parameters for call to function HalUARTRead
+   \   0000D9   12....       LCALL   ?Subroutine1 & 0xFFFF
+     93                        WiFiRecvLenght = WiFiRecvLenght + len;
+     94                        //printf("%s",WiFiRecvDataBuffer);
+     95                        if(WiFiRecvLenght >= WIFI_RECV_DATA_BUFFER_LEN)
+   \                     ??CrossCallReturnLabel_0:
+   \   0000DC   4002         JC      ??WiFiGate_ProcessEvent_13
+     96                        {
+     97                          WiFiRecvLenght = 0;
+   \   0000DE   E4           CLR     A
+   \   0000DF   F0           MOVX    @DPTR,A
+     98                        }
+     99                      }
+    100                      if(strstr(WiFiRecvDataBuffer,"OK\r\n"))
+                                       ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char const *"
+   \                     ??WiFiGate_ProcessEvent_13:
+   \   0000E0                ; Setup parameters for call to function strstr
+   \   0000E0   7C..         MOV     R4,#`?<Constant "OK\\r\\n">` & 0xff
+   \   0000E2   7D..         MOV     R5,#(`?<Constant "OK\\r\\n">` >> 8) & 0xff
+   \   0000E4   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   0000E7   6011         JZ      ??WiFiGate_ProcessEvent_14
+    101                      {
+    102                          osal_set_event(WiFiGate_TaskId,NextEvent);
+   \   0000E9                ; Setup parameters for call to function osal_set_event
+   \   0000E9   90....       MOV     DPTR,#NextEvent
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   FA           MOV     R2,A
+   \   0000EE   7B00         MOV     R3,#0x0
+   \   0000F0   90....       MOV     DPTR,#WiFiGate_TaskId
+   \   0000F3   E0           MOVX    A,@DPTR
+   \   0000F4   F9           MOV     R1,A
+   \   0000F5   12....       LCALL   ??osal_set_event?relay
+   \   0000F8   8071         SJMP    ??WiFiGate_ProcessEvent_0
+    103                      }
+    104                      else
+    105                      {
+    106                          osal_start_timerEx( WiFiGate_TaskId, WIFI_GET_RSPONE,100); 
+   \                     ??WiFiGate_ProcessEvent_14:
+   \   0000FA                ; Setup parameters for call to function osal_start_timerEx
+   \   0000FA   7C64         MOV     R4,#0x64
+   \   0000FC   7D00         MOV     R5,#0x0
+   \   0000FE   7A90         MOV     R2,#-0x70
+    107                      }
+   \                     ??WiFiGate_ProcessEvent_15:
+   \   000100   12....       LCALL   ??Subroutine4_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000103   8066         SJMP    ??WiFiGate_ProcessEvent_0
+    108                  break;
+    109                case WIFI_RECEIVE_MSG_EVT:
+    110                     len = GET_RECV_LENGHT();
+   \                     ??WiFiGate_ProcessEvent_7:
+   \   000105                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   000105   7900         MOV     R1,#0x0
+   \   000107   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   00010A   EA           MOV     A,R2
+   \   00010B   FE           MOV     R6,A
+    111                      if(len)
+   \   00010C   6007         JZ      ??WiFiGate_ProcessEvent_16
+    112                      {              
+    113                        GET_RECV_DATA(&WiFiRecvDataBuffer[WiFiRecvLenght],len);
+   \   00010E                ; Setup parameters for call to function HalUARTRead
+   \   00010E   12....       LCALL   ?Subroutine1 & 0xFFFF
+    114                        WiFiRecvLenght = WiFiRecvLenght + len;
+    115                        if(WiFiRecvLenght >= WIFI_RECV_DATA_BUFFER_LEN)
+   \                     ??CrossCallReturnLabel_1:
+   \   000111   4002         JC      ??WiFiGate_ProcessEvent_16
+    116                        {
+    117                          WiFiRecvLenght = 0;
+   \   000113   E4           CLR     A
+   \   000114   F0           MOVX    @DPTR,A
+    118                        }
+    119                      }
+    120                      if(WiFiCmdHandle)
+   \                     ??WiFiGate_ProcessEvent_16:
+   \   000115   90....       MOV     DPTR,#WiFiCmdHandle
+   \   000118   E0           MOVX    A,@DPTR
+   \   000119   6032         JZ      ??WiFiGate_ProcessEvent_17
+    121                      {
+    122                        if(strstr(WiFiRecvDataBuffer,"~BUTTON_ON"))
+                                         ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char const *"
+   \   00011B                ; Setup parameters for call to function strstr
+   \   00011B   7C..         MOV     R4,#`?<Constant "~BUTTON_ON">` & 0xff
+   \   00011D   7D..         MOV     R5,#(`?<Constant "~BUTTON_ON">` >> 8) & 0xff
+   \   00011F   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000122   600B         JZ      ??WiFiGate_ProcessEvent_18
+    123                        {
+    124          		  printf("CMD:~BUTTON_ON\r\n");
+   \   000124                ; Setup parameters for call to function printf
+   \   000124   7A..         MOV     R2,#`?<Constant "CMD:~BUTTON_ON\\r\\n">` & 0xff
+   \   000126   7B..         MOV     R3,#(`?<Constant "CMD:~BUTTON_ON\\r\\n">` >> 8) & 0xff
+   \   000128   12....       LCALL   ??printf?relay
+    125                            PointToPoint_FanControl(1);                  
+   \   00012B                ; Setup parameters for call to function PointToPoint_FanControl
+   \   00012B   7901         MOV     R1,#0x1
+   \   00012D   8012         SJMP    ??WiFiGate_ProcessEvent_19
+    126                        }
+    127                        else if(strstr(WiFiRecvDataBuffer,"~BUTTON_OFF"))
+                                              ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char const *"
+   \                     ??WiFiGate_ProcessEvent_18:
+   \   00012F                ; Setup parameters for call to function strstr
+   \   00012F   7C..         MOV     R4,#`?<Constant "~BUTTON_OFF">` & 0xff
+   \   000131   7D..         MOV     R5,#(`?<Constant "~BUTTON_OFF">` >> 8) & 0xff
+   \   000133   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000136   600C         JZ      ??WiFiGate_ProcessEvent_20
+    128                        {
+    129                            printf("CMD:~BUTTON_OFF\r\n");
+   \   000138                ; Setup parameters for call to function printf
+   \   000138   7A..         MOV     R2,#`?<Constant "CMD:~BUTTON_OFF\\r\\n">` & 0xff
+   \   00013A   7B..         MOV     R3,#(`?<Constant "CMD:~BUTTON_OFF\\r\\n">` >> 8) & 0xff
+   \   00013C   12....       LCALL   ??printf?relay
+    130                            PointToPoint_FanControl(0); 
+   \   00013F                ; Setup parameters for call to function PointToPoint_FanControl
+   \   00013F   7900         MOV     R1,#0x0
+   \                     ??WiFiGate_ProcessEvent_19:
+   \   000141   12....       LCALL   ??PointToPoint_FanControl?relay
+    131                        }
+    132                        WiFiCmdHandle = 0;
+   \                     ??WiFiGate_ProcessEvent_20:
+   \   000144   90....       MOV     DPTR,#WiFiCmdHandle
+   \   000147   E4           CLR     A
+   \   000148   F0           MOVX    @DPTR,A
+    133                        WiFiRecvLenght = 0;
+   \   000149   90....       MOV     DPTR,#WiFiRecvLenght
+   \   00014C   F0           MOVX    @DPTR,A
+    134                      }
+    135                      if(!len)
+   \                     ??WiFiGate_ProcessEvent_17:
+   \   00014D   EE           MOV     A,R6
+   \   00014E   7008         JNZ     ??WiFiGate_ProcessEvent_21
+    136                      {
+    137                        osal_start_timerEx( WiFiGate_TaskId, WIFI_RECEIVE_MSG_EVT,100);
+   \   000150                ; Setup parameters for call to function osal_start_timerEx
+   \   000150   7C64         MOV     R4,#0x64
+   \   000152   7D00         MOV     R5,#0x0
+   \   000154   7A86         MOV     R2,#-0x7a
+   \   000156   80A8         SJMP    ??WiFiGate_ProcessEvent_15
+    138                      }
+    139                      else
+    140                      {
+    141                        osal_start_timerEx( WiFiGate_TaskId, WIFI_RECEIVE_MSG_EVT,10);
+   \                     ??WiFiGate_ProcessEvent_21:
+   \   000158                ; Setup parameters for call to function osal_start_timerEx
+   \   000158   7C0A         MOV     R4,#0xa
+   \   00015A   12....       LCALL   ?Subroutine3 & 0xFFFF
+    142                        WiFiCmdHandle = 1;
+   \                     ??CrossCallReturnLabel_6:
+   \   00015D   90....       MOV     DPTR,#WiFiCmdHandle
+   \   000160   02....       LJMP    ??WiFiGate_ProcessEvent_12 & 0xFFFF
+    143                      }
+    144                break;
+    145                case WIFI_SEND_DATA_MSG_EVT:
+    146                     osal_msg_receive( WiFiGate_TaskId );
+   \                     ??WiFiGate_ProcessEvent_10:
+   \   000163                ; Setup parameters for call to function osal_msg_receive
+   \   000163   90....       MOV     DPTR,#WiFiGate_TaskId
+   \   000166   E0           MOVX    A,@DPTR
+   \   000167   F9           MOV     R1,A
+   \   000168   12....       LCALL   ??osal_msg_receive?relay
+    147                     //SEND_TO_WIFI();
+    148                break;
+    149                
+    150              }
+    151              
+    152            }
+    153            return 0;
+   \                     ??WiFiGate_ProcessEvent_0:
+   \   00016B   7A00         MOV     R2,#0x0
+   \   00016D   7B00         MOV     R3,#0x0
+   \   00016F                REQUIRE ?Subroutine0
+   \   00016F                ; // Fall through to label ?Subroutine0
+    154          } 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7D00         MOV     R5,#0x0
+   \   000002   7A86         MOV     R2,#-0x7a
+   \   000004                REQUIRE ??Subroutine4_0
+   \   000004                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7A..         MOV     R2,#WiFiRecvDataBuffer & 0xff
+   \   000002   7B..         MOV     R3,#(WiFiRecvDataBuffer >> 8) & 0xff
+   \   000004   12....       LCALL   ??strstr?relay
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   EA           MOV     A,R2
+   \   00000A   45..         ORL     A,?V0 + 1
+   \   00000C   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   FC           MOV     R4,A
+   \   000001   7D00         MOV     R5,#0x0
+   \   000003   90....       MOV     DPTR,#WiFiRecvLenght
+   \   000006   E0           MOVX    A,@DPTR
+   \   000007   F8           MOV     R0,A
+   \   000008   74..         MOV     A,#WiFiRecvDataBuffer & 0xff
+   \   00000A   28           ADD     A,R0
+   \   00000B   FA           MOV     R2,A
+   \   00000C   74..         MOV     A,#(WiFiRecvDataBuffer >> 8) & 0xff
+   \   00000E   3400         ADDC    A,#0x0
+   \   000010   FB           MOV     R3,A
+   \   000011   7900         MOV     R1,#0x0
+   \   000013   12....       LCALL   ??HalUARTRead?relay
+   \   000016   90....       MOV     DPTR,#WiFiRecvLenght
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   2E           ADD     A,R6
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   C3           CLR     C
+   \   00001D   9464         SUBB    A,#0x64
+   \   00001F   22           RET
+    155          /*
+    156          发送数据到WIFI网络上
+    157          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    158          void SendToWiFiNetwork(uint8 *pData,uint8 len)
+   \                     SendToWiFiNetwork:
+    159          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    160            if(WiFiModeInitDone)
+   \   000007   90....       MOV     DPTR,#WiFiModeInitDone
+   \   00000A   E0           MOVX    A,@DPTR
+   \   00000B   600B         JZ      ??SendToWiFiNetwork_0
+    161            {
+    162              SEND_TO_WIFI(pData,len);
+   \   00000D                ; Setup parameters for call to function HalUARTWrite
+   \   00000D   8E..         MOV     ?V0 + 0,R6
+   \   00000F   AC..         MOV     R4,?V0 + 0
+   \   000011   7D00         MOV     R5,#0x0
+   \   000013   7900         MOV     R1,#0x0
+   \   000015   12....       LCALL   ??HalUARTWrite?relay
+    163            }
+    164          }
+   \                     ??SendToWiFiNetwork_0:
+   \   000018   80..         SJMP    ?Subroutine0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WiFiGate_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WiFiGate_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ConfigWiFiArg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ConfigWiFiArg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WiFiGate_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WiFiGate_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SendToWiFiNetwork?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SendToWiFiNetwork
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WifiConfig:Send AT\\r\\n">`:
+   \   000000   57696669     DB "WifiConfig:Send AT\015\012"
+   \            436F6E66
+   \            69673A53
+   \            656E6420
+   \            41540D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT\\r\\n">`:
+   \   000000   41540D0A     DB "AT\015\012"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WifiConfig:AT+CWMODE\\r\\n">`:
+   \   000000   57696669     DB "WifiConfig:AT+CWMODE\015\012"
+   \            436F6E66
+   \            69673A41
+   \            542B4357
+   \            4D4F4445
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CWMODE=3\\r\\n">`:
+   \   000000   41542B43     DB "AT+CWMODE=3\015\012"
+   \            574D4F44
+   \            453D330D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WifiConfig:AT+CWJAP\\r\\n">`:
+   \   000000   57696669     DB "WifiConfig:AT+CWJAP\015\012"
+   \            436F6E66
+   \            69673A41
+   \            542B4357
+   \            4A41500D
+   \            0A00    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CWJAP=\\"Honor 8X\\",\\"...">`:
+   \   000000   41542B43     DB "AT+CWJAP=\"Honor 8X\",\"1234567890\"\015\012"
+   \            574A4150
+   \            3D22486F
+   \            6E6F7220
+   \            3858222C
+   \            22313233
+   \            34353637
+   \            38393022
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WifiConfig:AT+CIPSTART\\r\\n">`:
+   \   000000   57696669     DB "WifiConfig:AT+CIPSTART\015\012"
+   \            436F6E66
+   \            69673A41
+   \            542B4349
+   \            50535441
+   \            52540D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CIPSTART=\\"TCP\\",\\"18...">`:
+   \   000000   41542B43     DB "AT+CIPSTART=\"TCP\",\"183.230.40.40\",1811\015\012"
+   \            49505354
+   \            4152543D
+   \            22544350
+   \            222C2231
+   \            38332E32
+   \            33302E34
+   \            302E3430
+   \            222C3138
+   \            31310D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WifiConfig:AT+CIPMODE\\r\\n">`:
+   \   000000   57696669     DB "WifiConfig:AT+CIPMODE\015\012"
+   \            436F6E66
+   \            69673A41
+   \            542B4349
+   \            504D4F44
+   \            450D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CIPMODE=1\\r\\n">`:
+   \   000000   41542B43     DB "AT+CIPMODE=1\015\012"
+   \            49504D4F
+   \            44453D31
+   \            0D0A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "WifiConfig:AT+CIPSEND\\r\\n">`:
+   \   000000   57696669     DB "WifiConfig:AT+CIPSEND\015\012"
+   \            436F6E66
+   \            69673A41
+   \            542B4349
+   \            5053454E
+   \            440D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "AT+CIPSEND\\r\\n">`:
+   \   000000   41542B43     DB "AT+CIPSEND\015\012"
+   \            49505345
+   \            4E440D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "Try to connect OneNET\\r\\n">`:
+   \   000000   54727920     DB "Try to connect OneNET\015\012"
+   \            746F2063
+   \            6F6E6E65
+   \            6374204F
+   \            6E654E45
+   \            540D0A00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "*201298#1234567890#sa...">`:
+   \   000000   2A323031     DB "*201298#1234567890#sample*"
+   \            32393823
+   \            31323334
+   \            35363738
+   \            39302373
+   \            616D706C
+   \            652A00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "OK\\r\\n">`:
+   \   000000   4F4B0D0A     DB "OK\015\012"
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "~BUTTON_ON">`:
+   \   000000   7E425554     DB "~BUTTON_ON"
+   \            544F4E5F
+   \            4F4E00  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "CMD:~BUTTON_ON\\r\\n">`:
+   \   000000   434D443A     DB "CMD:~BUTTON_ON\015\012"
+   \            7E425554
+   \            544F4E5F
+   \            4F4E0D0A
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "~BUTTON_OFF">`:
+   \   000000   7E425554     DB "~BUTTON_OFF"
+   \            544F4E5F
+   \            4F464600
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "CMD:~BUTTON_OFF\\r\\n">`:
+   \   000000   434D443A     DB "CMD:~BUTTON_OFF\015\012"
+   \            7E425554
+   \            544F4E5F
+   \            4F46460D
+   \            0A00    
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     ConfigWiFiArg                    0      0     24
+       -> memset                      0      0     28
+       -> HalUARTResetRxQueue         0      0     24
+       -> strlen                      0      0     24
+       -> HalUARTWrite                0      0     24
+       -> osal_start_timerEx          0      0     24
+     SendToWiFiNetwork                0      0     10
+       -> HalUARTWrite                0      0     20
+     WiFiGate_Init                    0      0      9
+       -> osal_start_timerEx          0      0     18
+       -> UartInit                    0      0     18
+     WiFiGate_ProcessEvent            0      0     10
+       -> printf                      0      0     20
+       -> ConfigWiFiArg               0      0     20
+       -> printf                      0      0     20
+       -> ConfigWiFiArg               0      0     20
+       -> printf                      0      0     20
+       -> ConfigWiFiArg               0      0     20
+       -> printf                      0      0     20
+       -> ConfigWiFiArg               0      0     20
+       -> printf                      0      0     20
+       -> ConfigWiFiArg               0      0     20
+       -> printf                      0      0     20
+       -> ConfigWiFiArg               0      0     20
+       -> osal_start_timerEx          0      0     20
+       -> printf                      0      0     20
+       -> HalUARTWrite                0      0     20
+       -> Hal_UART_RxBufLen           0      0     20
+       -> HalUARTRead                 0      0     20
+       -> strstr                      0      0     20
+       -> osal_set_event              0      0     20
+       -> osal_start_timerEx          0      0     20
+       -> Hal_UART_RxBufLen           0      0     20
+       -> HalUARTRead                 0      0     20
+       -> strstr                      0      0     20
+       -> printf                      0      0     20
+       -> PointToPoint_FanControl     0      0     20
+       -> strstr                      0      0     20
+       -> printf                      0      0     20
+       -> PointToPoint_FanControl     0      0     20
+       -> osal_start_timerEx          0      0     20
+       -> osal_start_timerEx          0      0     20
+       -> osal_msg_receive            0      0     20
+
+
+   Segment part sizes:
+
+     Function/Label                            Bytes
+     --------------                            -----
+     WiFiRecvDataBuffer                         100
+     WiFiRecvLenght                               1
+     NextEvent                                    1
+     WiFiCmdHandle                                1
+     WiFiGate_TaskId                              1
+     WiFiModeInitDone                             1
+     WiFiGate_Init                               33
+     ConfigWiFiArg                               86
+     ??Subroutine4_0                             11
+     WiFiGate_ProcessEvent                      367
+     ?Subroutine0                                 5
+     ?Subroutine3                                 4
+     ?Subroutine2                                13
+     ?Subroutine1                                32
+     SendToWiFiNetwork                           26
+     ??WiFiGate_Init?relay                        6
+     ??ConfigWiFiArg?relay                        6
+     ??WiFiGate_ProcessEvent?relay                6
+     ??SendToWiFiNetwork?relay                    6
+     ?<Constant "WifiConfig:Send AT\r\n">        21
+     ?<Constant "AT\r\n">                         5
+     ?<Constant "WifiConfig:AT+CWMODE\r\n">      23
+     ?<Constant "AT+CWMODE=3\r\n">               14
+     ?<Constant "WifiConfig:AT+CWJAP\r\n">       22
+     ?<Constant "AT+CWJAP=\"Honor 8X\",\"...">   35
+     ?<Constant "WifiConfig:AT+CIPSTART\r\n">    25
+     ?<Constant "AT+CIPSTART=\"TCP\",\"18...">   41
+     ?<Constant "WifiConfig:AT+CIPMODE\r\n">     24
+     ?<Constant "AT+CIPMODE=1\r\n">              15
+     ?<Constant "WifiConfig:AT+CIPSEND\r\n">     24
+     ?<Constant "AT+CIPSEND\r\n">                13
+     ?<Constant "Try to connect OneNET\r\n">     24
+     ?<Constant "*201298#1234567890#sa...">      27
+     ?<Constant "OK\r\n">                         5
+     ?<Constant "~BUTTON_ON">                    11
+     ?<Constant "CMD:~BUTTON_ON\r\n">            17
+     ?<Constant "~BUTTON_OFF">                   12
+     ?<Constant "CMD:~BUTTON_OFF\r\n">           18
+
+ 
+ 577 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+ 376 bytes in segment XDATA_ROM_C
+ 105 bytes in segment XDATA_Z
+ 
+ 601 bytes of CODE  memory
+ 376 bytes of CONST memory
+ 105 bytes of XDATA memory
+
+Errors: none
+Warnings: 4

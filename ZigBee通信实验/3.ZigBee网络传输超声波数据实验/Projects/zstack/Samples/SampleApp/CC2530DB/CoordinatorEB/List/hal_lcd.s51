@@ -1,0 +1,2475 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        16/Dec/2020  22:20:00 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Components\hal\target\CC2530EB\hal_l /
+//                          cd.c                                              /
+//    Command line       =  -f E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg    /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
+//                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f      /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg      /
+//                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR     /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFF11                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅ /
+//                          ÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Components\ha /
+//                          l\target\CC2530EB\hal_lcd.c -D ZIGBEEPRO -D       /
+//                          ZTOOL_P1 -D MT_SYS_FUNC -D xMT_ZDO_FUNC -D        /
+//                          LCD_SUPPORTED=DEBUG -D NV_RESTORE -lC             /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\CoordinatorEB\List\ -lA                    /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\CoordinatorEB\List\ --diag_suppress        /
+//                          Pe001,Pa010 -o E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.Z /
+//                          igBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sampl /
+//                          es\SampleApp\CC2530DB\CoordinatorEB\Obj\ -e       /
+//                          --debug --core=plain --dptr=16,1                  /
+//                          --data_model=large --code_model=banked            /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data_rom --nr_virtual_regs 16   /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.Zi /
+//                          gBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sample /
+//                          s\SampleApp\CC2530DB\..\SOURCE\ -I                /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\ZMAIN\TI2530DB\ -I                /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\MT\ -I           /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I  /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC253 /
+//                          0EB\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍø /
+//                          Âç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU /
+//                          \CCSOC\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBe /
+//                          eÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\S /
+//                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\ /
+//                          INCLUDE\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigB /
+//                          eeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\ /
+//                          SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STAC /
+//                          K\AF\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍ /
+//                          øÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sam /
+//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\N /
+//                          WK\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂ /
+//                          ç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sampl /
+//                          eApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC /
+//                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´ /
+//                          «Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ /
+//                           -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« /
+//                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\   /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\    /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I  /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I         /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\  /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SDAT /
+//                          A\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç /
+//                          ´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sample /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUD /
+//                          E\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç /
+//                          ´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sample /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_L /
+//                          EVEL\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍ /
+//                          øÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sam /
+//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW /
+//                          _LEVEL\srf04\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3 /
+//                          .ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -I              /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\HARDWARE\ -Ohz   /
+//    List file          =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\CoordinatorEB\List\hal_lcd.s51             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_lcd
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+
+        PUBLIC ??HalLcdDisplayPercentBar?relay
+        FUNCTION ??HalLcdDisplayPercentBar?relay,0203H
+        PUBLIC ??HalLcdInit?relay
+        FUNCTION ??HalLcdInit?relay,0203H
+        PUBLIC ??HalLcdWriteScreen?relay
+        FUNCTION ??HalLcdWriteScreen?relay,0203H
+        PUBLIC ??HalLcdWriteString?relay
+        FUNCTION ??HalLcdWriteString?relay,0203H
+        PUBLIC ??HalLcdWriteStringValue?relay
+        FUNCTION ??HalLcdWriteStringValue?relay,0203H
+        PUBLIC ??HalLcdWriteStringValueValue?relay
+        FUNCTION ??HalLcdWriteStringValueValue?relay,0203H
+        PUBLIC ??HalLcdWriteValue?relay
+        FUNCTION ??HalLcdWriteValue?relay,0203H
+        PUBLIC ??SET_DDRAM_ADDR?relay
+        FUNCTION ??SET_DDRAM_ADDR?relay,0203H
+        PUBLIC ASCIITAB_DZK
+        PUBLIC HalLcdDisplayPercentBar
+        FUNCTION HalLcdDisplayPercentBar,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdInit
+        FUNCTION HalLcdInit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteScreen
+        FUNCTION HalLcdWriteScreen,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteString
+        FUNCTION HalLcdWriteString,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HalLcdWriteStringValue
+        FUNCTION HalLcdWriteStringValue,0203H
+        ARGFRAME XSTACK, 1, STACK
+        PUBLIC HalLcdWriteStringValueValue
+        FUNCTION HalLcdWriteStringValueValue,0203H
+        ARGFRAME XSTACK, 4, STACK
+        PUBLIC HalLcdWriteValue
+        FUNCTION HalLcdWriteValue,0203H
+        ARGFRAME XSTACK, 1, STACK
+        PUBLIC SET_DDRAM_ADDR
+        FUNCTION SET_DDRAM_ADDR,0203H
+        ARGFRAME XSTACK, 0, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+HalLcdDisplayPercentBar SYMBOL "HalLcdDisplayPercentBar"
+??HalLcdDisplayPercentBar?relay SYMBOL "?relay", HalLcdDisplayPercentBar
+HalLcdInit          SYMBOL "HalLcdInit"
+??HalLcdInit?relay  SYMBOL "?relay", HalLcdInit
+HalLcdWriteScreen   SYMBOL "HalLcdWriteScreen"
+??HalLcdWriteScreen?relay SYMBOL "?relay", HalLcdWriteScreen
+HalLcdWriteString   SYMBOL "HalLcdWriteString"
+??HalLcdWriteString?relay SYMBOL "?relay", HalLcdWriteString
+HalLcdWriteStringValue SYMBOL "HalLcdWriteStringValue"
+??HalLcdWriteStringValue?relay SYMBOL "?relay", HalLcdWriteStringValue
+HalLcdWriteStringValueValue SYMBOL "HalLcdWriteStringValueValue"
+??HalLcdWriteStringValueValue?relay SYMBOL "?relay", HalLcdWriteStringValueValue
+HalLcdWriteValue    SYMBOL "HalLcdWriteValue"
+??HalLcdWriteValue?relay SYMBOL "?relay", HalLcdWriteValue
+SET_DDRAM_ADDR      SYMBOL "SET_DDRAM_ADDR"
+??SET_DDRAM_ADDR?relay SYMBOL "?relay", SET_DDRAM_ADDR
+
+// E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Components\hal\target\CC2530EB\hal_lcd.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_lcd.c
+//    3   Revised:        $Date: 2010-8-31$
+//    4   Author:         $outman from feibit.com$
+//    5 
+//    6   Description:    This file contains the interface to the HAL LCD Service. 
+//    7 
+//    8   IMPORTANT:   THE ORIGINAL CODE IS FROM TI, AND THE FONTS LIB AND 
+//    9                       RELATED CODE IS WRITTEN BY WWW.FEIBIT.COM
+//   10 
+//   11 
+//   12   Copyright 2007 - 2009 Texas Instruments Incorporated. All rights reserved.
+//   13 
+//   14   IMPORTANT: Your use of this Software is limited to those specific rights
+//   15   granted under the terms of a software license agreement between the user
+//   16   who downloaded the software, his/her employer (which must be your employer)
+//   17   and Texas Instruments Incorporated (the "License").  You may not use this
+//   18   Software unless you agree to abide by the terms of the License. The License
+//   19   limits your use, and you acknowledge, that the Software may not be modified,
+//   20   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   21   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   22   frequency transceiver, which is integrated into your product.  Other than for
+//   23   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   24   works of, modify, distribute, perform, display or sell this Software and/or
+//   25   its documentation for any purpose.
+//   26 
+//   27   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   28   PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   29   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   30   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   31   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   32   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   33   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   34   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   35   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   36   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   37   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   38 
+//   39   Should you have any questions regarding your right to use this Software,
+//   40   contact Texas Instruments Incorporated at www.TI.com.
+//   41 **************************************************************************************************/
+//   42 
+//   43 /**************************************************************************************************
+//   44  *                                           INCLUDES
+//   45  **************************************************************************************************/
+//   46 #include "hal_types.h"
+//   47 #include "hal_lcd.h"
+//   48 #include "OSAL.h"
+//   49 #include "OnBoard.h"
+//   50 #include "hal_assert.h"
+//   51 
+//   52 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+//   53   #include "DebugTrace.h"
+//   54 #endif
+//   55 
+//   56 /**************************************************************************************************
+//   57  *                                          CONSTANTS
+//   58  **************************************************************************************************/
+//   59 /*
+//   60   LCD pins
+//   61 
+//   62   //control
+//   63   P0.0 - LCD_MODE
+//   64   P1.1 - LCD_FLASH_RESET
+//   65   P1.2 - LCD_CS
+//   66 
+//   67   //spi
+//   68   P1.5 - CLK
+//   69   P1.6 - MOSI
+//   70   P1.7 - MISO
+//   71 */
+//   72 
+//   73 /* 30/8/2010 ++ by feibit */
+//   74 
+//   75 #define BIT0              0x01
+//   76 #define BIT1              0x02
+//   77 #define BIT2              0x04
+//   78 #define BIT3              0x08
+//   79 #define BIT4              0x10
+//   80 #define BIT5              0x20
+//   81 #define BIT6              0x40
+//   82 #define BIT7              0x80
+//   83 
+//   84 /* The ASCII fonts library, the matrix size is w*h = 8*12, created by outman from feibit.com */
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//   85 __code const uint8 ASCIITAB_DZK[]=
+ASCIITAB_DZK:
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 120
+        DB 120
+        DB 120
+        DB 48
+        DB 48
+        DB 0
+        DB 48
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 102
+        DB 102
+        DB 102
+        DB 36
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 108
+        DB 108
+        DB 254
+        DB 108
+        DB 108
+        DB 108
+        DB 254
+        DB 108
+        DB 108
+        DB 0
+        DB 0
+        DB 48
+        DB 48
+        DB 124
+        DB 192
+        DB 192
+        DB 120
+        DB 12
+        DB 12
+        DB 248
+        DB 48
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 196
+        DB 204
+        DB 24
+        DB 48
+        DB 96
+        DB 204
+        DB 140
+        DB 0
+        DB 0
+        DB 0
+        DB 112
+        DB 216
+        DB 216
+        DB 112
+        DB 250
+        DB 222
+        DB 204
+        DB 220
+        DB 118
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 48
+        DB 48
+        DB 96
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 12
+        DB 24
+        DB 48
+        DB 96
+        DB 96
+        DB 96
+        DB 48
+        DB 24
+        DB 12
+        DB 0
+        DB 0
+        DB 0
+        DB 96
+        DB 48
+        DB 24
+        DB 12
+        DB 12
+        DB 12
+        DB 24
+        DB 48
+        DB 96
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 102
+        DB 60
+        DB 255
+        DB 60
+        DB 102
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 24
+        DB 24
+        DB 126
+        DB 24
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 56
+        DB 96
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 2
+        DB 6
+        DB 12
+        DB 24
+        DB 48
+        DB 96
+        DB 192
+        DB 128
+        DB 0
+        DB 0
+        DB 0
+        DB 124
+        DB 198
+        DB 206
+        DB 222
+        DB 214
+        DB 246
+        DB 230
+        DB 198
+        DB 124
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 48
+        DB 240
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 204
+        DB 12
+        DB 24
+        DB 48
+        DB 96
+        DB 204
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 12
+        DB 12
+        DB 56
+        DB 12
+        DB 12
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 12
+        DB 28
+        DB 60
+        DB 108
+        DB 204
+        DB 254
+        DB 12
+        DB 12
+        DB 30
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 192
+        DB 192
+        DB 192
+        DB 248
+        DB 12
+        DB 12
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 96
+        DB 192
+        DB 192
+        DB 248
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 198
+        DB 198
+        DB 6
+        DB 12
+        DB 24
+        DB 48
+        DB 48
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 204
+        DB 236
+        DB 120
+        DB 220
+        DB 204
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 204
+        DB 204
+        DB 124
+        DB 24
+        DB 24
+        DB 48
+        DB 112
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 56
+        DB 0
+        DB 0
+        DB 56
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 56
+        DB 0
+        DB 0
+        DB 56
+        DB 56
+        DB 24
+        DB 48
+        DB 0
+        DB 0
+        DB 12
+        DB 24
+        DB 48
+        DB 96
+        DB 192
+        DB 96
+        DB 48
+        DB 24
+        DB 12
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 126
+        DB 0
+        DB 126
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 96
+        DB 48
+        DB 24
+        DB 12
+        DB 6
+        DB 12
+        DB 24
+        DB 48
+        DB 96
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 12
+        DB 24
+        DB 48
+        DB 48
+        DB 0
+        DB 48
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 124
+        DB 198
+        DB 198
+        DB 222
+        DB 222
+        DB 222
+        DB 192
+        DB 192
+        DB 124
+        DB 0
+        DB 0
+        DB 0
+        DB 48
+        DB 120
+        DB 204
+        DB 204
+        DB 204
+        DB 252
+        DB 204
+        DB 204
+        DB 204
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 102
+        DB 102
+        DB 102
+        DB 124
+        DB 102
+        DB 102
+        DB 102
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 102
+        DB 198
+        DB 192
+        DB 192
+        DB 192
+        DB 198
+        DB 102
+        DB 60
+        DB 0
+        DB 0
+        DB 0
+        DB 248
+        DB 108
+        DB 102
+        DB 102
+        DB 102
+        DB 102
+        DB 102
+        DB 108
+        DB 248
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 98
+        DB 96
+        DB 100
+        DB 124
+        DB 100
+        DB 96
+        DB 98
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 102
+        DB 98
+        DB 100
+        DB 124
+        DB 100
+        DB 96
+        DB 96
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 102
+        DB 198
+        DB 192
+        DB 192
+        DB 206
+        DB 198
+        DB 102
+        DB 62
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 252
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 30
+        DB 12
+        DB 12
+        DB 12
+        DB 12
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 230
+        DB 102
+        DB 108
+        DB 108
+        DB 120
+        DB 108
+        DB 108
+        DB 102
+        DB 230
+        DB 0
+        DB 0
+        DB 0
+        DB 240
+        DB 96
+        DB 96
+        DB 96
+        DB 96
+        DB 98
+        DB 102
+        DB 102
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 238
+        DB 254
+        DB 254
+        DB 214
+        DB 198
+        DB 198
+        DB 198
+        DB 198
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 198
+        DB 230
+        DB 246
+        DB 254
+        DB 222
+        DB 206
+        DB 198
+        DB 198
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 108
+        DB 198
+        DB 198
+        DB 198
+        DB 198
+        DB 198
+        DB 108
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 102
+        DB 102
+        DB 102
+        DB 124
+        DB 96
+        DB 96
+        DB 96
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 108
+        DB 198
+        DB 198
+        DB 198
+        DB 206
+        DB 222
+        DB 124
+        DB 12
+        DB 30
+        DB 0
+        DB 0
+        DB 252
+        DB 102
+        DB 102
+        DB 102
+        DB 124
+        DB 108
+        DB 102
+        DB 102
+        DB 230
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 204
+        DB 192
+        DB 112
+        DB 24
+        DB 204
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 180
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 198
+        DB 198
+        DB 198
+        DB 214
+        DB 214
+        DB 108
+        DB 108
+        DB 108
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 48
+        DB 120
+        DB 204
+        DB 204
+        DB 204
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 48
+        DB 48
+        DB 48
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 254
+        DB 206
+        DB 152
+        DB 24
+        DB 48
+        DB 96
+        DB 98
+        DB 198
+        DB 254
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 48
+        DB 60
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 128
+        DB 192
+        DB 96
+        DB 48
+        DB 24
+        DB 12
+        DB 6
+        DB 2
+        DB 0
+        DB 0
+        DB 0
+        DB 60
+        DB 12
+        DB 12
+        DB 12
+        DB 12
+        DB 12
+        DB 12
+        DB 12
+        DB 60
+        DB 0
+        DB 0
+        DB 16
+        DB 56
+        DB 108
+        DB 198
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 255
+        DB 0
+        DB 48
+        DB 48
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 12
+        DB 124
+        DB 204
+        DB 204
+        DB 118
+        DB 0
+        DB 0
+        DB 0
+        DB 224
+        DB 96
+        DB 96
+        DB 124
+        DB 102
+        DB 102
+        DB 102
+        DB 102
+        DB 220
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 192
+        DB 192
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 28
+        DB 12
+        DB 12
+        DB 124
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 118
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 252
+        DB 192
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 56
+        DB 108
+        DB 96
+        DB 96
+        DB 248
+        DB 96
+        DB 96
+        DB 96
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 118
+        DB 204
+        DB 204
+        DB 204
+        DB 124
+        DB 12
+        DB 204
+        DB 0
+        DB 0
+        DB 224
+        DB 96
+        DB 96
+        DB 108
+        DB 118
+        DB 102
+        DB 102
+        DB 102
+        DB 230
+        DB 0
+        DB 0
+        DB 0
+        DB 24
+        DB 24
+        DB 0
+        DB 120
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 126
+        DB 0
+        DB 0
+        DB 0
+        DB 12
+        DB 12
+        DB 0
+        DB 60
+        DB 12
+        DB 12
+        DB 12
+        DB 12
+        DB 204
+        DB 204
+        DB 0
+        DB 0
+        DB 224
+        DB 96
+        DB 96
+        DB 102
+        DB 108
+        DB 120
+        DB 108
+        DB 102
+        DB 230
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 126
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 214
+        DB 214
+        DB 214
+        DB 214
+        DB 198
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 248
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 220
+        DB 102
+        DB 102
+        DB 102
+        DB 102
+        DB 124
+        DB 96
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 118
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 124
+        DB 12
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 236
+        DB 110
+        DB 118
+        DB 96
+        DB 96
+        DB 240
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 120
+        DB 204
+        DB 96
+        DB 24
+        DB 204
+        DB 120
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 32
+        DB 96
+        DB 252
+        DB 96
+        DB 96
+        DB 96
+        DB 108
+        DB 56
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 118
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 204
+        DB 204
+        DB 204
+        DB 204
+        DB 120
+        DB 48
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 198
+        DB 214
+        DB 214
+        DB 108
+        DB 108
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 198
+        DB 108
+        DB 56
+        DB 56
+        DB 108
+        DB 198
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 102
+        DB 102
+        DB 102
+        DB 102
+        DB 60
+        DB 12
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 252
+        DB 140
+        DB 24
+        DB 96
+        DB 196
+        DB 252
+        DB 0
+        DB 0
+        DB 0
+        DB 28
+        DB 48
+        DB 48
+        DB 96
+        DB 192
+        DB 96
+        DB 48
+        DB 48
+        DB 28
+        DB 0
+        DB 0
+        DB 0
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 0
+        DB 24
+        DB 24
+        DB 24
+        DB 24
+        DB 0
+        DB 0
+        DB 0
+        DB 224
+        DB 48
+        DB 48
+        DB 24
+        DB 12
+        DB 24
+        DB 48
+        DB 48
+        DB 224
+        DB 0
+        DB 0
+        DB 0
+        DB 115
+        DB 218
+        DB 206
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 0
+        DB 16
+        DB 56
+        DB 108
+        DB 198
+        DB 198
+        DB 254
+        DB 0
+        DB 0
+//   86 {
+//   87 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*""=00H*/ 
+//   88 0x00,0x30,0x78,0x78,0x78,0x30,0x30,0x00,0x30,0x30,0x00,0x00,/*"!"=01H*/
+//   89 0x00,0x00,0x66,0x66,0x66,0x24,0x00,0x00,0x00,0x00,0x00,0x00,/*"""=02h*/
+//   90 0x00,0x00,0x6c,0x6c,0xfe,0x6c,0x6c,0x6c,0xfe,0x6c,0x6c,0x00,/*"#"=03h*/
+//   91 0x00,0x30,0x30,0x7c,0xc0,0xc0,0x78,0x0c,0x0c,0xf8,0x30,0x30,/*"$"=04h*/
+//   92 0x00,0x00,0x00,0x00,0xc4,0xcc,0x18,0x30,0x60,0xcc,0x8c,0x00,/*"%"=05h*/
+//   93 0x00,0x00,0x70,0xd8,0xd8,0x70,0xfa,0xde,0xcc,0xdc,0x76,0x00,/*"&"=06h*/
+//   94 0x00,0x00,0x30,0x30,0x30,0x60,0x00,0x00,0x00,0x00,0x00,0x00,/*"'"=07h*/
+//   95 0x00,0x00,0x0c,0x18,0x30,0x60,0x60,0x60,0x30,0x18,0x0c,0x00,/*"("=08h*/
+//   96 0x00,0x00,0x60,0x30,0x18,0x0c,0x0c,0x0c,0x18,0x30,0x60,0x00,/*")"=09h*/
+//   97 0x00,0x00,0x00,0x00,0x66,0x3c,0xff,0x3c,0x66,0x00,0x00,0x00,/*"*"=0Ah*/
+//   98 0x00,0x00,0x00,0x00,0x18,0x18,0x7e,0x18,0x18,0x00,0x00,0x00,/*"+"=0Bh*/
+//   99 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x38,0x38,0x60,/*";"=0Ch*/
+//  100 0x00,0x00,0x00,0x00,0x00,0x00,0xfe,0x00,0x00,0x00,0x00,0x00,/*"-"=0Dh*/
+//  101 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x38,0x38,0x00,/*"."=0Eh*/
+//  102 0x00,0x00,0x00,0x02,0x06,0x0c,0x18,0x30,0x60,0xc0,0x80,0x00,/*"/"=0Fh*/
+//  103 0x00,0x00,0x7c,0xc6,0xce,0xde,0xd6,0xf6,0xe6,0xc6,0x7c,0x00,/*"0"=10h*/
+//  104 0x00,0x00,0x10,0x30,0xf0,0x30,0x30,0x30,0x30,0x30,0xfc,0x00,/*"1"=11h*/
+//  105 0x00,0x00,0x78,0xcc,0xcc,0x0c,0x18,0x30,0x60,0xcc,0xfc,0x00,/*"2"=12h*/
+//  106 0x00,0x00,0x78,0xcc,0x0c,0x0c,0x38,0x0c,0x0c,0xcc,0x78,0x00,/*"3"=13h*/
+//  107 0x00,0x00,0x0c,0x1c,0x3c,0x6c,0xcc,0xfe,0x0c,0x0c,0x1e,0x00,/*"4"=14h*/
+//  108 0x00,0x00,0xfc,0xc0,0xc0,0xc0,0xf8,0x0c,0x0c,0xcc,0x78,0x00,/*"5"=15h*/
+//  109 0x00,0x00,0x38,0x60,0xc0,0xc0,0xf8,0xcc,0xcc,0xcc,0x78,0x00,/*"6"=16h*/
+//  110 0x00,0x00,0xfe,0xc6,0xc6,0x06,0x0c,0x18,0x30,0x30,0x30,0x00,/*"7"=17h*/
+//  111 0x00,0x00,0x78,0xcc,0xcc,0xec,0x78,0xdc,0xcc,0xcc,0x78,0x00,/*"8"=18h*/
+//  112 0x00,0x00,0x78,0xcc,0xcc,0xcc,0x7c,0x18,0x18,0x30,0x70,0x00,/*"9"=19h*/
+//  113 0x00,0x00,0x00,0x00,0x38,0x38,0x00,0x00,0x38,0x38,0x00,0x00,/*":"=1Ah*/
+//  114 0x00,0x00,0x00,0x00,0x38,0x38,0x00,0x00,0x38,0x38,0x18,0x30,/*";"=1Bh*/
+//  115 0x00,0x00,0x0c,0x18,0x30,0x60,0xc0,0x60,0x30,0x18,0x0c,0x00,/*"<"=1Ch*/
+//  116 0x00,0x00,0x00,0x00,0x00,0x7e,0x00,0x7e,0x00,0x00,0x00,0x00,/*"="=1Dh*/
+//  117 0x00,0x00,0x60,0x30,0x18,0x0c,0x06,0x0c,0x18,0x30,0x60,0x00,/*">"=1Eh*/
+//  118 0x00,0x00,0x78,0xcc,0x0c,0x18,0x30,0x30,0x00,0x30,0x30,0x00,/*"?"=1Fh*/
+//  119 0x00,0x00,0x7c,0xc6,0xc6,0xde,0xde,0xde,0xc0,0xc0,0x7c,0x00,/*"@"=20h*/
+//  120 0x00,0x00,0x30,0x78,0xcc,0xcc,0xcc,0xfc,0xcc,0xcc,0xcc,0x00,/*"A"=21h*/
+//  121 0x00,0x00,0xfc,0x66,0x66,0x66,0x7c,0x66,0x66,0x66,0xfc,0x00,/*"B"=22h*/
+//  122 0x00,0x00,0x3c,0x66,0xc6,0xc0,0xc0,0xc0,0xc6,0x66,0x3c,0x00,/*"C"=23h*/
+//  123 0x00,0x00,0xf8,0x6c,0x66,0x66,0x66,0x66,0x66,0x6c,0xf8,0x00,/*"D"=24h*/
+//  124 0x00,0x00,0xfe,0x62,0x60,0x64,0x7c,0x64,0x60,0x62,0xfe,0x00,/*"E"=25h*/
+//  125 0x00,0x00,0xfe,0x66,0x62,0x64,0x7c,0x64,0x60,0x60,0xf0,0x00,/*"F"=26h*/
+//  126 0x00,0x00,0x3c,0x66,0xc6,0xc0,0xc0,0xce,0xc6,0x66,0x3e,0x00,/*"G"=27h*/
+//  127 0x00,0x00,0xcc,0xcc,0xcc,0xcc,0xfc,0xcc,0xcc,0xcc,0xcc,0x00,/*"h"=28h*/
+//  128 0x00,0x00,0x78,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x78,0x00,/*"I"=29h*/
+//  129 0x00,0x00,0x1e,0x0c,0x0c,0x0c,0x0c,0xcc,0xcc,0xcc,0x78,0x00,/*"J"=2Ah*/
+//  130 0x00,0x00,0xe6,0x66,0x6c,0x6c,0x78,0x6c,0x6c,0x66,0xe6,0x00,/*"K"=2Bh*/
+//  131 0x00,0x00,0xf0,0x60,0x60,0x60,0x60,0x62,0x66,0x66,0xfe,0x00,/*"L"=2Ch*/
+//  132 0x00,0x00,0xc6,0xee,0xfe,0xfe,0xd6,0xc6,0xc6,0xc6,0xc6,0x00,/*"M"=2Dh*/
+//  133 0x00,0x00,0xc6,0xc6,0xe6,0xf6,0xfe,0xde,0xce,0xc6,0xc6,0x00,/*"N"=2Eh*/
+//  134 0x00,0x00,0x38,0x6c,0xc6,0xc6,0xc6,0xc6,0xc6,0x6c,0x38,0x00,/*"O"=2Fh*/
+//  135 0x00,0x00,0xfc,0x66,0x66,0x66,0x7c,0x60,0x60,0x60,0xf0,0x00,/*"P"=30h*/
+//  136 0x00,0x00,0x38,0x6c,0xc6,0xc6,0xc6,0xce,0xde,0x7c,0x0c,0x1e,/*"Q"=31h*/
+//  137 0x00,0x00,0xfc,0x66,0x66,0x66,0x7c,0x6c,0x66,0x66,0xe6,0x00,/*"R"=32h*/
+//  138 0x00,0x00,0x78,0xcc,0xcc,0xc0,0x70,0x18,0xcc,0xcc,0x78,0x00,/*"S"=33h*/
+//  139 0x00,0x00,0xfc,0xb4,0x30,0x30,0x30,0x30,0x30,0x30,0x78,0x00,/*"T"=34h*/
+//  140 0x00,0x00,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,0x78,0x00,/*"U"=35h*/
+//  141 0x00,0x00,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,0xcc,0x78,0x30,0x00,/*"V"=36h*/
+//  142 0x00,0x00,0xc6,0xc6,0xc6,0xc6,0xd6,0xd6,0x6c,0x6c,0x6c,0x00,/*"W"=37h*/
+//  143 0x00,0x00,0xcc,0xcc,0xcc,0x78,0x30,0x78,0xcc,0xcc,0xcc,0x00,/*"X"=38h*/
+//  144 0x00,0x00,0xcc,0xcc,0xcc,0xcc,0x78,0x30,0x30,0x30,0x78,0x00,/*"Y"=39h*/
+//  145 0x00,0x00,0xfe,0xce,0x98,0x18,0x30,0x60,0x62,0xc6,0xfe,0x00,/*"Z"=3Ah*/
+//  146 0x00,0x00,0x3c,0x30,0x30,0x30,0x30,0x30,0x30,0x30,0x3c,0x00,/*"["=3Bh*/
+//  147 0x00,0x00,0x00,0x80,0xc0,0x60,0x30,0x18,0x0c,0x06,0x02,0x00,/*"\"=3Ch*/
+//  148 0x00,0x00,0x3c,0x0c,0x0c,0x0c,0x0c,0x0c,0x0c,0x0c,0x3c,0x00,/*"]"=3Dh*/
+//  149 0x00,0x10,0x38,0x6c,0xc6,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*"^"=3Eh*/
+//  150 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xff,/*"_"=3Fh*/
+//  151 0x00,0x30,0x30,0x18,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,/*"`"=40h*/
+//  152 0x00,0x00,0x00,0x00,0x00,0x78,0x0c,0x7c,0xcc,0xcc,0x76,0x00,/*"a"=41h*/
+//  153 0x00,0x00,0xe0,0x60,0x60,0x7c,0x66,0x66,0x66,0x66,0xdc,0x00,/*"b"=42h*/
+//  154 0x00,0x00,0x00,0x00,0x00,0x78,0xcc,0xc0,0xc0,0xcc,0x78,0x00,/*"c"=43h*/
+//  155 0x00,0x00,0x1c,0x0c,0x0c,0x7c,0xcc,0xcc,0xcc,0xcc,0x76,0x00,/*"d"=44h*/
+//  156 0x00,0x00,0x00,0x00,0x00,0x78,0xcc,0xfc,0xc0,0xcc,0x78,0x00,/*"e"=45h*/
+//  157 0x00,0x00,0x38,0x6c,0x60,0x60,0xf8,0x60,0x60,0x60,0xf0,0x00,/*"f"=46h*/
+//  158 0x00,0x00,0x00,0x00,0x00,0x76,0xcc,0xcc,0xcc,0x7c,0x0c,0xcc,/*"g"=47h*/
+//  159 0x00,0x00,0xe0,0x60,0x60,0x6c,0x76,0x66,0x66,0x66,0xe6,0x00,/*"h"=48h*/
+//  160 0x00,0x00,0x18,0x18,0x00,0x78,0x18,0x18,0x18,0x18,0x7e,0x00,/*"i"=49h*/
+//  161 0x00,0x00,0x0c,0x0c,0x00,0x3c,0x0c,0x0c,0x0c,0x0c,0xcc,0xcc,/*"j"=4Ah*/
+//  162 0x00,0x00,0xe0,0x60,0x60,0x66,0x6c,0x78,0x6c,0x66,0xe6,0x00,/*"k"=4Bh*/
+//  163 0x00,0x00,0x78,0x18,0x18,0x18,0x18,0x18,0x18,0x18,0x7e,0x00,/*"l"=4Ch*/
+//  164 0x00,0x00,0x00,0x00,0x00,0xfc,0xd6,0xd6,0xd6,0xd6,0xc6,0x00,/*"m"=4Dh*/
+//  165 0x00,0x00,0x00,0x00,0x00,0xf8,0xcc,0xcc,0xcc,0xcc,0xcc,0x00,/*"n"=4Eh*/
+//  166 0x00,0x00,0x00,0x00,0x00,0x78,0xcc,0xcc,0xcc,0xcc,0x78,0x00,/*"o'=4Fh*/
+//  167 0x00,0x00,0x00,0x00,0x00,0xdc,0x66,0x66,0x66,0x66,0x7c,0x60,/*"p"=50h*/
+//  168 0xf0,0x00,0x00,0x00,0x00,0x76,0xcc,0xcc,0xcc,0xcc,0x7c,0x0c,/*"q"=51h*/
+//  169 0x00,0x00,0x00,0x00,0x00,0xec,0x6e,0x76,0x60,0x60,0xf0,0x00,/*"r"=52h*/
+//  170 0x00,0x00,0x00,0x00,0x00,0x78,0xcc,0x60,0x18,0xcc,0x78,0x00,/*"s"=53h*/
+//  171 0x00,0x00,0x00,0x20,0x60,0xfc,0x60,0x60,0x60,0x6c,0x38,0x00,/*"t"=54h*/
+//  172 0x00,0x00,0x00,0x00,0x00,0xcc,0xcc,0xcc,0xcc,0xcc,0x76,0x00,/*"u"=55h*/
+//  173 0x00,0x00,0x00,0x00,0x00,0xcc,0xcc,0xcc,0xcc,0x78,0x30,0x00,/*"v"=56h*/
+//  174 0x00,0x00,0x00,0x00,0x00,0xc6,0xc6,0xd6,0xd6,0x6c,0x6c,0x00,/*"w"=57h*/
+//  175 0x00,0x00,0x00,0x00,0x00,0xc6,0x6c,0x38,0x38,0x6c,0xc6,0x00,/*"x"=58h*/
+//  176 0x00,0x00,0x00,0x00,0x00,0x66,0x66,0x66,0x66,0x3c,0x0c,0x18,/*"y"=59h*/
+//  177 0x00,0x00,0x00,0x00,0x00,0xfc,0x8c,0x18,0x60,0xc4,0xfc,0x00,/*"z"=5Ah*/
+//  178 0x00,0x00,0x1c,0x30,0x30,0x60,0xc0,0x60,0x30,0x30,0x1c,0x00,/*"{"=5Bh*/
+//  179 0x00,0x00,0x18,0x18,0x18,0x18,0x00,0x18,0x18,0x18,0x18,0x00,/*"|"=5Ch*/
+//  180 0x00,0x00,0xe0,0x30,0x30,0x18,0x0c,0x18,0x30,0x30,0xe0,0x00,/*"}"=5Dh*/
+//  181 0x00,0x00,0x73,0xda,0xce,0x00,0x00,0x00,0x00,0x00,0x00,0x00,           
+//  182 0x00,0x00,0x00,0x00,0x10,0x38,0x6c,0xc6,0xc6,0xfe,0x00,0x00,/*"~"=5Fh*/
+//  183 };
+//  184  
+//  185 /* LCD Control lines */
+//  186 #define HAL_LCD_MODE_PORT 0
+//  187 #define HAL_LCD_MODE_PIN  0
+//  188 
+//  189 #define HAL_LCD_RESET_PORT 1
+//  190 #define HAL_LCD_RESET_PIN  1
+//  191 
+//  192 #define HAL_LCD_CS_PORT 1
+//  193 #define HAL_LCD_CS_PIN  2
+//  194 
+//  195 /* LCD SPI lines */
+//  196 #define HAL_LCD_CLK_PORT 1
+//  197 #define HAL_LCD_CLK_PIN  5
+//  198 
+//  199 #define HAL_LCD_MOSI_PORT 1
+//  200 #define HAL_LCD_MOSI_PIN  6
+//  201 
+//  202 /*No output data comes from LCD 30/8/2010 ++ by feibit */
+//  203 //#define HAL_LCD_MISO_PORT 1
+//  204 //#define HAL_LCD_MISO_PIN  7
+//  205 
+//  206 /* LCD backlight control pin */
+//  207 #define HAL_LCD_BK_PORT 0
+//  208 #define HAL_LCD_BK_PIN  7
+//  209 
+//  210 /* SPI settings */
+//  211 #define HAL_SPI_CLOCK_POL_LO       0x00
+//  212 #define HAL_SPI_CLOCK_PHA_0        0x00
+//  213 #define HAL_SPI_TRANSFER_MSB_FIRST 0x20
+//  214 
+//  215 /* LCD lines */
+//  216 #define LCD_MAX_LINE_COUNT              3
+//  217 #define LCD_MAX_LINE_LENGTH             16
+//  218 #define LCD_MAX_BUF                     25
+//  219 
+//  220 /* Defines for HW LCD */
+//  221 
+//  222 /**************************************************************************************************
+//  223  *                                           MACROS
+//  224  **************************************************************************************************/
+//  225 
+//  226 #define HAL_IO_SET(port, pin, val)        HAL_IO_SET_PREP(port, pin, val)
+//  227 #define HAL_IO_SET_PREP(port, pin, val)   st( P##port##_##pin## = val; )
+//  228 
+//  229 #define HAL_CONFIG_IO_OUTPUT(port, pin, val)      HAL_CONFIG_IO_OUTPUT_PREP(port, pin, val)
+//  230 #define HAL_CONFIG_IO_OUTPUT_PREP(port, pin, val) st( P##port##SEL &= ~BV(pin); \ 
+//  231                                                       P##port##_##pin## = val; \ 
+//  232                                                       P##port##DIR |= BV(pin); )
+//  233 
+//  234 #define HAL_CONFIG_IO_PERIPHERAL(port, pin)      HAL_CONFIG_IO_PERIPHERAL_PREP(port, pin)
+//  235 #define HAL_CONFIG_IO_PERIPHERAL_PREP(port, pin) st( P##port##SEL |= BV(pin); )
+//  236 
+//  237 
+//  238 
+//  239 /* SPI interface control */
+//  240 #define LCD_SPI_BEGIN()     HAL_IO_SET(HAL_LCD_CS_PORT,  HAL_LCD_CS_PIN,  0); /* chip select */
+//  241 #define LCD_SPI_END()                                                         \ 
+//  242 {                                                                             \ 
+//  243   asm("NOP");                                                                 \ 
+//  244   asm("NOP");                                                                 \ 
+//  245   asm("NOP");                                                                 \ 
+//  246   asm("NOP");                                                                 \ 
+//  247   HAL_IO_SET(HAL_LCD_CS_PORT,  HAL_LCD_CS_PIN,  1); /* chip select */         \ 
+//  248 }
+//  249 /* clear the received and transmit byte status, write tx data to buffer, wait till transmit done */
+//  250 #define LCD_SPI_TX(x)                   { U1CSR &= ~(BV(2) | BV(1)); U1DBUF = x; while( !(U1CSR & BV(1)) ); }
+//  251 #define LCD_SPI_WAIT_RXRDY()            { while(!(U1CSR & BV(1))); }
+//  252 
+//  253 
+//  254 /* Control macros */
+//  255 #define LCD_DO_WRITE()        HAL_IO_SET(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  1);
+//  256 #define LCD_DO_CONTROL()      HAL_IO_SET(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  0);
+//  257 
+//  258 #define LCD_ACTIVATE_RESET()  HAL_IO_SET(HAL_LCD_RESET_PORT, HAL_LCD_RESET_PIN, 0);
+//  259 #define LCD_RELEASE_RESET()   HAL_IO_SET(HAL_LCD_RESET_PORT, HAL_LCD_RESET_PIN, 1);
+//  260 
+//  261 #define CONTRAST_CTRL_REGISTER          0x81
+//  262 
+//  263 /**************************************************************************************************
+//  264  *                                       GLOBAL VARIABLES
+//  265  **************************************************************************************************/
+//  266 
+//  267 
+//  268 /**************************************************************************************************
+//  269  *                                       FUNCTIONS - API
+//  270  **************************************************************************************************/
+//  271 #if (HAL_LCD == TRUE)
+//  272 static uint8 *Lcd_Line1;
+//  273 void HalLcd_HW_Init(void);
+//  274 void HalLcd_HW_WaitUs(uint16 i);
+//  275 void HalLcd_HW_Clear(void);
+//  276 void HalLcd_HW_Control(uint8 cmd);
+//  277 void HalLcd_HW_Write(uint8 data);
+//  278 void HalLcd_HW_SetContrast(uint8 value);
+//  279 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text);
+//  280 void HalLcd_HW_WriteLine(uint8 line, const char *pText);
+//  281 /* 30/8/2010 ++ by feibit */
+//  282 void SET_DDRAM_ADDR(uint8 x, uint8 y);
+//  283 uint8 HalLcd_Convert_DZK(uint8 index, uint16 addr);
+//  284 
+//  285 #endif //LCD
+//  286 
+//  287 /**************************************************************************************************
+//  288  * @fn      HalLcdInit
+//  289  *
+//  290  * @brief   Initilize LCD Service
+//  291  *
+//  292  * @param   init - pointer to void that contains the initialized value
+//  293  *
+//  294  * @return  None
+//  295  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  296 void HalLcdInit(void)
+HalLcdInit:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function HalLcdInit
+        CODE
+//  297 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  298 //  Lcd_Line1 = NULL;
+//  299 //#if (HAL_LCD == TRUE)
+//  300 //  HalLcd_HW_Init();
+//  301 //#endif
+//  302 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//  303 
+//  304 /*************************************************************************************************
+//  305  *                    LCD EMULATION FUNCTIONS
+//  306  *
+//  307  * Some evaluation boards are equipped with Liquid Crystal Displays
+//  308  * (LCD) which may be used to display diagnostic information. These
+//  309  * functions provide LCD emulation, sending the diagnostic strings
+//  310  * to Z-Tool via the RS232 serial port. These functions are enabled
+//  311  * when the "LCD_SUPPORTED" compiler flag is placed in the makefile.
+//  312  *
+//  313  * Most applications update both lines (1 and 2) of the LCD whenever
+//  314  * text is posted to the device. This emulator assumes that line 1 is
+//  315  * updated first (saved locally) and the formatting and send operation
+//  316  * is triggered by receipt of line 2. Nothing will be transmitted if
+//  317  * only line 1 is updated.
+//  318  *
+//  319  *************************************************************************************************/
+//  320 
+//  321 /* 30/8/2010 ++ by feibit */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  322 void SET_DDRAM_ADDR(uint8 x, uint8 y)
+SET_DDRAM_ADDR:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function SET_DDRAM_ADDR
+        CODE
+//  323 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  324 //	HalLcd_HW_Control(y|0xb0);
+//  325 //	HalLcd_HW_Control((x >> 4)|0x10);
+//  326 //	HalLcd_HW_Control(x&0x0f);
+//  327 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+//  328 
+//  329 /**************************************************************************************************
+//  330  * @fn      HalLcdWriteString
+//  331  *
+//  332  * @brief   Write a string to the LCD
+//  333  *
+//  334  * @param   str    - pointer to the string that will be displayed
+//  335  *          option - display options
+//  336  *
+//  337  * @return  None
+//  338  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  339 void HalLcdWriteString ( char *str, uint8 option)
+HalLcdWriteString:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function HalLcdWriteString
+        CODE
+//  340 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  341 #if (HAL_LCD == TRUE)
+//  342 
+//  343   uint8 strLen = 0;
+//  344   uint8 totalLen = 0;
+//  345   uint8 *buf;
+//  346   uint8 tmpLen;
+//  347 
+//  348   if ( Lcd_Line1 == NULL )
+//  349   {
+//  350     Lcd_Line1 = osal_mem_alloc( HAL_LCD_MAX_CHARS+1 );
+//  351     HalLcdWriteString( "TexasInstruments", 1 );
+//  352   }
+//  353 
+//  354   strLen = (uint8)osal_strlen( (char*)str );
+//  355 
+//  356   /* Check boundries */
+//  357   if ( strLen > HAL_LCD_MAX_CHARS )
+//  358     strLen = HAL_LCD_MAX_CHARS;
+//  359 
+//  360   if ( option == HAL_LCD_LINE_1 )
+//  361   {
+//  362     /* Line 1 gets saved for later */
+//  363     osal_memcpy( Lcd_Line1, str, strLen );
+//  364     Lcd_Line1[strLen] = '\0';
+//  365   }
+//  366   else
+//  367   {
+//  368     /* Line 2 triggers action */
+//  369     tmpLen = (uint8)osal_strlen( (char*)Lcd_Line1 );
+//  370     totalLen =  tmpLen + 1 + strLen + 1;
+//  371     buf = osal_mem_alloc( totalLen );
+//  372     if ( buf != NULL )
+//  373     {
+//  374       /* Concatenate strings */
+//  375       osal_memcpy( buf, Lcd_Line1, tmpLen );
+//  376       buf[tmpLen++] = ' ';
+//  377       osal_memcpy( &buf[tmpLen], str, strLen );
+//  378       buf[tmpLen+strLen] = '\0';
+//  379 
+//  380       /* Send it out */
+//  381 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
+//  382 
+//  383 #if defined(SERIAL_DEBUG_SUPPORTED)
+//  384       debug_str( (uint8*)buf );
+//  385 #endif //LCD_SUPPORTED
+//  386 
+//  387 #endif //ZTOOL_P1
+//  388 
+//  389       /* Free mem */
+//  390       osal_mem_free( buf );
+//  391     }
+//  392   }
+//  393 
+//  394   /* Display the string */
+//  395   HalLcd_HW_WriteLine (option, str);
+//  396 
+//  397 #endif //HAL_LCD
+//  398 
+//  399 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+//  400 
+//  401 /**************************************************************************************************
+//  402  * @fn      HalLcdWriteValue
+//  403  *
+//  404  * @brief   Write a value to the LCD
+//  405  *
+//  406  * @param   value  - value that will be displayed
+//  407  *          radix  - 8, 10, 16
+//  408  *          option - display options
+//  409  *
+//  410  * @return  None
+//  411  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  412 void HalLcdWriteValue ( uint32 value, const uint8 radix, uint8 option)
+HalLcdWriteValue:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function HalLcdWriteValue
+        CODE
+//  413 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  414 #if (HAL_LCD == TRUE)
+//  415   uint8 buf[LCD_MAX_BUF];
+//  416 
+//  417   _ltoa( value, &buf[0], radix );
+//  418   HalLcdWriteString( (char*)buf, option );
+//  419 #endif
+//  420 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+//  421 
+//  422 /**************************************************************************************************
+//  423  * @fn      HalLcdWriteScreen
+//  424  *
+//  425  * @brief   Write a value to the LCD
+//  426  *
+//  427  * @param   line1  - string that will be displayed on line 1
+//  428  *          line2  - string that will be displayed on line 2
+//  429  *
+//  430  * @return  None
+//  431  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  432 void HalLcdWriteScreen( char *line1, char *line2 )
+HalLcdWriteScreen:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function HalLcdWriteScreen
+        CODE
+//  433 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  434 #if (HAL_LCD == TRUE)
+//  435   HalLcdWriteString( line1, 1 );
+//  436   HalLcdWriteString( line2, 2 );
+//  437 #endif
+//  438 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+//  439 
+//  440 /**************************************************************************************************
+//  441  * @fn      HalLcdWriteStringValue
+//  442  *
+//  443  * @brief   Write a string followed by a value to the LCD
+//  444  *
+//  445  * @param   title  - Title that will be displayed before the value
+//  446  *          value  - value
+//  447  *          format - redix
+//  448  *          line   - line number
+//  449  *
+//  450  * @return  None
+//  451  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  452 void HalLcdWriteStringValue( char *title, uint16 value, uint8 format, uint8 line )
+HalLcdWriteStringValue:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function HalLcdWriteStringValue
+        CODE
+//  453 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  454 #if (HAL_LCD == TRUE)
+//  455   uint8 tmpLen;
+//  456   uint8 buf[LCD_MAX_BUF];
+//  457   uint32 err;
+//  458 
+//  459   tmpLen = (uint8)osal_strlen( (char*)title );
+//  460   osal_memcpy( buf, title, tmpLen );
+//  461   buf[tmpLen] = ' ';
+//  462   err = (uint32)(value);
+//  463   _ltoa( err, &buf[tmpLen+1], format );
+//  464   HalLcdWriteString( (char*)buf, line );		
+//  465 #endif
+//  466 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+//  467 
+//  468 /**************************************************************************************************
+//  469  * @fn      HalLcdWriteStringValue
+//  470  *
+//  471  * @brief   Write a string followed by a value to the LCD
+//  472  *
+//  473  * @param   title   - Title that will be displayed before the value
+//  474  *          value1  - value #1
+//  475  *          format1 - redix of value #1
+//  476  *          value2  - value #2
+//  477  *          format2 - redix of value #2
+//  478  *          line    - line number
+//  479  *
+//  480  * @return  None
+//  481  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  482 void HalLcdWriteStringValueValue( char *title, uint16 value1, uint8 format1,
+HalLcdWriteStringValueValue:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function HalLcdWriteStringValueValue
+        CODE
+//  483                                   uint16 value2, uint8 format2, uint8 line )
+//  484 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  485 
+//  486 #if (HAL_LCD == TRUE)
+//  487 
+//  488   uint8 tmpLen;
+//  489   uint8 buf[LCD_MAX_BUF];
+//  490   uint32 err;
+//  491 
+//  492   tmpLen = (uint8)osal_strlen( (char*)title );
+//  493   if ( tmpLen )
+//  494   {
+//  495     osal_memcpy( buf, title, tmpLen );
+//  496     buf[tmpLen++] = ' ';
+//  497   }
+//  498 
+//  499   err = (uint32)(value1);
+//  500   _ltoa( err, &buf[tmpLen], format1 );
+//  501   tmpLen = (uint8)osal_strlen( (char*)buf );
+//  502 
+//  503   buf[tmpLen++] = ',';
+//  504   buf[tmpLen++] = ' ';
+//  505   err = (uint32)(value2);
+//  506   _ltoa( err, &buf[tmpLen], format2 );
+//  507 
+//  508   HalLcdWriteString( (char *)buf, line );		
+//  509 
+//  510 #endif
+//  511 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock6
+//  512 
+//  513 /**************************************************************************************************
+//  514  * @fn      HalLcdDisplayPercentBar
+//  515  *
+//  516  * @brief   Display percentage bar on the LCD
+//  517  *
+//  518  * @param   title   -
+//  519  *          value   -
+//  520  *
+//  521  * @return  None
+//  522  **************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  523 void HalLcdDisplayPercentBar( char *title, uint8 value )
+HalLcdDisplayPercentBar:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function HalLcdDisplayPercentBar
+        CODE
+//  524 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  525 #if (HAL_LCD == TRUE)
+//  526 
+//  527   uint8 percent;
+//  528   uint8 leftOver;
+//  529   uint8 buf[17];
+//  530   uint32 err;
+//  531   uint8 x;
+//  532 
+//  533   /* Write the title: */
+//  534   HalLcdWriteString( title, HAL_LCD_LINE_1 );
+//  535 
+//  536   if ( value > 100 )
+//  537     value = 100;
+//  538 
+//  539   /* convert to blocks */
+//  540   percent = (uint8)(value / 10);
+//  541   leftOver = (uint8)(value % 10);
+//  542 
+//  543   /* Make window */
+//  544   osal_memcpy( buf, "[          ]  ", 15 );
+//  545 
+//  546   for ( x = 0; x < percent; x ++ )
+//  547   {
+//  548     buf[1+x] = '>';
+//  549   }
+//  550 
+//  551   if ( leftOver >= 5 )
+//  552     buf[1+x] = '+';
+//  553 
+//  554   err = (uint32)value;
+//  555   _ltoa( err, (uint8*)&buf[13], 10 );
+//  556 
+//  557   HalLcdWriteString( (char*)buf, HAL_LCD_LINE_2 );
+//  558 
+//  559 #endif
+//  560 
+//  561 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock7
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SET_DDRAM_ADDR?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SET_DDRAM_ADDR
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdWriteString?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdWriteString
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdWriteValue?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdWriteValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdWriteScreen?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdWriteScreen
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdWriteStringValue?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdWriteStringValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdWriteStringValueValue?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdWriteStringValueValue
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalLcdDisplayPercentBar?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalLcdDisplayPercentBar
+
+        END
+//  562 
+//  563 
+//  564 #if (HAL_LCD == TRUE)
+//  565 /**************************************************************************************************
+//  566  *                                    HARDWARE LCD
+//  567  **************************************************************************************************/
+//  568 
+//  569 /**************************************************************************************************
+//  570  * @fn      halLcd_ConfigIO
+//  571  *
+//  572  * @brief   Configure IO lines needed for LCD control.
+//  573  *
+//  574  * @param   None
+//  575  *
+//  576  * @return  None
+//  577  **************************************************************************************************/
+//  578 static void halLcd_ConfigIO(void)
+//  579 {
+//  580   /* GPIO configuration */
+//  581   HAL_CONFIG_IO_OUTPUT(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  1);
+//  582   HAL_CONFIG_IO_OUTPUT(HAL_LCD_RESET_PORT, HAL_LCD_RESET_PIN, 1);
+//  583   HAL_CONFIG_IO_OUTPUT(HAL_LCD_CS_PORT,    HAL_LCD_CS_PIN,    1);
+//  584 /* 30/8/2010 ++ by feibit */
+//  585   HAL_CONFIG_IO_OUTPUT(HAL_LCD_BK_PORT,    HAL_LCD_BK_PIN,    1);
+//  586 
+//  587 }
+//  588 
+//  589 /**************************************************************************************************
+//  590  * @fn      halLcd_ConfigSPI
+//  591  *
+//  592  * @brief   Configure SPI lines needed for talking to LCD.
+//  593  *
+//  594  * @param   None
+//  595  *
+//  596  * @return  None
+//  597  **************************************************************************************************/
+//  598 static void halLcd_ConfigSPI(void)
+//  599 {
+//  600   /* UART/SPI Peripheral configuration */
+//  601 
+//  602    uint8 baud_exponent;
+//  603    uint8 baud_mantissa;
+//  604 
+//  605   /* Set SPI on UART 1 alternative 2 */
+//  606   PERCFG |= 0x02;
+//  607 
+//  608   /* Configure clk, master out and master in lines */
+//  609   HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_CLK_PORT,  HAL_LCD_CLK_PIN);
+//  610   HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MOSI_PORT, HAL_LCD_MOSI_PIN);
+//  611 /* 30/8/2010 ++ by feibit */
+//  612 //  HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MISO_PORT, HAL_LCD_MISO_PIN);
+//  613 
+//  614 
+//  615   /* Set SPI speed to 1 MHz (the values assume system clk of 32MHz)
+//  616    * Confirm on board that this results in 1MHz spi clk.
+//  617    */
+//  618   baud_exponent = 15;
+//  619   baud_mantissa =  0;
+//  620 
+//  621   /* Configure SPI */
+//  622   U1UCR  = 0x80;      /* Flush and goto IDLE state. 8-N-1. */
+//  623   U1CSR  = 0x00;      /* SPI mode, master. */
+//  624   U1GCR  = HAL_SPI_TRANSFER_MSB_FIRST | HAL_SPI_CLOCK_PHA_0 | HAL_SPI_CLOCK_POL_LO | baud_exponent;
+//  625   U1BAUD = baud_mantissa;
+//  626 }
+//  627 
+//  628 /**************************************************************************************************
+//  629  * @fn      HalLcd_HW_Init
+//  630  *
+//  631  * @brief   Initilize HW LCD Driver.
+//  632  *
+//  633  * @param   None
+//  634  *
+//  635  * @return  None
+//  636  **************************************************************************************************/
+//  637 void HalLcd_HW_Init(void)
+//  638 {
+//  639     /* Initialize LCD IO lines */
+//  640     halLcd_ConfigIO();
+//  641 
+//  642     /* Initialize SPI */
+//  643     halLcd_ConfigSPI();
+//  644 
+//  645     HalLcd_HW_Control(0xaf);    //¿ªÏÔÊ¾
+//  646     HalLcd_HW_Control(0x40);    //ÏÔÊ¾ÆðÊ¼ÐÐÎª0
+//  647     HalLcd_HW_Control(0xa0);    //RAMÁÐµØÖ·ÓëÁÐÇý¶¯Í¬Ë³Ðò
+//  648     HalLcd_HW_Control(0xa6);    //ÕýÏòÏÔÊ¾
+//  649     HalLcd_HW_Control(0xa4);    //ÏÔÊ¾È«ÁÁ¹¦ÄÜ¹Ø±Õ
+//  650     HalLcd_HW_Control(0xa2);    //LCDÆ«Ñ¹±È1/9
+//  651     HalLcd_HW_Control(0xc8);    //ÐÐÇý¶¯·½ÏòÎª·´Ïò
+//  652     HalLcd_HW_Control(0x2f);    //ÆôÓÃÄÚ²¿LCDÇý¶¯µçÔ´
+//  653     HalLcd_HW_Control(0xf8);    //ÉýÑ¹µçÂ·ÉèÖÃÖ¸Áî´úÂë
+//  654     HalLcd_HW_Control(0x00);    //±¶Ñ¹ÉèÖÃÎª4X
+//  655 
+//  656     /* set contrast */
+//  657     HalLcd_HW_SetContrast(0x38);
+//  658     
+//  659     /* Clear the display */
+//  660     HalLcd_HW_Clear();
+//  661 
+//  662 }
+//  663 
+//  664 /**************************************************************************************************
+//  665  * @fn      HalLcd_HW_Control
+//  666  *
+//  667  * @brief   Write 1 command to the LCD
+//  668  *
+//  669  * @param   uint8 cmd - command to be written to the LCD
+//  670  *
+//  671  * @return  None
+//  672  **************************************************************************************************/
+//  673 void HalLcd_HW_Control(uint8 cmd)
+//  674 {
+//  675   LCD_SPI_BEGIN();
+//  676   LCD_DO_CONTROL();
+//  677   LCD_SPI_TX(cmd);
+//  678   LCD_SPI_WAIT_RXRDY();
+//  679   LCD_SPI_END();
+//  680 }
+//  681 
+//  682 /**************************************************************************************************
+//  683  * @fn      HalLcd_HW_Write
+//  684  *
+//  685  * @brief   Write 1 byte to the LCD
+//  686  *
+//  687  * @param   uint8 data - data to be written to the LCD
+//  688  *
+//  689  * @return  None
+//  690  **************************************************************************************************/
+//  691 void HalLcd_HW_Write(uint8 data)
+//  692 {
+//  693   LCD_SPI_BEGIN();
+//  694   LCD_DO_WRITE();
+//  695   LCD_SPI_TX(data);
+//  696   LCD_SPI_WAIT_RXRDY();
+//  697   LCD_SPI_END();
+//  698 }
+//  699 
+//  700 /**************************************************************************************************
+//  701  * @fn          HalLcd_HW_SetContrast
+//  702  *
+//  703  * @brief       Set display contrast
+//  704  *
+//  705  * @param       uint8 value - contrast value
+//  706  *
+//  707  * @return      none
+//  708  **************************************************************************************************/
+//  709 void HalLcd_HW_SetContrast(uint8 value)
+//  710 {
+//  711     HalLcd_HW_Control(CONTRAST_CTRL_REGISTER);    
+//  712     HalLcd_HW_Control(value);   
+//  713 }
+//  714 
+//  715 /**************************************************************************************************
+//  716  * @fn      HalLcd_HW_Clear
+//  717  *
+//  718  * @brief   Clear the HW LCD
+//  719  *
+//  720  * @param   None
+//  721  *
+//  722  * @return  None
+//  723  **************************************************************************************************/
+//  724 void HalLcd_HW_Clear(void)
+//  725 {
+//  726 	uint8 i,j;
+//  727 	for (i = 0; i < 8; i++)
+//  728 	{
+//  729 		for (j = 0; j < 132; j++)
+//  730 		{
+//  731 			SET_DDRAM_ADDR(j,i);
+//  732 			HalLcd_HW_Write(0);
+//  733 		}
+//  734 	}
+//  735 }
+//  736 
+//  737 /**************************************************************************************************
+//  738  * @fn      HalLcd_HW_WriteChar
+//  739  *
+//  740  * @brief   Write one char to the display
+//  741  *
+//  742  * @param   uint8 line - line number that the char will be displayed
+//  743  *          uint8 col - colum where the char will be displayed
+//  744  *
+//  745  * @return  None
+//  746  **************************************************************************************************/
+//  747 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text)
+//  748 {
+//  749     uint8 j;
+//  750     uint16 addr;
+//  751     uint8 cvt_result;
+//  752 
+//  753     if (col < LCD_MAX_LINE_LENGTH && line <= HAL_LCD_LINE_4)
+//  754     {
+//  755             
+//  756         //write first line 
+//  757         SET_DDRAM_ADDR(col * 8, (line - 1) * 2);
+//  758         addr = (text - 0x20)*12;
+//  759 
+//  760         for (j = 0; j < 8; j++)
+//  761         {
+//  762              cvt_result = HalLcd_Convert_DZK(j,addr);
+//  763              cvt_result = cvt_result << 2;
+//  764         	HalLcd_HW_Write(cvt_result);
+//  765         }
+//  766 
+//  767         //write second line 
+//  768         SET_DDRAM_ADDR(col * 8, (line - 1) * 2 + 1);
+//  769         addr = addr + 6;
+//  770 
+//  771         for (j = 0; j < 8; j++)
+//  772         {
+//  773              cvt_result = HalLcd_Convert_DZK(j,addr);
+//  774         	HalLcd_HW_Write(cvt_result);
+//  775         }
+//  776 
+//  777     }
+//  778     else
+//  779     {
+//  780         return;
+//  781     }
+//  782 }
+//  783 
+//  784 uint8 HalLcd_Convert_DZK(uint8 index, uint16 addr)
+//  785 {
+//  786     uint8 return_val = 0;
+//  787     uint8 j;
+//  788     uint8 temp;
+//  789     uint8 mask_array[8] = {BIT7,BIT6,BIT5,BIT4,BIT3,BIT2,BIT1,BIT0};
+//  790     uint8 mask = mask_array[index];
+//  791 
+//  792     if (index > 7)
+//  793     {
+//  794         return return_val;
+//  795     }
+//  796 
+//  797     for (j = 0; j < 6; j++)
+//  798     {
+//  799         temp = ASCIITAB_DZK[addr + j];
+//  800         temp = temp & mask;
+//  801         temp = temp >> (7 - index);
+//  802         if (temp)
+//  803         {
+//  804             return_val |=  mask_array[7-j];
+//  805         }
+//  806         else
+//  807         {
+//  808             return_val &=  ~mask_array[7-j];
+//  809         }
+//  810     }
+//  811 
+//  812     return return_val;
+//  813 }
+//  814 
+//  815 /**************************************************************************************************
+//  816  * @fn          halLcdWriteLine
+//  817  *
+//  818  * @brief       Write one line on display
+//  819  *
+//  820  * @param       uint8 line - display line
+//  821  *              char *pText - text buffer to write
+//  822  *
+//  823  * @return      none
+//  824  **************************************************************************************************/
+//  825 void HalLcd_HW_WriteLine(uint8 line, const char *pText)
+//  826 {
+//  827   uint8 count;
+//  828   uint8 totalLength = (uint8)osal_strlen( (char *)pText );
+//  829 
+//  830   /* Write the content first */
+//  831   for (count=0; count<totalLength; count++)
+//  832   {
+//  833     HalLcd_HW_WriteChar(line, count, (*(pText++)));
+//  834   }
+//  835 
+//  836   /* Write blank spaces to rest of the line */
+//  837   for(count=totalLength; count<LCD_MAX_LINE_LENGTH;count++)
+//  838   {
+//  839     HalLcd_HW_WriteChar(line, count, ' ');
+//  840   }
+//  841 }
+//  842 
+//  843 /**************************************************************************************************
+//  844  * @fn      HalLcd_HW_WaitUs
+//  845  *
+//  846  * @brief   wait for x us. @ 32MHz MCU clock it takes 32 "nop"s for 1 us delay.
+//  847  *
+//  848  * @param   x us. range[0-65536]
+//  849  *
+//  850  * @return  None
+//  851  **************************************************************************************************/
+//  852 void HalLcd_HW_WaitUs(uint16 microSecs)
+//  853 {
+//  854   while(microSecs--)
+//  855   {
+//  856     /* 32 NOPs == 1 usecs */
+//  857     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  858     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  859     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  860     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  861     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  862     asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+//  863     asm("nop"); asm("nop");
+//  864   }
+//  865 }
+//  866 #endif
+//  867 
+//  868 
+//  869 /**************************************************************************************************
+//  870 **************************************************************************************************/
+//  871 
+//  872 
+//  873 
+// 
+//    24 bytes in segment BANKED_CODE
+//    48 bytes in segment BANK_RELAYS
+// 1 152 bytes in segment CODE_C
+// 
+// 1 224 bytes of CODE memory
+//
+//Errors: none
+//Warnings: none

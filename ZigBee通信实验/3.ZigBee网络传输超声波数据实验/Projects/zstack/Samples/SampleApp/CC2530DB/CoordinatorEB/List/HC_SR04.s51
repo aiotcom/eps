@@ -1,0 +1,842 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        16/Dec/2020  22:49:09 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Components\HARDWARE\HC_SR04.c        /
+//    Command line       =  -f E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg    /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                  /
+//                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f      /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg      /
+//                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR     /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFF11                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅ /
+//                          ÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Components\HA /
+//                          RDWARE\HC_SR04.c -D ZIGBEEPRO -D ZTOOL_P1 -D      /
+//                          MT_SYS_FUNC -D xMT_ZDO_FUNC -D                    /
+//                          LCD_SUPPORTED=DEBUG -D NV_RESTORE -lC             /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\CoordinatorEB\List\ -lA                    /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\CoordinatorEB\List\ --diag_suppress        /
+//                          Pe001,Pa010 -o E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.Z /
+//                          igBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sampl /
+//                          es\SampleApp\CC2530DB\CoordinatorEB\Obj\ -e       /
+//                          --debug --core=plain --dptr=16,1                  /
+//                          --data_model=large --code_model=banked            /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data_rom --nr_virtual_regs 16   /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.Zi /
+//                          gBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sample /
+//                          s\SampleApp\CC2530DB\..\SOURCE\ -I                /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\ZMAIN\TI2530DB\ -I                /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\MT\ -I           /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I  /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC253 /
+//                          0EB\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍø /
+//                          Âç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Samp /
+//                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU /
+//                          \CCSOC\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBe /
+//                          eÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\S /
+//                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\OSAL\ /
+//                          INCLUDE\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigB /
+//                          eeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\ /
+//                          SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STAC /
+//                          K\AF\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍ /
+//                          øÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sam /
+//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\N /
+//                          WK\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂ /
+//                          ç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sampl /
+//                          eApp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SEC /
+//                          \ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´ /
+//                          «Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleA /
+//                          pp\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ /
+//                           -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´« /
+//                          Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleAp /
+//                          p\CC2530DB\..\..\..\..\..\COMPONENTS\STACK\SYS\   /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\    /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I  /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I         /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\  /
+//                          -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Ê /
+//                          ä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\..\..\..\..\..\COMPONENTS\SERVICES\SDAT /
+//                          A\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç /
+//                          ´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sample /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUD /
+//                          E\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç /
+//                          ´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sample /
+//                          App\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_L /
+//                          EVEL\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍ /
+//                          øÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\Sam /
+//                          pleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LOW /
+//                          _LEVEL\srf04\ -I E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3 /
+//                          .ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Sam /
+//                          ples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS /
+//                          \MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -I              /
+//                          E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\..\..\..\..\..\COMPONENTS\HARDWARE\ -Ohz   /
+//    List file          =  E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬ /
+//                          Éù²¨Êý¾ÝÊµÑé\Projects\zstack\Samples\SampleApp\CC /
+//                          2530DB\CoordinatorEB\List\HC_SR04.s51             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME HC_SR04
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?FLT_ADD
+        EXTERN ?FLT_DIV
+        EXTERN ?FLT_MUL
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?R2345_FLT_TO_L
+        EXTERN ?UL_TO_FLT
+        EXTERN ?US_DIV_MOD
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSTORE_R2345
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??HCSR04_Init?relay
+        FUNCTION ??HCSR04_Init?relay,0203H
+        PUBLIC ??HCSR04_StartMeasure?relay
+        FUNCTION ??HCSR04_StartMeasure?relay,0203H
+        PUBLIC HCSR04_Init
+        FUNCTION HCSR04_Init,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC HCSR04_StartMeasure
+        FUNCTION HCSR04_StartMeasure,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P0SEL
+        PUBWEAK P1DIR
+        PUBWEAK P1INP
+        PUBWEAK P1SEL
+        PUBWEAK _A_IEN1
+        PUBWEAK _A_P0
+        PUBWEAK _A_P1
+        PUBWEAK __Constant_0
+        PUBWEAK __Constant_1
+        PUBWEAK __Constant_14
+        PUBWEAK __Constant_3f000000
+        PUBWEAK __Constant_a
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+delay_ms            SYMBOL "delay_ms"
+delay_us            SYMBOL "delay_us"
+??delay_ms?relay    SYMBOL "?relay", delay_ms
+??delay_us?relay    SYMBOL "?relay", delay_us
+HCSR04_Init         SYMBOL "HCSR04_Init"
+??HCSR04_Init?relay SYMBOL "?relay", HCSR04_Init
+HCSR04_StartMeasure SYMBOL "HCSR04_StartMeasure"
+??HCSR04_StartMeasure?relay SYMBOL "?relay", HCSR04_StartMeasure
+
+        EXTERN delay_ms
+        FUNCTION delay_ms,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN delay_us
+        FUNCTION delay_us,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??delay_ms?relay
+        FUNCTION ??delay_ms?relay,00H
+        EXTERN ??delay_us?relay
+        FUNCTION ??delay_us?relay,00H
+        EXTERN HCSR04Count
+
+// E:\³£ÓÃÄ£¿éÊµÑé\ZigBeeÍ¨ÐÅÊµÑé\3.ZigBeeÍøÂç´«Êä³¬Éù²¨Êý¾ÝÊµÑé\Components\HARDWARE\HC_SR04.c
+//    1 #include "HC_SR04.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,090H
+// union <unnamed> volatile __sfr _A_P1
+_A_P1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0b8H
+// union <unnamed> volatile __sfr _A_IEN1
+_A_IEN1:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f6H
+// unsigned char volatile __sfr P1INP
+P1INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//    2 #include "TM1640.h"	
+//    3 #include "delay.h"
+//    4 #include "Time.h"
+//    5 
+//    6 //==========================================================
+//    7 //	º¯ÊýÃû³Æ£º	HCSR04_Init()
+//    8 //
+//    9 //	º¯Êý¹¦ÄÜ£º	³õÊ¼»¯³¬Éù²¨Ä£¿é
+//   10 //
+//   11 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//   12 //
+//   13 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   14 //
+//   15 //	ËµÃ÷£º		
+//   16 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   17 void HCSR04_Init(void)
+HCSR04_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function HCSR04_Init
+        CODE
+//   18 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   19     P0SEL &= ~0x03;     //ÉèÖÃP0.0¡¢P0.1ÆÕÍ¨IO¿Ú  
+        ANL     0xf3,#0xfc
+//   20     P1SEL &= ~0xF3;     //ÉèÖÃP1.0¡¢P1.1¡¢P1.4¡¢P1.5¡¢P1.6¡¢P1.7ÎªÆÕÍ¨IO¿Ú 
+        ANL     0xf4,#0xc
+//   21     
+//   22     P0DIR |= 0x01;      //P0.0¶¨ÒåÎªÊä³ö
+        ORL     0xfd,#0x1
+//   23     P1DIR |= 0x62;      //P1.1¡¢P1.5¡¢P1.6¶¨ÒåÎªÊä³ö
+        ORL     0xfe,#0x62
+//   24     
+//   25     P0DIR &= ~0x02;     //ÉèP0.1ÎªÊäÈëÄ£Ê½ 
+        ANL     0xfd,#0xfd
+//   26     P0INP &= ~0x02;     //´ò¿ªP0.1ÉÏÀ­µç×è
+        ANL     0x8f,#0xfd
+//   27     P1DIR &= ~0x91;     //ÉèP1.0¡¢P1.4¡¢P1.7ÎªÊäÈëÄ£Ê½ 
+        ANL     0xfe,#0x6e
+//   28     P1INP &= ~0x91;     //´ò¿ªP1.0¡¢P1.4¡¢P1.7ÉÏÀ­µç×è
+        ANL     0xf6,#0x6e
+//   29 	
+//   30     Trigl1_LOW();	//Trigl1³õÊ¼»¯ÖÃ0
+        CLR     0x90.6
+//   31     Trigl2_LOW()	//Trigl2³õÊ¼»¯ÖÃ0
+        CLR     0x90.5
+//   32     Trigl3_LOW()	//Trigl3³õÊ¼»¯ÖÃ0
+        CLR     0x80.0
+//   33     Trigl4_LOW()	//Trigl4³õÊ¼»¯ÖÃ0	
+        CLR     0x90.1
+//   34 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE P0SEL
+        REQUIRE P1SEL
+        REQUIRE P0DIR
+        REQUIRE P1DIR
+        REQUIRE P0INP
+        REQUIRE P1INP
+        REQUIRE _A_P1
+        REQUIRE _A_P0
+//   35 
+//   36 //==========================================================
+//   37 //	º¯ÊýÃû³Æ£º	HCSR04_StartMeasure()
+//   38 //
+//   39 //	º¯Êý¹¦ÄÜ£º	³¬Éù²¨Ä£¿é²â¾à
+//   40 //
+//   41 //	Èë¿Ú²ÎÊý£º	number:¶à´ÎÆ½¾ùÖµ ´ÎÊý
+//   42 //
+//   43 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   44 //
+//   45 //	ËµÃ÷£º		
+//   46 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   47 uint16 HCSR04_StartMeasure(uint8 number)
+HCSR04_StartMeasure:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function HCSR04_StartMeasure
+        CODE
+//   48 {
+        FUNCALL HCSR04_StartMeasure, delay_ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL HCSR04_StartMeasure, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL HCSR04_StartMeasure, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL HCSR04_StartMeasure, delay_us
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//   49 					uint16_t rspcount;
+//   50   static  uint8 Flag = 1;
+//   51   static  uint16 i = 0;
+//   52   static  double HCSR04_Data = 0;
+//   53   static  double Apart = 0;
+//   54   
+//   55   for(i=0;i<number;i++)
+        MOV     DPTR,#??i
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        SJMP    ??HCSR04_StartMeasure_0
+//   56   {
+//   57       Flag = 1;
+//   58       Trigl3_HIGH();  //À­¸ßTrigl3
+//   59       delay_us(20);   //±ØÐë´óÓÚ10us
+//   60       Trigl3_LOW();		//À­µÍTrigl3
+//   61       rspcount = 0;
+//   62 			 
+//   63       while((!Echo3_STATE())&&(rspcount<9000)){	//µÈ´ý·µ»Ø
+//   64 					delay_us(1);
+//   65 					rspcount++;
+//   66 			}
+//   67       HCSR04Count = 0; //ÇåÁã¼ÆÊýÆ÷
+//   68       T1IE = 1;        //¿ªÆôITM1ÖÐ¶Ï,¿ªÊ¼¼ÆÊ±
+//   69       
+//   70 			rspcount = 0;
+//   71       while(Flag)		//µÈ´ý½ÓÊÕ»ØÏìÐÅºÅ
+//   72       {
+//   73 					rspcount++;
+//   74 					delay_us(1);
+//   75           if(!Echo3_STATE())    //½ÓÊÕÍê³É
+//   76           {
+//   77               T1IE = 0;	        //¹Ø±ÕITM2ÖÐ¶Ï
+//   78               if((HCSR04Count*17/50)>=400){
+//   79                   i--;
+//   80               }
+//   81               else{ 
+//   82                   Apart += HCSR04Count*17/100;	//¾àÀëÊý¾Ý
+??HCSR04_StartMeasure_1:
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#??Apart
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     DPTR,#??Apart
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+//   83 							}
+//   84               HCSR04Count = 0;
+??HCSR04_StartMeasure_2:
+        MOV     DPTR,#HCSR04Count
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//   85               Flag = 0;
+        MOV     DPTR,#??Flag
+        MOVX    @DPTR,A
+//   86           }
+//   87       }
+//   88 			T1IE = 0;//Í£²½¶¨Ê±Æ÷1¼ÆÊý  
+??HCSR04_StartMeasure_3:
+        CLR     0xb8.1
+//   89 			delay_ms(10);
+        ; Setup parameters for call to function delay_ms
+        MOV     DPTR,#__Constant_a
+        LCALL   ?XLOAD_R2345
+        LCALL   ??delay_ms?relay
+        MOV     DPTR,#??i
+        MOVX    A,@DPTR
+        ADD     A,#0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+??HCSR04_StartMeasure_0:
+        MOVX    @DPTR,A
+        MOV     DPTR,#??i
+        MOV     ?V0 + 0,R6
+        CLR     C
+        MOVX    A,@DPTR
+        SUBB    A,?V0 + 0
+        INC     DPTR
+        MOVX    A,@DPTR
+        SUBB    A,#0x0
+        JC      $+5
+        LJMP    ??HCSR04_StartMeasure_4 & 0xFFFF
+        MOV     DPTR,#??Flag
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+        SETB    0x80.0
+        ; Setup parameters for call to function delay_us
+        MOV     DPTR,#__Constant_14
+        LCALL   ?XLOAD_R2345
+        LCALL   ??delay_us?relay
+        CLR     0x80.0
+        MOV     ?V0 + 0,#0x28
+        MOV     ?V0 + 1,#0x23
+        SJMP    ??HCSR04_StartMeasure_5
+??HCSR04_StartMeasure_6:
+        ; Setup parameters for call to function delay_us
+        MOV     DPTR,#__Constant_1
+        LCALL   ?XLOAD_R2345
+        LCALL   ??delay_us?relay
+        MOV     A,?V0 + 0
+        ADD     A,#-0x1
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#-0x1
+        MOV     ?V0 + 1,A
+??HCSR04_StartMeasure_5:
+        MOV     C,0x80.1
+        JC      ??HCSR04_StartMeasure_7
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JNZ     ??HCSR04_StartMeasure_6
+??HCSR04_StartMeasure_7:
+        MOV     DPTR,#HCSR04Count
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+        SETB    0xb8.1
+??HCSR04_StartMeasure_8:
+        MOV     DPTR,#??Flag
+        MOVX    A,@DPTR
+        JZ      ??HCSR04_StartMeasure_3
+        ; Setup parameters for call to function delay_us
+        MOV     DPTR,#__Constant_1
+        LCALL   ?XLOAD_R2345
+        LCALL   ??delay_us?relay
+        MOV     C,0x80.1
+        JC      ??HCSR04_StartMeasure_8
+        CLR     0xb8.1
+        MOV     DPTR,#HCSR04Count
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     A,R4
+        MOV     B,#0x11
+        MUL     AB
+        MOV     R4,A
+        MOV     R0,B
+        MOV     B,#0x11
+        MOV     A,R5
+        MUL     AB
+        ADD     A,R0
+        MOV     R5,A
+        MOV     A,R4
+        MOV     R0,A
+        MOV     A,R5
+        MOV     R1,A
+        MOV     R2,#0x32
+        MOV     R3,#0x0
+        LCALL   ?US_DIV_MOD
+        MOV     A,R0
+        SUBB    A,#-0x70
+        MOV     A,R1
+        SUBB    A,#0x1
+        JNC     $+5
+        LJMP    ??HCSR04_StartMeasure_1 & 0xFFFF
+        MOV     DPTR,#??i
+        MOVX    A,@DPTR
+        ADD     A,#-0x1
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#-0x1
+        MOVX    @DPTR,A
+        LJMP    ??HCSR04_StartMeasure_2 & 0xFFFF
+//   90   }
+//   91   
+//   92   HCSR04_Data = (Apart/number)/2;//È¡Æ½¾ùÖµ
+??HCSR04_StartMeasure_4:
+        MOV     DPTR,#??Apart
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        CLR     A
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?FLT_DIV
+        MOV     DPTR,#__Constant_3f000000
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 4
+        MOV     R1,#?V0 + 0
+        LCALL   ?FLT_MUL
+        MOV     DPTR,#??HCSR04_Data
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_TO_X
+//   93   Apart = 0;
+        MOV     DPTR,#__Constant_0
+        LCALL   ?XLOAD_R2345
+        MOV     DPTR,#??Apart
+        LCALL   ?XSTORE_R2345
+//   94 	return (uint16)HCSR04_Data;
+        MOV     DPTR,#??HCSR04_Data
+        LCALL   ?XLOAD_R2345
+        LCALL   ?R2345_FLT_TO_L
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+        REQUIRE _A_P0
+        REQUIRE _A_IEN1
+//   95 }
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+??Flag:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for Flag>`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+??i:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+??HCSR04_Data:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA32
+??Apart:
+        DS 4
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for Flag>`:
+        DATA8
+        DB 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_a:
+        DD 10
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_14:
+        DD 20
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_1:
+        DD 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3f000000:
+        DD 3F000000H
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_0:
+        DD 0H
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HCSR04_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HCSR04_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HCSR04_StartMeasure?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HCSR04_StartMeasure
+
+        END
+//   96 
+//   97 
+//   98 
+//   99 
+// 
+// 378 bytes in segment BANKED_CODE
+//  12 bytes in segment BANK_RELAYS
+//   9 bytes in segment SFR_AN
+//   1 byte  in segment XDATA_I
+//   1 byte  in segment XDATA_ID
+//  20 bytes in segment XDATA_ROM_C
+//  10 bytes in segment XDATA_Z
+// 
+// 391 bytes of CODE  memory
+//   0 bytes of CONST memory (+ 20 bytes shared)
+//   0 bytes of DATA  memory (+  9 bytes shared)
+//  11 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

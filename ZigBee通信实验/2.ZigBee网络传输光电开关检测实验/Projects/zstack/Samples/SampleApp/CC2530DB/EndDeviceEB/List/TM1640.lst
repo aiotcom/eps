@@ -1,0 +1,1222 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         23/Oct/2020  17:48:11 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\TM1640.c                         #
+#    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ         #
+#                          -DROOT=__near_func -DBLINK_LEDS) -f                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Co #
+#                          mponents\HARDWARE\TM1640.c -D NWK_AUTO_POLL -D     #
+#                          ZTOOL_P1 -D MT_SYS_FUNC -D MT_ZDO_FUNC -D          #
+#                          LCD_SUPPORTED=DEBUG -lC E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\EndDeviceEB\List\ -lA               #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\List\ --diag_suppress Pe001,Pa010 -o            #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\Obj\ -e --no_unroll --no_inline --no_tbaa       #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\SOURCE #
+#                          \ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏ #
+#                          ß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý #
+#                          ¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\..\. #
+#                          .\..\ZMAIN\TI2530DB\ -I E:\aiotcode-master\¶àÍøÈÚº #
+#                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ #
+#                          ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\Samp #
+#                          leApp\CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\HAL\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\OSAL\INCLUDE\ -I                  #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\AF\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\NWK\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SEC\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SAPI\ -I                    #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\SYS\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\STACK\ZDO\ -I                     #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\F8W\ -I                      #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\ZMAC\ -I                          #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SADDR\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\SERVICES\SDATA\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\INCLUDE\ -I                   #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I                #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I           #
+#                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\  #
+#                          -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´ #
+#                          «¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\COMPONENTS\HARDWARE\ -Om                  #
+#    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\List\TM1640.lst                                 #
+#    Object file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸Ð #
+#                          ÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\EndDevice #
+#                          EB\Obj\TM1640.r51                                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\TM1640.c
+      1          #include "TM1640.h"
+      2          #include "delay.h"
+      3          
+      4          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      5          void init_tm1640(void);
+      6          void send_LED_Display(unsigned char address,uint16 data,unsigned char type); 
+      7          void LED_DisplayClear(void); 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      8          void TM1640_Init(void)
+   \                     TM1640_Init:
+      9          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     10              P1SEL &= ~0x30;     //ÉèÖÃP1.4¡¢P1.5ÎªÆÕÍ¨IO¿Ú  
+   \   000004   53F4CF       ANL     0xf4,#0xcf
+     11              P1DIR |= 0x30;      //P1.4¡¢P1.5¶¨ÒåÎªÊä³ö
+   \   000007   43FE30       ORL     0xfe,#0x30
+     12              init_tm1640();  
+   \   00000A                ; Setup parameters for call to function init_tm1640
+   \   00000A   12....       LCALL   ??init_tm1640?relay
+     13              LED_DisplayClear();//Çå³þÏÔÊ¾
+   \   00000D                ; Setup parameters for call to function LED_DisplayClear
+   \   00000D   12....       LCALL   ??LED_DisplayClear?relay
+     14          }
+   \   000010   D083         POP     DPH
+   \   000012   D082         POP     DPL
+   \   000014   02....       LJMP    ?BRET
+   \   000017                REQUIRE P1SEL
+   \   000017                REQUIRE P1DIR
+     15          
+     16          
+     17          /******			TM1640			******/
+     18          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     19          unsigned char TM164_DATA[14] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x00,0X39,0X76,0X80};//0~9,¿Õ°×£¬C,H,µã;
+   \                     TM164_DATA:
+   \   000000                DS 14
+   \   00000E                REQUIRE `?<Initializer for TM164_DATA>`
+   \   00000E                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     20          unsigned char TM164_SIG[4] = {0x01,0x02,0x04,0x08};
+   \                     TM164_SIG:
+   \   000000                DS 4
+   \   000004                REQUIRE `?<Initializer for TM164_SIG>`
+   \   000004                REQUIRE __INIT_XDATA_I
+     21          
+     22          //==========================================================
+     23          //	º¯ÊýÃû³Æ£º	start
+     24          //
+     25          //	º¯Êý¹¦ÄÜ£º	TM1640¿ªÊ¼
+     26          //
+     27          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     28          //
+     29          //	·µ»Ø²ÎÊý£º	ÎÞ
+     30          //
+     31          //	ËµÃ÷£º		
+     32          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     33          void start(void)
+   \                     start:
+     34          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     35              sda_H;
+   \   000004   D295         SETB    0x90.5
+   \   000006   D295         SETB    0x90.5
+     36              scl_H;
+   \   000008   D294         SETB    0x90.4
+   \   00000A   D294         SETB    0x90.4
+     37              delay_ms(2);
+   \   00000C                ; Setup parameters for call to function delay_ms
+   \   00000C   90....       MOV     DPTR,#__Constant_2
+   \   00000F   12....       LCALL   ?XLOAD_R2345
+   \   000012   12....       LCALL   ??delay_ms?relay
+     38              sda_L;
+   \   000015   C295         CLR     0x90.5
+   \   000017   C295         CLR     0x90.5
+     39              delay_ms(2);
+   \   000019                ; Setup parameters for call to function delay_ms
+   \   000019   90....       MOV     DPTR,#__Constant_2
+   \   00001C   12....       LCALL   ?XLOAD_R2345
+   \   00001F   12....       LCALL   ??delay_ms?relay
+     40              scl_L;
+   \   000022   C294         CLR     0x90.4
+   \   000024   C294         CLR     0x90.4
+     41              delay_ms(2);
+   \   000026                ; Setup parameters for call to function delay_ms
+   \   000026   90....       MOV     DPTR,#__Constant_2
+   \   000029   12....       LCALL   ?XLOAD_R2345
+   \   00002C   12....       LCALL   ??delay_ms?relay
+     42          }
+   \   00002F   D083         POP     DPH
+   \   000031   D082         POP     DPL
+   \   000033   02....       LJMP    ?BRET
+   \   000036                REQUIRE _A_P1
+     43          
+     44          //==========================================================
+     45          //	º¯ÊýÃû³Æ£º	stop
+     46          //
+     47          //	º¯Êý¹¦ÄÜ£º	TM1640Í£Ö¹
+     48          //
+     49          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     50          //
+     51          //	·µ»Ø²ÎÊý£º	ÎÞ
+     52          //
+     53          //	ËµÃ÷£º		
+     54          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     55          void stop(void)
+   \                     stop:
+     56          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     57              sda_L;
+   \   000004   C295         CLR     0x90.5
+   \   000006   C295         CLR     0x90.5
+     58              scl_H;
+   \   000008   D294         SETB    0x90.4
+   \   00000A   D294         SETB    0x90.4
+     59              delay_ms(2);
+   \   00000C                ; Setup parameters for call to function delay_ms
+   \   00000C   90....       MOV     DPTR,#__Constant_2
+   \   00000F   12....       LCALL   ?XLOAD_R2345
+   \   000012   12....       LCALL   ??delay_ms?relay
+     60              sda_H;
+   \   000015   D295         SETB    0x90.5
+   \   000017   D295         SETB    0x90.5
+     61              delay_ms(2);
+   \   000019                ; Setup parameters for call to function delay_ms
+   \   000019   90....       MOV     DPTR,#__Constant_2
+   \   00001C   12....       LCALL   ?XLOAD_R2345
+   \   00001F   12....       LCALL   ??delay_ms?relay
+     62              scl_L;
+   \   000022   C294         CLR     0x90.4
+   \   000024   C294         CLR     0x90.4
+     63              delay_ms(2);
+   \   000026                ; Setup parameters for call to function delay_ms
+   \   000026   90....       MOV     DPTR,#__Constant_2
+   \   000029   12....       LCALL   ?XLOAD_R2345
+   \   00002C   12....       LCALL   ??delay_ms?relay
+     64          }
+   \   00002F   D083         POP     DPH
+   \   000031   D082         POP     DPL
+   \   000033   02....       LJMP    ?BRET
+   \   000036                REQUIRE _A_P1
+     65          
+     66          
+     67          //==========================================================
+     68          //	º¯ÊýÃû³Æ£º	write
+     69          //
+     70          //	º¯Êý¹¦ÄÜ£º	ÉèÖÃÊý¾Ý
+     71          //
+     72          //	Èë¿Ú²ÎÊý£º	ÎÞ
+     73          //
+     74          //	·µ»Ø²ÎÊý£º	ÎÞ
+     75          //
+     76          //	ËµÃ÷£º		
+     77          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     78          void write(unsigned char date)
+   \                     `write`:
+     79          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+     80              unsigned char i,aa;
+     81              aa=date;
+   \   000007   8F..         MOV     ?V0 + 0,R7
+     82              sda_L;
+   \   000009   C295         CLR     0x90.5
+   \   00000B   C295         CLR     0x90.5
+     83              scl_L;
+   \   00000D   C294         CLR     0x90.4
+   \   00000F   C294         CLR     0x90.4
+     84              for(i=0;i<8;i++)
+   \   000011   7E00         MOV     R6,#0x0
+   \   000013   8018         SJMP    ??write_0
+     85              {
+     86                  scl_L;
+     87                  if(aa&0x01)
+     88                  {
+     89                      sda_H;
+     90                      delay_ms(2);
+     91                  }
+     92                  else
+     93                  {
+     94                      sda_L
+   \                     ??write_1:
+   \   000015   C295         CLR     0x90.5
+   \   000017   C295         CLR     0x90.5
+     95                      delay_ms(2);
+   \   000019                ; Setup parameters for call to function delay_ms
+   \                     ??write_2:
+   \   000019   90....       MOV     DPTR,#__Constant_2
+   \   00001C   12....       LCALL   ?XLOAD_R2345
+   \   00001F   12....       LCALL   ??delay_ms?relay
+     96                  }
+     97                  scl_H;
+   \   000022   D294         SETB    0x90.4
+   \   000024   D294         SETB    0x90.4
+     98                  aa=aa>>1;
+   \   000026   E5..         MOV     A,?V0 + 0
+   \   000028   C3           CLR     C
+   \   000029   13           RRC     A
+   \   00002A   F5..         MOV     ?V0 + 0,A
+   \   00002C   0E           INC     R6
+   \                     ??write_0:
+   \   00002D   EE           MOV     A,R6
+   \   00002E   C3           CLR     C
+   \   00002F   9408         SUBB    A,#0x8
+   \   000031   C294         CLR     0x90.4
+   \   000033   C294         CLR     0x90.4
+   \   000035   500C         JNC     ??write_3
+   \   000037   E5..         MOV     A,?V0 + 0
+   \   000039   A2E0         MOV     C,0xE0 /* A   */.0
+   \   00003B   50D8         JNC     ??write_1
+   \   00003D   D295         SETB    0x90.5
+   \   00003F   D295         SETB    0x90.5
+   \   000041                ; Setup parameters for call to function delay_ms
+   \   000041   80D6         SJMP    ??write_2
+     99              }
+    100              scl_L;
+    101          
+    102              sda_L;
+   \                     ??write_3:
+   \   000043   C295         CLR     0x90.5
+   \   000045   C295         CLR     0x90.5
+    103          
+    104          }
+   \   000047   7F01         MOV     R7,#0x1
+   \   000049   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00004C                REQUIRE _A_P1
+    105          
+    106          //==========================================================
+    107          //	º¯ÊýÃû³Æ£º	init_tm1640
+    108          //
+    109          //	º¯Êý¹¦ÄÜ£º	³õÊ¼»¯TM1640
+    110          //
+    111          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    112          //
+    113          //	·µ»Ø²ÎÊý£º	ÎÞ
+    114          //
+    115          //	ËµÃ÷£º		
+    116          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    117          void init_tm1640(void)
+   \                     init_tm1640:
+    118          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    119              sda_H;
+   \   000004   D295         SETB    0x90.5
+   \   000006   D295         SETB    0x90.5
+    120              scl_H;
+   \   000008   D294         SETB    0x90.4
+   \   00000A   D294         SETB    0x90.4
+    121              start();
+   \   00000C                ; Setup parameters for call to function start
+   \   00000C   12....       LCALL   ??start?relay
+    122              write(SET_DATA_ORDER);//ÉèÖÃÊý¾Ý£¬0x40,0x44·Ö±ð¶ÔÓ¦µØÖ·×Ô¶¯¼ÓÒ»ºÍ¹Ì¶¨µØÖ·Ä£Ê½
+   \   00000F                ; Setup parameters for call to function write
+   \   00000F   7940         MOV     R1,#0x40
+   \   000011   12....       LCALL   ??write?relay
+    123              stop();
+   \   000014                ; Setup parameters for call to function stop
+   \   000014   12....       LCALL   ??stop?relay
+    124              start();
+   \   000017                ; Setup parameters for call to function start
+   \   000017   12....       LCALL   ??start?relay
+    125              write(SET_DISPLAY);	  //¿ØÖÆÏÔÊ¾£¬¿ªÏÔÊ¾0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f·Ö±ð¶ÔÓ¦Âö³å¿í¶È
+   \   00001A                ; Setup parameters for call to function write
+   \   00001A   798C         MOV     R1,#-0x74
+   \   00001C   12....       LCALL   ??write?relay
+    126                                    //------------------1/16, 2/16, 4/16, 10/16, 11/16, 12/16, 13/16, 14/16
+    127              //0x80¹ØÏÔÊ¾
+    128              stop();
+   \   00001F                ; Setup parameters for call to function stop
+   \   00001F   12....       LCALL   ??stop?relay
+    129          
+    130          }
+   \   000022   D083         POP     DPH
+   \   000024   D082         POP     DPL
+   \   000026   02....       LJMP    ?BRET
+   \   000029                REQUIRE _A_P1
+    131          
+    132          //==========================================================
+    133          //	º¯ÊýÃû³Æ£º	init_tm1640_NEW
+    134          //
+    135          //	º¯Êý¹¦ÄÜ£º	ÉèÖÃTM1640
+    136          //
+    137          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    138          //
+    139          //	·µ»Ø²ÎÊý£º	ÎÞ
+    140          //
+    141          //	ËµÃ÷£º		
+    142          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    143          void init_tm1640_NEW(void)
+   \                     init_tm1640_NEW:
+    144          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    145              unsigned char i;
+    146              sda_H;
+   \   000005   D295         SETB    0x90.5
+   \   000007   D295         SETB    0x90.5
+    147              scl_H;
+   \   000009   D294         SETB    0x90.4
+   \   00000B   D294         SETB    0x90.4
+    148          
+    149              start();
+   \   00000D                ; Setup parameters for call to function start
+   \   00000D   12....       LCALL   ??start?relay
+    150              write(SET_DATA_ORDER);	//ÉèÖÃÊý¾Ý£¬0x40,0x44·Ö±ð¶ÔÓ¦µØÖ·×Ô¶¯¼ÓÒ»ºÍ¹Ì¶¨µØÖ·Ä£Ê½
+   \   000010                ; Setup parameters for call to function write
+   \   000010   7940         MOV     R1,#0x40
+   \   000012   12....       LCALL   ??write?relay
+    151              stop();
+   \   000015                ; Setup parameters for call to function stop
+   \   000015   12....       LCALL   ??stop?relay
+    152          
+    153              start();
+   \   000018                ; Setup parameters for call to function start
+   \   000018   12....       LCALL   ??start?relay
+    154              write(0x00);		//ÉèÖÃµØÖ·
+   \   00001B                ; Setup parameters for call to function write
+   \   00001B   7900         MOV     R1,#0x0
+   \   00001D   12....       LCALL   ??write?relay
+    155              for(i=0;i<4;i++)
+   \   000020   7E00         MOV     R6,#0x0
+   \   000022   8014         SJMP    ??init_tm1640_NEW_0
+    156              {
+    157                  write(TM164_DATA[i]);
+   \                     ??init_tm1640_NEW_1:
+   \   000024                ; Setup parameters for call to function write
+   \   000024   8E..         MOV     ?V0 + 0,R6
+   \   000026   74..         MOV     A,#TM164_DATA & 0xff
+   \   000028   25..         ADD     A,?V0 + 0
+   \   00002A   F582         MOV     DPL,A
+   \   00002C   74..         MOV     A,#(TM164_DATA >> 8) & 0xff
+   \   00002E   3400         ADDC    A,#0x0
+   \   000030   F583         MOV     DPH,A
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   F9           MOV     R1,A
+   \   000034   12....       LCALL   ??write?relay
+    158              }
+   \   000037   0E           INC     R6
+   \                     ??init_tm1640_NEW_0:
+   \   000038   EE           MOV     A,R6
+   \   000039   C3           CLR     C
+   \   00003A   9404         SUBB    A,#0x4
+   \   00003C   40E6         JC      ??init_tm1640_NEW_1
+    159              stop();
+   \   00003E                ; Setup parameters for call to function stop
+   \   00003E   12....       LCALL   ??stop?relay
+    160          
+    161              start();
+   \   000041                ; Setup parameters for call to function start
+   \   000041   12....       LCALL   ??start?relay
+    162              write(SET_DISPLAY);	       //¿ØÖÆÏÔÊ¾£¬¿ªÏÔÊ¾0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f·Ö±ð¶ÔÓ¦Âö³å¿í¶È
+   \   000044                ; Setup parameters for call to function write
+   \   000044   798C         MOV     R1,#-0x74
+   \   000046   12....       LCALL   ??write?relay
+    163                                         //------------------1/16, 2/16, 4/16, 10/16, 11/16, 12/16, 13/16, 14/16
+    164              //0x80¹ØÏÔÊ¾
+    165              stop();
+   \   000049                ; Setup parameters for call to function stop
+   \   000049   12....       LCALL   ??stop?relay
+    166          
+    167          }
+   \   00004C   7F02         MOV     R7,#0x2
+   \   00004E   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000051                REQUIRE _A_P1
+    168          
+    169          //==========================================================
+    170          //	º¯ÊýÃû³Æ£º	send_LED_Display
+    171          //
+    172          //	º¯Êý¹¦ÄÜ£º	ÏÔÊ¾
+    173          //
+    174          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    175          //
+    176          //	·µ»Ø²ÎÊý£º	ÎÞ
+    177          //
+    178          //	ËµÃ÷£º		
+    179          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    180          void send_LED_Display(unsigned char address,uint16 data,unsigned char type)  
+   \                     send_LED_Display:
+    181          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+   \   00000B   8C..         MOV     ?V0 + 1,R4
+    182            unsigned char SEG_1,SEG_2,SEG_3,SEG_4;
+    183            if(type == 1)//ÏÔÊ¾ÎÂ¶ÈµÄÊý¾Ý
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   65..         XRL     A,?V0 + 1
+   \   000011   7005         JNZ     ??send_LED_Display_0
+    184            {
+    185                 SEG_4 = 12;
+   \   000013   75..0C       MOV     ?V0 + 2,#0xc
+   \   000016   8027         SJMP    ??send_LED_Display_1
+    186            }
+    187            else if(type == 2)//ÏÔÊ¾Êª¶ÈµÄÊý¾Ý
+   \                     ??send_LED_Display_0:
+   \   000018   7402         MOV     A,#0x2
+   \   00001A   65..         XRL     A,?V0 + 1
+   \   00001C   7005         JNZ     ??send_LED_Display_2
+    188            {
+    189                SEG_4 = 11;
+   \   00001E   75..0B       MOV     ?V0 + 2,#0xb
+   \   000021   801C         SJMP    ??send_LED_Display_1
+    190            }
+    191            else if(type == 3)//ÏÔÊ¾¹âÇ¿µÄÊý¾Ý
+   \                     ??send_LED_Display_2:
+   \   000023   7403         MOV     A,#0x3
+   \   000025   65..         XRL     A,?V0 + 1
+   \   000027   7010         JNZ     ??send_LED_Display_3
+    192            {
+    193                SEG_4 = data%10;
+   \                     ??send_LED_Display_4:
+   \   000029   EE           MOV     A,R6
+   \   00002A   F8           MOV     R0,A
+   \   00002B   EF           MOV     A,R7
+   \   00002C   F9           MOV     R1,A
+   \   00002D   7A0A         MOV     R2,#0xa
+   \   00002F   7B00         MOV     R3,#0x0
+   \   000031   12....       LCALL   ?US_DIV_MOD
+   \   000034   EA           MOV     A,R2
+   \   000035   F5..         MOV     ?V0 + 2,A
+   \   000037   8006         SJMP    ??send_LED_Display_1
+    194            }
+    195            else if(type == 4)//ÅäºÏÆäËûÄ£¿éÏÔÊ¾
+   \                     ??send_LED_Display_3:
+   \   000039   7404         MOV     A,#0x4
+   \   00003B   65..         XRL     A,?V0 + 1
+   \   00003D   60EA         JZ      ??send_LED_Display_4
+    196            {
+    197                SEG_1 =  data/1000;
+    198                SEG_2 = (data/100)%10;
+    199                SEG_3 = (data/10)%10;
+    200                SEG_4 = data%10;
+    201            }
+    202            if(data > 1000)
+   \                     ??send_LED_Display_1:
+   \   00003F   C3           CLR     C
+   \   000040   EE           MOV     A,R6
+   \   000041   94E9         SUBB    A,#-0x17
+   \   000043   EF           MOV     A,R7
+   \   000044   9403         SUBB    A,#0x3
+   \   000046   4039         JC      ??send_LED_Display_5
+    203            {          
+    204                SEG_1 = data/1000;
+   \   000048   EE           MOV     A,R6
+   \   000049   F8           MOV     R0,A
+   \   00004A   EF           MOV     A,R7
+   \   00004B   F9           MOV     R1,A
+   \   00004C   7AE8         MOV     R2,#-0x18
+   \   00004E   7B03         MOV     R3,#0x3
+   \   000050   12....       LCALL   ?US_DIV_MOD
+   \   000053   E8           MOV     A,R0
+   \   000054   F5..         MOV     ?V0 + 6,A
+    205                SEG_2 = (data/100)%10;
+   \   000056   EE           MOV     A,R6
+   \   000057   F8           MOV     R0,A
+   \   000058   EF           MOV     A,R7
+   \   000059   F9           MOV     R1,A
+   \   00005A   7A64         MOV     R2,#0x64
+   \   00005C   7B00         MOV     R3,#0x0
+   \   00005E   12....       LCALL   ?US_DIV_MOD
+   \   000061   7A0A         MOV     R2,#0xa
+   \   000063   7B00         MOV     R3,#0x0
+   \   000065   12....       LCALL   ?US_DIV_MOD
+   \   000068   EA           MOV     A,R2
+   \   000069   F5..         MOV     ?V0 + 4,A
+    206                SEG_3 = (data/10)%10;
+   \   00006B   EE           MOV     A,R6
+   \   00006C   F8           MOV     R0,A
+   \   00006D   EF           MOV     A,R7
+   \   00006E   F9           MOV     R1,A
+   \   00006F   7A0A         MOV     R2,#0xa
+   \   000071   7B00         MOV     R3,#0x0
+   \   000073   12....       LCALL   ?US_DIV_MOD
+   \   000076   7A0A         MOV     R2,#0xa
+   \   000078   7B00         MOV     R3,#0x0
+   \   00007A   12....       LCALL   ?US_DIV_MOD
+   \   00007D   EA           MOV     A,R2
+   \   00007E   FE           MOV     R6,A
+   \   00007F   802D         SJMP    ??send_LED_Display_6
+    207            }
+    208            else if(data > 9)
+   \                     ??send_LED_Display_5:
+   \   000081   C3           CLR     C
+   \   000082   EE           MOV     A,R6
+   \   000083   940A         SUBB    A,#0xa
+   \   000085   EF           MOV     A,R7
+   \   000086   9400         SUBB    A,#0x0
+   \   000088   401C         JC      ??send_LED_Display_7
+    209            {
+    210                SEG_1 = data/10; 
+   \   00008A   EE           MOV     A,R6
+   \   00008B   F8           MOV     R0,A
+   \   00008C   EF           MOV     A,R7
+   \   00008D   F9           MOV     R1,A
+   \   00008E   7A0A         MOV     R2,#0xa
+   \   000090   7B00         MOV     R3,#0x0
+   \   000092   12....       LCALL   ?US_DIV_MOD
+   \   000095   E8           MOV     A,R0
+   \   000096   F5..         MOV     ?V0 + 6,A
+    211                SEG_2 = data%10;
+   \   000098   EE           MOV     A,R6
+   \   000099   F8           MOV     R0,A
+   \   00009A   EF           MOV     A,R7
+   \   00009B   F9           MOV     R1,A
+   \   00009C   7A0A         MOV     R2,#0xa
+   \   00009E   7B00         MOV     R3,#0x0
+   \   0000A0   12....       LCALL   ?US_DIV_MOD
+   \   0000A3   EA           MOV     A,R2
+   \   0000A4   8004         SJMP    ??send_LED_Display_8
+    212                SEG_3 = 10;
+    213            }
+    214            else
+    215            {
+    216                SEG_1 = 0x00;
+   \                     ??send_LED_Display_7:
+   \   0000A6   75..00       MOV     ?V0 + 6,#0x0
+    217                SEG_2 = data;
+   \   0000A9   EE           MOV     A,R6
+   \                     ??send_LED_Display_8:
+   \   0000AA   F5..         MOV     ?V0 + 4,A
+    218                SEG_3 = 10;
+   \   0000AC   7E0A         MOV     R6,#0xa
+    219            }
+    220            
+    221            sda_H;
+   \                     ??send_LED_Display_6:
+   \   0000AE   D295         SETB    0x90.5
+   \   0000B0   D295         SETB    0x90.5
+    222            scl_H;
+   \   0000B2   D294         SETB    0x90.4
+   \   0000B4   D294         SETB    0x90.4
+    223          
+    224            start();
+   \   0000B6                ; Setup parameters for call to function start
+   \   0000B6   12....       LCALL   ??start?relay
+    225            write(SET_DATA_ORDER);	//ÉèÖÃÊý¾Ý£¬0x40,0x44·Ö±ð¶ÔÓ¦µØÖ·×Ô¶¯¼ÓÒ»ºÍ¹Ì¶¨µØÖ·Ä£Ê½
+   \   0000B9                ; Setup parameters for call to function write
+   \   0000B9   7940         MOV     R1,#0x40
+   \   0000BB   12....       LCALL   ??write?relay
+    226            stop();
+   \   0000BE                ; Setup parameters for call to function stop
+   \   0000BE   12....       LCALL   ??stop?relay
+    227            
+    228            start();
+   \   0000C1                ; Setup parameters for call to function start
+   \   0000C1   12....       LCALL   ??start?relay
+    229            write(address);	//ÉèÖÃÆðÊ¼µØÖ·
+   \   0000C4                ; Setup parameters for call to function write
+   \   0000C4   A9..         MOV     R1,?V0 + 0
+   \   0000C6   12....       LCALL   ??write?relay
+    230            write(TM164_DATA[SEG_1]);
+   \   0000C9                ; Setup parameters for call to function write
+   \   0000C9   74..         MOV     A,#TM164_DATA & 0xff
+   \   0000CB   25..         ADD     A,?V0 + 6
+   \   0000CD   F582         MOV     DPL,A
+   \   0000CF   74..         MOV     A,#(TM164_DATA >> 8) & 0xff
+   \   0000D1   3400         ADDC    A,#0x0
+   \   0000D3   F583         MOV     DPH,A
+   \   0000D5   E0           MOVX    A,@DPTR
+   \   0000D6   F9           MOV     R1,A
+   \   0000D7   12....       LCALL   ??write?relay
+    231            write(TM164_DATA[SEG_2]);
+   \   0000DA                ; Setup parameters for call to function write
+   \   0000DA   74..         MOV     A,#TM164_DATA & 0xff
+   \   0000DC   25..         ADD     A,?V0 + 4
+   \   0000DE   F582         MOV     DPL,A
+   \   0000E0   74..         MOV     A,#(TM164_DATA >> 8) & 0xff
+   \   0000E2   3400         ADDC    A,#0x0
+   \   0000E4   F583         MOV     DPH,A
+   \   0000E6   E0           MOVX    A,@DPTR
+   \   0000E7   F9           MOV     R1,A
+   \   0000E8   12....       LCALL   ??write?relay
+    232            write(TM164_DATA[SEG_3]);
+   \   0000EB                ; Setup parameters for call to function write
+   \   0000EB   8E..         MOV     ?V0 + 4,R6
+   \   0000ED   74..         MOV     A,#TM164_DATA & 0xff
+   \   0000EF   25..         ADD     A,?V0 + 4
+   \   0000F1   F582         MOV     DPL,A
+   \   0000F3   74..         MOV     A,#(TM164_DATA >> 8) & 0xff
+   \   0000F5   3400         ADDC    A,#0x0
+   \   0000F7   F583         MOV     DPH,A
+   \   0000F9   E0           MOVX    A,@DPTR
+   \   0000FA   F9           MOV     R1,A
+   \   0000FB   12....       LCALL   ??write?relay
+    233            write(TM164_DATA[SEG_4]);
+   \   0000FE                ; Setup parameters for call to function write
+   \   0000FE   74..         MOV     A,#TM164_DATA & 0xff
+   \   000100   25..         ADD     A,?V0 + 2
+   \   000102   F582         MOV     DPL,A
+   \   000104   74..         MOV     A,#(TM164_DATA >> 8) & 0xff
+   \   000106   3400         ADDC    A,#0x0
+   \   000108   F583         MOV     DPH,A
+   \   00010A   E0           MOVX    A,@DPTR
+   \   00010B   F9           MOV     R1,A
+   \   00010C   12....       LCALL   ??write?relay
+    234            
+    235            stop();
+   \   00010F                ; Setup parameters for call to function stop
+   \   00010F   12....       LCALL   ??stop?relay
+    236            
+    237            start();
+   \   000112                ; Setup parameters for call to function start
+   \   000112   12....       LCALL   ??start?relay
+    238            write(SET_DISPLAY);	//¿ØÖÆÏÔÊ¾£¬¿ªÏÔÊ¾0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f·Ö±ð¶ÔÓ¦Âö³å¿í¶È
+   \   000115                ; Setup parameters for call to function write
+   \   000115   798C         MOV     R1,#-0x74
+   \   000117   12....       LCALL   ??write?relay
+    239            //------------------1/16, 2/16, 4/16, 10/16, 11/16, 12/16, 13/16, 14/16
+    240            //0x80¹ØÏÔÊ¾
+    241            stop();
+   \   00011A                ; Setup parameters for call to function stop
+   \   00011A   12....       LCALL   ??stop?relay
+    242          }
+   \   00011D   7F08         MOV     R7,#0x8
+   \   00011F   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000122                REQUIRE _A_P1
+    243          //==========================================================
+    244          //	º¯ÊýÃû³Æ£º	send_LED_Display
+    245          //
+    246          //	º¯Êý¹¦ÄÜ£º	ÏÔÊ¾
+    247          //
+    248          //	Èë¿Ú²ÎÊý£º	ÎÞ
+    249          //
+    250          //	·µ»Ø²ÎÊý£º	ÎÞ
+    251          //
+    252          //	ËµÃ÷£º		
+    253          //==========================================================
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    254          void LED_DisplayClear(void)  
+   \                     LED_DisplayClear:
+    255          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    256            unsigned char SEG_1 = 10,SEG_2 = 10,SEG_3 = 10,SEG_4 = 10;
+    257            
+    258            sda_H;
+   \   000004   D295         SETB    0x90.5
+   \   000006   D295         SETB    0x90.5
+    259            scl_H;
+   \   000008   D294         SETB    0x90.4
+   \   00000A   D294         SETB    0x90.4
+    260          
+    261            start();
+   \   00000C                ; Setup parameters for call to function start
+   \   00000C   12....       LCALL   ??start?relay
+    262            write(SET_DATA_ORDER);	//ÉèÖÃÊý¾Ý£¬0x40,0x44·Ö±ð¶ÔÓ¦µØÖ·×Ô¶¯¼ÓÒ»ºÍ¹Ì¶¨µØÖ·Ä£Ê½
+   \   00000F                ; Setup parameters for call to function write
+   \   00000F   7940         MOV     R1,#0x40
+   \   000011   12....       LCALL   ??write?relay
+    263            stop();
+   \   000014                ; Setup parameters for call to function stop
+   \   000014   12....       LCALL   ??stop?relay
+    264            
+    265            start();
+   \   000017                ; Setup parameters for call to function start
+   \   000017   12....       LCALL   ??start?relay
+    266            write(0xc0);	//ÉèÖÃÆðÊ¼µØÖ·
+   \   00001A                ; Setup parameters for call to function write
+   \   00001A   79C0         MOV     R1,#-0x40
+   \   00001C   12....       LCALL   ??write?relay
+    267            write(TM164_DATA[SEG_1]);
+   \   00001F                ; Setup parameters for call to function write
+   \   00001F   90....       MOV     DPTR,#TM164_DATA + 10
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   F9           MOV     R1,A
+   \   000024   12....       LCALL   ??write?relay
+    268            write(TM164_DATA[SEG_2]);
+   \   000027                ; Setup parameters for call to function write
+   \   000027   90....       MOV     DPTR,#TM164_DATA + 10
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   F9           MOV     R1,A
+   \   00002C   12....       LCALL   ??write?relay
+    269            write(TM164_DATA[SEG_3]);
+   \   00002F                ; Setup parameters for call to function write
+   \   00002F   90....       MOV     DPTR,#TM164_DATA + 10
+   \   000032   E0           MOVX    A,@DPTR
+   \   000033   F9           MOV     R1,A
+   \   000034   12....       LCALL   ??write?relay
+    270            write(TM164_DATA[SEG_4]);
+   \   000037                ; Setup parameters for call to function write
+   \   000037   90....       MOV     DPTR,#TM164_DATA + 10
+   \   00003A   E0           MOVX    A,@DPTR
+   \   00003B   F9           MOV     R1,A
+   \   00003C   12....       LCALL   ??write?relay
+    271            
+    272            stop();
+   \   00003F                ; Setup parameters for call to function stop
+   \   00003F   12....       LCALL   ??stop?relay
+    273            
+    274            start();
+   \   000042                ; Setup parameters for call to function start
+   \   000042   12....       LCALL   ??start?relay
+    275            write(SET_DISPLAY);	//¿ØÖÆÏÔÊ¾£¬¿ªÏÔÊ¾0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f·Ö±ð¶ÔÓ¦Âö³å¿í¶È
+   \   000045                ; Setup parameters for call to function write
+   \   000045   798C         MOV     R1,#-0x74
+   \   000047   12....       LCALL   ??write?relay
+    276            //------------------1/16, 2/16, 4/16, 10/16, 11/16, 12/16, 13/16, 14/16
+    277            //0x80¹ØÏÔÊ¾
+    278            stop();
+   \   00004A                ; Setup parameters for call to function stop
+   \   00004A   12....       LCALL   ??stop?relay
+    279          }
+   \   00004D   D083         POP     DPH
+   \   00004F   D082         POP     DPL
+   \   000051   02....       LJMP    ?BRET
+   \   000054                REQUIRE _A_P1
+    280          /******×Ô¶¯¼ÓÒ»Ä£Ê½*****/
+    281          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    282          void send_z(uint8 address,uint8 date)
+   \                     send_z:
+    283          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    284              unsigned char i;
+    285              start();
+   \   000007                ; Setup parameters for call to function start
+   \   000007   12....       LCALL   ??start?relay
+    286              write(address);	//ÉèÖÃÆðÊ¼µØÖ·
+   \   00000A                ; Setup parameters for call to function write
+   \   00000A   EE           MOV     A,R6
+   \   00000B   F9           MOV     R1,A
+   \   00000C   12....       LCALL   ??write?relay
+    287              for(i=0;i<4;i++)
+   \   00000F   7F00         MOV     R7,#0x0
+   \   000011   8014         SJMP    ??send_z_0
+    288              {
+    289                  write(TM164_DATA[i]);
+   \                     ??send_z_1:
+   \   000013                ; Setup parameters for call to function write
+   \   000013   8F..         MOV     ?V0 + 0,R7
+   \   000015   74..         MOV     A,#TM164_DATA & 0xff
+   \   000017   25..         ADD     A,?V0 + 0
+   \   000019   F582         MOV     DPL,A
+   \   00001B   74..         MOV     A,#(TM164_DATA >> 8) & 0xff
+   \   00001D   3400         ADDC    A,#0x0
+   \   00001F   F583         MOV     DPH,A
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   F9           MOV     R1,A
+   \   000023   12....       LCALL   ??write?relay
+    290              }
+   \   000026   0F           INC     R7
+   \                     ??send_z_0:
+   \   000027   EF           MOV     A,R7
+   \   000028   C3           CLR     C
+   \   000029   9404         SUBB    A,#0x4
+   \   00002B   40E6         JC      ??send_z_1
+    291              stop();
+   \   00002D                ; Setup parameters for call to function stop
+   \   00002D   12....       LCALL   ??stop?relay
+    292          }
+   \   000030   7F02         MOV     R7,#0x2
+   \   000032   02....       LJMP    ?BANKED_LEAVE_XDATA
+    293          
+    294          /******¹Ì¶¨µØÖ·Ä£Ê½*****/
+    295          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    296          void send(uint8 address, uint8 date)
+   \                     send:
+    297          
+    298          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+    299              start();
+   \   000009                ; Setup parameters for call to function start
+   \   000009   12....       LCALL   ??start?relay
+    300              write(address);	//´«ÏÔÊ¾Êý¾Ý¶ÔÓ¦µØÖ·
+   \   00000C                ; Setup parameters for call to function write
+   \   00000C   EF           MOV     A,R7
+   \   00000D   F9           MOV     R1,A
+   \   00000E   12....       LCALL   ??write?relay
+    301              write(date);	//´«BYTEÏÔÊ¾Êý¾Ý
+   \   000011                ; Setup parameters for call to function write
+   \   000011   EE           MOV     A,R6
+   \   000012   F9           MOV     R1,A
+   \   000013   12....       LCALL   ??write?relay
+    302              stop();
+   \   000016                ; Setup parameters for call to function stop
+   \   000016   12....       LCALL   ??stop?relay
+    303          }
+   \   000019   7F01         MOV     R7,#0x1
+   \   00001B   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for TM164_DATA>`:
+   \   000000   3F           DB 63
+   \   000001   06           DB 6
+   \   000002   5B           DB 91
+   \   000003   4F           DB 79
+   \   000004   66           DB 102
+   \   000005   6D           DB 109
+   \   000006   7D           DB 125
+   \   000007   07           DB 7
+   \   000008   7F           DB 127
+   \   000009   6F           DB 111
+   \   00000A   00           DB 0
+   \   00000B   39           DB 57
+   \   00000C   76           DB 118
+   \   00000D   80           DB 128
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for TM164_SIG>`:
+   \   000000   01           DB 1
+   \   000001   02           DB 2
+   \   000002   04           DB 4
+   \   000003   08           DB 8
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     __Constant_2:
+   \   000000   02000000     DD 2
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??TM1640_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    TM1640_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    `write`
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??init_tm1640?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    init_tm1640
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??init_tm1640_NEW?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    init_tm1640_NEW
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_LED_Display?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_LED_Display
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LED_DisplayClear?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LED_DisplayClear
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_z?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_z
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send
+    304          
+    305          
+    306          /*   								TM1604½áÊø   								*/
+    307          
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     LED_DisplayClear          2      0      0
+       -> start                4      0      0
+       -> write                4      0      0
+       -> stop                 4      0      0
+       -> start                4      0      0
+       -> write                4      0      0
+       -> write                4      0      0
+       -> write                4      0      0
+       -> write                4      0      0
+       -> write                4      0      0
+       -> stop                 4      0      0
+       -> start                4      0      0
+       -> write                4      0      0
+       -> stop                 4      0      0
+     TM1640_Init               2      0      0
+       -> init_tm1640          4      0      0
+       -> LED_DisplayClear     4      0      0
+     init_tm1640               2      0      0
+       -> start                4      0      0
+       -> write                4      0      0
+       -> stop                 4      0      0
+       -> start                4      0      0
+       -> write                4      0      0
+       -> stop                 4      0      0
+     init_tm1640_NEW           0      0     10
+       -> start                0      0     20
+       -> write                0      0     20
+       -> stop                 0      0     20
+       -> start                0      0     20
+       -> write                0      0     20
+       -> write                0      0     20
+       -> stop                 0      0     20
+       -> start                0      0     20
+       -> write                0      0     20
+       -> stop                 0      0     20
+     send                      0      0      9
+       -> start                0      0     18
+       -> write                0      0     18
+       -> write                0      0     18
+       -> stop                 0      0     18
+     send_LED_Display          0      0     16
+       -> start                0      0     32
+       -> write                0      0     32
+       -> stop                 0      0     32
+       -> start                0      0     32
+       -> write                0      0     32
+       -> write                0      0     32
+       -> write                0      0     32
+       -> write                0      0     32
+       -> write                0      0     32
+       -> stop                 0      0     32
+       -> start                0      0     32
+       -> write                0      0     32
+       -> stop                 0      0     32
+     send_z                    0      0     10
+       -> start                0      0     20
+       -> write                0      0     20
+       -> write                0      0     20
+       -> stop                 0      0     20
+     start                     2      0     16
+       -> delay_ms             4      0      0
+       -> delay_ms             4      0      0
+       -> delay_ms             4      0      0
+     stop                      2      0     16
+       -> delay_ms             4      0      0
+       -> delay_ms             4      0      0
+       -> delay_ms             4      0      0
+     write                     0      0     25
+       -> delay_ms             0      0     18
+       -> delay_ms             0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                Bytes
+     --------------                -----
+     _A_P1                            1
+     P1SEL                            1
+     P1DIR                            1
+     TM1640_Init                     23
+     TM164_DATA                      14
+     TM164_SIG                        4
+     start                           54
+     stop                            54
+     write                           76
+     init_tm1640                     41
+     init_tm1640_NEW                 81
+     send_LED_Display               290
+     LED_DisplayClear                84
+     send_z                          53
+     send                            30
+     ?<Initializer for TM164_DATA>   14
+     ?<Initializer for TM164_SIG>     4
+     __Constant_2                     4
+     ??TM1640_Init?relay              6
+     ??start?relay                    6
+     ??stop?relay                     6
+     ??write?relay                    6
+     ??init_tm1640?relay              6
+     ??init_tm1640_NEW?relay          6
+     ??send_LED_Display?relay         6
+     ??LED_DisplayClear?relay         6
+     ??send_z?relay                   6
+     ??send?relay                     6
+
+ 
+ 786 bytes in segment BANKED_CODE
+  60 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+  18 bytes in segment XDATA_I
+  18 bytes in segment XDATA_ID
+   4 bytes in segment XDATA_ROM_C
+ 
+ 864 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 3 bytes shared)
+  18 bytes of XDATA memory
+
+Errors: none
+Warnings: none

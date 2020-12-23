@@ -1,0 +1,253 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         28/Feb/2019  10:28:09 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Components\HARDWARE\Fan.c         #
+#    Command line       =  -f D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poin #
+#                          t2point-interactive\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg  #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f       #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg    #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF11                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Components\HARDWARE\Fan.c -D      #
+#                          ZIGBEEPRO -D ZTOOL_P1 -D MT_SYS_FUNC -D            #
+#                          xMT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -D NV_RESTORE  #
+#                          -lC D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poi #
+#                          nt2point-interactive\Projects\zstack\Samples\Sampl #
+#                          eApp\CC2530DB\CoordinatorEB\List\ -lA              #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\CoordinatorEB\List\ --diag_suppress      #
+#                          Pe001,Pa010 -o D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2 #
+#                          .0\exp2-point2point-interactive\Projects\zstack\Sa #
+#                          mples\SampleApp\CC2530DB\CoordinatorEB\Obj\ -e     #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poin #
+#                          t2point-interactive\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBee #
+#                          V2.0\exp2-point2point-interactive\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\..\SOURCE\ -I           #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I              #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\MT\ -I         #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\   #
+#                          -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poin #
+#                          t2point-interactive\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\ #
+#                          CC2530EB\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0 #
+#                          \exp2-point2point-interactive\Projects\zstack\Samp #
+#                          les\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\O #
+#                          SAL\MCU\CCSOC\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBe #
+#                          eV2.0\exp2-point2point-interactive\Projects\zstack #
+#                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONE #
+#                          NTS\OSAL\INCLUDE\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zi #
+#                          gBeeV2.0\exp2-point2point-interactive\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\AF\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zig #
+#                          BeeV2.0\exp2-point2point-interactive\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPO #
+#                          NENTS\STACK\NWK\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zig #
+#                          BeeV2.0\exp2-point2point-interactive\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPO #
+#                          NENTS\STACK\SEC\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zig #
+#                          BeeV2.0\exp2-point2point-interactive\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPO #
+#                          NENTS\STACK\SAPI\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zi #
+#                          gBeeV2.0\exp2-point2point-interactive\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\SYS\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zi #
+#                          gBeeV2.0\exp2-point2point-interactive\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\STACK\ZDO\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zi #
+#                          gBeeV2.0\exp2-point2point-interactive\Projects\zst #
+#                          ack\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMP #
+#                          ONENTS\ZMAC\F8W\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zig #
+#                          BeeV2.0\exp2-point2point-interactive\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPO #
+#                          NENTS\ZMAC\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2 #
+#                          .0\exp2-point2point-interactive\Projects\zstack\Sa #
+#                          mples\SampleApp\CC2530DB\..\..\..\..\..\COMPONENTS #
+#                          \SERVICES\SADDR\ -I D:\ZigBee\KJXY-ZigBee\KJXY-Zig #
+#                          BeeV2.0\exp2-point2point-interactive\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPO #
+#                          NENTS\SERVICES\SDATA\ -I                           #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\   #
+#                          -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-poin #
+#                          t2point-interactive\Projects\zstack\Samples\Sample #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LE #
+#                          VEL\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2 #
+#                          -point2point-interactive\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\..\..\..\..\..\COMPONENTS\MAC\LO #
+#                          W_LEVEL\srf04\ -I D:\ZigBee\KJXY-ZigBee\KJXY-ZigBe #
+#                          eV2.0\exp2-point2point-interactive\Projects\zstack #
+#                          \Samples\SampleApp\CC2530DB\..\..\..\..\..\COMPONE #
+#                          NTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\ -I            #
+#                          D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\..\..\..\..\..\COMPONENTS\HARDWARE\ -Ohz #
+#    List file          =  D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\CoordinatorEB\List\Fan.lst               #
+#    Object file        =  D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2p #
+#                          oint-interactive\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\CoordinatorEB\Obj\Fan.r51                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\ZigBee\KJXY-ZigBee\KJXY-ZigBeeV2.0\exp2-point2point-interactive\Components\HARDWARE\Fan.c
+      1          #include "Fan.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          void FanOff(void);
+      3          /*
+      4          初始化风扇控制IO
+      5          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      6          void Fan_Init(void)
+   \                     Fan_Init:
+      7          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      8             P0DIR |= 0x02;      //P0.1定义为输出
+   \   000000   43FD02       ORL     0xfd,#0x2
+      9             FanOff();
+   \   000003                REQUIRE ?Subroutine0
+   \   000003                REQUIRE P0DIR
+   \   000003                REQUIRE _A_P0
+   \   000003                ; // Fall through to label ?Subroutine0
+     10          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   C281         CLR     0x80.1
+   \   000002   02....       LJMP    ?BRET
+     11          /*
+     12          控制风扇转动
+     13          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          void FanOn(void)
+   \                     FanOn:
+     15          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     16            Fan = 1;
+   \   000000   D281         SETB    0x80.1
+     17          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P0
+     18          /*
+     19          控制风扇停止
+     20          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     21          void FanOff(void)
+   \                     FanOff:
+     22          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     23            Fan = 0;
+   \   000000   80..         SJMP    ?Subroutine0
+   \   000002                REQUIRE _A_P0
+     24          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Fan_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Fan_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??FanOn?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    FanOn
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??FanOff?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    FanOff
+
+   Maximum stack usage in bytes:
+
+     Function ISTACK PSTACK XSTACK
+     -------- ------ ------ ------
+     FanOff       0      0      0
+     FanOn        0      0      0
+     Fan_Init     0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label   Bytes
+     --------------   -----
+     _A_P0               1
+     P0DIR               1
+     Fan_Init            3
+     ?Subroutine0        5
+     FanOn               5
+     FanOff              2
+     ??Fan_Init?relay    6
+     ??FanOn?relay       6
+     ??FanOff?relay      6
+
+ 
+ 15 bytes in segment BANKED_CODE
+ 18 bytes in segment BANK_RELAYS
+  2 bytes in segment SFR_AN
+ 
+ 33 bytes of CODE memory
+  0 bytes of DATA memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none

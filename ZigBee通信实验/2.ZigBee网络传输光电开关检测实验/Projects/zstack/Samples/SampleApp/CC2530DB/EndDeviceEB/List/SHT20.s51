@@ -1,0 +1,3886 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        23/Oct/2020  17:48:22 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Components\HARDWARE\SHT20.c                       /
+//    Command line       =  -f E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß /
+//                          ´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý /
+//                          ¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB\..\ /
+//                          ..\..\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ     /
+//                          -DROOT=__near_func -DBLINK_LEDS) -f               /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0       /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFF11                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\aiotcode-master\¶àÍøÈÚº /
+//                          ÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í /
+//                          ¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\SHT20. /
+//                          c -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_SYS_FUNC -D  /
+//                          MT_ZDO_FUNC -D LCD_SUPPORTED=DEBUG -lC            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDev /
+//                          iceEB\List\ -lA E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×° /
+//                          ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé /
+//                          -ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\EndDeviceEB\List\ --diag_suppress       /
+//                          Pe001,Pa010 -o E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°Ö /
+//                          Ã\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé- /
+//                          ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\ /
+//                          CC2530DB\EndDeviceEB\Obj\ -e --no_unroll          /
+//                          --no_inline --no_tbaa --debug --core=plain        /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\ -I    /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\SOU /
+//                          RCE\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓ /
+//                          ÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ /
+//                          ÐÆ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530D /
+//                          B\..\..\..\ZMAIN\TI2530DB\ -I                     /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MT\ -I                        /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\HAL\INCLUDE\ -I               /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I       /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\OSAL\INCLUDE\ -I              /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\AF\ -I                  /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\NWK\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\SEC\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\SAPI\ -I                /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\SYS\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\STACK\ZDO\ -I                 /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\ZMAC\F8W\ -I                  /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\ZMAC\ -I                      /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\SERVICES\SADDR\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\SERVICES\SDATA\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\INCLUDE\ -I               /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I            /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I       /
+//                          E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ /
+//                          ..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CH /
+//                          IP\ -I E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚ /
+//                          ÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸Ð /
+//                          Æ÷Êý¾Ý\Projects\zstack\Samples\SampleApp\CC2530DB /
+//                          \..\..\..\..\..\COMPONENTS\HARDWARE\ -Om          /
+//    List file          =  E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ /
+//                          ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\ /
+//                          Projects\zstack\Samples\SampleApp\CC2530DB\EndDev /
+//                          iceEB\List\SHT20.s51                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME SHT20
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?FLT_ADD
+        EXTERN ?FLT_MUL
+        EXTERN ?FLT_TO_L
+        EXTERN ?L_MOV_TO_X
+        EXTERN ?L_MOV_X
+        EXTERN ?R2345_FLT_TO_L
+        EXTERN ?UL_TO_FLT
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSTORE_R2345
+        EXTERN __INIT_XDATA_Z
+
+        FUNCTION ??IIC_Ack?relay,0203H
+        FUNCTION ??IIC_Delay?relay,0203H
+        FUNCTION ??IIC_NAck?relay,0203H
+        FUNCTION ??IIC_Read_Byte?relay,0203H
+        FUNCTION ??IIC_SCL_INPUT?relay,0203H
+        FUNCTION ??IIC_SCL_OUTPUT?relay,0203H
+        FUNCTION ??IIC_SDA_INPUT?relay,0203H
+        FUNCTION ??IIC_SDA_OUTPUT?relay,0203H
+        FUNCTION ??IIC_Start?relay,0203H
+        FUNCTION ??IIC_Stop?relay,0203H
+        FUNCTION ??SHT20_IIC_Init?relay,0203H
+        PUBLIC ??SHT2x_DisplayHumi?relay
+        FUNCTION ??SHT2x_DisplayHumi?relay,0203H
+        PUBLIC ??SHT2x_DisplayTemp?relay
+        FUNCTION ??SHT2x_DisplayTemp?relay,0203H
+        PUBLIC ??SHT2x_GetHumi?relay
+        FUNCTION ??SHT2x_GetHumi?relay,0203H
+        PUBLIC ??SHT2x_GetSerialNumber?relay
+        FUNCTION ??SHT2x_GetSerialNumber?relay,0203H
+        PUBLIC ??SHT2x_GetTemp?relay
+        FUNCTION ??SHT2x_GetTemp?relay,0203H
+        PUBLIC ??SHT2x_GetTempHumi?relay
+        FUNCTION ??SHT2x_GetTempHumi?relay,0203H
+        PUBLIC ??SHT2x_I2cReadByte?relay
+        FUNCTION ??SHT2x_I2cReadByte?relay,0203H
+        PUBLIC ??SHT2x_Init?relay
+        FUNCTION ??SHT2x_Init?relay,0203H
+        PUBLIC ??SHT2x_MeasureHumiHM?relay
+        FUNCTION ??SHT2x_MeasureHumiHM?relay,0203H
+        PUBLIC ??SHT2x_MeasureHumiPoll?relay
+        FUNCTION ??SHT2x_MeasureHumiPoll?relay,0203H
+        PUBLIC ??SHT2x_MeasureTempHM?relay
+        FUNCTION ??SHT2x_MeasureTempHM?relay,0203H
+        PUBLIC ??SHT2x_MeasureTempPoll?relay
+        FUNCTION ??SHT2x_MeasureTempPoll?relay,0203H
+        FUNCTION ??Write_IIC_Byte?relay,0203H
+        FUNCTION IIC_Ack,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION IIC_Delay,0203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION IIC_NAck,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION IIC_Read_Byte,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        FUNCTION IIC_SCL_INPUT,0203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION IIC_SCL_OUTPUT,0203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION IIC_SDA_INPUT,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION IIC_SDA_OUTPUT,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION IIC_Start,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION IIC_Stop,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P0SEL
+        FUNCTION SHT20_IIC_Init,0203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC SHT2x_DisplayHumi
+        FUNCTION SHT2x_DisplayHumi,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC SHT2x_DisplayTemp
+        FUNCTION SHT2x_DisplayTemp,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC SHT2x_GetHumi
+        FUNCTION SHT2x_GetHumi,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC SHT2x_GetSerialNumber
+        FUNCTION SHT2x_GetSerialNumber,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC SHT2x_GetTemp
+        FUNCTION SHT2x_GetTemp,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC SHT2x_GetTempHumi
+        FUNCTION SHT2x_GetTempHumi,021203H
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC SHT2x_I2cReadByte
+        FUNCTION SHT2x_I2cReadByte,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC SHT2x_Init
+        FUNCTION SHT2x_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC SHT2x_MeasureHumiHM
+        FUNCTION SHT2x_MeasureHumiHM,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC SHT2x_MeasureHumiPoll
+        FUNCTION SHT2x_MeasureHumiPoll,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC SHT2x_MeasureTempHM
+        FUNCTION SHT2x_MeasureTempHM,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 16, STACK
+        PUBLIC SHT2x_MeasureTempPoll
+        FUNCTION SHT2x_MeasureTempPoll,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        FUNCTION Write_IIC_Byte,021203H
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK _A_P0
+        PUBWEAK __Constant_14
+        PUBWEAK __Constant_3afa000c
+        PUBWEAK __Constant_3b2fb83f
+        PUBWEAK __Constant_c0c00000
+        PUBWEAK __Constant_c23b6666
+        PUBLIC g_sht2x_param
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+send_LED_Display    SYMBOL "send_LED_Display"
+TM1640_Init         SYMBOL "TM1640_Init"
+??TM1640_Init?relay SYMBOL "?relay", TM1640_Init
+??send_LED_Display?relay SYMBOL "?relay", send_LED_Display
+SHT2x_DisplayHumi   SYMBOL "SHT2x_DisplayHumi"
+??SHT2x_DisplayHumi?relay SYMBOL "?relay", SHT2x_DisplayHumi
+SHT2x_DisplayTemp   SYMBOL "SHT2x_DisplayTemp"
+??SHT2x_DisplayTemp?relay SYMBOL "?relay", SHT2x_DisplayTemp
+SHT2x_GetHumi       SYMBOL "SHT2x_GetHumi"
+??SHT2x_GetHumi?relay SYMBOL "?relay", SHT2x_GetHumi
+SHT2x_GetSerialNumber SYMBOL "SHT2x_GetSerialNumber"
+??SHT2x_GetSerialNumber?relay SYMBOL "?relay", SHT2x_GetSerialNumber
+SHT2x_GetTemp       SYMBOL "SHT2x_GetTemp"
+??SHT2x_GetTemp?relay SYMBOL "?relay", SHT2x_GetTemp
+SHT2x_GetTempHumi   SYMBOL "SHT2x_GetTempHumi"
+??SHT2x_GetTempHumi?relay SYMBOL "?relay", SHT2x_GetTempHumi
+SHT2x_I2cReadByte   SYMBOL "SHT2x_I2cReadByte"
+??SHT2x_I2cReadByte?relay SYMBOL "?relay", SHT2x_I2cReadByte
+SHT2x_Init          SYMBOL "SHT2x_Init"
+??SHT2x_Init?relay  SYMBOL "?relay", SHT2x_Init
+SHT2x_MeasureHumiHM SYMBOL "SHT2x_MeasureHumiHM"
+??SHT2x_MeasureHumiHM?relay SYMBOL "?relay", SHT2x_MeasureHumiHM
+SHT2x_MeasureHumiPoll SYMBOL "SHT2x_MeasureHumiPoll"
+??SHT2x_MeasureHumiPoll?relay SYMBOL "?relay", SHT2x_MeasureHumiPoll
+SHT2x_MeasureTempHM SYMBOL "SHT2x_MeasureTempHM"
+??SHT2x_MeasureTempHM?relay SYMBOL "?relay", SHT2x_MeasureTempHM
+SHT2x_MeasureTempPoll SYMBOL "SHT2x_MeasureTempPoll"
+??SHT2x_MeasureTempPoll?relay SYMBOL "?relay", SHT2x_MeasureTempPoll
+
+        EXTERN send_LED_Display
+        FUNCTION send_LED_Display,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN TM1640_Init
+        FUNCTION TM1640_Init,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??TM1640_Init?relay
+        FUNCTION ??TM1640_Init?relay,00H
+        EXTERN ??send_LED_Display?relay
+        FUNCTION ??send_LED_Display?relay,00H
+
+// E:\aiotcode-master\¶àÍøÈÚºÏÊµÑé×°ÖÃ\2.»ùÓÚÎÞÏß´«¸ÐÍøÂçµÄÊµÑé\3.2ZigBeeµã²¥Í¨ÐÅÊµÑé-ÉÏ±¨´«¸ÐÆ÷Êý¾Ý\Components\HARDWARE\SHT20.c
+//    1 #include "SHT20.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//    2 #include "TM1640.h"
+//    3 #include <ioCC2530.h>
+//    4 #include "OLED.h"
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//    5 SHT2x_PARAM g_sht2x_param;
+g_sht2x_param:
+        DS 24
+        REQUIRE __INIT_XDATA_Z
+//    6 //==========================================================
+//    7 //	º¯ÊýÃû³Æ£º	IIC_Delay
+//    8 //
+//    9 //	º¯Êý¹¦ÄÜ£º	IICÑÓÊ±º¯Êý
+//   10 //
+//   11 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//   12 //
+//   13 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   14 //
+//   15 //	ËµÃ÷£º		
+//   16 //==========================================================
+//   17 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   18 static void IIC_Delay(uint32 n)
+IIC_Delay:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function IIC_Delay
+        CODE
+//   19 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   20   while(0);
+//   21 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//   22 
+//   23 //==========================================================
+//   24 //	º¯ÊýÃû³Æ£º	SHT20_IIC_Init
+//   25 //
+//   26 //	º¯Êý¹¦ÄÜ£º	³õÊ¼»¯IIC
+//   27 //
+//   28 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//   29 //
+//   30 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   31 //
+//   32 //	ËµÃ÷£º		
+//   33 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   34 static void SHT20_IIC_Init(void)
+SHT20_IIC_Init:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function SHT20_IIC_Init
+        CODE
+//   35 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   36     P0SEL &= ~0x03;     //ÉèÖÃP0.0¡¢P0.1ÎªÆÕÍ¨IO¿Ú  
+        ANL     0xf3,#0xfc
+//   37     P0DIR |= 0x03;      //P0.0¡¢P0.1¶¨ÒåÎªÊä³ö
+        ORL     0xfd,#0x3
+//   38 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+//   39 
+//   40 //==========================================================
+//   41 //	º¯ÊýÃû³Æ£º	IIC_SCL_OUTPUT
+//   42 //
+//   43 //	º¯Êý¹¦ÄÜ£º	IICÊ±ÖÓÏßÊä³öÄ£Ê½
+//   44 //
+//   45 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//   46 //
+//   47 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   48 //
+//   49 //	ËµÃ÷£º		
+//   50 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   51 static void IIC_SCL_OUTPUT(void)
+IIC_SCL_OUTPUT:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function IIC_SCL_OUTPUT
+        CODE
+//   52 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   53     P0SEL &= ~0x02;     //ÉèÖÃP0.1ÎªÆÕÍ¨IO¿Ú  
+        ANL     0xf3,#0xfd
+//   54     P0DIR |= 0x02;      //P0.1¶¨ÒåÎªÊä³ö
+        ORL     0xfd,#0x2
+//   55 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+//   56 
+//   57 //==========================================================
+//   58 //	º¯ÊýÃû³Æ£º	IIC_SCL_INPUT
+//   59 //
+//   60 //	º¯Êý¹¦ÄÜ£º	IICÊ±ÖÓÏßÊäÈëÄ£Ê½
+//   61 //
+//   62 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//   63 //
+//   64 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   65 //
+//   66 //	ËµÃ÷£º		
+//   67 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   68 static void IIC_SCL_INPUT(void)
+IIC_SCL_INPUT:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function IIC_SCL_INPUT
+        CODE
+//   69 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   70     P0SEL &= ~0x02;     //ÉèÖÃP0.1ÎªÆÕÍ¨IO¿Ú  
+        ANL     0xf3,#0xfd
+//   71     P0DIR &= ~0x02;     //°´¼ü½ÓÔÚP0.6¿ÚÉÏ£¬ÉèP0.6ÎªÊäÈëÄ£Ê½ 
+        ANL     0xfd,#0xfd
+//   72     P0INP &= ~0x02;     //´ò¿ªP0.1ÉÏÀ­µç×è
+        ANL     0x8f,#0xfd
+//   73 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock3
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE P0INP
+//   74 
+//   75 //==========================================================
+//   76 //	º¯ÊýÃû³Æ£º	IIC_SDA_OUTPUT
+//   77 //
+//   78 //	º¯Êý¹¦ÄÜ£º	IICÊý¾ÝÏßÊä³öÄ£Ê½ 
+//   79 //
+//   80 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//   81 //
+//   82 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   83 //
+//   84 //	ËµÃ÷£º		
+//   85 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   86 static void IIC_SDA_OUTPUT(void)
+IIC_SDA_OUTPUT:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function IIC_SDA_OUTPUT
+        CODE
+//   87 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   88     P0SEL &= ~0x01;     //ÉèÖÃP0.0ÎªÆÕÍ¨IO¿Ú  
+        ANL     0xf3,#0xfe
+//   89     P0DIR |= 0x01;      //P0.0¶¨ÒåÎªÊä³ö
+        ORL     0xfd,#0x1
+//   90 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock4
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+//   91 //==========================================================
+//   92 //	º¯ÊýÃû³Æ£º	IIC_SDA_INPUT
+//   93 //
+//   94 //	º¯Êý¹¦ÄÜ£º	IICÊý¾ÝÏßÊäÈëÄ£Ê½
+//   95 //
+//   96 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//   97 //
+//   98 //	·µ»Ø²ÎÊý£º	ÎÞ
+//   99 //
+//  100 //	ËµÃ÷£º		
+//  101 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  102 static void IIC_SDA_INPUT(void)
+IIC_SDA_INPUT:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function IIC_SDA_INPUT
+        CODE
+//  103 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  104     P0SEL &= ~0x01;     //ÉèÖÃP0.0ÎªÆÕÍ¨IO¿Ú  
+        ANL     0xf3,#0xfe
+//  105     P0DIR &= ~0x01;     //°´¼ü½ÓÔÚP0.0¿ÚÉÏ£¬ÉèP0.7ÎªÊäÈëÄ£Ê½ 
+        ANL     0xfd,#0xfe
+//  106     P0INP &= ~0x01;     //´ò¿ªP0.0ÉÏÀ­µç×è
+        ANL     0x8f,#0xfe
+//  107 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock5
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE P0INP
+//  108 //==========================================================
+//  109 //	º¯ÊýÃû³Æ£º	IIC_Start
+//  110 //
+//  111 //	º¯Êý¹¦ÄÜ£º	IICÆô¶¯Ê±Ðò
+//  112 //
+//  113 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  114 //
+//  115 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  116 //
+//  117 //	ËµÃ÷£º		
+//  118 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  119 static void IIC_Start(void)
+IIC_Start:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function IIC_Start
+        CODE
+//  120 {
+        FUNCALL IIC_Start, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_Start, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  121     IIC_SDA_OUTPUT();	//Ê±ÖÓÏßÊä³öÄ£Ê½
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  122     IIC_SCL_OUTPUT();	//Êý¾ÝÏßÊä³öÄ£Ê½
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  123     SDA_HIGH();		//À­¸ßÊý¾ÝÏß
+        SETB    0x80.0
+//  124     SCL_HIGH();		//À­¸ßÊ±ÖÓÏß
+        SETB    0x80.1
+//  125     SDA_LOW();		//À­µÍÊý¾ÝÏß			
+        CLR     0x80.0
+//  126     SCL_LOW();		//À­µÍÊ±ÖÓÏß
+        CLR     0x80.1
+//  127 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock6
+        REQUIRE _A_P0
+//  128 //==========================================================
+//  129 //	º¯ÊýÃû³Æ£º	IIC_Stop
+//  130 //
+//  131 //	º¯Êý¹¦ÄÜ£º	IICÍ£Ö¹Ê±Ðò 
+//  132 //
+//  133 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  134 //
+//  135 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  136 //
+//  137 //	ËµÃ÷£º		
+//  138 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  139 static void IIC_Stop(void)
+IIC_Stop:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function IIC_Stop
+        CODE
+//  140 {
+        FUNCALL IIC_Stop, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_Stop, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  141     IIC_SDA_OUTPUT();
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  142     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  143     SCL_LOW();
+        CLR     0x80.1
+//  144     SDA_LOW();
+        CLR     0x80.0
+//  145     SCL_HIGH();
+        SETB    0x80.1
+//  146     SDA_HIGH();
+        SETB    0x80.0
+//  147 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock7
+        REQUIRE _A_P0
+//  148 
+//  149 //==========================================================
+//  150 //	º¯ÊýÃû³Æ£º	IIC_Wait_Ack
+//  151 //
+//  152 //	º¯Êý¹¦ÄÜ£º	µÈ´ýÓ¦´ðÐÅºÅµ½À´
+//  153 //
+//  154 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  155 //
+//  156 //	·µ»Ø²ÎÊý£º	·µ»ØÖµ£º1£¬½ÓÊÕÓ¦´ðÊ§°Ü
+//  157 //        							0£¬½ÓÊÕÓ¦´ð³É¹¦
+//  158 //
+//  159 //	ËµÃ÷£º		
+//  160 //==========================================================
+//  161 //static uint8 IIC_Wait_Ack(void)
+//  162 //{
+//  163 //    uint8 Time=0;
+//  164 //    IIC_SCL_OUTPUT();
+//  165 //    IIC_SDA_OUTPUT();
+//  166 //    SDA_HIGH();
+//  167 //    SCL_HIGH();
+//  168 //    IIC_SDA_INPUT();
+//  169 //    while(SDA_STATE())
+//  170 //    {
+//  171 //      Time++;
+//  172 //      if(Time>250)
+//  173 //      {
+//  174 //        IIC_Stop();
+//  175 //        return 1;
+//  176 //      }
+//  177 //    }
+//  178 //    SCL_LOW();
+//  179 //    return 0;
+//  180 //}
+//  181 //==========================================================
+//  182 //	º¯ÊýÃû³Æ£º	IIC_Ack
+//  183 //
+//  184 //	º¯Êý¹¦ÄÜ£º	IIC ACKÓ¦´ð
+//  185 //
+//  186 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  187 //
+//  188 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  189 //
+//  190 //	ËµÃ÷£º		
+//  191 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  192 static void IIC_Ack(void)
+IIC_Ack:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function IIC_Ack
+        CODE
+//  193 {
+        FUNCALL IIC_Ack, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_Ack, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  194     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  195     SCL_LOW();
+        CLR     0x80.1
+//  196     IIC_SDA_OUTPUT();
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  197     SDA_LOW();
+        CLR     0x80.0
+//  198     SCL_HIGH();
+        SETB    0x80.1
+//  199     SCL_LOW();
+        CLR     0x80.1
+//  200 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock8
+        REQUIRE _A_P0
+//  201 
+//  202 //==========================================================
+//  203 //	º¯ÊýÃû³Æ£º	IIC_NAck
+//  204 //
+//  205 //	º¯Êý¹¦ÄÜ£º	IIC ÎÞACKÓ¦´ð
+//  206 //
+//  207 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  208 //
+//  209 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  210 //
+//  211 //	ËµÃ÷£º		
+//  212 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  213 static void IIC_NAck(void)
+IIC_NAck:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function IIC_NAck
+        CODE
+//  214 {
+        FUNCALL IIC_NAck, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_NAck, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  215     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  216     SCL_LOW();
+        CLR     0x80.1
+//  217     IIC_SDA_OUTPUT();
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  218     SDA_HIGH();
+        SETB    0x80.0
+//  219     SCL_HIGH();
+        SETB    0x80.1
+//  220     SCL_LOW();
+        CLR     0x80.1
+//  221 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+        REQUIRE _A_P0
+//  222 //==========================================================
+//  223 //	º¯ÊýÃû³Æ£º	IIC_Read_Byte
+//  224 //
+//  225 //	º¯Êý¹¦ÄÜ£º	IIC ¶ÁÈ¡Êý¾Ý
+//  226 //
+//  227 //	Èë¿Ú²ÎÊý£º	ack:ÊÇ·ñ·¢ËÍACK
+//  228 //
+//  229 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  230 //
+//  231 //	ËµÃ÷£º		
+//  232 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  233 static uint8 IIC_Read_Byte(uint8 ack)
+IIC_Read_Byte:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function IIC_Read_Byte
+        CODE
+//  234 {
+        FUNCALL IIC_Read_Byte, IIC_SDA_INPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_Read_Byte, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_Read_Byte, IIC_NAck
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL IIC_Read_Byte, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//  235     uint8 i,receive=0;
+        MOV     R6,#0x0
+//  236     IIC_SDA_INPUT();
+        ; Setup parameters for call to function IIC_SDA_INPUT
+        LCALL   ??IIC_SDA_INPUT?relay
+//  237     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  238     for(i=0;i<8;i++)
+        MOV     R0,#0x0
+        SJMP    ??IIC_Read_Byte_0
+//  239     {
+//  240         SCL_LOW();
+??IIC_Read_Byte_1:
+        CLR     0x80.1
+//  241         SCL_HIGH();
+        SETB    0x80.1
+//  242         receive<<=1;
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R6,A
+//  243         if(SDA_STATE())receive++;
+        MOV     C,0x80.0
+        JNC     ??IIC_Read_Byte_2
+        INC     R6
+//  244     }
+??IIC_Read_Byte_2:
+        INC     R0
+??IIC_Read_Byte_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JC      ??IIC_Read_Byte_1
+//  245     if(!ack) IIC_NAck();
+        MOV     A,R7
+        JNZ     ??IIC_Read_Byte_3
+        ; Setup parameters for call to function IIC_NAck
+        LCALL   ??IIC_NAck?relay
+        SJMP    ??IIC_Read_Byte_4
+//  246     else IIC_Ack();
+??IIC_Read_Byte_3:
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  247     return receive;
+??IIC_Read_Byte_4:
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+        REQUIRE _A_P0
+//  248 }
+//  249 
+//  250 
+//  251 //==========================================================
+//  252 //	º¯ÊýÃû³Æ£º	Write_IIC_Byte
+//  253 //
+//  254 //	º¯Êý¹¦ÄÜ£º	IIC Ð´ÈëÊý¾Ý
+//  255 //
+//  256 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  257 //
+//  258 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  259 //
+//  260 //	ËµÃ÷£º		
+//  261 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  262 static uint8 Write_IIC_Byte(uint8 byte)
+Write_IIC_Byte:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function Write_IIC_Byte
+        CODE
+//  263 {
+        FUNCALL Write_IIC_Byte, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Write_IIC_Byte, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Write_IIC_Byte, IIC_SDA_INPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Write_IIC_Byte, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//  264     uint8 i, ack;
+//  265 
+//  266     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  267     IIC_SDA_OUTPUT();		//ÉèÖÃÎªÊä³öÄ£Ê½
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  268     
+//  269     for(i = 0; i < 8; i++)
+        MOV     R0,#0x0
+        SJMP    ??Write_IIC_Byte_0
+//  270     {
+//  271         if(byte & 0x80)         //Ò»´Î¶ÁÈ¡×î¸ßÎ» ·¢ËÍÊý¾Ý
+//  272         {
+//  273             SDA_HIGH();
+//  274         }
+//  275         else 
+//  276         {
+//  277             SDA_LOW();
+??Write_IIC_Byte_1:
+        CLR     0x80.0
+//  278         }
+//  279         
+//  280         SCL_HIGH();  		//Ê±ÖÓÏßÀ­¸ß
+??Write_IIC_Byte_2:
+        SETB    0x80.1
+//  281         SCL_LOW();   		//Ê±ÖÓÏßÀ­µÍ
+        CLR     0x80.1
+//  282         
+//  283         byte <<= 1;
+        CLR     C
+        RLC     A
+        MOV     R7,A
+        INC     R0
+??Write_IIC_Byte_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??Write_IIC_Byte_3
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.7
+        JNC     ??Write_IIC_Byte_1
+        SETB    0x80.0
+        SJMP    ??Write_IIC_Byte_2
+//  284     }
+//  285 
+//  286     IIC_SDA_INPUT();  	        //Êý¾ÝÏßÊäÈëÄ£Ê½
+??Write_IIC_Byte_3:
+        ; Setup parameters for call to function IIC_SDA_INPUT
+        LCALL   ??IIC_SDA_INPUT?relay
+//  287     
+//  288     SCL_HIGH();			//Ê±ÖÓÏßÀ­¸ß
+        SETB    0x80.1
+//  289     
+//  290     if(Bit_SET == SDA_STATE())  //Èç¹û½ÓÊÜµ½Êý¾ÝÏß¸ßÐÅºÅ  ACK´íÎó
+//  291     {
+//  292         ack = ACK_ERROR;
+//  293     }
+//  294     else
+//  295     {
+//  296         ack = ACK_OK;
+        MOV     C,0x80.0
+        CLR     A
+        RLC     A
+        MOV     R6,A
+//  297     }
+//  298     
+//  299     SCL_LOW();          //À­µÍÊ±ÖÓÏß
+        CLR     0x80.1
+//  300 
+//  301     IIC_SDA_OUTPUT();	
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  302 
+//  303     SDA_HIGH();		//À­¸ßÊý¾ÝÏß
+        SETB    0x80.0
+//  304     
+//  305     return (ack);
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock11
+        REQUIRE _A_P0
+//  306 }
+//  307 //==========================================================
+//  308 //	º¯ÊýÃû³Æ£º	SHT2x_I2cReadByte
+//  309 //
+//  310 //	º¯Êý¹¦ÄÜ£º	IIC ¶ÁÈ¡Êý¾Ý
+//  311 //
+//  312 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  313 //
+//  314 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  315 //
+//  316 //	ËµÃ÷£º		
+//  317 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  318 uint8 SHT2x_I2cReadByte(void)
+SHT2x_I2cReadByte:
+        CFI Block cfiBlock12 Using cfiCommon0
+        CFI Function SHT2x_I2cReadByte
+        CODE
+//  319 {
+        FUNCALL SHT2x_I2cReadByte, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_I2cReadByte, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_I2cReadByte, IIC_SDA_INPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_I2cReadByte, IIC_SDA_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  320     uint8 i, val = 0;
+        MOV     R6,#0x0
+//  321 
+//  322     IIC_SCL_OUTPUT();  		    //ÉèÖÃÎªÊä³öÄ£Ê½
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  323     IIC_SDA_OUTPUT();
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  324 
+//  325     SDA_HIGH();			    //Êý¾ÝÏßÀ­¸ß
+        SETB    0x80.0
+//  326     
+//  327     IIC_SDA_INPUT();		    //Êý¾ÝÏßÉèÖÃÎªÊäÈëÄ£Ê½
+        ; Setup parameters for call to function IIC_SDA_INPUT
+        LCALL   ??IIC_SDA_INPUT?relay
+//  328         
+//  329     for(i = 0; i < 8; i++)
+        MOV     R0,#0x0
+        SJMP    ??SHT2x_I2cReadByte_0
+//  330     {
+//  331         val <<= 1; 
+??SHT2x_I2cReadByte_1:
+        MOV     A,R6
+        CLR     C
+        RLC     A
+        MOV     R6,A
+//  332         
+//  333         SCL_HIGH();  	 	    //À­¸ßÊ±ÖÓÏß
+        SETB    0x80.1
+//  334         
+//  335         if(Bit_SET == SDA_STATE())  //Èç¹ûÊý¾ÝÏß±»À­¸ß
+        MOV     C,0x80.0
+        JNC     ??SHT2x_I2cReadByte_2
+//  336         {
+//  337             val |= 0x01;	    //¶ÁÈ¡Êý¾ÝÏßÖÐµÄÊý¾Ý
+        SETB    0xE0 /* A   */.0
+        MOV     R6,A
+//  338         }
+//  339         
+//  340         SCL_LOW();      	    //À­µÍÊ±ÖÓÏß
+??SHT2x_I2cReadByte_2:
+        CLR     0x80.1
+//  341     }
+        INC     R0
+??SHT2x_I2cReadByte_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,#0x8
+        JC      ??SHT2x_I2cReadByte_1
+//  342 
+//  343     IIC_SDA_OUTPUT();  		    //Êý¾ÝÏßÊä³öÄ£Ê½
+        ; Setup parameters for call to function IIC_SDA_OUTPUT
+        LCALL   ??IIC_SDA_OUTPUT?relay
+//  344 
+//  345     SDA_HIGH();			    //Êý¾ÝÏßÀ­¸ß
+        SETB    0x80.0
+//  346     
+//  347     return (val);		    //·µ»Ø¶ÁÈ¡µ½µÄÊý¾Ý
+        MOV     A,R6
+        MOV     R1,A
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock12
+        REQUIRE _A_P0
+//  348 }
+//  349 ////==========================================================
+//  350 ////	º¯ÊýÃû³Æ£º	IIC_Send_Byte
+//  351 ////
+//  352 ////	º¯Êý¹¦ÄÜ£º	IIC Ð´ÈëÊý¾Ý
+//  353 ////
+//  354 ////	Èë¿Ú²ÎÊý£º	txd:Ð´ÈëÊý¾Ý
+//  355 ////
+//  356 ////	·µ»Ø²ÎÊý£º	ÎÞ
+//  357 ////
+//  358 ////	ËµÃ÷£º		
+//  359 ////==========================================================
+//  360 //static void IIC_Send_Byte(uint8 txd)
+//  361 //{
+//  362 //    uint8 t;
+//  363 //    IIC_SCL_OUTPUT();
+//  364 //    IIC_SDA_OUTPUT();
+//  365 //    SCL_LOW();
+//  366 //    for(t=0;t<8;t++)
+//  367 //    {
+//  368 //        if(txd & 0x80)
+//  369 //        {
+//  370 //            SDA_HIGH();
+//  371 //        }
+//  372 //        else 
+//  373 //        {
+//  374 //            SDA_LOW();
+//  375 //        }
+//  376 //        
+//  377 //        SCL_HIGH();
+//  378 //        SCL_LOW();
+//  379 //        txd<<=1;
+//  380 //    }
+//  381 //}
+//  382 
+//  383 //==========================================================
+//  384 //	º¯ÊýÃû³Æ£º	SHT2x_MeasureTempHM
+//  385 //
+//  386 //	º¯Êý¹¦ÄÜ£º	Ö÷»úÄ£Ê½ÎÂ¶È¶ÁÈ¡
+//  387 //
+//  388 //	Èë¿Ú²ÎÊý£º	ÎÞ
+//  389 //
+//  390 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  391 //
+//  392 //	ËµÃ÷£º		
+//  393 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  394 float SHT2x_MeasureTempHM(void)
+SHT2x_MeasureTempHM:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function SHT2x_MeasureTempHM
+        CODE
+//  395 {
+        FUNCALL SHT2x_MeasureTempHM, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_SCL_INPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_NAck
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempHM, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//  396     float TEMP;
+//  397     uint8 tmp1, tmp2;
+//  398     uint16 ST;
+//  399     
+//  400     IIC_SCL_OUTPUT();  					//Ê±ÖÓÏßÉèÖÃÎªÊä³öÄ£Ê½
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  401      
+//  402     IIC_Start();    					//¿ªÆôIIC´«Êä×´Ì¬                       
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  403     Write_IIC_Byte(I2C_ADR_W);				//Ð´Èë0x80 ±íÊ¾¿ªÊ¼Ð´Êý¾Ý
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x80
+        LCALL   ??Write_IIC_Byte?relay
+//  404     Write_IIC_Byte(TRIG_TEMP_MEASUREMENT_HM); 		//Ö÷»úÄ£Ê½Ïà¶ÔÎÂ¶È
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x1d
+        LCALL   ??Write_IIC_Byte?relay
+//  405   
+//  406     IIC_Start();					//¿ªÆôIIC´«Êä×´Ì¬      
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  407     Write_IIC_Byte(I2C_ADR_R);				//Ð´Èë0x81 ±íÊ¾¿ªÊ¼¶ÁÊý¾Ý
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x7f
+        LCALL   ??Write_IIC_Byte?relay
+//  408 
+//  409     SCL_HIGH();   					//À­¸ßÊ±ÖÓÏß
+        SETB    0x80.1
+//  410 
+//  411     IIC_SCL_INPUT();					//ÉèÖÃÎªÊäÈëÄ£Ê½
+        ; Setup parameters for call to function IIC_SCL_INPUT
+        LCALL   ??IIC_SCL_INPUT?relay
+        SJMP    ??SHT2x_MeasureTempHM_0
+//  412 
+//  413     while(Bit_RESET == SCL_STATE())  			//Èç¹û¸ÃÊ±ÖÓÏß±»ÖÃµÍ
+//  414     {
+//  415         IIC_Delay(20);
+??SHT2x_MeasureTempHM_1:
+        ; Setup parameters for call to function IIC_Delay
+        MOV     DPTR,#__Constant_14
+        LCALL   ?XLOAD_R2345
+        LCALL   ??IIC_Delay?relay
+//  416     }
+??SHT2x_MeasureTempHM_0:
+        MOV     C,0x80.1
+        JNC     ??SHT2x_MeasureTempHM_1
+//  417     
+//  418     tmp1 = SHT2x_I2cReadByte();                         //¶ÁÈ¡Êý¾Ý
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     R6,A
+//  419     IIC_Ack();						//ACKÓ¦´ð
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  420     tmp2 = SHT2x_I2cReadByte();     	                //¶ÁÈ¡Êý¾Ý
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  421     IIC_NAck();						//²»Ó¦´ð
+        ; Setup parameters for call to function IIC_NAck
+        LCALL   ??IIC_NAck?relay
+//  422     IIC_Stop();						//¹Ø±ÕIIC
+        ; Setup parameters for call to function IIC_Stop
+        LCALL   ??IIC_Stop?relay
+//  423     
+//  424     ST = (tmp1 << 8) | (tmp2 << 0);
+//  425     ST &= ~0x0003;
+//  426     TEMP = ((float)ST * 0.00268127) - 46.85;  //×ª»»ËùµÃµ½µÄÊý¾Ý
+//  427 
+//  428     IIC_SCL_OUTPUT();  			      //Ê±ÖÓÏßÊä³ö
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  429 
+//  430     return (TEMP);	    		      //·µ»ØÎÂ¶ÈÖµ
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,?V0 + 0
+        ANL     A,#0xfc
+        MOV     ?V0 + 0,A
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#__Constant_3b2fb83f
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     DPTR,#__Constant_c23b6666
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock13
+        REQUIRE _A_P0
+//  431 }
+//  432 
+//  433 //==========================================================
+//  434 //	º¯ÊýÃû³Æ£º	SHT2x_MeasureHumiHM
+//  435 //
+//  436 //	º¯Êý¹¦ÄÜ£º	Ö÷»úÄ£Ê½Êª¶È¶ÁÈ¡
+//  437 //
+//  438 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//  439 //
+//  440 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  441 //
+//  442 //	ËµÃ÷£º		
+//  443 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  444 float SHT2x_MeasureHumiHM(void)
+SHT2x_MeasureHumiHM:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function SHT2x_MeasureHumiHM
+        CODE
+//  445 {
+        FUNCALL SHT2x_MeasureHumiHM, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_SCL_INPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_NAck
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiHM, IIC_SCL_OUTPUT
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//  446     float HUMI;
+//  447     uint8 tmp1, tmp2;    
+//  448     uint16 SRH;
+//  449 
+//  450     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  451     
+//  452     IIC_Start();                               
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  453     Write_IIC_Byte(I2C_ADR_W);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x80
+        LCALL   ??Write_IIC_Byte?relay
+//  454     Write_IIC_Byte(TRIG_HUMI_MEASUREMENT_HM);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x1b
+        LCALL   ??Write_IIC_Byte?relay
+//  455 
+//  456     IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  457     Write_IIC_Byte(I2C_ADR_R);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x7f
+        LCALL   ??Write_IIC_Byte?relay
+//  458 
+//  459     SCL_HIGH();
+        SETB    0x80.1
+//  460 
+//  461     IIC_SCL_INPUT();
+        ; Setup parameters for call to function IIC_SCL_INPUT
+        LCALL   ??IIC_SCL_INPUT?relay
+        SJMP    ??SHT2x_MeasureHumiHM_0
+//  462 
+//  463     while(Bit_RESET == SCL_STATE())
+//  464     {
+//  465         IIC_Delay(20);
+??SHT2x_MeasureHumiHM_1:
+        ; Setup parameters for call to function IIC_Delay
+        MOV     DPTR,#__Constant_14
+        LCALL   ?XLOAD_R2345
+        LCALL   ??IIC_Delay?relay
+//  466     }
+??SHT2x_MeasureHumiHM_0:
+        MOV     C,0x80.1
+        JNC     ??SHT2x_MeasureHumiHM_1
+//  467     
+//  468     tmp1 = SHT2x_I2cReadByte();
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     R6,A
+//  469     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  470     tmp2 = SHT2x_I2cReadByte();
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  471     IIC_NAck();
+        ; Setup parameters for call to function IIC_NAck
+        LCALL   ??IIC_NAck?relay
+//  472     IIC_Stop();
+        ; Setup parameters for call to function IIC_Stop
+        LCALL   ??IIC_Stop?relay
+//  473     
+//  474     SRH = (tmp1 << 8) | (tmp2 << 0);
+//  475     SRH &= ~0x0003;
+//  476     HUMI = ((float)SRH * 0.00190735) - 6;
+//  477 
+//  478     IIC_SCL_OUTPUT();
+        ; Setup parameters for call to function IIC_SCL_OUTPUT
+        LCALL   ??IIC_SCL_OUTPUT?relay
+//  479 
+//  480     return (HUMI);
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,?V0 + 0
+        ANL     A,#0xfc
+        MOV     ?V0 + 0,A
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#__Constant_3afa000c
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     DPTR,#__Constant_c0c00000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock14
+        REQUIRE _A_P0
+//  481 }
+//  482 
+//  483 //==========================================================
+//  484 //	º¯ÊýÃû³Æ£º	SHT2x_MeasureTempPoll
+//  485 //
+//  486 //	º¯Êý¹¦ÄÜ£º	·ÇÖ÷»úÄ£Ê½ÎÂ¶È¶ÁÈ¡ 
+//  487 //
+//  488 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//  489 //
+//  490 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  491 //
+//  492 //	ËµÃ÷£º		
+//  493 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  494 float SHT2x_MeasureTempPoll(void)
+SHT2x_MeasureTempPoll:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function SHT2x_MeasureTempPoll
+        CODE
+//  495 {
+        FUNCALL SHT2x_MeasureTempPoll, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, IIC_Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, IIC_NAck
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureTempPoll, IIC_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//  496     float TEMP;
+//  497     uint8 ack, tmp1, tmp2;
+//  498     uint16 ST;
+//  499     
+//  500     IIC_Start();                            
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  501     Write_IIC_Byte(I2C_ADR_W);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x80
+        LCALL   ??Write_IIC_Byte?relay
+//  502     Write_IIC_Byte(TRIG_TEMP_MEASUREMENT_POLL);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0xd
+        LCALL   ??Write_IIC_Byte?relay
+//  503 
+//  504     do {
+//  505         IIC_Delay(20);               
+??SHT2x_MeasureTempPoll_0:
+        ; Setup parameters for call to function IIC_Delay
+        MOV     DPTR,#__Constant_14
+        LCALL   ?XLOAD_R2345
+        LCALL   ??IIC_Delay?relay
+//  506         IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  507         ack = Write_IIC_Byte(I2C_ADR_R);
+//  508     } while(ACK_ERROR == ack);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x7f
+        LCALL   ??Write_IIC_Byte?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JZ      ??SHT2x_MeasureTempPoll_0
+//  509     
+//  510     tmp1 = SHT2x_I2cReadByte();
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     R6,A
+//  511     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  512     tmp2 = SHT2x_I2cReadByte();
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  513     IIC_NAck();
+        ; Setup parameters for call to function IIC_NAck
+        LCALL   ??IIC_NAck?relay
+//  514     IIC_Stop();
+        ; Setup parameters for call to function IIC_Stop
+        LCALL   ??IIC_Stop?relay
+//  515     
+//  516     ST = (tmp1 << 8) | (tmp2 << 0);
+//  517     ST &= ~0x0003;
+//  518     TEMP = ((float)ST * 0.00268127) - 46.85;
+//  519 
+//  520     return (TEMP);	  
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,?V0 + 0
+        ANL     A,#0xfc
+        MOV     ?V0 + 0,A
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#__Constant_3b2fb83f
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     DPTR,#__Constant_c23b6666
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock15
+//  521 }
+//  522 
+//  523 //==========================================================
+//  524 //	º¯ÊýÃû³Æ£º	SHT2x_MeasureHumiPoll
+//  525 //
+//  526 //	º¯Êý¹¦ÄÜ£º	·ÇÖ÷»úÄ£Ê½Êª¶È¶ÁÈ¡ 
+//  527 //
+//  528 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//  529 //
+//  530 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  531 //
+//  532 //	ËµÃ÷£º		
+//  533 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  534 float SHT2x_MeasureHumiPoll(void)
+SHT2x_MeasureHumiPoll:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function SHT2x_MeasureHumiPoll
+        CODE
+//  535 {
+        FUNCALL SHT2x_MeasureHumiPoll, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, IIC_Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, IIC_NAck
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_MeasureHumiPoll, IIC_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x10
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 16)
+        ; Saved register size: 16
+        ; Auto size: 0
+//  536     float HUMI;
+//  537     uint8 ack, tmp1, tmp2;    
+//  538     uint16 SRH;
+//  539     
+//  540     IIC_Start();                               
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  541     Write_IIC_Byte(I2C_ADR_W);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x80
+        LCALL   ??Write_IIC_Byte?relay
+//  542     Write_IIC_Byte(TRIG_HUMI_MEASUREMENT_POLL);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0xb
+        LCALL   ??Write_IIC_Byte?relay
+//  543     
+//  544     do {
+//  545         IIC_Delay(20);
+??SHT2x_MeasureHumiPoll_0:
+        ; Setup parameters for call to function IIC_Delay
+        MOV     DPTR,#__Constant_14
+        LCALL   ?XLOAD_R2345
+        LCALL   ??IIC_Delay?relay
+//  546         IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  547         ack = Write_IIC_Byte(I2C_ADR_R);
+//  548     } while(ACK_ERROR == ack);
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x7f
+        LCALL   ??Write_IIC_Byte?relay
+        MOV     A,R1
+        XRL     A,#0x1
+        JZ      ??SHT2x_MeasureHumiPoll_0
+//  549     
+//  550     tmp1 = SHT2x_I2cReadByte();
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     R6,A
+//  551     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  552     tmp2 = SHT2x_I2cReadByte();
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//  553     IIC_NAck();
+        ; Setup parameters for call to function IIC_NAck
+        LCALL   ??IIC_NAck?relay
+//  554     IIC_Stop();
+        ; Setup parameters for call to function IIC_Stop
+        LCALL   ??IIC_Stop?relay
+//  555     
+//  556     SRH = (tmp1 << 8) | (tmp2 << 0);
+//  557     SRH &= ~0x0003;
+//  558     HUMI = ((float)SRH * 0.00190735) - 6;
+//  559 
+//  560     return (HUMI);
+        MOV     A,R6
+        MOV     R1,A
+        MOV     A,?V0 + 0
+        ANL     A,#0xfc
+        MOV     ?V0 + 0,A
+        MOV     A,R1
+        MOV     ?V0 + 1,A
+        CLR     A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 0
+        LCALL   ?UL_TO_FLT
+        MOV     DPTR,#__Constant_3afa000c
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_MUL
+        MOV     DPTR,#__Constant_c0c00000
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 4
+        LCALL   ?FLT_ADD
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     R7,#0x8
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock16
+//  561 }
+//  562 
+//  563 //==========================================================
+//  564 //	º¯ÊýÃû³Æ£º	SHT2x_GetSerialNumber
+//  565 //
+//  566 //	º¯Êý¹¦ÄÜ£º	ÐòÁÐºÅ
+//  567 //
+//  568 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//  569 //
+//  570 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  571 //
+//  572 //	ËµÃ÷£º		
+//  573 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  574 void SHT2x_GetSerialNumber(uint8 *buf)
+SHT2x_GetSerialNumber:
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function SHT2x_GetSerialNumber
+        CODE
+//  575 {
+        FUNCALL SHT2x_GetSerialNumber, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Read_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Start
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, Write_IIC_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Read_Byte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Ack
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, SHT2x_I2cReadByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_NAck
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetSerialNumber, IIC_Stop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  576     /* Read from memory location 1 */
+//  577     IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  578     Write_IIC_Byte(I2C_ADR_W);	                //I2C address
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x80
+        LCALL   ??Write_IIC_Byte?relay
+//  579     Write_IIC_Byte(0xFA); 			//Command for readout on-chip memory
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x6
+        LCALL   ??Write_IIC_Byte?relay
+//  580     Write_IIC_Byte(0x0F); 			//on-chip memory address
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#0xf
+        LCALL   ??Write_IIC_Byte?relay
+//  581     IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  582     Write_IIC_Byte(I2C_ADR_R);	                //I2C address
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x7f
+        LCALL   ??Write_IIC_Byte?relay
+//  583     buf[5] = SHT2x_I2cReadByte();               //Read SNB_3
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  584     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  585     SHT2x_I2cReadByte(); 			//Read CRC SNB_3 (CRC is not analyzed)
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+//  586     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  587     buf[4] = SHT2x_I2cReadByte(); 	        //Read SNB_2
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  588     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  589     IIC_Read_Byte(0); 				//Read CRC SNB_2 (CRC is not analyzed)
+        ; Setup parameters for call to function IIC_Read_Byte
+        MOV     R1,#0x0
+        LCALL   ??IIC_Read_Byte?relay
+//  590     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  591     buf[3] = SHT2x_I2cReadByte(); 	        //Read SNB_1
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  592     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  593     SHT2x_I2cReadByte(); 			//Read CRC SNB_1 (CRC is not analyzed)
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+//  594     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  595     buf[2] = SHT2x_I2cReadByte(); 	        //Read SNB_0
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  596     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  597     SHT2x_I2cReadByte(); 			//Read CRC SNB_0 (CRC is not analyzed)
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+//  598     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  599     IIC_Stop();
+        ; Setup parameters for call to function IIC_Stop
+        LCALL   ??IIC_Stop?relay
+//  600 
+//  601     /* Read from memory location 2 */
+//  602     IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  603     Write_IIC_Byte(I2C_ADR_W); 	                //I2C address
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x80
+        LCALL   ??Write_IIC_Byte?relay
+//  604     Write_IIC_Byte(0xFC); 			//Command for readout on-chip memory
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x4
+        LCALL   ??Write_IIC_Byte?relay
+//  605     Write_IIC_Byte(0xC9); 			//on-chip memory address
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x37
+        LCALL   ??Write_IIC_Byte?relay
+//  606     IIC_Start();
+        ; Setup parameters for call to function IIC_Start
+        LCALL   ??IIC_Start?relay
+//  607     Write_IIC_Byte(I2C_ADR_R); 	                //I2C address
+        ; Setup parameters for call to function Write_IIC_Byte
+        MOV     R1,#-0x7f
+        LCALL   ??Write_IIC_Byte?relay
+//  608     buf[1] = SHT2x_I2cReadByte(); 	        //Read SNC_1
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    @DPTR,A
+//  609     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  610     buf[0] = SHT2x_I2cReadByte(); 	        //Read SNC_0
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//  611     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  612     IIC_Read_Byte(0); 			        //Read CRC SNC0/1 (CRC is not analyzed)
+        ; Setup parameters for call to function IIC_Read_Byte
+        MOV     R1,#0x0
+        LCALL   ??IIC_Read_Byte?relay
+//  613     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  614     buf[7] = SHT2x_I2cReadByte(); 	        //Read SNA_1
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  615     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  616     buf[6] = SHT2x_I2cReadByte(); 	        //Read SNA_0
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+        MOV     A,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+//  617     IIC_Ack();
+        ; Setup parameters for call to function IIC_Ack
+        LCALL   ??IIC_Ack?relay
+//  618     SHT2x_I2cReadByte(); 			//Read CRC SNA0/1 (CRC is not analyzed)
+        ; Setup parameters for call to function SHT2x_I2cReadByte
+        LCALL   ??SHT2x_I2cReadByte?relay
+//  619     IIC_NAck();
+        ; Setup parameters for call to function IIC_NAck
+        LCALL   ??IIC_NAck?relay
+//  620     IIC_Stop();
+        ; Setup parameters for call to function IIC_Stop
+        LCALL   ??IIC_Stop?relay
+//  621 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock17
+//  622 
+//  623 //==========================================================
+//  624 //	º¯ÊýÃû³Æ£º	SHT2x_GetTempHumi
+//  625 //
+//  626 //	º¯Êý¹¦ÄÜ£º	µÃµ½µÄÊý¾Ý 
+//  627 //
+//  628 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//  629 //
+//  630 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  631 //
+//  632 //	ËµÃ÷£º		
+//  633 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  634 void SHT2x_GetTempHumi(void)
+SHT2x_GetTempHumi:
+        CFI Block cfiBlock18 Using cfiCommon0
+        CFI Function SHT2x_GetTempHumi
+        CODE
+//  635 {   
+        FUNCALL SHT2x_GetTempHumi, SHT2x_MeasureTempHM
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_GetTempHumi, SHT2x_MeasureHumiHM
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  636     g_sht2x_param.TEMP_HM = SHT2x_MeasureTempHM();			//Ö÷»úÄ£Ê½ÏÂµÄÎÂ¶ÈÊý¾Ý
+        ; Setup parameters for call to function SHT2x_MeasureTempHM
+        LCALL   ??SHT2x_MeasureTempHM?relay
+        MOV     DPTR,#g_sht2x_param
+        LCALL   ?XSTORE_R2345
+//  637     g_sht2x_param.HUMI_HM = SHT2x_MeasureHumiHM(); 			//Ö÷»úÄ£Ê½ÏÂµÄÊª¶ÈÊý¾Ý
+        ; Setup parameters for call to function SHT2x_MeasureHumiHM
+        LCALL   ??SHT2x_MeasureHumiHM?relay
+        MOV     DPTR,#g_sht2x_param + 4
+        LCALL   ?XSTORE_R2345
+//  638 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock18
+//  639 //==========================================================
+//  640 //	º¯ÊýÃû³Æ£º	SHT2x_GetTemp
+//  641 //
+//  642 //	º¯Êý¹¦ÄÜ£º	µÃµ½µÄÊý¾Ý 
+//  643 //
+//  644 //	Èë¿Ú²ÎÊý£º	Ê±¼ä
+//  645 //
+//  646 //	·µ»Ø²ÎÊý£º	ÎÞ
+//  647 //
+//  648 //	ËµÃ÷£º		
+//  649 //==========================================================
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  650 uint8 SHT2x_GetTemp(void)
+SHT2x_GetTemp:
+        CFI Block cfiBlock19 Using cfiCommon0
+        CFI Function SHT2x_GetTemp
+        CODE
+//  651 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  652     return (uint8)g_sht2x_param.TEMP_HM;
+        MOV     DPTR,#g_sht2x_param
+        LCALL   ?XLOAD_R2345
+        LCALL   ?R2345_FLT_TO_L
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock19
+//  653 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  654 uint8 SHT2x_GetHumi(void)
+SHT2x_GetHumi:
+        CFI Block cfiBlock20 Using cfiCommon0
+        CFI Function SHT2x_GetHumi
+        CODE
+//  655 {
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  656     return (uint8)g_sht2x_param.HUMI_HM;
+        MOV     DPTR,#g_sht2x_param + 4
+        LCALL   ?XLOAD_R2345
+        LCALL   ?R2345_FLT_TO_L
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock20
+//  657 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  658 void SHT2x_DisplayHumi(void)
+SHT2x_DisplayHumi:
+        CFI Block cfiBlock21 Using cfiCommon0
+        CFI Function SHT2x_DisplayHumi
+        CODE
+//  659 {
+        FUNCALL SHT2x_DisplayHumi, SHT2x_MeasureHumiHM
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_DisplayHumi, send_LED_Display
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  660     g_sht2x_param.HUMI_HM = SHT2x_MeasureHumiHM();	
+        ; Setup parameters for call to function SHT2x_MeasureHumiHM
+        LCALL   ??SHT2x_MeasureHumiHM?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,R4
+        MOV     ?V0 + 3,R5
+        MOV     DPTR,#g_sht2x_param + 4
+        MOV     R0,#?V0 + 0
+        LCALL   ?L_MOV_TO_X
+//  661     send_LED_Display(0xc0,(uint8)g_sht2x_param.HUMI_HM,1);
+        ; Setup parameters for call to function send_LED_Display
+        MOV     R4,#0x1
+        MOV     R0,#?V0 + 0
+        LCALL   ?FLT_TO_L
+        MOV     R2,?V0 + 0
+        MOV     R3,#0x0
+        MOV     R1,#-0x40
+        LCALL   ??send_LED_Display?relay
+//  662 }
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock21
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  663 void SHT2x_DisplayTemp(void)
+SHT2x_DisplayTemp:
+        CFI Block cfiBlock22 Using cfiCommon0
+        CFI Function SHT2x_DisplayTemp
+        CODE
+//  664 {
+        FUNCALL SHT2x_DisplayTemp, SHT2x_MeasureTempHM
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_DisplayTemp, send_LED_Display
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  665     g_sht2x_param.TEMP_HM = SHT2x_MeasureTempHM();
+        ; Setup parameters for call to function SHT2x_MeasureTempHM
+        LCALL   ??SHT2x_MeasureTempHM?relay
+        MOV     DPTR,#g_sht2x_param
+        LCALL   ?XSTORE_R2345
+//  666     send_LED_Display(0xc0,(uint8)g_sht2x_param.TEMP_HM,2); 
+        ; Setup parameters for call to function send_LED_Display
+        MOV     DPTR,#g_sht2x_param
+        LCALL   ?XLOAD_R2345
+        LCALL   ?R2345_FLT_TO_L
+        MOV     R2,?V0 + 0
+        MOV     R3,#0x0
+        MOV     A,#0x2
+        MOV     R4,A
+        MOV     R1,#-0x40
+        LCALL   ??send_LED_Display?relay
+//  667 }
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock22
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  668 void SHT2x_Init(void)
+SHT2x_Init:
+        CFI Block cfiBlock23 Using cfiCommon0
+        CFI Function SHT2x_Init
+        CODE
+//  669 {
+        FUNCALL SHT2x_Init, SHT20_IIC_Init
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_Init, TM1640_Init
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL SHT2x_Init, SHT2x_GetTempHumi
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  670   SHT20_IIC_Init();
+        ; Setup parameters for call to function SHT20_IIC_Init
+        LCALL   ??SHT20_IIC_Init?relay
+//  671   TM1640_Init();
+        ; Setup parameters for call to function TM1640_Init
+        LCALL   ??TM1640_Init?relay
+//  672   SHT2x_GetTempHumi(); 
+        ; Setup parameters for call to function SHT2x_GetTempHumi
+        LCALL   ??SHT2x_GetTempHumi?relay
+//  673 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock23
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_14:
+        DD 20
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3b2fb83f:
+        DD 3B2FB83FH
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_c23b6666:
+        DD 0C23B6666H
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_3afa000c:
+        DD 3AFA000CH
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA32
+__Constant_c0c00000:
+        DD 0C0C00000H
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_Delay?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_Delay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT20_IIC_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT20_IIC_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_SCL_OUTPUT?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_SCL_OUTPUT
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_SCL_INPUT?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_SCL_INPUT
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_SDA_OUTPUT?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_SDA_OUTPUT
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_SDA_INPUT?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_SDA_INPUT
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_Start?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_Start
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_Stop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_Stop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_Ack?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_Ack
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_NAck?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_NAck
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??IIC_Read_Byte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    IIC_Read_Byte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Write_IIC_Byte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Write_IIC_Byte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_I2cReadByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_I2cReadByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_MeasureTempHM?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_MeasureTempHM
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_MeasureHumiHM?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_MeasureHumiHM
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_MeasureTempPoll?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_MeasureTempPoll
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_MeasureHumiPoll?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_MeasureHumiPoll
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_GetSerialNumber?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_GetSerialNumber
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_GetTempHumi?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_GetTempHumi
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_GetTemp?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_GetTemp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_GetHumi?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_GetHumi
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_DisplayHumi?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_DisplayHumi
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_DisplayTemp?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_DisplayTemp
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??SHT2x_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    SHT2x_Init
+
+        END
+// 
+// 1 265 bytes in segment BANKED_CODE
+//   144 bytes in segment BANK_RELAYS
+//     4 bytes in segment SFR_AN
+//    20 bytes in segment XDATA_ROM_C
+//    24 bytes in segment XDATA_Z
+// 
+// 1 409 bytes of CODE  memory
+//     0 bytes of CONST memory (+ 20 bytes shared)
+//     0 bytes of DATA  memory (+  4 bytes shared)
+//    24 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none
